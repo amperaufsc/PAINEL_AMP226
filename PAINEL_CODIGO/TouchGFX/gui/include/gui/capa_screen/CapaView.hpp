@@ -13,7 +13,9 @@ public:
     virtual void tearDownScreen();
     void updateButtonState(uint32_t buttonID);
     void setCANValue(int value);
+    virtual void modoespera();
 protected:
+    int piscarimagem;
 };
 
 #endif // CAPAVIEW_HPP

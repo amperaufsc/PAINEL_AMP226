@@ -5,12 +5,95 @@
   </Languages>
   <Texts>
     <TextGroup Id="Group1" />
-    <TextGroup Id="Unsorted" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_CBAY" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_ON7B" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_4WMP" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZFV1" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_AYI9" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_NJC4" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_0NCS" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_0P77" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_KC4C" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_KLPD" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; °C</Translation>
+      </Text>
+      <Text Id="__SingleUse_DPMA" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Carga Acumulador</Translation>
+      </Text>
+      <Text Id="__SingleUse_2SWE" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; A</Translation>
+      </Text>
+      <Text Id="__SingleUse_KUTP" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Corrente acumulador</Translation>
+      </Text>
+      <Text Id="__SingleUse_NY2N" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; A</Translation>
+      </Text>
+      <Text Id="__SingleUse_0JHV" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Tensao LV</Translation>
+      </Text>
+      <Text Id="__SingleUse_FKG4" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">RPM</Translation>
+      </Text>
+      <Text Id="__SingleUse_J676" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; rpm&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_OFVA" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Tensão Inversor</Translation>
+      </Text>
+      <Text Id="__SingleUse_5HLU" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; V</Translation>
+      </Text>
+      <Text Id="__SingleUse_S0EV" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Temp. motor</Translation>
+      </Text>
+      <Text Id="__SingleUse_OPWS" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Tensao HV</Translation>
+      </Text>
+      <Text Id="__SingleUse_HFVM" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; V</Translation>
+      </Text>
+      <Text Id="__SingleUse_913G" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Temp. Acumulador</Translation>
+      </Text>
+      <Text Id="__SingleUse_3AJU" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; A</Translation>
+      </Text>
+      <Text Id="__SingleUse_JK1H" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; V</Translation>
+      </Text>
+      <Text Id="__SingleUse_BTZ4" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Temp. inversor</Translation>
+      </Text>
+      <Text Id="__SingleUse_5JSZ" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; °C</Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="batman" Font="Gotham_Bold.otf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="coringa" Font="Gotham_Ultra.otf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
   </Typographies>
 </TextDatabase>

@@ -11,6 +11,8 @@ public:
     virtual ~ModoProvaView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void updateButtonState(uint32_t buttonID);
+
 protected:
 };
 

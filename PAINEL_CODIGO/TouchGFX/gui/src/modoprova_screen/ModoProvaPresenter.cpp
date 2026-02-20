@@ -16,3 +16,12 @@ void ModoProvaPresenter::deactivate()
 {
 
 }
+void ModoProvaPresenter::hwButtonClicked(uint8_t buttonId)
+{
+
+	    if (buttonId == 2) // PB11
+	    {
+	        static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
+	    }
+
+}

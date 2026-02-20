@@ -360,14 +360,19 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/Botao_voltar.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Botao_voltar.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/Fundo_SA.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Fundo_SA.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/fundo_prova.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/fundo_prova.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/fundo_teste.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/fundo_teste.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/Model.cpp</name>
@@ -393,56 +398,6 @@
 			<name>Application/User/gui/pag1_AutonomosView.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag1_autonomos_screen/pag1_AutonomosView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag2_AutonomosPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag2_autonomos_screen/pag2_AutonomosPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag2_AutonomosView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag2_autonomos_screen/pag2_AutonomosView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag3_AutonomosPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag3_autonomos_screen/pag3_AutonomosPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag3_AutonomosView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag3_autonomos_screen/pag3_AutonomosView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag4_AutonomosPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag4_autonomos_screen/pag4_AutonomosPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag4_AutonomosView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag4_autonomos_screen/pag4_AutonomosView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag5_AutonomosPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag5_autonomos_screen/pag5_AutonomosPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag5_AutonomosView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag5_autonomos_screen/pag5_AutonomosView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag6_AutonomosPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag6_autonomos_screen/pag6_AutonomosPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag6_AutonomosView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag6_autonomos_screen/pag6_AutonomosView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/Screen1Presenter.cpp</name>
@@ -520,6 +475,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_Gotham_Bold_otf_20_4bpp_0.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Font_Gotham_Ultra_otf_25_4bpp_0.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_Gotham_Ultra_otf_25_4bpp_0.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/Font_verdana_10_4bpp_0.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_verdana_10_4bpp_0.cpp</locationURI>
@@ -545,6 +505,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_Gotham_Bold_otf_20_4bpp.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Kerning_Gotham_Ultra_otf_25_4bpp.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_Gotham_Ultra_otf_25_4bpp.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/Kerning_verdana_10_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_verdana_10_4bpp.cpp</locationURI>
@@ -563,6 +528,11 @@
 			<name>Application/User/generated/Table_Gotham_Bold_otf_20_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_Gotham_Bold_otf_20_4bpp.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Table_Gotham_Ultra_otf_25_4bpp.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_Gotham_Ultra_otf_25_4bpp.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Table_verdana_10_4bpp.cpp</name>
@@ -600,14 +570,19 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Botao_voltarBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/Botao_voltarBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/Fundo_SABase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/Fundo_SABase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/fundo_provaBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/fundo_provaBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/fundo_testeBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/fundo_testeBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/ModoProvaViewBase.cpp</name>
@@ -618,31 +593,6 @@
 			<name>Application/User/generated/pag1_AutonomosViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag1_autonomos_screen/pag1_AutonomosViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/pag2_AutonomosViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag2_autonomos_screen/pag2_AutonomosViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/pag3_AutonomosViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag3_autonomos_screen/pag3_AutonomosViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/pag4_AutonomosViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag4_autonomos_screen/pag4_AutonomosViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/pag5_AutonomosViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag5_autonomos_screen/pag5_AutonomosViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/pag6_AutonomosViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag6_autonomos_screen/pag6_AutonomosViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/TestesViewBase.cpp</name>
@@ -665,6 +615,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_MENU_painel.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_botaoMENU.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_botaoMENU.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_bubassaro.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bubassaro.cpp</locationURI>
@@ -680,6 +635,46 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_chamand.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_fundo2.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundo2.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_fundoSA.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundoSA.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_fundo_prova.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundo_prova.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_fundo_testes.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundo_testes.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_fundobonito.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundobonito.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_l1.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_l1.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_l2.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_l2.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_logo_branca.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logo_branca.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_logo_png_azul.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logo_png_azul.cpp</locationURI>
@@ -688,6 +683,21 @@
 			<name>Application/User/generated/image_logo_png_rosa.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logo_png_rosa.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_logob.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logob.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_logobranca.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logobranca.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_menu.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_menu.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_squirtle.cpp</name>

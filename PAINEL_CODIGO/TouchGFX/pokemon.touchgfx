@@ -13,19 +13,19 @@
           },
           {
             "Type": "Image",
-            "Name": "logorosa",
-            "Y": -166,
+            "Name": "logobranca",
+            "Y": -314,
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "logo_png_rosa.png"
+            "RelativeFilename": "l2.png"
           },
           {
             "Type": "Image",
             "Name": "logoazul",
-            "Y": -166,
+            "Y": -314,
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "logo_png_azul.png"
+            "RelativeFilename": "l1.png"
           }
         ],
         "Interactions": [
@@ -66,7 +66,340 @@
       },
       {
         "Name": "Testes",
-        "Components": [],
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "fundo_teste1",
+            "Width": 800,
+            "Height": 480,
+            "CustomContainerDefinitionName": "fundo_teste"
+          },
+          {
+            "Type": "Image",
+            "Name": "menut",
+            "Y": 440,
+            "Width": 160,
+            "Height": 40,
+            "RelativeFilename": "botaoMENU.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Tempinversor_un",
+            "X": 98,
+            "Y": 249,
+            "Width": 46,
+            "Height": 23,
+            "TextId": "__SingleUse_5JSZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_0P77"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TensaoLV_un",
+            "X": 356,
+            "Y": 249,
+            "Width": 36,
+            "Height": 23,
+            "TextId": "__SingleUse_JK1H",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_AYI9"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "RPM",
+            "X": 93,
+            "Y": 340,
+            "Width": 57,
+            "Height": 29,
+            "TextId": "__SingleUse_FKG4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "RPM_un",
+            "X": 86,
+            "Y": 381,
+            "Width": 70,
+            "Height": 46,
+            "TextId": "__SingleUse_J676",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_0NCS"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TensaoLV",
+            "X": 311,
+            "Y": 208,
+            "Width": 127,
+            "Height": 29,
+            "TextId": "__SingleUse_0JHV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TensaoHV",
+            "X": 307,
+            "Y": 340,
+            "Width": 134,
+            "Height": 29,
+            "TextId": "__SingleUse_OPWS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TensaoHV_un",
+            "X": 356,
+            "Y": 381,
+            "Width": 36,
+            "Height": 23,
+            "TextId": "__SingleUse_HFVM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_NJC4"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TensaoInversor",
+            "X": 264,
+            "Y": 76,
+            "Width": 201,
+            "Height": 29,
+            "TextId": "__SingleUse_OFVA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TensaoInversor_un",
+            "X": 356,
+            "Y": 117,
+            "Width": 36,
+            "Height": 23,
+            "TextId": "__SingleUse_5HLU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_ZFV1"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Tempmotor_un",
+            "X": 98,
+            "Y": 117,
+            "Width": 46,
+            "Height": 23,
+            "TextId": "__SingleUse_KLPD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_KC4C",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "CargaAcumulador",
+            "X": 518,
+            "Y": 208,
+            "Width": 239,
+            "Height": 29,
+            "TextId": "__SingleUse_DPMA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Tempinversor",
+            "X": 27,
+            "Y": 208,
+            "Width": 189,
+            "Height": 29,
+            "TextId": "__SingleUse_BTZ4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Correnteacumulador_un",
+            "X": 622,
+            "Y": 117,
+            "Width": 37,
+            "Height": 23,
+            "TextId": "__SingleUse_NY2N",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_4WMP"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Tempmotor",
+            "X": 39,
+            "Y": 76,
+            "Width": 164,
+            "Height": 29,
+            "TextId": "__SingleUse_S0EV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TempAcumulador",
+            "X": 515,
+            "Y": 340,
+            "Width": 242,
+            "Height": 29,
+            "TextId": "__SingleUse_913G",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TempAcumulador_un",
+            "X": 622,
+            "Y": 381,
+            "Width": 37,
+            "Height": 23,
+            "TextId": "__SingleUse_3AJU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_CBAY"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "CargaAcumulador_un",
+            "X": 622,
+            "Y": 249,
+            "Width": 37,
+            "Height": 23,
+            "TextId": "__SingleUse_2SWE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_ON7B"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Correnteacumulador",
+            "X": 502,
+            "Y": 76,
+            "Width": 271,
+            "Height": 29,
+            "TextId": "__SingleUse_KUTP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          }
+        ],
         "Interactions": [
           {
             "InteractionName": "voltarmenu",
@@ -84,7 +417,23 @@
       },
       {
         "Name": "ModoProva",
-        "Components": [],
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "fundo_prova1",
+            "Width": 800,
+            "Height": 480,
+            "CustomContainerDefinitionName": "fundo_prova"
+          },
+          {
+            "Type": "Image",
+            "Name": "menump",
+            "Y": 440,
+            "Width": 160,
+            "Height": 40,
+            "RelativeFilename": "botaoMENU.png"
+          }
+        ],
         "Interactions": [
           {
             "InteractionName": "voltarmenu",
@@ -102,7 +451,23 @@
       },
       {
         "Name": "pag1_Autonomos",
-        "Components": [],
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "fundo_SA1",
+            "Width": 800,
+            "Height": 480,
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "Image",
+            "Name": "menusa1",
+            "Y": 440,
+            "Width": 160,
+            "Height": 40,
+            "RelativeFilename": "botaoMENU.png"
+          }
+        ],
         "Interactions": [
           {
             "InteractionName": "voltarmenu",
@@ -117,59 +482,20 @@
             }
           }
         ]
-      },
-      {
-        "Name": "pag2_Autonomos",
-        "Components": [],
-        "Interactions": []
-      },
-      {
-        "Name": "pag3_Autonomos",
-        "Components": [],
-        "Interactions": [
-          {
-            "InteractionName": "Interaction1",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "ModoProva"
-            }
-          }
-        ]
-      },
-      {
-        "Name": "pag4_Autonomos",
-        "Components": [],
-        "Interactions": []
-      },
-      {
-        "Name": "pag5_Autonomos",
-        "Components": [],
-        "Interactions": []
-      },
-      {
-        "Name": "pag6_Autonomos",
-        "Components": [],
-        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [
       {
-        "Name": "Botao_voltar",
+        "Name": "fundo_prova",
         "Width": 800,
         "Height": 480,
         "Components": [
           {
-            "Type": "ScalableImage",
-            "Name": "scalableImage1",
-            "X": 640,
-            "Y": 440,
-            "Width": 160,
-            "Height": 40,
-            "ScalingAlgorithm": "Nearest-neighbor"
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "fundo_prova.png"
           }
         ],
         "Interactions": []
@@ -178,7 +504,30 @@
         "Name": "Fundo_SA",
         "Width": 800,
         "Height": 480,
-        "Components": [],
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "fundoSA.png"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "fundo_teste",
+        "Width": 800,
+        "Height": 480,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "fundo_testes.png"
+          }
+        ],
         "Interactions": []
       }
     ],
