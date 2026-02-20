@@ -36,7 +36,7 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionBlock",
               "ActionComponent": "Testes"
             }
           },
@@ -47,7 +47,7 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionBlock",
               "ActionComponent": "ModoProva"
             }
           },
@@ -58,7 +58,7 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionBlock",
               "ActionComponent": "pag1_Autonomos"
             }
           }
@@ -66,44 +66,17 @@
       },
       {
         "Name": "Testes",
-        "Components": [
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "X": 330,
-            "Y": 240,
-            "Width": 120,
-            "Height": 120,
-            "RelativeFilename": "bubassaro.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "image2",
-            "X": 124,
-            "Y": 240,
-            "Width": 120,
-            "Height": 120,
-            "RelativeFilename": "squirtle.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "image3",
-            "X": 556,
-            "Y": 240,
-            "Width": 120,
-            "Height": 120,
-            "RelativeFilename": "chamand.png"
-          }
-        ],
+        "Components": [],
         "Interactions": [
           {
-            "InteractionName": "teste_to_capa",
+            "InteractionName": "voltarmenu",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
               "ActionComponent": "Capa"
             }
           }
@@ -111,69 +84,17 @@
       },
       {
         "Name": "ModoProva",
-        "Components": [
-          {
-            "Type": "Slider",
-            "Name": "slider1",
-            "Width": 1100,
-            "Height": 480,
-            "IsHorizontalSlider": true,
-            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_medium.png",
-            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_medium.png",
-            "Indicator": "__generated\\clay_theme_images_backgrounds_800x480_gradient_light.png",
-            "BackgroundX": 16,
-            "BackgroundY": 11,
-            "IndicatorMax": 300,
-            "ValueMax": 100
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 184,
-            "Y": 91,
-            "Width": 432,
-            "Height": 48,
-            "TextId": "__SingleUse_4VW6",
-            "TextRotation": "0",
-            "AutoSize": true
-          },
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "X": 124,
-            "Y": 240,
-            "Width": 120,
-            "Height": 120,
-            "RelativeFilename": "bubassaro.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "image2",
-            "X": 556,
-            "Y": 240,
-            "Width": 120,
-            "Height": 120,
-            "RelativeFilename": "squirtle.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "image3",
-            "X": 350,
-            "Y": 240,
-            "Width": 120,
-            "Height": 120,
-            "RelativeFilename": "chamand.png"
-          }
-        ],
+        "Components": [],
         "Interactions": [
           {
-            "InteractionName": "modoprova_to_capa",
+            "InteractionName": "voltarmenu",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
               "ActionComponent": "Capa"
             }
           }
@@ -181,39 +102,17 @@
       },
       {
         "Name": "pag1_Autonomos",
-        "Components": [
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 145,
-            "Y": 276,
-            "Width": 511,
-            "Height": 48,
-            "TextId": "__SingleUse_ZY78",
-            "TextRotation": "0",
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2",
-            "X": 322,
-            "Y": 330,
-            "Width": 156,
-            "Height": 48,
-            "TextId": "__SingleUse_9BR7",
-            "TextRotation": "0",
-            "AutoSize": true
-          }
-        ],
+        "Components": [],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "voltarmenu",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
               "ActionComponent": "Capa"
             }
           }
@@ -221,102 +120,12 @@
       },
       {
         "Name": "pag2_Autonomos",
-        "Components": [
-          {
-            "Type": "Image",
-            "Name": "image2",
-            "Width": 1024,
-            "Height": 600,
-            "RelativeFilename": "__generated\\clay_theme_images_backgrounds_1024x600_puzzle.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "X": 340,
-            "Y": 95,
-            "Width": 120,
-            "Height": 120,
-            "RelativeFilename": "bubassaro.png"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 145,
-            "Y": 276,
-            "Width": 511,
-            "Height": 48,
-            "TextId": "__SingleUse_YBKR",
-            "TextRotation": "0",
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2",
-            "X": 301,
-            "Y": 332,
-            "Width": 199,
-            "Height": 48,
-            "TextId": "__SingleUse_GKM1",
-            "TextRotation": "0",
-            "AutoSize": true
-          }
-        ],
-        "Interactions": [
-          {
-            "InteractionName": "Interaction1",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Testes"
-            }
-          }
-        ]
+        "Components": [],
+        "Interactions": []
       },
       {
         "Name": "pag3_Autonomos",
-        "Components": [
-          {
-            "Type": "Image",
-            "Name": "image2",
-            "Width": 1024,
-            "Height": 600,
-            "RelativeFilename": "__generated\\clay_theme_images_backgrounds_1024x600_puzzle.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "X": 340,
-            "Y": 95,
-            "Width": 120,
-            "Height": 120,
-            "RelativeFilename": "chamand.png"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 145,
-            "Y": 276,
-            "Width": 511,
-            "Height": 48,
-            "TextId": "__SingleUse_I6BA",
-            "TextRotation": "0",
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2",
-            "X": 276,
-            "Y": 332,
-            "Width": 248,
-            "Height": 48,
-            "TextId": "__SingleUse_VLMS",
-            "TextRotation": "0",
-            "AutoSize": true
-          }
-        ],
+        "Components": [],
         "Interactions": [
           {
             "InteractionName": "Interaction1",
@@ -343,11 +152,6 @@
       },
       {
         "Name": "pag6_Autonomos",
-        "Components": [],
-        "Interactions": []
-      },
-      {
-        "Name": "pag7_Autonomos",
         "Components": [],
         "Interactions": []
       }

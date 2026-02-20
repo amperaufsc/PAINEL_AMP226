@@ -11,6 +11,8 @@ public:
     virtual ~CapaView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void updateButtonState(uint32_t buttonID);
+    void setCANValue(int value);
 protected:
 };
 

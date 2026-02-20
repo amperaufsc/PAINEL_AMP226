@@ -5,29 +5,7 @@
   </Languages>
   <Texts>
     <TextGroup Id="Group1" />
-    <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_VLMS" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">Charmander</Translation>
-      </Text>
-      <Text Id="__SingleUse_GKM1" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">Bulbasaur</Translation>
-      </Text>
-      <Text Id="__SingleUse_9BR7" Alignment="Left" TypographyId="Large">
-        <Translation Language="GB">Squirtle</Translation>
-      </Text>
-      <Text Id="__SingleUse_ZY78" Alignment="Left" TypographyId="Large">
-        <Translation Language="GB">O pokemon escolhido foi:</Translation>
-      </Text>
-      <Text Id="__SingleUse_YBKR" Alignment="Left" TypographyId="Large">
-        <Translation Language="GB">O pokemon escolhido foi:</Translation>
-      </Text>
-      <Text Id="__SingleUse_I6BA" Alignment="Left" TypographyId="Large">
-        <Translation Language="GB">O pokemon escolhido foi:</Translation>
-      </Text>
-      <Text Id="__SingleUse_4VW6" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">Escolha seu Pokemon</Translation>
-      </Text>
-    </TextGroup>
+    <TextGroup Id="Unsorted" />
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />

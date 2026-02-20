@@ -445,16 +445,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag6_autonomos_screen/pag6_AutonomosView.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/pag7_AutonomosPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag7_autonomos_screen/pag7_AutonomosPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag7_AutonomosView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag7_autonomos_screen/pag7_AutonomosView.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/Screen1Presenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp</locationURI>
@@ -655,11 +645,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag6_autonomos_screen/pag6_AutonomosViewBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/pag7_AutonomosViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag7_autonomos_screen/pag7_AutonomosViewBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/TestesViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/testes_screen/TestesViewBase.cpp</locationURI>
@@ -673,26 +658,6 @@
 			<name>Application/User/generated/SVGDatabase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_slider_horizontal_thick_filler_medium.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_horizontal_thick_filler_medium.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_slider_horizontal_thick_track_medium.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_horizontal_thick_track_medium.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_clay_theme_images_backgrounds_1024x600_puzzle.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_backgrounds_1024x600_puzzle.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_clay_theme_images_backgrounds_800x480_gradient_light.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_backgrounds_800x480_gradient_light.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_MENU_painel.cpp</name>

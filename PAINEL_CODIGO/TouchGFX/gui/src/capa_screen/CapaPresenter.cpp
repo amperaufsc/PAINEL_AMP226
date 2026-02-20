@@ -16,3 +16,28 @@ void CapaPresenter::deactivate()
 {
 
 }
+
+void CapaPresenter::hwButtonClicked(uint8_t buttonId)
+{
+	{
+	    if (buttonId == 3) // PB11
+	    {
+	        static_cast<FrontendApplication*>(Application::getInstance())->gotoTestesScreenBlockTransition();
+	    }
+	    else if (buttonId == 2) // PA3
+	    {
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoModoProvaScreenBlockTransition();
+	    }
+	    else if (buttonId == 1) // PA2
+	    {
+	         static_cast<FrontendApplication*>(Application::getInstance())->gotopag1_AutonomosScreenBlockTransition();
+	    }
+
+	}
+}
+
+
+void CapaPresenter::updateCANData(int value)
+{
+    view.setCANValue(value);
+}
