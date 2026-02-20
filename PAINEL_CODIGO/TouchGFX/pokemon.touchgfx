@@ -90,6 +90,16 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Screen6"
             }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone"
+            }
           }
         ]
       },
