@@ -27,17 +27,12 @@
       <Text Id="__SingleUse_4VW6" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">Escolha seu Pokemon</Translation>
       </Text>
-      <Text Id="__SingleUse_DMK7" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">Escolha seu Pokemon</Translation>
-      </Text>
-      <Text Id="__SingleUse_68HX" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">Escolha seu Pokemon</Translation>
-      </Text>
     </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="batman" Font="Gotham_Bold.otf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
   </Typographies>
 </TextDatabase>
