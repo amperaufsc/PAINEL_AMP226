@@ -27,10 +27,20 @@ void CapaView::setCANValue(int value)
 
 void CapaView::modoespera()
 {
-	piscarimagem++;
-	if (piscarimagem % 60 == 0)
-	{
-		logoazul.setVisible(!logoazul.isVisible());
-		logoazul.invalidate();
-	}
+
+    piscarimagem++;
+
+
+    if (piscarimagem % 60 == 0)
+    {
+        logoazul.setVisible(!logoazul.isVisible());
+        logoazul.invalidate();
+    }
+
+
+    if (piscarimagem >= 1200)
+    {
+        piscarimagem = 0;
+    }
 }
+

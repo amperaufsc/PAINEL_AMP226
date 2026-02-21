@@ -6,6 +6,87 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_WGWZ" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_OE0U" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; km</Translation>
+      </Text>
+      <Text Id="__SingleUse_0N1R" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_5ZQ7" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; %</Translation>
+      </Text>
+      <Text Id="__SingleUse_JC2V" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">RPM</Translation>
+      </Text>
+      <Text Id="__SingleUse_NZBD" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_8ABU" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; rpm</Translation>
+      </Text>
+      <Text Id="__SingleUse_3DVT" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">freio&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_6QZV" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Tensao HV</Translation>
+      </Text>
+      <Text Id="__SingleUse_0N3L" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_T4IY" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; V</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZFN3" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">velocidade</Translation>
+      </Text>
+      <Text Id="__SingleUse_H95H" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_4H7T" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; Km/h</Translation>
+      </Text>
+      <Text Id="__SingleUse_OJQO" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_PDU7" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt;  kw/h</Translation>
+      </Text>
+      <Text Id="__SingleUse_AXGA" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Carga Acumulador</Translation>
+      </Text>
+      <Text Id="__SingleUse_4951" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">distancia</Translation>
+      </Text>
+      <Text Id="__SingleUse_AF0Y" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_X7T1" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; %</Translation>
+      </Text>
+      <Text Id="__SingleUse_KH82" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">potencia</Translation>
+      </Text>
+      <Text Id="__SingleUse_ECCU" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Temp. Acumulador</Translation>
+      </Text>
+      <Text Id="__SingleUse_KAQ0" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_C8P5" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; °C</Translation>
+      </Text>
+      <Text Id="__SingleUse_UEVC" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_E5ED" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; %</Translation>
+      </Text>
+      <Text Id="__SingleUse_3N7C" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">acelerador</Translation>
+      </Text>
       <Text Id="__SingleUse_CBAY" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
       </Text>
@@ -40,7 +121,7 @@
         <Translation Language="GB">Carga Acumulador</Translation>
       </Text>
       <Text Id="__SingleUse_2SWE" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; A</Translation>
+        <Translation Language="GB">&lt;value&gt;%</Translation>
       </Text>
       <Text Id="__SingleUse_KUTP" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Corrente acumulador</Translation>

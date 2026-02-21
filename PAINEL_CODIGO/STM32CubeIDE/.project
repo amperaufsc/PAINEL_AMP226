@@ -400,41 +400,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag1_autonomos_screen/pag1_AutonomosView.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/Screen1Presenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Screen1View.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/screen1_screen/Screen1View.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Screen2Presenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/screen2_screen/Screen2Presenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Screen3Presenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/screen3_screen/Screen3Presenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Screen4Presenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/screen4_screen/Screen4Presenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Screen5Presenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/screen5_screen/Screen5Presenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Screen6Presenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/screen6_screen/Screen6Presenter.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/TestesPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/testes_screen/TestesPresenter.cpp</locationURI>
@@ -608,6 +573,26 @@
 			<name>Application/User/generated/SVGDatabase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_gauge_tiny_backgrounds_light_filled.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_gauge_tiny_backgrounds_light_filled.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_gauge_tiny_needles_rough.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_gauge_tiny_needles_rough.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_imageprogress_plain_thick_tiny.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_imageprogress_plain_thick_tiny.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_imageprogress_plain_thick_tiny_action.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_imageprogress_plain_thick_tiny_action.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_MENU_painel.cpp</name>

@@ -84,12 +84,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Tempinversor_un",
-            "X": 98,
-            "Y": 249,
-            "Width": 46,
-            "Height": 23,
-            "TextId": "__SingleUse_5JSZ",
+            "Name": "RPM_un",
+            "X": 86,
+            "Y": 381,
+            "Width": 62,
+            "Height": 46,
+            "TextId": "__SingleUse_J676",
             "TextRotation": "0",
             "Color": {
               "Red": 245,
@@ -98,8 +98,24 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_0P77"
+              "TextId": "__SingleUse_0NCS"
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "RPM",
+            "X": 93,
+            "Y": 340,
+            "Width": 57,
+            "Height": 29,
+            "TextId": "__SingleUse_FKG4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
           },
           {
             "Type": "TextArea",
@@ -122,63 +138,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "RPM",
-            "X": 93,
-            "Y": 340,
-            "Width": 57,
-            "Height": 29,
-            "TextId": "__SingleUse_FKG4",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "RPM_un",
-            "X": 86,
-            "Y": 381,
-            "Width": 70,
-            "Height": 46,
-            "TextId": "__SingleUse_J676",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 245,
-              "Green": 247,
-              "Blue": 247
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_0NCS"
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "TensaoLV",
             "X": 311,
             "Y": 208,
             "Width": 127,
             "Height": 29,
             "TextId": "__SingleUse_0JHV",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "TensaoHV",
-            "X": 307,
-            "Y": 340,
-            "Width": 134,
-            "Height": 29,
-            "TextId": "__SingleUse_OPWS",
             "TextRotation": "0",
             "Color": {
               "Red": 55,
@@ -208,12 +173,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "TensaoInversor",
-            "X": 264,
-            "Y": 76,
-            "Width": 201,
+            "Name": "TensaoHV",
+            "X": 307,
+            "Y": 340,
+            "Width": 134,
             "Height": 29,
-            "TextId": "__SingleUse_OFVA",
+            "TextId": "__SingleUse_OPWS",
             "TextRotation": "0",
             "Color": {
               "Red": 55,
@@ -243,6 +208,57 @@
           },
           {
             "Type": "TextArea",
+            "Name": "TensaoInversor",
+            "X": 264,
+            "Y": 76,
+            "Width": 201,
+            "Height": 29,
+            "TextId": "__SingleUse_OFVA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Tempinversor_un",
+            "X": 98,
+            "Y": 249,
+            "Width": 46,
+            "Height": 23,
+            "TextId": "__SingleUse_5JSZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_0P77"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Tempinversor",
+            "X": 27,
+            "Y": 208,
+            "Width": 189,
+            "Height": 29,
+            "TextId": "__SingleUse_BTZ4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
             "Name": "Tempmotor_un",
             "X": 98,
             "Y": 117,
@@ -264,79 +280,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "CargaAcumulador",
-            "X": 518,
-            "Y": 208,
-            "Width": 239,
-            "Height": 29,
-            "TextId": "__SingleUse_DPMA",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Tempinversor",
-            "X": 27,
-            "Y": 208,
-            "Width": 189,
-            "Height": 29,
-            "TextId": "__SingleUse_BTZ4",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Correnteacumulador_un",
-            "X": 622,
-            "Y": 117,
-            "Width": 37,
-            "Height": 23,
-            "TextId": "__SingleUse_NY2N",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 245,
-              "Green": 247,
-              "Blue": 247
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_4WMP"
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "Tempmotor",
             "X": 39,
             "Y": 76,
             "Width": 164,
             "Height": 29,
             "TextId": "__SingleUse_S0EV",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "TempAcumulador",
-            "X": 515,
-            "Y": 340,
-            "Width": 242,
-            "Height": 29,
-            "TextId": "__SingleUse_913G",
             "TextRotation": "0",
             "Color": {
               "Red": 55,
@@ -366,10 +315,26 @@
           },
           {
             "Type": "TextArea",
+            "Name": "TempAcumulador",
+            "X": 515,
+            "Y": 340,
+            "Width": 242,
+            "Height": 29,
+            "TextId": "__SingleUse_913G",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
             "Name": "CargaAcumulador_un",
             "X": 622,
             "Y": 249,
-            "Width": 37,
+            "Width": 32,
             "Height": 23,
             "TextId": "__SingleUse_2SWE",
             "TextRotation": "0",
@@ -381,6 +346,41 @@
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_ON7B"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "CargaAcumulador",
+            "X": 518,
+            "Y": 208,
+            "Width": 239,
+            "Height": 29,
+            "TextId": "__SingleUse_DPMA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Correnteacumulador_un",
+            "X": 622,
+            "Y": 117,
+            "Width": 37,
+            "Height": 23,
+            "TextId": "__SingleUse_NY2N",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_4WMP"
             }
           },
           {
@@ -426,12 +426,408 @@
             "CustomContainerDefinitionName": "fundo_prova"
           },
           {
+            "Type": "ImageProgress",
+            "Name": "acelerador_barra",
+            "X": 108,
+            "Y": 97,
+            "Width": 100,
+            "Height": 18,
+            "FileNameProgress": "__generated\\alternate_theme_images_widgets_imageprogress_plain_thick_tiny_action.png",
+            "AnchorAtZero": true,
+            "Direction": "Right",
+            "Preset": "alternate_theme\\presets\\imageprogress\\plain\\thick\\tiny_action.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_imageprogress_plain_thick_tiny.png",
+            "IndicatorPositionWidth": 100,
+            "IndicatorPositionHeight": 18,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 60
+          },
+          {
+            "Type": "ImageProgress",
+            "Name": "bateria",
+            "X": 108,
+            "Y": 236,
+            "Width": 100,
+            "Height": 18,
+            "FileNameProgress": "__generated\\alternate_theme_images_widgets_imageprogress_plain_thick_tiny_action.png",
+            "AnchorAtZero": true,
+            "Direction": "Right",
+            "Preset": "alternate_theme\\presets\\imageprogress\\plain\\thick\\tiny_action.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_imageprogress_plain_thick_tiny.png",
+            "IndicatorPositionWidth": 100,
+            "IndicatorPositionHeight": 18,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 60
+          },
+          {
+            "Type": "ImageProgress",
+            "Name": "freio_barra",
+            "X": 590,
+            "Y": 100,
+            "Width": 100,
+            "Height": 18,
+            "FileNameProgress": "__generated\\alternate_theme_images_widgets_imageprogress_plain_thick_tiny_action.png",
+            "AnchorAtZero": true,
+            "Direction": "Right",
+            "Preset": "alternate_theme\\presets\\imageprogress\\plain\\thick\\tiny_action.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_imageprogress_plain_thick_tiny.png",
+            "IndicatorPositionWidth": 100,
+            "IndicatorPositionHeight": 18,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 60
+          },
+          {
+            "Type": "TextArea",
+            "Name": "distancia_un",
+            "X": 369,
+            "Y": 355,
+            "Width": 52,
+            "Height": 23,
+            "TextId": "__SingleUse_OE0U",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_WGWZ"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "distancia",
+            "X": 338,
+            "Y": 304,
+            "Width": 115,
+            "Height": 29,
+            "TextId": "__SingleUse_4951",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "RPM_un",
+            "X": 609,
+            "Y": 231,
+            "Width": 62,
+            "Height": 23,
+            "TextId": "__SingleUse_8ABU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_NZBD"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "RPM",
+            "X": 612,
+            "Y": 181,
+            "Width": 57,
+            "Height": 29,
+            "TextId": "__SingleUse_JC2V",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "freio_un",
+            "X": 621,
+            "Y": 95,
+            "Width": 38,
+            "Height": 23,
+            "TextId": "__SingleUse_5ZQ7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_0N1R"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "freio",
+            "X": 605,
+            "Y": 47,
+            "Width": 70,
+            "Height": 58,
+            "TextId": "__SingleUse_3DVT",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TensaoHV_un",
+            "X": 622,
+            "Y": 355,
+            "Width": 36,
+            "Height": 23,
+            "TextId": "__SingleUse_T4IY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_0N3L"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TensaoHV",
+            "X": 573,
+            "Y": 297,
+            "Width": 134,
+            "Height": 29,
+            "TextId": "__SingleUse_6QZV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "velocidade_un",
+            "X": 361,
+            "Y": 210,
+            "Width": 78,
+            "Height": 23,
+            "TextId": "__SingleUse_4H7T",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_H95H"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "velocidade",
+            "X": 331,
+            "Y": 47,
+            "Width": 138,
+            "Height": 29,
+            "TextId": "__SingleUse_ZFN3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "CargaAcumulador_un",
+            "X": 139,
+            "Y": 231,
+            "Width": 38,
+            "Height": 23,
+            "TextId": "__SingleUse_E5ED",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_UEVC"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "CargaAcumulador",
+            "X": 39,
+            "Y": 181,
+            "Width": 239,
+            "Height": 29,
+            "TextId": "__SingleUse_AXGA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "acelerador_un",
+            "X": 139,
+            "Y": 92,
+            "Width": 38,
+            "Height": 23,
+            "TextId": "__SingleUse_X7T1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_AF0Y"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Potencia_un",
+            "X": 118,
+            "Y": 355,
+            "Width": 78,
+            "Height": 23,
+            "TextId": "__SingleUse_PDU7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_OJQO",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "potencia",
+            "X": 102,
+            "Y": 304,
+            "Width": 111,
+            "Height": 29,
+            "TextId": "__SingleUse_KH82",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TempAcumulador_un",
+            "X": 372,
+            "Y": 449,
+            "Width": 46,
+            "Height": 23,
+            "TextId": "__SingleUse_C8P5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_KAQ0"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TempAcumulador",
+            "X": 279,
+            "Y": 411,
+            "Width": 242,
+            "Height": 29,
+            "TextId": "__SingleUse_ECCU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "acelerador",
+            "X": 90,
+            "Y": 47,
+            "Width": 135,
+            "Height": 29,
+            "TextId": "__SingleUse_3N7C",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
             "Type": "Image",
             "Name": "menump",
             "Y": 440,
             "Width": 160,
             "Height": 40,
             "RelativeFilename": "botaoMENU.png"
+          },
+          {
+            "Type": "Gauge",
+            "Name": "gauge1",
+            "X": 340,
+            "Y": 83,
+            "Width": 120,
+            "Height": 120,
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_gauge_tiny_backgrounds_light_filled.png",
+            "RotationCenterX": 60.0,
+            "RotationCenterY": 60.0,
+            "StartAngle": -90.0,
+            "EndAngle": 90.0,
+            "RangeMax": 100.0,
+            "InitialValue": 50.0,
+            "Easing": "Linear",
+            "EasingOption": "In",
+            "FileNameNeedle": "__generated\\alternate_theme_images_widgets_gauge_tiny_needles_rough.png",
+            "NeedleRotationCenterX": 5.0,
+            "NeedleRotationCenterY": 33.0,
+            "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
+            "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
+            "ArcColor": {
+              "Red": 20,
+              "Green": 151,
+              "Blue": 197
+            },
+            "ArcCapStyle": "Butt"
           }
         ],
         "Interactions": [

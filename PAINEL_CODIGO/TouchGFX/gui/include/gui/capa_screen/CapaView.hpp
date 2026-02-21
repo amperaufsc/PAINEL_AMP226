@@ -15,7 +15,7 @@ public:
     void setCANValue(int value);
     virtual void modoespera();
 protected:
-    int piscarimagem;
+    int piscarimagem = 0;
 };
 
 #endif // CAPAVIEW_HPP
