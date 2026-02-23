@@ -575,34 +575,19 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_imageprogress_plain_thick_tiny.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_imageprogress_plain_thick_tiny.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_imageprogress_plain_thick_tiny_action.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_imageprogress_plain_thick_tiny_action.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_imageprogress_styled_batteries_battery_large.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_imageprogress_styled_batteries_battery_large.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_imageprogress_styled_batteries_battery_large_action.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_imageprogress_styled_batteries_battery_large_action.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_MENU_painel.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_MENU_painel.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_bateria.cpp</name>
+			<name>Application/User/generated/image_bateriacheia.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateria.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriacheia.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_bateriafundo.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriafundo.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_botaoMENU.cpp</name>
