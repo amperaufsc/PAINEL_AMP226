@@ -28,7 +28,7 @@
         <Translation Language="GB">&lt;value&gt; rpm</Translation>
       </Text>
       <Text Id="__SingleUse_3DVT" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">freio&#10;</Translation>
+        <Translation Language="GB">freio</Translation>
       </Text>
       <Text Id="__SingleUse_6QZV" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Tensao HV</Translation>
