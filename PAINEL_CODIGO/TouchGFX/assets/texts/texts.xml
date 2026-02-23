@@ -25,7 +25,7 @@
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_8ABU" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; rpm</Translation>
+        <Translation Language="GB">&lt;value&gt; </Translation>
       </Text>
       <Text Id="__SingleUse_3DVT" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">freio</Translation>
@@ -174,7 +174,7 @@
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="batman" Font="Gotham_Bold.otf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
-    <Typography Id="coringa" Font="Gotham_Ultra.otf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="batman" Font="Gotham_Bold.otf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="coringa" Font="Gotham_Ultra.otf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
   </Typographies>
 </TextDatabase>
