@@ -63,4 +63,6 @@ void Model::tick()
         // avisamos o Presenter para atualizar a tela
         modelListener->updateCANData(msg_recebida.data[0]);
     }
+
+
 }

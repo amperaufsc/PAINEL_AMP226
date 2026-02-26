@@ -345,6 +345,26 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/Aceleracao_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/aceleracao_sa_screen/Aceleracao_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Aceleracao_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/aceleracao_sa_screen/Aceleracao_SAView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/AutoCross_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/autocross_sa_screen/AutoCross_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/AutoCross_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/autocross_sa_screen/AutoCross_SAView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/CapaPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/capa_screen/CapaPresenter.cpp</locationURI>
@@ -365,6 +385,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Fundo_SA.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/Fundo_capa.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Fundo_capa.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/fundo_prova.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/fundo_prova.cpp</locationURI>
@@ -373,6 +398,16 @@
 			<name>Application/User/gui/fundo_teste.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/fundo_teste.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Menu_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/menu_sa_screen/Menu_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Menu_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/menu_sa_screen/Menu_SAView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/Model.cpp</name>
@@ -398,6 +433,16 @@
 			<name>Application/User/gui/pag1_AutonomosView.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag1_autonomos_screen/pag1_AutonomosView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Teste_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/teste_sa_screen/Teste_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Teste_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/teste_sa_screen/Teste_SAView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/TestesPresenter.cpp</name>
@@ -525,6 +570,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/VectorFontRendererBuffers.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Aceleracao_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/aceleracao_sa_screen/Aceleracao_SAViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/AutoCross_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/autocross_sa_screen/AutoCross_SAViewBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/CapaViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/capa_screen/CapaViewBase.cpp</locationURI>
@@ -540,6 +595,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/Fundo_SABase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Fundo_capaBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/Fundo_capaBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/fundo_provaBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/fundo_provaBase.cpp</locationURI>
@@ -550,6 +610,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/fundo_testeBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Menu_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/menu_sa_screen/Menu_SAViewBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/ModoProvaViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/modoprova_screen/ModoProvaViewBase.cpp</locationURI>
@@ -558,6 +623,11 @@
 			<name>Application/User/generated/pag1_AutonomosViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag1_autonomos_screen/pag1_AutonomosViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Teste_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/teste_sa_screen/Teste_SAViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/TestesViewBase.cpp</name>
@@ -575,6 +645,41 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_36_small_rounded_inactive.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_36_small_rounded_inactive.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_active.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_active.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_ACEL.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_ACEL.cpp</locationURI>
@@ -588,6 +693,11 @@
 			<name>Application/User/generated/image_FUNDOFALSO.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_FUNDOFALSO.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_FundaSA.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_FundaSA.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_MENU_painel.cpp</name>
@@ -620,19 +730,19 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capa.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_capav2.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capav2.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_capav3.2.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capav3.2.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_chamand.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_chamand.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_fundo2.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundo2.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_fundoSA.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundoSA.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_fundo_prova.cpp</name>
@@ -655,24 +765,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundocorrigido.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_l1.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_l1.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_l2.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_l2.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_logo_branca.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logo_branca.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_logo_png_azul.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logo_png_azul.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_logo_png_rosa.cpp</name>
@@ -680,14 +775,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logo_png_rosa.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_logob.cpp</name>
+			<name>Application/User/generated/image_logoazulv2.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logob.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logoazulv2.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_logobranca.cpp</name>
+			<name>Application/User/generated/image_logobrancav2.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logobranca.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logobrancav2.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_menu.cpp</name>

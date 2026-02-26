@@ -12,6 +12,7 @@ public:
     virtual ~ModelListener() {}
     virtual void updateCANData(int value) {}
     virtual void hwButtonClicked(uint8_t buttonId) {}
+    virtual void atualizardados() {}
     void bind(Model* m)
     {
         model = m;
