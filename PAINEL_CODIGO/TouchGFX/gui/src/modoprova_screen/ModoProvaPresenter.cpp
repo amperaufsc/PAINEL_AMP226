@@ -19,7 +19,7 @@ void ModoProvaPresenter::deactivate()
 void ModoProvaPresenter::hwButtonClicked(uint8_t buttonId)
 {
 
-	    if (buttonId == 2) // PB11
+	    if (buttonId == 2) // PB11 BOLINHA
 	    {
 	        static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
 	    }

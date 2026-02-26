@@ -20,15 +20,15 @@ void CapaPresenter::deactivate()
 void CapaPresenter::hwButtonClicked(uint8_t buttonId)
 {
 	{
-	    if (buttonId == 3) // PB11
+	    if (buttonId == 3) // PB11 BOLINHA
 	    {
 	        static_cast<FrontendApplication*>(Application::getInstance())->gotoTestesScreenBlockTransition();
 	    }
-	    else if (buttonId == 2) // PA3
+	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoModoProvaScreenBlockTransition();
 	    }
-	    else if (buttonId == 1) // PA2
+	    else if (buttonId == 1) // PA2 X
 	    {
 	         static_cast<FrontendApplication*>(Application::getInstance())->gotopag1_AutonomosScreenBlockTransition();
 	    }

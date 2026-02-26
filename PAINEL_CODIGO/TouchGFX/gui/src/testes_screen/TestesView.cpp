@@ -15,7 +15,7 @@ void TestesView::tearDownScreen()
     TestesViewBase::tearDownScreen();
 }
 
-void TestesView::dadosteste(float correnteAcc, float soc, float potencia, float tempAcc, float tempMot, float tempInv, float tensaoInv, float tensaoHV, float tensaoMC, int rpm)
+void TestesView::dadosteste(float correnteAcc, float soc, float potencia, float tempAcc, float tempMot, float tempInv, float tensaoInv, float tensaoHV, float tensaoMC, int rpm, float velocidade)
 {
 
     Unicode::snprintfFloat(Correnteacumulador_unBuffer, CORRENTEACUMULADOR_UN_SIZE, "%d", correnteAcc);

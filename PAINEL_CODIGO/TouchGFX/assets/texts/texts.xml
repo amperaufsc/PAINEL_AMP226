@@ -6,11 +6,11 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_W2WJ" Alignment="Left" TypographyId="Large">
-        <Translation Language="GB">Dirigir Manual</Translation>
+      <Text Id="__SingleUse_Z366" Alignment="Left" TypographyId="Typography3">
+        <Translation Language="GB">Trackdrive</Translation>
       </Text>
-      <Text Id="__SingleUse_3UQR" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">Start</Translation>
+      <Text Id="__SingleUse_W2WJ" Alignment="Left" TypographyId="Typography3">
+        <Translation Language="GB">Dirigir &#10;Manual</Translation>
       </Text>
       <Text Id="__SingleUse_1PTY" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Pág 1</Translation>
@@ -18,11 +18,8 @@
       <Text Id="__SingleUse_AZVK" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Inspeção</Translation>
       </Text>
-      <Text Id="__SingleUse_JDDU" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_JDDU" Alignment="Left" TypographyId="Typography1">
         <Translation Language="GB">Inspeção</Translation>
-      </Text>
-      <Text Id="__SingleUse_B4HI" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">Start</Translation>
       </Text>
       <Text Id="__SingleUse_4BKM" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Dirigir Manual</Translation>
@@ -30,23 +27,14 @@
       <Text Id="__SingleUse_MRL4" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">EBS Teste</Translation>
       </Text>
-      <Text Id="__SingleUse_TJBO" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_TJBO" Alignment="Left" TypographyId="Typography1">
         <Translation Language="GB">EBS Teste</Translation>
-      </Text>
-      <Text Id="__SingleUse_O3MR" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">Start</Translation>
       </Text>
       <Text Id="__SingleUse_BNVG" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Inspeção</Translation>
       </Text>
       <Text Id="__SingleUse_HYVB" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Trackdrive</Translation>
-      </Text>
-      <Text Id="__SingleUse_DDSW" Alignment="Left" TypographyId="Large">
-        <Translation Language="GB">Trackdrive</Translation>
-      </Text>
-      <Text Id="__SingleUse_L1MR" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">Start</Translation>
       </Text>
       <Text Id="__SingleUse_BUTV" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">EBS Teste</Translation>
@@ -72,11 +60,8 @@
       <Text Id="__SingleUse_20FB" Alignment="Left" TypographyId="batman">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_WI60" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_WI60" Alignment="Left" TypographyId="Typography1">
         <Translation Language="GB">Skidped</Translation>
-      </Text>
-      <Text Id="__SingleUse_WFZT" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">Start</Translation>
       </Text>
       <Text Id="__SingleUse_R0QR" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Trackdrive</Translation>
@@ -90,11 +75,8 @@
       <Text Id="__SingleUse_VZCL" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">  Dirigir Manual</Translation>
       </Text>
-      <Text Id="__SingleUse_ZZ60" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_ZZ60" Alignment="Left" TypographyId="Typography3">
         <Translation Language="GB">Aceleração</Translation>
-      </Text>
-      <Text Id="__SingleUse_2MVB" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">Start</Translation>
       </Text>
       <Text Id="__SingleUse_NVF3" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Skidped</Translation>
@@ -105,7 +87,7 @@
       <Text Id="__SingleUse_P2D1" Alignment="Center" TypographyId="Typography1">
         <Translation Language="GB">Autocross</Translation>
       </Text>
-      <Text Id="__SingleUse_J5NX" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_J5NX" Alignment="Left" TypographyId="Typography2">
         <Translation Language="GB">MODOS DE PROVA</Translation>
       </Text>
       <Text Id="__SingleUse_7739" Alignment="Center" TypographyId="Default">
@@ -302,6 +284,9 @@
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="batman" Font="Gotham_Bold.otf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
     <Typography Id="coringa" Font="Gotham_Ultra.otf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
-    <Typography Id="Typography1" Font="verdana.ttf" Size="150" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography1" Font="Gotham_Ultra.otf" Size="150" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography2" Font="Gotham_Bold.otf" Size="70" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography3" Font="Gotham_Ultra.otf" Size="134" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" />
+    <Typography Id="Typography4" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

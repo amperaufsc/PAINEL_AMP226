@@ -24,8 +24,12 @@ public:
      * (ie. made inactive). Teardown functionality can be placed here.
      */
     virtual void deactivate();
+    virtual void hwButtonClicked(uint8_t buttonId) override;
+    virtual void updateCANData(int value);
+
 
     virtual ~Dirigir_manual_SAPresenter() {}
+    void notifyButtonChanged(uint32_t buttonID);
 
 private:
     Dirigir_manual_SAPresenter();
