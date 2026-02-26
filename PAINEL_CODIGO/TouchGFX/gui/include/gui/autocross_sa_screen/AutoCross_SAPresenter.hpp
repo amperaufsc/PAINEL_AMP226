@@ -1,17 +1,17 @@
-#ifndef TESTESPRESENTER_HPP
-#define TESTESPRESENTER_HPP
+#ifndef AUTOCROSS_SAPRESENTER_HPP
+#define AUTOCROSS_SAPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class TestesView;
+class AutoCross_SAView;
 
-class TestesPresenter : public touchgfx::Presenter, public ModelListener
+class AutoCross_SAPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    TestesPresenter(TestesView& v);
+    AutoCross_SAPresenter(AutoCross_SAView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -24,17 +24,13 @@ public:
      * (ie. made inactive). Teardown functionality can be placed here.
      */
     virtual void deactivate();
-    virtual void hwButtonClicked(uint8_t buttonId) override;
-    virtual void atualizardados();
 
-
-    virtual ~TestesPresenter() {}
-    void notifyButtonChanged(uint32_t buttonID);
+    virtual ~AutoCross_SAPresenter() {}
 
 private:
-    TestesPresenter();
+    AutoCross_SAPresenter();
 
-    TestesView& view;
+    AutoCross_SAView& view;
 };
 
-#endif // TESTESPRESENTER_HPP
+#endif // AUTOCROSS_SAPRESENTER_HPP

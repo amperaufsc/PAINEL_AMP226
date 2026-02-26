@@ -6,6 +6,51 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_8QN2" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">TESTES AQUI</Translation>
+      </Text>
+      <Text Id="__SingleUse_N33N" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">aceleração</Translation>
+      </Text>
+      <Text Id="__SingleUse_P2D1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Autocross</Translation>
+      </Text>
+      <Text Id="__SingleUse_VU67" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Autocross</Translation>
+      </Text>
+      <Text Id="__SingleUse_6CVB" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Skidpad</Translation>
+      </Text>
+      <Text Id="__SingleUse_W64W" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">Start</Translation>
+      </Text>
+      <Text Id="__SingleUse_PSB8" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">Start</Translation>
+      </Text>
+      <Text Id="__SingleUse_J5NX" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">MODOS DE PROVA</Translation>
+      </Text>
+      <Text Id="__SingleUse_7739" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Aceleração</Translation>
+      </Text>
+      <Text Id="__SingleUse_6W8H" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">modos de prova</Translation>
+      </Text>
+      <Text Id="__SingleUse_A1BC" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">skidpad</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q39K" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">autocros</Translation>
+      </Text>
+      <Text Id="__SingleUse_LXVD" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Menu Inicial</Translation>
+      </Text>
+      <Text Id="__SingleUse_46QZ" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Modos de Prova</Translation>
+      </Text>
+      <Text Id="__SingleUse_OTOA" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Area de testes</Translation>
+      </Text>
       <Text Id="__SingleUse_WL4J" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Falha ECU</Translation>
       </Text>
@@ -103,7 +148,7 @@
         <Translation Language="GB">&lt;value&gt; °C</Translation>
       </Text>
       <Text Id="__SingleUse_3N7C" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">ACCEL</Translation>
+        <Translation Language="GB">THROTTLE</Translation>
       </Text>
       <Text Id="__SingleUse_CBAY" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">000</Translation>

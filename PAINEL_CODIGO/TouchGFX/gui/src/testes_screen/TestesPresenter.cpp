@@ -26,3 +26,22 @@ void TestesPresenter::hwButtonClicked(uint8_t buttonId)
 	    }
 
 }
+
+void TestesPresenter::atualizardados()
+{
+	view.dadosteste(
+	        model->funcorrenteAcc(),
+	        model->funSOC(),
+	        model->funpotencia(),
+	        model->funtempAcc(),
+	        model->funtempMotor(),
+	        model->funtempInv(),
+	        model->funtensaoInv(),
+	        model->funtensaoHV(),
+	        model->funtensaoMC(),
+	        model->funrpm(),
+	        model->funvelocidade()
+	    );
+}
+
+

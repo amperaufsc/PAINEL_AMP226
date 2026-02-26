@@ -5,11 +5,29 @@
         "Name": "Capa",
         "Components": [
           {
-            "Type": "Image",
-            "Name": "Fundo",
+            "Type": "CustomContainerInstance",
+            "Name": "fundo_capa1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "capav3.png"
+            "CustomContainerDefinitionName": "Fundo_capa"
+          },
+          {
+            "Type": "Image",
+            "Name": "logobranca",
+            "X": 50,
+            "Y": 23,
+            "Width": 700,
+            "Height": 100,
+            "RelativeFilename": "logobrancav2.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "logoazul",
+            "X": 50,
+            "Y": 23,
+            "Width": 700,
+            "Height": 100,
+            "RelativeFilename": "logoazulv2.png"
           }
         ],
         "Interactions": [
@@ -103,41 +121,6 @@
           },
           {
             "Type": "TextArea",
-            "Name": "TensaoHV_un",
-            "X": 351,
-            "Y": 247,
-            "Width": 98,
-            "Height": 35,
-            "TextId": "__SingleUse_HFVM",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 245,
-              "Green": 247,
-              "Blue": 247
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_NJC4"
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Potencia",
-            "X": 597,
-            "Y": 126,
-            "Width": 133,
-            "Height": 35,
-            "TextId": "__SingleUse_FKG4",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
             "Name": "TensaoCelulamaisbaixa_un",
             "X": 351,
             "Y": 165,
@@ -170,6 +153,25 @@
               "Blue": 53
             },
             "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TensaoHV_un",
+            "X": 351,
+            "Y": 247,
+            "Width": 98,
+            "Height": 35,
+            "TextId": "__SingleUse_HFVM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_NJC4"
+            }
           },
           {
             "Type": "TextArea",
@@ -331,34 +333,6 @@
           },
           {
             "Type": "TextArea",
-            "Name": "falhainversor",
-            "X": 328,
-            "Y": 374,
-            "Width": 150,
-            "Height": 35,
-            "TextId": "__SingleUse_5U7Q",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 140
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "falhaECU",
-            "X": 589,
-            "Y": 374,
-            "Width": 155,
-            "Height": 35,
-            "TextId": "__SingleUse_WL4J",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 140
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
             "Name": "Potencia_un",
             "X": 614,
             "Y": 165,
@@ -373,20 +347,24 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_CXAF"
+              "TextId": "__SingleUse_CXAF",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
-            "Name": "falhaBMS",
-            "X": 49,
-            "Y": 374,
-            "Width": 157,
+            "Name": "Potencia",
+            "X": 597,
+            "Y": 126,
+            "Width": 133,
             "Height": 35,
-            "TextId": "__SingleUse_I401",
+            "TextId": "__SingleUse_FKG4",
             "TextRotation": "0",
             "Color": {
-              "Red": 140
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
             },
             "AutoSize": true
           },
@@ -441,7 +419,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_4WMP"
+              "TextId": "__SingleUse_4WMP",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -457,6 +437,48 @@
               "Red": 55,
               "Green": 52,
               "Blue": 53
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "falhainversor",
+            "X": 328,
+            "Y": 374,
+            "Width": 150,
+            "Height": 35,
+            "TextId": "__SingleUse_5U7Q",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 140
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "falhaECU",
+            "X": 589,
+            "Y": 374,
+            "Width": 155,
+            "Height": 35,
+            "TextId": "__SingleUse_WL4J",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 140
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "falhaBMS",
+            "X": 49,
+            "Y": 374,
+            "Width": 157,
+            "Height": 35,
+            "TextId": "__SingleUse_I401",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 140
             },
             "AutoSize": true
           }
@@ -881,9 +903,9 @@
           {
             "Type": "TextArea",
             "Name": "acelerador",
-            "X": 639,
+            "X": 596,
             "Y": 346,
-            "Width": 104,
+            "Width": 165,
             "Height": 35,
             "TextId": "__SingleUse_3N7C",
             "TextRotation": "0",
@@ -919,6 +941,76 @@
         ]
       },
       {
+        "Name": "Menu_SA",
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "fundo_SA1",
+            "Width": 800,
+            "Height": 480,
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 262,
+            "Y": 97,
+            "Width": 291,
+            "Height": 48,
+            "TextId": "__SingleUse_OTOA",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 242,
+            "Y": 220,
+            "Width": 317,
+            "Height": 48,
+            "TextId": "__SingleUse_46QZ",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1",
+            "X": 286,
+            "Y": 343,
+            "Width": 242,
+            "Height": 48,
+            "TextId": "__SingleUse_LXVD",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Teste_SA",
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "fundo_SA1",
+            "Width": 800,
+            "Height": 480,
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 264,
+            "Y": 222,
+            "Width": 272,
+            "Height": 48,
+            "TextId": "__SingleUse_8QN2",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
+      },
+      {
         "Name": "pag1_Autonomos",
         "Components": [
           {
@@ -931,10 +1023,67 @@
           {
             "Type": "Image",
             "Name": "menusa1",
+            "X": 320,
             "Y": 440,
             "Width": 160,
             "Height": 40,
             "RelativeFilename": "botaoMENU.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "B_autocross",
+            "Y": 444,
+            "Width": 138,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_small_rounded_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_small_rounded_inactive.png",
+            "TextId": "__SingleUse_Q39K",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\small_rounded_inactive.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "B_skidpad",
+            "X": 662,
+            "Y": 444,
+            "Width": 138,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_small_rounded_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_small_rounded_inactive.png",
+            "TextId": "__SingleUse_A1BC",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\small_rounded_inactive.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 213,
+            "Y": 220,
+            "Width": 374,
+            "Height": 48,
+            "TextId": "__SingleUse_J5NX",
+            "TextRotation": "0",
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -951,6 +1100,187 @@
             }
           }
         ]
+      },
+      {
+        "Name": "AutoCross_SA",
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "fundo_SA1",
+            "Width": 800,
+            "Height": 480,
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "Y": 430,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_active.png",
+            "TextId": "__SingleUse_6W8H",
+            "ReleasedColor": {
+              "Red": 252
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_active.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel2",
+            "X": 625,
+            "Y": 430,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
+            "TextId": "__SingleUse_7739",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel3",
+            "X": 280,
+            "Y": 215,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "TextId": "__SingleUse_PSB8",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 351,
+            "Y": 173,
+            "Width": 98,
+            "Height": 24,
+            "TextId": "__SingleUse_P2D1",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Aceleracao_SA",
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "fundo_SA1",
+            "Width": 800,
+            "Height": 480,
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "X": 280,
+            "Y": 215,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "TextId": "__SingleUse_W64W",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel2",
+            "X": 625,
+            "Y": 430,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_active.png",
+            "TextId": "__SingleUse_6CVB",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_active.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel3",
+            "Y": 430,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
+            "TextId": "__SingleUse_VU67",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 347,
+            "Y": 161,
+            "Width": 106,
+            "Height": 24,
+            "TextId": "__SingleUse_N33N",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [
@@ -995,6 +1325,21 @@
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "fundo_testes.png"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Fundo_capa",
+        "Width": 800,
+        "Height": 480,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "capav3.2.png"
           }
         ],
         "Interactions": []
