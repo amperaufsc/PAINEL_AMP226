@@ -12,7 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     void updateButtonState(uint32_t buttonID);
-    virtual void dadosteste((float correnteAcc, float soc, float potencia, float tempAcc, float tempMot, float tempInv, float tensaoInv, float tensaoHV, float tensaoMC, int rpm));
+    virtual void dadosteste(float correnteAcc, float soc, float potencia, float tempAcc, float tempMot, float tempInv, float tensaoInv, float tensaoHV, float tensaoMC, int rpm);
 
 protected:
 };

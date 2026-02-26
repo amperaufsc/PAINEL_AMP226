@@ -191,7 +191,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_0NCS"
+              "TextId": "__SingleUse_0NCS",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -226,7 +228,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_AYI9"
+              "TextId": "__SingleUse_AYI9",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -261,7 +265,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_NJC4"
+              "TextId": "__SingleUse_NJC4",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -296,7 +302,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_ZFV1"
+              "TextId": "__SingleUse_ZFV1",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -331,7 +339,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_0P77"
+              "TextId": "__SingleUse_0P77",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -403,7 +413,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_CBAY"
+              "TextId": "__SingleUse_CBAY",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -475,7 +487,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_ON7B"
+              "TextId": "__SingleUse_ON7B",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -763,7 +777,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_WGWZ"
+              "TextId": "__SingleUse_WGWZ",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -782,7 +798,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_POJW"
+              "TextId": "__SingleUse_POJW",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -796,7 +814,9 @@
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_NZBD"
+              "TextId": "__SingleUse_NZBD",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -847,7 +867,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_0N1R"
+              "TextId": "__SingleUse_0N1R",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -882,7 +904,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_0N3L"
+              "TextId": "__SingleUse_0N3L",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -912,7 +936,9 @@
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_H95H"
+              "TextId": "__SingleUse_H95H",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -1000,7 +1026,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_KAQ0"
+              "TextId": "__SingleUse_KAQ0",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -1051,7 +1079,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_AF0Y"
+              "TextId": "__SingleUse_AF0Y",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
