@@ -1,17 +1,17 @@
-#ifndef MENU_SAPRESENTER_HPP
-#define MENU_SAPRESENTER_HPP
+#ifndef EBS_TESTE_SAPRESENTER_HPP
+#define EBS_TESTE_SAPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Menu_SAView;
+class EBS_Teste_SAView;
 
-class Menu_SAPresenter : public touchgfx::Presenter, public ModelListener
+class EBS_Teste_SAPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Menu_SAPresenter(Menu_SAView& v);
+    EBS_Teste_SAPresenter(EBS_Teste_SAView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,12 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Menu_SAPresenter() {}
+    virtual ~EBS_Teste_SAPresenter() {}
 
 private:
-    Menu_SAPresenter();
+    EBS_Teste_SAPresenter();
 
-    Menu_SAView& view;
+    EBS_Teste_SAView& view;
 };
 
-#endif // MENU_SAPRESENTER_HPP
+#endif // EBS_TESTE_SAPRESENTER_HPP

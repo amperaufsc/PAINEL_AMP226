@@ -400,14 +400,34 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/fundo_teste.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/Menu_SAPresenter.cpp</name>
+			<name>Application/User/gui/Dirigir_manual_SAPresenter.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/menu_sa_screen/Menu_SAPresenter.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/dirigir_manual_sa_screen/Dirigir_manual_SAPresenter.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/Menu_SAView.cpp</name>
+			<name>Application/User/gui/Dirigir_manual_SAView.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/menu_sa_screen/Menu_SAView.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/dirigir_manual_sa_screen/Dirigir_manual_SAView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/EBS_Teste_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/ebs_teste_sa_screen/EBS_Teste_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/EBS_Teste_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/ebs_teste_sa_screen/EBS_Teste_SAView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Inspecao_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/inspecao_sa_screen/Inspecao_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Inspecao_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/inspecao_sa_screen/Inspecao_SAView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/Model.cpp</name>
@@ -435,14 +455,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag1_autonomos_screen/pag1_AutonomosView.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/Teste_SAPresenter.cpp</name>
+			<name>Application/User/gui/Skidped_SAPresenter.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/teste_sa_screen/Teste_SAPresenter.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/skidped_sa_screen/Skidped_SAPresenter.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/Teste_SAView.cpp</name>
+			<name>Application/User/gui/Skidped_SAView.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/teste_sa_screen/Teste_SAView.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/skidped_sa_screen/Skidped_SAView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/TestesPresenter.cpp</name>
@@ -453,6 +473,16 @@
 			<name>Application/User/gui/TestesView.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/testes_screen/TestesView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Trackdrive_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/trackdrive_sa_screen/Trackdrive_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Trackdrive_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/trackdrive_sa_screen/Trackdrive_SAView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/ApplicationFontProvider.cpp</name>
@@ -495,6 +525,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_verdana_10_4bpp_0.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Font_verdana_150_4bpp_0.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_verdana_150_4bpp_0.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/Font_verdana_20_4bpp_0.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_verdana_20_4bpp_0.cpp</locationURI>
@@ -525,6 +560,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_verdana_10_4bpp.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Kerning_verdana_150_4bpp.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_verdana_150_4bpp.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/Kerning_verdana_20_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_verdana_20_4bpp.cpp</locationURI>
@@ -548,6 +588,11 @@
 			<name>Application/User/generated/Table_verdana_10_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_verdana_10_4bpp.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Table_verdana_150_4bpp.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_verdana_150_4bpp.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Table_verdana_20_4bpp.cpp</name>
@@ -610,9 +655,19 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/fundo_testeBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Menu_SAViewBase.cpp</name>
+			<name>Application/User/generated/Dirigir_manual_SAViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/menu_sa_screen/Menu_SAViewBase.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/dirigir_manual_sa_screen/Dirigir_manual_SAViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/EBS_Teste_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/ebs_teste_sa_screen/EBS_Teste_SAViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Inspecao_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/inspecao_sa_screen/Inspecao_SAViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/ModoProvaViewBase.cpp</name>
@@ -625,14 +680,19 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag1_autonomos_screen/pag1_AutonomosViewBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Teste_SAViewBase.cpp</name>
+			<name>Application/User/generated/Skidped_SAViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/teste_sa_screen/Teste_SAViewBase.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/skidped_sa_screen/Skidped_SAViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/TestesViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/testes_screen/TestesViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Trackdrive_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/trackdrive_sa_screen/Trackdrive_SAViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/BitmapDatabase.cpp</name>
@@ -645,9 +705,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_36_small_rounded_inactive.cpp</name>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_disabled.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_36_small_rounded_inactive.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_disabled.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_inactive.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_inactive.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.cpp</name>
@@ -663,11 +728,6 @@
 			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_active.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_active.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.cpp</name>
@@ -690,6 +750,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_BRAK.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_DIREITA.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_DIREITA.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_ESQUERDA.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_ESQUERDA.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_FUNDOFALSO.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_FUNDOFALSO.cpp</locationURI>
@@ -703,6 +773,11 @@
 			<name>Application/User/generated/image_MENU_painel.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_MENU_painel.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_bandeirachegada.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bandeirachegada.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_batCheia.cpp</name>
@@ -720,11 +795,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_botaoMENU.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_bubassaro.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bubassaro.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_capa.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capa.cpp</locationURI>
@@ -738,11 +808,6 @@
 			<name>Application/User/generated/image_capav3.2.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capav3.2.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_chamand.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_chamand.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_fundo_prova.cpp</name>
@@ -793,11 +858,6 @@
 			<name>Application/User/generated/image_ponteira.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_ponteira.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_squirtle.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_squirtle.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_velocimetro.cpp</name>
