@@ -590,6 +590,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_FUNDOFALSO.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_FundaSA.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_FundaSA.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_MENU_painel.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_MENU_painel.cpp</locationURI>
@@ -620,19 +625,24 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capa.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_capa2.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capa2.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_capav2.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capav2.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_capav3.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capav3.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_chamand.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_chamand.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_fundo2.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundo2.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_fundoSA.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundoSA.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_fundo_prova.cpp</name>

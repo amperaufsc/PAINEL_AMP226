@@ -9,23 +9,7 @@
             "Name": "Fundo",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "MENU_painel.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "logobranca",
-            "Y": -314,
-            "Width": 800,
-            "Height": 480,
-            "RelativeFilename": "l2.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "logoazul",
-            "Y": -314,
-            "Width": 800,
-            "Height": 480,
-            "RelativeFilename": "l1.png"
+            "RelativeFilename": "capav3.png"
           }
         ],
         "Interactions": [
@@ -995,7 +979,7 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "fundoSA.png"
+            "RelativeFilename": "FundaSA.png"
           }
         ],
         "Interactions": []
