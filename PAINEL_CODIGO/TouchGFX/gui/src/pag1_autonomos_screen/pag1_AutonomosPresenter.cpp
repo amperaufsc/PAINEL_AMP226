@@ -16,3 +16,21 @@ void pag1_AutonomosPresenter::deactivate()
 {
 
 }
+void pag1_AutonomosPresenter::hwButtonClicked(uint8_t buttonId)
+{
+	{
+	    if (buttonId == 3) // PB11 BOLINHA
+	    {
+	          static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenBlockTransition();
+	    }
+	    else if (buttonId == 2) // PA3 TRIANGULO
+	    {
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoDirigir_manual_SAScreenSlideTransitionEast();
+	    }
+	    else if (buttonId == 1) // PA2 X
+	    {
+	         static_cast<FrontendApplication*>(Application::getInstance())->gotoAutoCross_SAScreenSlideTransitionWest();
+	    }
+
+	}
+}

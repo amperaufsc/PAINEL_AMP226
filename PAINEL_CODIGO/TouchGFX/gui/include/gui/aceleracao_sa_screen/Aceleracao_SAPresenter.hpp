@@ -25,7 +25,6 @@ public:
      */
     virtual void deactivate();
     virtual void hwButtonClicked(uint8_t buttonId) override;
-    virtual void updateCANData(int value);
 
     virtual ~Aceleracao_SAPresenter() {}
     void notifyButtonChanged(uint32_t buttonID);

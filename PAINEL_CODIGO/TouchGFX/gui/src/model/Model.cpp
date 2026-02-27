@@ -61,7 +61,7 @@ void Model::tick()
     {
         // Quando o Loopback devolver o dado do PA2 (que enviamos como 1)
         // avisamos o Presenter para atualizar a tela
-        modelListener->updateCANData(msg_recebida.data[0]);
+        //modelListener->updateCANData(msg_recebida.data[0]);
     }
 
 

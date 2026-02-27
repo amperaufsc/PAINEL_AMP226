@@ -6,6 +6,15 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_U665" Alignment="Center" TypographyId="Typography3">
+        <Translation Language="GB">Área de&#10; teste</Translation>
+      </Text>
+      <Text Id="__SingleUse_0TQI" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">AutoCross</Translation>
+      </Text>
+      <Text Id="__SingleUse_0HC6" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Página 1</Translation>
+      </Text>
       <Text Id="__SingleUse_Z366" Alignment="Left" TypographyId="Typography3">
         <Translation Language="GB">Trackdrive</Translation>
       </Text>

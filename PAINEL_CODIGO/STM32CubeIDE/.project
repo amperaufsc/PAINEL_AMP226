@@ -355,6 +355,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/aceleracao_sa_screen/Aceleracao_SAView.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/Area_de_Teste_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/area_de_teste_sa_screen/Area_de_Teste_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Area_de_Teste_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/area_de_teste_sa_screen/Area_de_Teste_SAView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/AutoCross_SAPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/autocross_sa_screen/AutoCross_SAPresenter.cpp</locationURI>
@@ -648,6 +658,11 @@
 			<name>Application/User/generated/Aceleracao_SAViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/aceleracao_sa_screen/Aceleracao_SAViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Area_de_Teste_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/area_de_teste_sa_screen/Area_de_Teste_SAViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/AutoCross_SAViewBase.cpp</name>

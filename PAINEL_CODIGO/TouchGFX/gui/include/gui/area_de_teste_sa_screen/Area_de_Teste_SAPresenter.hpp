@@ -1,17 +1,17 @@
-#ifndef TRACKDRIVE_SAPRESENTER_HPP
-#define TRACKDRIVE_SAPRESENTER_HPP
+#ifndef AREA_DE_TESTE_SAPRESENTER_HPP
+#define AREA_DE_TESTE_SAPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Trackdrive_SAView;
+class Area_de_Teste_SAView;
 
-class Trackdrive_SAPresenter : public touchgfx::Presenter, public ModelListener
+class Area_de_Teste_SAPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Trackdrive_SAPresenter(Trackdrive_SAView& v);
+    Area_de_Teste_SAPresenter(Area_de_Teste_SAView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -26,13 +26,13 @@ public:
     virtual void deactivate();
     virtual void hwButtonClicked(uint8_t buttonId) override;
 
-    virtual ~Trackdrive_SAPresenter() {}
-    void notifyButtonChanged(uint32_t buttonID);
+    virtual ~Area_de_Teste_SAPresenter() {}
+
 
 private:
-    Trackdrive_SAPresenter();
+    Area_de_Teste_SAPresenter();
 
-    Trackdrive_SAView& view;
+    Area_de_Teste_SAView& view;
 };
 
-#endif // TRACKDRIVE_SAPRESENTER_HPP
+#endif // AREA_DE_TESTE_SAPRESENTER_HPP

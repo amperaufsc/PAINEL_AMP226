@@ -25,7 +25,6 @@ public:
      */
     virtual void deactivate();
     virtual void hwButtonClicked(uint8_t buttonId) override;
-    virtual void updateCANData(int value);
 
 
     virtual ~EBS_Teste_SAPresenter() {}
