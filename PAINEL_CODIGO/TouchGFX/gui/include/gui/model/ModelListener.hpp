@@ -11,7 +11,7 @@ public:
     
     virtual ~ModelListener() {}
     virtual void hwButtonClicked(uint8_t buttonId) {}
-    virtual void atualizardados() {}
+    virtual void updateRPMValue(int val) {}
     void bind(Model* m)
     {
         model = m;

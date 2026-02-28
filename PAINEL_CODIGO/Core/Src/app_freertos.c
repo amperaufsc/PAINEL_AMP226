@@ -199,8 +199,9 @@ void StartTaskCAN(void *argument)
   /* USER CODE BEGIN StartTaskCAN */
 
   /* Definições locais para o envio */
-  FDCAN_TxHeaderTypeDef TxHeader;
-  uint8_t TxData[8]; // Buffer de dados
+	FDCAN_TxHeaderTypeDef TxHeader;
+	uint8_t TxData[8];
+	uint32_t contadorCliques = 0;
 
   /* Configuração fixa do Header (fora do loop para performance) */
   TxHeader.Identifier = 0x123;                 // O ID que o seu filtro espera
@@ -216,24 +217,21 @@ void StartTaskCAN(void *argument)
   for(;;)
   {
     /* Verifica se o botão PA2 foi pressionado */
-    if (flagEnviarCAN == 1)
-    {
-      TxData[0] = 0x01; // Valor que será enviado e aparecerá na tela
+	  if (flagEnviarCAN == 1)
+	      {
+	        contadorCliques++; // Incrementa o valor
+	        if(contadorCliques > 8) contadorCliques = 0; // Exemplo: resetar se passar de 8 (limite da sua gauge)
 
-      /* Tenta enviar a mensagem para o TxFifo */
-      if (HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData) == HAL_OK)
-      {
-        /* Incrementa o contador global para o Live Expressions */
-        can_envios_count++;
-      }
+	        TxData[0] = (uint8_t)contadorCliques; // Envia o contador atual
 
-      /* Reseta a flag para esperar o próximo clique */
-      flagEnviarCAN = 0;
-    }
-
-    /* Delay de 10ms para não sobrecarregar a CPU do RTOS */
-    osDelay(10);
-  }
+	        if (HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData) == HAL_OK)
+	        {
+	          can_envios_count++;
+	        }
+	        flagEnviarCAN = 0;
+	      }
+	      osDelay(10);
+	    }
   /* USER CODE END StartTaskCAN */
 }
   /* USER CODE END Task_CAN */

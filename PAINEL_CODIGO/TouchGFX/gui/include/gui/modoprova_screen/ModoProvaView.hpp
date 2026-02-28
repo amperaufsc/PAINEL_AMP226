@@ -2,8 +2,8 @@
 #define MODOPROVAVIEW_HPP
 
 #include <gui_generated/modoprova_screen/ModoProvaViewBase.hpp>
-#include <gui/modoprova_screen/ModoProvaPresenter.hpp>
 
+// AQUI É A DEFINIÇÃO COMPLETA, SEM O "class ModoProvaView;" ANTES
 class ModoProvaView : public ModoProvaViewBase
 {
 public:
@@ -11,9 +11,8 @@ public:
     virtual ~ModoProvaView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-    void updateButtonState(uint32_t buttonID);
 
-protected:
+    virtual void updateRPMValue(int val);
 };
 
-#endif // MODOPROVAVIEW_HPP
+#endif

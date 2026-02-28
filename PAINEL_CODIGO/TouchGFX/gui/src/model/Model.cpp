@@ -53,16 +53,18 @@ void Model::tick()
         pressedButtonId = 0;
     }
 
-    /* --- NOVA LÓGICA PARA RECEBER O CAN --- */
     can_msg_t msg_recebida;
 
-    // Tenta ler a fila do CAN (sem esperar)
-    if (osMessageQueueGet(Queue_CAN_RXHandle, &msg_recebida, NULL, 0) == osOK)
-    {
-        // Quando o Loopback devolver o dado do PA2 (que enviamos como 1)
-        // avisamos o Presenter para atualizar a tela
-        //modelListener->updateCANData(msg_recebida.data[0]);
-    }
+        // Tenta ler a fila. Se houver mensagem (osOK), processa.
+        // Usamos timeout 0 para não travar a interface gráfica.
+        if (osMessageQueueGet(Queue_CAN_RXHandle, &msg_recebida, NULL, 0) == osOK)
+        {
+            // Pega o valor que veio no dado (index 0)
+            uint16_t valorRPM = msg_recebida.data[0];
+
+            // Envia para o Presenter
+            modelListener->updateRPMValue(valorRPM);
+        }
 
 
 }
