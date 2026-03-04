@@ -126,8 +126,8 @@
       <Text Id="__SingleUse_POJW" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_7INH" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; %</Translation>
+      <Text Id="__SingleUse_7INH" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">&lt;value&gt;  %</Translation>
       </Text>
       <Text Id="__SingleUse_WGWZ" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>

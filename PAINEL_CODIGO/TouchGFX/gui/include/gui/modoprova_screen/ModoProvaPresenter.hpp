@@ -19,7 +19,15 @@ public:
     virtual ~ModoProvaPresenter() {};
 
     virtual void updateRPMValue(int val);
+    virtual void updateSpeedValue(int val);
+    virtual void updateSOCValue(int val);
+    virtual void updateFreioValue(int val);
+    virtual void updateAceleradorValue(int val);
     virtual void hwButtonClicked(uint8_t buttonId);
+    virtual void updateTensaoHVValue(int val);
+    virtual void updateDistanciaValue(int val);
+    virtual void updatePotenciaValue(int val);
+    virtual void updateTempAcumuladorValue(int val);
 
 private:
     ModoProvaPresenter();

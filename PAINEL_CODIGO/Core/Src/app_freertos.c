@@ -26,18 +26,13 @@
 /* USER CODE BEGIN Includes */
 #include "main.h"
 #include "cmsis_os2.h" // Para as funções de Queue do RTOS
+#include "can_types.h"
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#ifndef CAN_MSG_T_DEFINED
-#define CAN_MSG_T_DEFINED
-typedef struct {
-    uint32_t id;
-    uint8_t  data[8];
-    uint32_t dlc;
-} can_msg_t;
-#endif
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -56,8 +51,10 @@ volatile uint8_t flagEnviarCAN = 0;
 volatile uint32_t can_envios_count = 0;
 volatile uint32_t can_recepcoes_count = 0;
 volatile uint32_t ultimo_id_recebido = 0;
-
-extern volatile uint8_t flagEnviarCAN;
+volatile uint32_t erro_fila_count = 0;
+volatile uint8_t debug = 0;
+volatile uint32_t debug_id_isr = 0;
+int valorSoc = 0;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -196,43 +193,49 @@ void StartDefaultTask(void *argument)
 /* USER CODE END Header_StartTaskCAN */
 void StartTaskCAN(void *argument)
 {
-  /* USER CODE BEGIN StartTaskCAN */
+  FDCAN_TxHeaderTypeDef TxHeader;
+  uint8_t TxData[1];
+  uint32_t valorRPM = 0;
+  uint32_t valorVelocidade = 0;
 
-  /* Definições locais para o envio */
-	FDCAN_TxHeaderTypeDef TxHeader;
-	uint8_t TxData[8];
-	uint32_t contadorCliques = 0;
-
-  /* Configuração fixa do Header (fora do loop para performance) */
-  TxHeader.Identifier = 0x123;                 // O ID que o seu filtro espera
+  // Configurações base do Header
+  memset(&TxHeader, 0, sizeof(TxHeader));
   TxHeader.IdType = FDCAN_STANDARD_ID;
   TxHeader.TxFrameType = FDCAN_DATA_FRAME;
-  TxHeader.DataLength = FDCAN_DLC_BYTES_1;      // Vamos enviar apenas 1 byte
-  TxHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
-  TxHeader.BitRateSwitch = FDCAN_BRS_OFF;
+  TxHeader.DataLength = FDCAN_DLC_BYTES_1;
   TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
-  TxHeader.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
-  TxHeader.MessageMarker = 0;
 
   for(;;)
   {
-    /* Verifica se o botão PA2 foi pressionado */
-	  if (flagEnviarCAN == 1)
-	      {
-	        contadorCliques++; // Incrementa o valor
-	        if(contadorCliques > 8) contadorCliques = 0; // Exemplo: resetar se passar de 8 (limite da sua gauge)
+    // RPM (ID 0x123 ) ---
+    valorRPM++;
+    if(valorRPM > 8) valorRPM = 0;
 
-	        TxData[0] = (uint8_t)contadorCliques; // Envia o contador atual
+    TxHeader.Identifier = 0x123;
+    TxData[0] = (uint8_t)valorRPM;
+    HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-	        if (HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData) == HAL_OK)
-	        {
-	          can_envios_count++;
-	        }
-	        flagEnviarCAN = 0;
-	      }
-	      osDelay(10);
-	    }
-  /* USER CODE END StartTaskCAN */
+    osDelay(250); // Pequeno intervalo entre mensagens
+
+    // VELOCIDADE (ID 0x124 ) ---
+    valorVelocidade += 10;
+    if(valorVelocidade > 80) valorVelocidade = 0;
+
+    TxHeader.Identifier = 0x124;
+    TxData[0] = (uint8_t)valorVelocidade;
+    HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+    osDelay(250);
+    // --- ENVIO 3: SOC (ID 0x125 ) ---
+    valorSoc += 1;
+    if(valorSoc > 100) valorSoc = 0;
+
+    TxHeader.Identifier = 0x125;
+    TxData[0] = (uint8_t)valorSoc;
+    HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+    osDelay(250);
+  }
 }
   /* USER CODE END Task_CAN */
 
@@ -245,14 +248,33 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
     FDCAN_RxHeaderTypeDef RxHeader;
     can_msg_t msg_recebida;
 
-    if (HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msg_recebida.data) == HAL_OK)
+    // 1. Limpa as estruturas para garantir que não estamos lendo lixo de memória
+      memset(&RxHeader, 0, sizeof(RxHeader));
+      memset(&msg_recebida, 0, sizeof(msg_recebida));
+//
+//    // 2. Tenta ler o hardware e captura o status
+      HAL_StatusTypeDef status = HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msg_recebida.data);
+//
+//    // 3. Só prossegue se a leitura foi 100% bem-sucedida
+    if (status == HAL_OK)
     {
-      ultimo_id_recebido = RxHeader.Identifier;
-      can_recepcoes_count++; // Incrementa contador de recepção
+//        can_recepcoes_count++;
+        msg_recebida.id = RxHeader.Identifier;
+        debug_id_isr = msg_recebida.id;
 
-      msg_recebida.id = RxHeader.Identifier;
-      // Envia para a fila que o Model.cpp está lendo
-      osMessageQueuePut(Queue_CAN_RXHandle, &msg_recebida, 0, 0);
+        // Agora sim, garantimos que o ID é real
+        if (osMessageQueuePut(Queue_CAN_RXHandle, &msg_recebida, 0, 0) != osOK)
+        {
+            erro_fila_count++;
+        }
+    }
+
+    else
+    {
+        // Debug: Se cair aqui, a função HAL falhou
+    	debug++;
+        // Isso explica por que o seu ID era um contador:
+        // o código ignorava que a leitura falhou e lia memória vazia.
     }
   }
 }

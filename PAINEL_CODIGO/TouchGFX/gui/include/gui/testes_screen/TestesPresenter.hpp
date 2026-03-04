@@ -25,11 +25,26 @@ public:
      */
     virtual void deactivate();
     virtual void hwButtonClicked(uint8_t buttonId) override;
-    virtual void atualizardados();
+    virtual void updateTempMotorValue(int val) override;
+            virtual void updateTensaoInversorValue(int val) override;
+            virtual void updateSOCValue(int val) override;
+            virtual void updateTempInversorValue(int val) override;
+            virtual void updateTensaoCelulaMinValue(int val) override;
+            virtual void updatePotenciaValue(int val) override;
+            virtual void updateTempAcumuladorValue(int val) override;
+            virtual void updateTensaoHVValue(int val) override;
+            virtual void updateCorrenteAcumuladorValue(int val) override;
+            virtual void updateRPMValue(int val) override;
+
+            // --- Falhas ---
+            virtual void updateFalhaBMSValue(int val) override;
+            virtual void updateFalhaINVValue(int val) override;
+            virtual void updateFalhaECUValue(int val) override;
 
 
     virtual ~TestesPresenter() {}
     void notifyButtonChanged(uint32_t buttonID);
+
 
 private:
     TestesPresenter();

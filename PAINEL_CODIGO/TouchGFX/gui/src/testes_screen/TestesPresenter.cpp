@@ -17,6 +17,22 @@ void TestesPresenter::deactivate()
 
 }
 
+void TestesPresenter::updateTempMotorValue(int val)      { view.updateTempMotor(val); }
+void TestesPresenter::updateTensaoInversorValue(int val) { view.updateTensaoInversor(val); }
+void TestesPresenter::updateSOCValue(int val) { view.updateCorrenteAcumulador(val); }
+void TestesPresenter::updateTempInversorValue(int val)   { view.updateTempInversor(val); }
+void TestesPresenter::updateTensaoCelulaMinValue(int val){ view.updateTensaoCelulaMin(val); }
+void TestesPresenter::updatePotenciaValue(int val)       { view.updatePotencia(val); }
+void TestesPresenter::updateTempAcumuladorValue(int val) { view.updateTempAcumulador(val); }
+void TestesPresenter::updateTensaoHVValue(int val)       { view.updateTensaoHV(val); }
+void TestesPresenter::updateCorrenteAcumuladorValue(int val){ view.updateCorrenteAcumulador(val); }
+void TestesPresenter::updateRPMValue(int val)            { view.updateRPM(val); }
+
+// --- Implementação das Falhas ---
+void TestesPresenter::updateFalhaBMSValue(int val)       { view.updateFalhaBMS(val); }
+void TestesPresenter::updateFalhaINVValue(int val)       { view.updateFalhaINV(val); }
+void TestesPresenter::updateFalhaECUValue(int val)       { view.updateFalhaECU(val); }
+
 void TestesPresenter::hwButtonClicked(uint8_t buttonId)
 {
 
@@ -27,21 +43,6 @@ void TestesPresenter::hwButtonClicked(uint8_t buttonId)
 
 }
 
-void TestesPresenter::atualizardados()
-{
-	view.dadosteste(
-	        model->funcorrenteAcc(),
-	        model->funSOC(),
-	        model->funpotencia(),
-	        model->funtempAcc(),
-	        model->funtempMotor(),
-	        model->funtempInv(),
-	        model->funtensaoInv(),
-	        model->funtensaoHV(),
-	        model->funtensaoMC(),
-	        model->funrpm(),
-	        model->funvelocidade()
-	    );
-}
+
 
 

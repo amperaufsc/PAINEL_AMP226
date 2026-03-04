@@ -623,7 +623,7 @@
             "RotationCenterY": 120.0,
             "StartAngle": -113.0,
             "EndAngle": 112.0,
-            "RangeMax": 100.0,
+            "RangeMax": 80.0,
             "Easing": "Linear",
             "EasingOption": "In",
             "FileNameNeedle": "ponteira.png",
@@ -673,9 +673,9 @@
           {
             "Type": "TextArea",
             "Name": "distancia_un",
-            "X": 474,
+            "X": 463,
             "Y": 53,
-            "Width": 78,
+            "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_OE0U",
             "TextRotation": "0",
@@ -684,7 +684,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_WGWZ",
               "UseBuffer": true,
@@ -696,7 +695,7 @@
             "Name": "bateria_un",
             "X": 430,
             "Y": 190,
-            "Width": 57,
+            "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_7INH",
             "TextRotation": "0",
@@ -705,7 +704,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_POJW",
               "UseBuffer": true,
@@ -765,7 +763,7 @@
             "Name": "freio_un",
             "X": 92,
             "Y": 392,
-            "Width": 57,
+            "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_5ZQ7",
             "TextRotation": "0",
@@ -774,7 +772,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_0N1R",
               "UseBuffer": true,
@@ -800,9 +797,9 @@
           {
             "Type": "TextArea",
             "Name": "TensaoHV_un",
-            "X": 272,
+            "X": 260,
             "Y": 53,
-            "Width": 54,
+            "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_T4IY",
             "TextRotation": "0",
@@ -811,7 +808,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_0N3L",
               "UseBuffer": true,
@@ -837,13 +833,12 @@
           {
             "Type": "TextArea",
             "Name": "velocidade_un",
-            "X": 669,
-            "Y": 234,
-            "Width": 22,
-            "Height": 35,
+            "X": 638,
+            "Y": 232,
+            "Width": 80,
+            "Height": 37,
             "TextId": "__SingleUse_4H7T",
             "TextRotation": "0",
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_H95H",
               "UseBuffer": true,
@@ -885,9 +880,9 @@
           {
             "Type": "TextArea",
             "Name": "Potencia_un",
-            "X": 345,
+            "X": 336,
             "Y": 321,
-            "Width": 83,
+            "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_PDU7",
             "TextRotation": "0",
@@ -896,7 +891,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_OJQO",
               "UseBuffer": true,
@@ -922,9 +916,9 @@
           {
             "Type": "TextArea",
             "Name": "TempAcumulador_un",
-            "X": 359,
+            "X": 350,
             "Y": 405,
-            "Width": 67,
+            "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_C8P5",
             "TextRotation": "0",
@@ -933,7 +927,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_KAQ0",
               "UseBuffer": true,
@@ -960,7 +953,7 @@
             "Type": "ImageProgress",
             "Name": "Acelarador_bar",
             "X": 621,
-            "Y": 387,
+            "Y": 392,
             "Width": 141,
             "Height": 45,
             "FileNameProgress": "ACEL.png",
@@ -976,8 +969,8 @@
             "Type": "TextArea",
             "Name": "acelerador_un",
             "X": 663,
-            "Y": 392,
-            "Width": 57,
+            "Y": 397,
+            "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_X7T1",
             "TextRotation": "0",
@@ -986,7 +979,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_AF0Y",
               "UseBuffer": true,
@@ -1228,7 +1220,7 @@
             "Name": "textArea1",
             "X": 101,
             "Y": 67,
-            "Width": 598,
+            "Width": 531,
             "Height": 316,
             "TextId": "__SingleUse_U665",
             "TextRotation": "0",
@@ -1937,7 +1929,7 @@
             "Name": "textArea1",
             "X": 147,
             "Y": 82,
-            "Width": 535,
+            "Width": 490,
             "Height": 316,
             "TextId": "__SingleUse_W2WJ",
             "TextRotation": "0",
@@ -2045,7 +2037,7 @@
       "Height": 480
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "AutoCross_SA",
+    "StartupScreenName": "ModoProva",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

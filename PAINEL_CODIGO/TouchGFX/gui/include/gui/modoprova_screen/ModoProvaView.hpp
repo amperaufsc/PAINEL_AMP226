@@ -11,8 +11,17 @@ public:
     virtual ~ModoProvaView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-
+    virtual void updateSOC(int val);
     virtual void updateRPMValue(int val);
+    virtual void updateSpeedValue(int val);
+    virtual void updateFreio(int val);
+    virtual void updateAcelerador(int val);
+    virtual void updateTensaoHV(int val);
+    virtual void updateDistancia(int val);
+    virtual void updatePotencia(int val);
+    virtual void updateTempAcumulador(int val);
+
+
 };
 
 #endif
