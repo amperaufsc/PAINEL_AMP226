@@ -6,8 +6,8 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_U665" Alignment="Center" TypographyId="Typography3">
-        <Translation Language="GB">Área de&#10; teste</Translation>
+      <Text Id="__SingleUse_U665" Alignment="Center" TypographyId="Typography2">
+        <Translation Language="GB">ÁREA DE TESTE</Translation>
       </Text>
       <Text Id="__SingleUse_0TQI" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">AutoCross</Translation>

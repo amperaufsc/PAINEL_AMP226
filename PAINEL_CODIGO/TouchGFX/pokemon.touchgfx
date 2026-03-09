@@ -87,9 +87,9 @@
           {
             "Type": "TextArea",
             "Name": "RPM_un",
-            "X": 354,
+            "X": 313,
             "Y": 317,
-            "Width": 93,
+            "Width": 180,
             "Height": 35,
             "TextId": "__SingleUse_J676",
             "TextRotation": "0",
@@ -98,7 +98,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_0NCS",
               "UseBuffer": true,
@@ -383,9 +382,9 @@
           {
             "Type": "TextArea",
             "Name": "CargaAcumulador_un",
-            "X": 639,
-            "Y": 247,
-            "Width": 48,
+            "X": 617,
+            "Y": 253,
+            "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_2SWE",
             "TextRotation": "0",
@@ -394,7 +393,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_ON7B",
               "UseBuffer": true,
@@ -492,7 +490,9 @@
             "TextId": "__SingleUse_I401",
             "TextRotation": "0",
             "Color": {
-              "Red": 140
+              "Red": 221,
+              "Green": 43,
+              "Blue": 125
             },
             "AutoSize": true
           },
@@ -641,8 +641,8 @@
           {
             "Type": "ImageProgress",
             "Name": "bateria",
-            "X": 310,
-            "Y": 153,
+            "X": 290,
+            "Y": 163,
             "Width": 120,
             "Height": 90,
             "FileNameProgress": "batCheia.png",
@@ -693,8 +693,8 @@
           {
             "Type": "TextArea",
             "Name": "bateria_un",
-            "X": 430,
-            "Y": 190,
+            "X": 417,
+            "Y": 191,
             "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_7INH",
@@ -880,8 +880,8 @@
           {
             "Type": "TextArea",
             "Name": "Potencia_un",
-            "X": 336,
-            "Y": 321,
+            "X": 350,
+            "Y": 313,
             "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_PDU7",
@@ -900,8 +900,8 @@
           {
             "Type": "TextArea",
             "Name": "potencia",
-            "X": 326,
-            "Y": 277,
+            "X": 334,
+            "Y": 278,
             "Width": 133,
             "Height": 35,
             "TextId": "__SingleUse_KH82",
@@ -937,7 +937,7 @@
             "Type": "TextArea",
             "Name": "TempAcumulador",
             "X": 256,
-            "Y": 372,
+            "Y": 370,
             "Width": 289,
             "Height": 35,
             "TextId": "__SingleUse_ECCU",
@@ -968,7 +968,7 @@
           {
             "Type": "TextArea",
             "Name": "acelerador_un",
-            "X": 663,
+            "X": 661,
             "Y": 397,
             "Width": 100,
             "Height": 35,
@@ -1156,8 +1156,8 @@
           {
             "Type": "Image",
             "Name": "menusa1_2",
-            "X": 608,
-            "Y": 390,
+            "X": 754,
+            "Y": 383,
             "Width": 160,
             "Height": 40,
             "RelativeFilename": "DIREITA.png"
@@ -1218,10 +1218,10 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 101,
-            "Y": 67,
-            "Width": 531,
-            "Height": 316,
+            "X": 110,
+            "Y": 193,
+            "Width": 580,
+            "Height": 71,
             "TextId": "__SingleUse_U665",
             "TextRotation": "0",
             "Color": {
@@ -1771,105 +1771,6 @@
         ]
       },
       {
-        "Name": "Inspecao_SA",
-        "Components": [
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
-            "Width": 800,
-            "Height": 480,
-            "CustomContainerDefinitionName": "Fundo_SA"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "TextId": "__SingleUse_MRL4",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_disabled.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel2",
-            "X": 625,
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
-            "TextId": "__SingleUse_4BKM",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 56,
-            "Y": 153,
-            "Width": 688,
-            "Height": 177,
-            "TextId": "__SingleUse_JDDU",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          }
-        ],
-        "Interactions": [
-          {
-            "InteractionName": "IrEBSTeste",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "EBS_Teste_SA"
-            }
-          },
-          {
-            "InteractionName": "IrDirigirManual",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "West",
-              "ActionComponent": "Dirigir_manual_SA"
-            }
-          }
-        ]
-      },
-      {
         "Name": "Dirigir_manual_SA",
         "Components": [
           {
@@ -1964,6 +1865,105 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
               "ActionComponent": "pag1_Autonomos"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Inspecao_SA",
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "fundo_SA1",
+            "Width": 800,
+            "Height": 480,
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "Y": 430,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
+            "TextId": "__SingleUse_MRL4",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_disabled.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel2",
+            "X": 625,
+            "Y": 430,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
+            "TextId": "__SingleUse_4BKM",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 56,
+            "Y": 153,
+            "Width": 688,
+            "Height": 177,
+            "TextId": "__SingleUse_JDDU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "IrEBSTeste",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "EBS_Teste_SA"
+            }
+          },
+          {
+            "InteractionName": "IrDirigirManual",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Dirigir_manual_SA"
             }
           }
         ]
