@@ -92,10 +92,14 @@ void Model::tick()
                     modelListener->updateTempAcumuladorValue(valor);
                     break;
                 case 0x132: modelListener->updateTempMotorValue(valor); break;
-                    case 0x133: modelListener->updateTensaoInversorValue(valor); break;
-                    case 0x135: modelListener->updateTempInversorValue(valor); break;
-                    case 0x136: modelListener->updateTensaoCelulaMinValue(valor); break;
-                    case 0x139: modelListener->updateTensaoHVValue(valor); break;
+
+                case 0x133: modelListener->updateTensaoInversorValue(valor); break;
+
+                case 0x135: modelListener->updateTempInversorValue(valor); break;
+
+                case 0x136: modelListener->updateTensaoCelulaMinValue(valor); break;
+
+                case 0x139: modelListener->updateTensaoHVValue(valor); break;
 
                 default:
                     // Se cair aqui, o ID que chegou não é o que esperávamos

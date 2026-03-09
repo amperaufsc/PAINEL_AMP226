@@ -54,7 +54,7 @@ volatile uint32_t ultimo_id_recebido = 0;
 volatile uint32_t erro_fila_count = 0;
 volatile uint8_t debug = 0;
 volatile uint32_t debug_id_isr = 0;
-int valorSoc = 0;
+
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -261,12 +261,6 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 //        can_recepcoes_count++;
         msg_recebida.id = RxHeader.Identifier;
         debug_id_isr = msg_recebida.id;
-
-        // Agora sim, garantimos que o ID é real
-        if (osMessageQueuePut(Queue_CAN_RXHandle, &msg_recebida, 0, 0) != osOK)
-        {
-            erro_fila_count++;
-        }
     }
 
     else
