@@ -9,7 +9,7 @@ Dirigir_manual_SAPresenter::Dirigir_manual_SAPresenter(Dirigir_manual_SAView& v)
 
 void Dirigir_manual_SAPresenter::activate()
 {
-
+	model->reportCurrentScreen(Model::MANUAL);
 }
 
 void Dirigir_manual_SAPresenter::deactivate()

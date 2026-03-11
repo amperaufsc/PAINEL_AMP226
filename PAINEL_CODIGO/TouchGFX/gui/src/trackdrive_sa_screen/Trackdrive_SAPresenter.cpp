@@ -9,7 +9,7 @@ Trackdrive_SAPresenter::Trackdrive_SAPresenter(Trackdrive_SAView& v)
 
 void Trackdrive_SAPresenter::activate()
 {
-
+	model->reportCurrentScreen(Model::TRACKDRIVE);
 }
 
 void Trackdrive_SAPresenter::deactivate()

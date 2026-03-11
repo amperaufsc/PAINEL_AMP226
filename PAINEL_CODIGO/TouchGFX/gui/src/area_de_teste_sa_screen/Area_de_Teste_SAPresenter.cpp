@@ -9,7 +9,7 @@ Area_de_Teste_SAPresenter::Area_de_Teste_SAPresenter(Area_de_Teste_SAView& v)
 
 void Area_de_Teste_SAPresenter::activate()
 {
-
+	model->reportCurrentScreen(Model::AREA_TESTE);
 }
 
 void Area_de_Teste_SAPresenter::deactivate()

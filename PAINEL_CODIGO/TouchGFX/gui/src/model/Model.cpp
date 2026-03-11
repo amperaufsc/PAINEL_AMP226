@@ -8,6 +8,7 @@
 
 extern "C" {
     #include "main.h" // Para garantir que can_msg_t seja reconhecida
+    extern FDCAN_HandleTypeDef hfdcan1;
     extern osMessageQueueId_t QueueButtonHandle;
     extern osMessageQueueId_t Queue_CAN_RXHandle; // Handle da fila do CAN
     extern volatile uint8_t pressedButtonId;
@@ -109,3 +110,26 @@ void Model::tick()
             }
         }
     }
+void Model::reportCurrentScreen(ScreenID screenId)
+{
+    currentScreen = screenId;
+
+    // Código de envio CAN
+    FDCAN_TxHeaderTypeDef TxHeader;
+    uint8_t TxData[1];
+
+    TxHeader.Identifier = 0x341;
+    TxHeader.IdType = FDCAN_STANDARD_ID;
+    TxHeader.TxFrameType = FDCAN_DATA_FRAME;
+    TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+    TxHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
+    TxHeader.BitRateSwitch = FDCAN_BRS_OFF;
+    TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
+    TxHeader.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
+    TxHeader.MessageMarker = 0;
+
+    TxData[0] = (uint8_t)currentScreen;
+
+    // Envia a mensagem
+    HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+}

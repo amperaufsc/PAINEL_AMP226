@@ -9,7 +9,7 @@ Skidped_SAPresenter::Skidped_SAPresenter(Skidped_SAView& v)
 
 void Skidped_SAPresenter::activate()
 {
-
+	model->reportCurrentScreen(Model::SKIDPED);
 }
 
 void Skidped_SAPresenter::deactivate()

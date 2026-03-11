@@ -9,7 +9,7 @@ pag1_AutonomosPresenter::pag1_AutonomosPresenter(pag1_AutonomosView& v)
 
 void pag1_AutonomosPresenter::activate()
 {
-
+	model->reportCurrentScreen(Model::AUTONOMOS);
 }
 
 void pag1_AutonomosPresenter::deactivate()

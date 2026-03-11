@@ -9,7 +9,7 @@ Aceleracao_SAPresenter::Aceleracao_SAPresenter(Aceleracao_SAView& v)
 
 void Aceleracao_SAPresenter::activate()
 {
-
+	model->reportCurrentScreen(Model::ACELERACAO);
 }
 
 void Aceleracao_SAPresenter::deactivate()

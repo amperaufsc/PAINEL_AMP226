@@ -9,7 +9,7 @@ EBS_Teste_SAPresenter::EBS_Teste_SAPresenter(EBS_Teste_SAView& v)
 
 void EBS_Teste_SAPresenter::activate()
 {
-
+	model->reportCurrentScreen(Model::EBS);
 }
 
 void EBS_Teste_SAPresenter::deactivate()

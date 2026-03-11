@@ -9,7 +9,7 @@ Inspecao_SAPresenter::Inspecao_SAPresenter(Inspecao_SAView& v)
 
 void Inspecao_SAPresenter::activate()
 {
-
+	model->reportCurrentScreen(Model::INSPECAO);
 }
 
 void Inspecao_SAPresenter::deactivate()

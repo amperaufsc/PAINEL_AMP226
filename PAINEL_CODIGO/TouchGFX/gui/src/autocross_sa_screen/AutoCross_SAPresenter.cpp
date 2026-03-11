@@ -9,7 +9,7 @@ AutoCross_SAPresenter::AutoCross_SAPresenter(AutoCross_SAView& v)
 
 void AutoCross_SAPresenter::activate()
 {
-
+	model->reportCurrentScreen(Model::AUTOCROSS);
 }
 
 void AutoCross_SAPresenter::deactivate()
