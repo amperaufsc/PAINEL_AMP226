@@ -6,14 +6,62 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_VW2G" Alignment="Left" TypographyId="EscritosBotoes">
+      <Text Id="__SingleUse_GRRB" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">TESTE EBS</Translation>
+      </Text>
+      <Text Id="__SingleUse_FZIB" Alignment="Left" TypographyId="EscritosBotoes">
         <Translation Language="GB">START</Translation>
+      </Text>
+      <Text Id="__SingleUse_IN3K" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">TRACK DRIVE</Translation>
+      </Text>
+      <Text Id="__SingleUse_2TD0" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">INSPEÇÃO</Translation>
+      </Text>
+      <Text Id="__SingleUse_V7IO" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">START</Translation>
+      </Text>
+      <Text Id="__SingleUse_V53F" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">SKIDPED</Translation>
+      </Text>
+      <Text Id="__SingleUse_UT5O" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">ACELERAÇÃO</Translation>
+      </Text>
+      <Text Id="__SingleUse_U7DG" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">TRACK DRIVE</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q49C" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">AUTOCROSS</Translation>
+      </Text>
+      <Text Id="__SingleUse_UM46" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">SKIDPAD</Translation>
+      </Text>
+      <Text Id="__SingleUse_0XJ2" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">TESTE</Translation>
+      </Text>
+      <Text Id="__SingleUse_DUDH" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">ACELERAÇÃO</Translation>
+      </Text>
+      <Text Id="__SingleUse_GGSA" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">VOLTAR</Translation>
+      </Text>
+      <Text Id="__SingleUse_7JIB" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">AUTOCROSS</Translation>
+      </Text>
+      <Text Id="__SingleUse_M0MB" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">INSPEÇÃO</Translation>
+      </Text>
+      <Text Id="__SingleUse_IRS7" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">TESTES</Translation>
+      </Text>
+      <Text Id="__SingleUse_VW2G" Alignment="Left" TypographyId="EscritosBotoes">
+        <Translation Language="GB">VOLTAR</Translation>
       </Text>
       <Text Id="__SingleUse_3HOC" Alignment="Left" TypographyId="EscritosBotoes">
         <Translation Language="GB">START</Translation>
       </Text>
       <Text Id="__SingleUse_VTP3" Alignment="Left" TypographyId="EscritosBotoes">
-        <Translation Language="GB">START</Translation>
+        <Translation Language="GB">TESTE EBS</Translation>
       </Text>
       <Text Id="__SingleUse_NE17" Alignment="Left" TypographyId="EscritosBotoes">
         <Translation Language="GB">START</Translation>
@@ -30,8 +78,8 @@
       <Text Id="__SingleUse_WCPZ" Alignment="Left" TypographyId="EscritosBotoes">
         <Translation Language="GB">MENU</Translation>
       </Text>
-      <Text Id="__SingleUse_J5NX" Alignment="Left" TypographyId="Typography2">
-        <Translation Language="GB">MODOS AUTONOMO</Translation>
+      <Text Id="__SingleUse_J5NX" Alignment="Left" TypographyId="paginasautonomos">
+        <Translation Language="GB">MODO AUTONOMO</Translation>
       </Text>
       <Text Id="__SingleUse_VPF4" Alignment="Left" TypographyId="EscritosBotoes">
         <Translation Language="GB">MENU</Translation>
@@ -39,17 +87,17 @@
       <Text Id="__SingleUse_O679" Alignment="Left" TypographyId="EscritosBotoes">
         <Translation Language="GB">MENU</Translation>
       </Text>
-      <Text Id="__SingleUse_U665" Alignment="Center" TypographyId="Typography2">
+      <Text Id="__SingleUse_U665" Alignment="Center" TypographyId="paginasautonomos">
         <Translation Language="GB">ÁREA DE TESTE</Translation>
       </Text>
-      <Text Id="__SingleUse_Z366" Alignment="Left" TypographyId="Typography3">
-        <Translation Language="GB">Trackdrive</Translation>
+      <Text Id="__SingleUse_Z366" Alignment="Left" TypographyId="paginasautonomos">
+        <Translation Language="GB">TRACK DRIVE</Translation>
       </Text>
-      <Text Id="__SingleUse_JDDU" Alignment="Left" TypographyId="Typography1">
-        <Translation Language="GB">Inspeção</Translation>
+      <Text Id="__SingleUse_JDDU" Alignment="Left" TypographyId="paginasautonomos">
+        <Translation Language="GB">INSPEÇÃO</Translation>
       </Text>
-      <Text Id="__SingleUse_TJBO" Alignment="Left" TypographyId="Typography1">
-        <Translation Language="GB">EBS Teste</Translation>
+      <Text Id="__SingleUse_TJBO" Alignment="Left" TypographyId="paginasautonomos">
+        <Translation Language="GB">EBS TESTE</Translation>
       </Text>
       <Text Id="__SingleUse_RFE0" Alignment="Left" TypographyId="batman">
         <Translation Language="GB">0</Translation>
@@ -69,14 +117,14 @@
       <Text Id="__SingleUse_20FB" Alignment="Left" TypographyId="batman">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_WI60" Alignment="Left" TypographyId="Typography1">
-        <Translation Language="GB">Skidped</Translation>
+      <Text Id="__SingleUse_WI60" Alignment="Left" TypographyId="paginasautonomos">
+        <Translation Language="GB">SKIDPAD</Translation>
       </Text>
-      <Text Id="__SingleUse_ZZ60" Alignment="Left" TypographyId="Typography3">
-        <Translation Language="GB">Aceleração</Translation>
+      <Text Id="__SingleUse_ZZ60" Alignment="Left" TypographyId="paginasautonomos">
+        <Translation Language="GB">ACELERAÇÃO </Translation>
       </Text>
-      <Text Id="__SingleUse_P2D1" Alignment="Center" TypographyId="Typography1">
-        <Translation Language="GB">Autocross</Translation>
+      <Text Id="__SingleUse_P2D1" Alignment="Center" TypographyId="paginasautonomos">
+        <Translation Language="GB">AUTOCROSS</Translation>
       </Text>
       <Text Id="__SingleUse_WL4J" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Falha ECU</Translation>
@@ -267,7 +315,7 @@
     <Typography Id="batman" Font="Gotham_Bold.otf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
     <Typography Id="coringa" Font="Gotham_Ultra.otf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
     <Typography Id="Typography1" Font="Gotham_Ultra.otf" Size="150" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Typography2" Font="Gotham_Bold.otf" Size="70" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="paginasautonomos" Font="Gotham_Bold.otf" Size="70" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography3" Font="Gotham_Ultra.otf" Size="134" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" />
     <Typography Id="Typography4" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="EscritosBotoes" Font="Gotham_Bold.otf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
