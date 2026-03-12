@@ -45,15 +45,6 @@
       <Text Id="__SingleUse_Z366" Alignment="Left" TypographyId="Typography3">
         <Translation Language="GB">Trackdrive</Translation>
       </Text>
-      <Text Id="__SingleUse_W2WJ" Alignment="Left" TypographyId="Typography3">
-        <Translation Language="GB">Dirigir &#10;Manual</Translation>
-      </Text>
-      <Text Id="__SingleUse_1PTY" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Pág 1</Translation>
-      </Text>
-      <Text Id="__SingleUse_AZVK" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Inspeção</Translation>
-      </Text>
       <Text Id="__SingleUse_JDDU" Alignment="Left" TypographyId="Typography1">
         <Translation Language="GB">Inspeção</Translation>
       </Text>

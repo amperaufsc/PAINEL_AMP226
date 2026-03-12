@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>STM32U5G9J-DK2</name>
-	<comment/>
+	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
@@ -230,269 +230,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Core/Src/stm32u5xx_it.c</locationURI>
 		</link>
 		<link>
-			<name>Application/User/TouchGFX/App/app_touchgfx.c</name>
+			<name>Application/User/generated/Aceleracao_SAViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/App/app_touchgfx.c</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/CortexMMCUInstrumentation.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/CortexMMCUInstrumentation.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/KeySampler.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/KeySampler.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/STM32TouchController.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/STM32TouchController.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/TouchGFXGPIO.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/TouchGFXGPIO.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/TouchGFXHAL.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/TouchGFXHAL.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/generated/OSWrappers.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/generated/OSWrappers.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/generated/STM32DMA.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/generated/STM32DMA.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/generated/TouchGFXConfiguration.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/generated/TouchGFXConfiguration.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/generated/nema_hal.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/generated/nema_hal.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/cmsis_os2.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/croutine.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/croutine.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/event_groups.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/list.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/list.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/port.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/port.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/portasm.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/queue.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/queue.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/stream_buffer.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/tasks.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/tasks.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/timers.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/timers.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/RTOS2/CMSIS/RTOS2/Heap/Heap_4/heap_4.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Aceleracao_SAPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/aceleracao_sa_screen/Aceleracao_SAPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Aceleracao_SAView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/aceleracao_sa_screen/Aceleracao_SAView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Area_de_Teste_SAPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/area_de_teste_sa_screen/Area_de_Teste_SAPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Area_de_Teste_SAView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/area_de_teste_sa_screen/Area_de_Teste_SAView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/AutoCross_SAPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/autocross_sa_screen/AutoCross_SAPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/AutoCross_SAView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/autocross_sa_screen/AutoCross_SAView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/CapaPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/capa_screen/CapaPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/CapaView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/capa_screen/CapaView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/FrontendApplication.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Fundo_SA.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Fundo_SA.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Fundo_capa.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Fundo_capa.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/fundo_prova.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/fundo_prova.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/fundo_teste.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/fundo_teste.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Dirigir_manual_SAPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/dirigir_manual_sa_screen/Dirigir_manual_SAPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Dirigir_manual_SAView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/dirigir_manual_sa_screen/Dirigir_manual_SAView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/EBS_Teste_SAPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/ebs_teste_sa_screen/EBS_Teste_SAPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/EBS_Teste_SAView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/ebs_teste_sa_screen/EBS_Teste_SAView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Inspecao_SAPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/inspecao_sa_screen/Inspecao_SAPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Inspecao_SAView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/inspecao_sa_screen/Inspecao_SAView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Model.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/Model.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/ModoProvaPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/modoprova_screen/ModoProvaPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/ModoProvaView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/modoprova_screen/ModoProvaView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag1_AutonomosPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag1_autonomos_screen/pag1_AutonomosPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/pag1_AutonomosView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag1_autonomos_screen/pag1_AutonomosView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Skidped_SAPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/skidped_sa_screen/Skidped_SAPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Skidped_SAView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/skidped_sa_screen/Skidped_SAView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/TestesPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/testes_screen/TestesPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/TestesView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/testes_screen/TestesView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Trackdrive_SAPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/trackdrive_sa_screen/Trackdrive_SAPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Trackdrive_SAView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/trackdrive_sa_screen/Trackdrive_SAView.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/aceleracao_sa_screen/Aceleracao_SAViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/ApplicationFontProvider.cpp</name>
@@ -500,9 +240,29 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/ApplicationFontProvider.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Area_de_Teste_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/area_de_teste_sa_screen/Area_de_Teste_SAViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/AutoCross_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/autocross_sa_screen/AutoCross_SAViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/BitmapDatabase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/BitmapDatabase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/CachedFont.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/CachedFont.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/CapaViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/capa_screen/CapaViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/CompressedFontCache.cpp</name>
@@ -513,6 +273,11 @@
 			<name>Application/User/generated/CompressedUnmappedFontCache.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/CompressedUnmappedFontCache.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/EBS_Teste_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/ebs_teste_sa_screen/EBS_Teste_SAViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/FontCache.cpp</name>
@@ -565,9 +330,29 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_verdana_40_4bpp_0.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/FrontendApplicationBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Fundo_SABase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/Fundo_SABase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Fundo_capaBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/Fundo_capaBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/GeneratedFont.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/GeneratedFont.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Inspecao_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/inspecao_sa_screen/Inspecao_SAViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Kerning_Gotham_Bold_otf_24_4bpp.cpp</name>
@@ -615,6 +400,26 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_verdana_40_4bpp.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/LanguageGb.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/LanguageGb.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/ModoProvaViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/modoprova_screen/ModoProvaViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/SVGDatabase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Skidped_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/skidped_sa_screen/Skidped_SAViewBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/Table_Gotham_Bold_otf_24_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_Gotham_Bold_otf_24_4bpp.cpp</locationURI>
@@ -660,6 +465,26 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_verdana_40_4bpp.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/TestesViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/testes_screen/TestesViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Texts.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/Texts.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Trackdrive_SAViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/trackdrive_sa_screen/Trackdrive_SAViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/TypedTextDatabase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/TypedTextDatabase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/UnmappedDataFont.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/UnmappedDataFont.cpp</locationURI>
@@ -670,41 +495,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/VectorFontRendererBuffers.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Aceleracao_SAViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/aceleracao_sa_screen/Aceleracao_SAViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/Area_de_Teste_SAViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/area_de_teste_sa_screen/Area_de_Teste_SAViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/AutoCross_SAViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/autocross_sa_screen/AutoCross_SAViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/CapaViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/capa_screen/CapaViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/FrontendApplicationBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/Fundo_SABase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/Fundo_SABase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/Fundo_capaBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/Fundo_capaBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/fundo_provaBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/fundo_provaBase.cpp</locationURI>
@@ -713,71 +503,6 @@
 			<name>Application/User/generated/fundo_testeBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/fundo_testeBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/Dirigir_manual_SAViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/dirigir_manual_sa_screen/Dirigir_manual_SAViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/EBS_Teste_SAViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/ebs_teste_sa_screen/EBS_Teste_SAViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/Inspecao_SAViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/inspecao_sa_screen/Inspecao_SAViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/ModoProvaViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/modoprova_screen/ModoProvaViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/pag1_AutonomosViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag1_autonomos_screen/pag1_AutonomosViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/Skidped_SAViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/skidped_sa_screen/Skidped_SAViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/TestesViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/testes_screen/TestesViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/Trackdrive_SAViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/trackdrive_sa_screen/Trackdrive_SAViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/BitmapDatabase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/BitmapDatabase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/SVGDatabase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_ACEL.cpp</name>
@@ -985,19 +710,264 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_x.play_-_Editado.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/LanguageGb.cpp</name>
+			<name>Application/User/generated/pag1_AutonomosViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/LanguageGb.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag1_autonomos_screen/pag1_AutonomosViewBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Texts.cpp</name>
+			<name>Application/User/gui/Aceleracao_SAPresenter.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/Texts.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/aceleracao_sa_screen/Aceleracao_SAPresenter.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/TypedTextDatabase.cpp</name>
+			<name>Application/User/gui/Aceleracao_SAView.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/TypedTextDatabase.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/aceleracao_sa_screen/Aceleracao_SAView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Area_de_Teste_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/area_de_teste_sa_screen/Area_de_Teste_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Area_de_Teste_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/area_de_teste_sa_screen/Area_de_Teste_SAView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/AutoCross_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/autocross_sa_screen/AutoCross_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/AutoCross_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/autocross_sa_screen/AutoCross_SAView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/CapaPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/capa_screen/CapaPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/CapaView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/capa_screen/CapaView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/EBS_Teste_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/ebs_teste_sa_screen/EBS_Teste_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/EBS_Teste_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/ebs_teste_sa_screen/EBS_Teste_SAView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/FrontendApplication.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Fundo_SA.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Fundo_SA.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Fundo_capa.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Fundo_capa.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Inspecao_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/inspecao_sa_screen/Inspecao_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Inspecao_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/inspecao_sa_screen/Inspecao_SAView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Model.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/Model.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ModoProvaPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/modoprova_screen/ModoProvaPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ModoProvaView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/modoprova_screen/ModoProvaView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Skidped_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/skidped_sa_screen/Skidped_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Skidped_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/skidped_sa_screen/Skidped_SAView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/TestesPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/testes_screen/TestesPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/TestesView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/testes_screen/TestesView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Trackdrive_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/trackdrive_sa_screen/Trackdrive_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Trackdrive_SAView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/trackdrive_sa_screen/Trackdrive_SAView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/fundo_prova.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/fundo_prova.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/fundo_teste.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/fundo_teste.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/pag1_AutonomosPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag1_autonomos_screen/pag1_AutonomosPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/pag1_AutonomosView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag1_autonomos_screen/pag1_AutonomosView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/App/app_touchgfx.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/App/app_touchgfx.c</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/CortexMMCUInstrumentation.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/CortexMMCUInstrumentation.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/KeySampler.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/KeySampler.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/STM32TouchController.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/STM32TouchController.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/TouchGFXGPIO.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/TouchGFXGPIO.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/TouchGFXHAL.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/TouchGFXHAL.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/generated/OSWrappers.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/generated/OSWrappers.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/generated/STM32DMA.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/generated/STM32DMA.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/generated/TouchGFXConfiguration.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/generated/TouchGFXConfiguration.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/generated/nema_hal.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/generated/nema_hal.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/cmsis_os2.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/croutine.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/croutine.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/event_groups.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/list.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/list.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/port.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/port.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/portasm.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/queue.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/queue.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/stream_buffer.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/tasks.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/tasks.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/RTOS2/CMSIS/RTOS2/Core/TZ_Non_Supported/timers.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/timers.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/RTOS2/CMSIS/RTOS2/Heap/Heap_4/heap_4.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
