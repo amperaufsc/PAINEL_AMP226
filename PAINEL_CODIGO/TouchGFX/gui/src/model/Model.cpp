@@ -21,7 +21,7 @@ extern "C" {
 }
 
 
-Model::Model() : modelListener(0)
+Model::Model() : modelListener(0), currentScreen(CAPA), estadoBotaoPA8(false)
 {
 
 }
@@ -35,6 +35,36 @@ uint32_t ultimo_id_intruso = 0;
 
 void Model::tick()
 {
+	/* --- LÓGICA DO BOTÃO PA8 (TOGGLE) --- */
+	    static bool ultimoEstadoPino = true; // High (pull-up interno)
+
+	    // Lê o estado atual do pino PA8
+	    bool estadoAtualPino = (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET);
+
+	    // Detecta borda de descida (quando você aperta o botão e ele vai pra GND)
+	    if (ultimoEstadoPino == true && estadoAtualPino == false)
+	    {
+	        // Inverte o estado lógico (Toggle)
+	        estadoBotaoPA8 = !estadoBotaoPA8;
+
+	        // Prepara e envia a CAN
+	        FDCAN_TxHeaderTypeDef TxHeader;
+	        uint8_t TxData[1];
+
+	        TxHeader.Identifier = 0x342; // Use um ID diferente do 0x341 da tela
+	        TxHeader.IdType = FDCAN_STANDARD_ID;
+	        TxHeader.TxFrameType = FDCAN_DATA_FRAME;
+	        TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+	        TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
+
+	        TxData[0] = estadoBotaoPA8 ? 1 : 0;
+
+	        HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	        // Pequeno delay para debounce simples
+	        // No Model::tick, evitar HAL_Delay longo. 15-20 ticks do TouchGFX bastam.
+	    }
+	    ultimoEstadoPino = estadoAtualPino;
     /* --- LÓGICA EXISTENTE DOS BOTÕES --- */
     static int debounceCounter = 0;
     if (debounceCounter > 0) debounceCounter--;

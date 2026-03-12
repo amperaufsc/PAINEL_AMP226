@@ -193,49 +193,41 @@ void StartDefaultTask(void *argument)
 /* USER CODE END Header_StartTaskCAN */
 void StartTaskCAN(void *argument)
 {
-  FDCAN_TxHeaderTypeDef TxHeader;
-  uint8_t TxData[1];
-  //uint32_t valorRPM = 0;
-  uint32_t valorVelocidade = 0;
-  uint32_t valorSoc = 0;
-
-  // Configurações base do Header
-  memset(&TxHeader, 0, sizeof(TxHeader));
-  TxHeader.IdType = FDCAN_STANDARD_ID;
-  TxHeader.TxFrameType = FDCAN_DATA_FRAME;
-  TxHeader.DataLength = FDCAN_DLC_BYTES_1;
-  TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
-
+  /* USER CODE BEGIN Task_CAN */
+  /* Infinite loop */
   for(;;)
   {
-    // RPM (ID 0x341 ) ---
-    //valorRPM++;
-    //if(valorRPM > 8) valorRPM = 0;
+	  // RPM (ID 0x123 ) ---
+	    // valorRPM++;
+	   //  if(valorRPM > 8) valorRPM = 0;
 
-   // TxHeader.Identifier = 0x341;
-   // TxData[0] = (uint8_t)screenId;
-   // HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	   //  TxHeader.Identifier = 0x123;
+	    // TxData[0] = (uint8_t)valorRPM;
+	    // HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-    // VELOCIDADE (ID 0x124 ) ---
-    valorVelocidade += 10;
-    if(valorVelocidade > 80) valorVelocidade = 0;
+	    // osDelay(250); // Pequeno intervalo entre mensagens
 
-    TxHeader.Identifier = 0x124;
-    TxData[0] = (uint8_t)valorVelocidade;
-    HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	     // VELOCIDADE (ID 0x124 ) ---
+	   //  valorVelocidade += 10;
+	   //  if(valorVelocidade > 80) valorVelocidade = 0;
 
-    // --- ENVIO 3: SOC (ID 0x125 ) ---
-    valorSoc += 1;
-    if(valorSoc > 100) valorSoc = 0;
+	  //   TxHeader.Identifier = 0x124;
+	  //   TxData[0] = (uint8_t)valorVelocidade;
+	   //  HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-    TxHeader.Identifier = 0x125;
-    TxData[0] = (uint8_t)valorSoc;
-    HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	   //  osDelay(250);
+	     // --- ENVIO 3: SOC (ID 0x125 ) ---
+	  //   valorSoc += 1;
+	   //  if(valorSoc > 100) valorSoc = 0;
 
-    osDelay(250);
-  }
-}
+	   //  TxHeader.Identifier = 0x125;
+	   //  TxData[0] = (uint8_t)valorSoc;
+	   //  HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	    // osDelay(250);
+	   }
   /* USER CODE END Task_CAN */
+}
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */

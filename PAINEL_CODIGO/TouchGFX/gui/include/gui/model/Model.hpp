@@ -51,6 +51,7 @@ public:
 protected:
     ModelListener* modelListener;
     ScreenID currentScreen;
+    bool estadoBotaoPA8;
     //variaveis que vamos usar
     // obs se a informação for de tipo diferente mudar o tipo da variavel tanto aqui quanto na função correspondente
     // eu so deduzir o tipo pra deixar ja pronta as variaveis
