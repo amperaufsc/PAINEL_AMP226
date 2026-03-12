@@ -197,6 +197,7 @@ void StartTaskCAN(void *argument)
   uint8_t TxData[1];
   uint32_t valorRPM = 0;
   uint32_t valorVelocidade = 0;
+  uint32_t valorSoc = 0;
 
   // Configurações base do Header
   memset(&TxHeader, 0, sizeof(TxHeader));
@@ -225,7 +226,7 @@ void StartTaskCAN(void *argument)
     TxData[0] = (uint8_t)valorVelocidade;
     HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-    osDelay(250);
+    osDelay(100);
     // --- ENVIO 3: SOC (ID 0x125 ) ---
     valorSoc += 1;
     if(valorSoc > 100) valorSoc = 0;
