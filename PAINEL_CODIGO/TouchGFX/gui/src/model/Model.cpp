@@ -22,9 +22,15 @@ extern "C" {
 }
 
 
-Model::Model() : modelListener(0), currentScreen(CAPA)
+Model::Model() : modelListener(0), currentScreen(CAPA) , estadoPB11(false)
 {
 
+}
+bool Model::isTelaPermitidaParaPB11(ScreenID id)
+{
+    // Retorna true apenas se for uma das telas que você listou
+    return (id == AREA_TESTE || id == AUTOCROSS || id == ACELERACAO ||
+            id == SKIDPED || id == TRACKDRIVE || id == EBS || id == INSPECAO);
 }
 
 extern "C" {
@@ -43,9 +49,25 @@ void Model::tick()
 
 	    if (pressedButtonId != 0 && debounceCounter == 0)
 	    {
-	        modelListener->hwButtonClicked(pressedButtonId);
+	    	modelListener->hwButtonClicked(pressedButtonId);
 	        pressedButtonId = 0;
 	        debounceCounter = 15;
+	        if (pressedButtonId == 3)
+	                {
+	                    // REGRA 1: Só funciona se estiver nas telas específicas
+	                    if (isTelaPermitidaParaPB11(currentScreen))
+	                    {
+	                        estadoPB11 = !estadoPB11; // Inverte: se era 0 vira 1, se era 1 vira 0
+
+	                        // REGRA 2: Prepara e envia a CAN (só funciona na área do FreeRTOS graças à fila)
+	                        can_msg_t msg_pb11;
+	                        msg_pb11.id = 0x541; //
+	                        msg_pb11.data[0] = estadoPB11 ? 1 : 0;
+
+	                        // Envia para o FreeRTOS transmitir
+	                        osMessageQueuePut(Queue_CAN_TXHandle, &msg_pb11, 0, 0);
+	                    }
+	                }
 	    }
 	    else if (pressedButtonId != 0)
 	    {
@@ -89,6 +111,18 @@ void Model::tick()
 	}
 void Model::reportCurrentScreen(ScreenID screenId)
 {
+	if (estadoPB11 == true)
+	    {
+	        estadoPB11 = false;
+
+	        can_msg_t msg_reset;
+	        msg_reset.id = 0x541; // IMPORTANTE: Escolha o ID CAN para essa mensagem! Usei 0x441 como exemplo.
+	        msg_reset.data[0] = 0;
+
+	        // Envia para o FreeRTOS
+	        osMessageQueuePut(Queue_CAN_TXHandle, &msg_reset, 0, 0);
+	    }
+
 	currentScreen = screenId;
 
 	    can_msg_t msg_tx;

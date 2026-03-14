@@ -35,6 +35,8 @@ public:
 protected:
     ModelListener* modelListener;
     ScreenID currentScreen;
+    bool estadoPB11;
+    bool isTelaPermitidaParaPB11(ScreenID id);
 
 };
 
