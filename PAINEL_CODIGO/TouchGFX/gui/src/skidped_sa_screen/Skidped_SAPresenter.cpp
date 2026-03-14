@@ -9,7 +9,6 @@ Skidped_SAPresenter::Skidped_SAPresenter(Skidped_SAView& v)
 
 void Skidped_SAPresenter::activate()
 {
-	model->reportCurrentScreen(Model::SKIDPED);
 }
 
 void Skidped_SAPresenter::deactivate()
@@ -25,11 +24,13 @@ void Skidped_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {
+	    	model->reportCurrentScreen(Model::ACELERACAO);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoAceleracao_SAScreenSlideTransitionEast();
 	    }
 	    else if (buttonId == 1) // PA2 X
 	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotoTrackdrive_SAScreenSlideTransitionWest();
+	    	model->reportCurrentScreen(Model::TRACKDRIVE);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoTrackdrive_SAScreenSlideTransitionWest();
 	    }
 
 	}

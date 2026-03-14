@@ -9,7 +9,7 @@ TestesPresenter::TestesPresenter(TestesView& v)
 
 void TestesPresenter::activate()
 {
-	model->reportCurrentScreen(Model::TESTES);
+
 }
 
 void TestesPresenter::deactivate()
@@ -38,7 +38,8 @@ void TestesPresenter::hwButtonClicked(uint8_t buttonId)
 
 	    if (buttonId == 3) // PB11
 	    {
-	        static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
+	    	model->reportCurrentScreen(Model::CAPA);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
 	    }
 
 }

@@ -28,6 +28,7 @@
 #include "cmsis_os2.h" // Para as funções de Queue do RTOS
 #include "can_types.h"
 #include <string.h>
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -39,6 +40,7 @@
 /* USER CODE BEGIN PD */
 extern FDCAN_HandleTypeDef hfdcan1;
 volatile uint8_t flagEnviarCAN = 0;
+osMessageQueueId_t Queue_CAN_TXHandle;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -54,6 +56,7 @@ volatile uint32_t ultimo_id_recebido = 0;
 volatile uint32_t erro_fila_count = 0;
 volatile uint8_t debug = 0;
 volatile uint32_t debug_id_isr = 0;
+bool estadoBotaoPA8 = false; // Estado lógico do botão
 
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
@@ -195,8 +198,29 @@ void StartTaskCAN(void *argument)
 {
   /* USER CODE BEGIN Task_CAN */
   /* Infinite loop */
-  for(;;)
-  {
+	can_msg_t msg_interna;
+	    FDCAN_TxHeaderTypeDef TxHeader;
+
+	    for(;;)
+	    {
+	        // A Task fica dormindo (blocked) até chegar algo na fila
+	        if (osMessageQueueGet(Queue_CAN_TXHandle, &msg_interna, NULL, osWaitForever) == osOK)
+	        {
+	            // Monta o Header exatamente como você tinha antes
+	            TxHeader.Identifier = msg_interna.id;
+	            TxHeader.IdType = FDCAN_STANDARD_ID;
+	            TxHeader.TxFrameType = FDCAN_DATA_FRAME;
+	            TxHeader.DataLength = FDCAN_DLC_BYTES_1; // No FDCAN, isso mapeia para 1 byte
+	            TxHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
+	            TxHeader.BitRateSwitch = FDCAN_BRS_OFF;
+	            TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
+	            TxHeader.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
+	            TxHeader.MessageMarker = 0;
+
+	            // Envia para o hardware
+	            HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, msg_interna.data);
+	        }
+	    }
 	  // RPM (ID 0x123 ) ---
 	    // valorRPM++;
 	   //  if(valorRPM > 8) valorRPM = 0;
@@ -227,7 +251,6 @@ void StartTaskCAN(void *argument)
 	    // osDelay(250);
 	   }
   /* USER CODE END Task_CAN */
-}
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
@@ -261,6 +284,35 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
         // o código ignorava que a leitura falhou e lia memória vazia.
     }
   }
+}
+void StartMonitorTask(void *argument)
+{
+    static bool ultimoEstadoPino = true;
+
+    for(;;)
+    {
+        // 1. Lê o estado atual do pino PA8
+        bool estadoAtualPino = (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET);
+
+        // 2. Detecta borda de descida (High -> Low)
+        if (ultimoEstadoPino == true && estadoAtualPino == false)
+        {
+            estadoBotaoPA8 = !estadoBotaoPA8; // Toggle
+
+            // 3. Prepara a struct para a FILA
+            can_msg_t msg_botao;
+            msg_botao.id = 0x241;
+            msg_botao.data[0] = estadoBotaoPA8 ? 1 : 0;
+
+            // 4. Envia para a fila (a mesma usada pelo Model)
+            osMessageQueuePut(Queue_CAN_TXHandle, &msg_botao, 0, 0);
+        }
+
+        ultimoEstadoPino = estadoAtualPino;
+
+        // 5. Delay de 20ms para Debounce simples
+        osDelay(20);
+    }
 }
 /* USER CODE END Application */
 

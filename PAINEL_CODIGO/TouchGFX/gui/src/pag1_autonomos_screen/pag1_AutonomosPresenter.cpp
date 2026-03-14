@@ -9,7 +9,6 @@ pag1_AutonomosPresenter::pag1_AutonomosPresenter(pag1_AutonomosView& v)
 
 void pag1_AutonomosPresenter::activate()
 {
-	model->reportCurrentScreen(Model::AUTONOMOS);
 }
 
 void pag1_AutonomosPresenter::deactivate()
@@ -21,15 +20,18 @@ void pag1_AutonomosPresenter::hwButtonClicked(uint8_t buttonId)
 	{
 	    if (buttonId == 3) // PB11 BOLINHA
 	    {
-	          static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenBlockTransition();
+	    	model->reportCurrentScreen(Model::CAPA);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenBlockTransition();
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {
+	    	model->reportCurrentScreen(Model::INSPECAO);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoInspecao_SAScreenSlideTransitionEast();
 	    }
 	    else if (buttonId == 1) // PA2 X
 	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotoAutoCross_SAScreenSlideTransitionWest();
+	    	model->reportCurrentScreen(Model::AREA_TESTE);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoArea_de_Teste_SAScreenSlideTransitionWest();
 	    }
 
 	}
