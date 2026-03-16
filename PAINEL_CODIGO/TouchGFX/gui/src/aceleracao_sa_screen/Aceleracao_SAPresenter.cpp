@@ -9,7 +9,6 @@ Aceleracao_SAPresenter::Aceleracao_SAPresenter(Aceleracao_SAView& v)
 
 void Aceleracao_SAPresenter::activate()
 {
-	model->reportCurrentScreen(Model::ACELERACAO);
 }
 
 void Aceleracao_SAPresenter::deactivate()
@@ -25,11 +24,13 @@ void Aceleracao_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {
+	    	model->reportCurrentScreen(Model::AUTOCROSS);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoAutoCross_SAScreenSlideTransitionEast();
 	    }
 	    else if (buttonId == 1) // PA2 X
 	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotoSkidped_SAScreenSlideTransitionWest();
+	    	model->reportCurrentScreen(Model::SKIDPED);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoSkidped_SAScreenSlideTransitionWest();
 	    }
 
 	}

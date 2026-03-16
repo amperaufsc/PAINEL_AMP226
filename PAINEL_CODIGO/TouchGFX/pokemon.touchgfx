@@ -1147,7 +1147,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
-              "ActionComponent": "AutoCross_SA"
+              "ActionComponent": "Area_de_Teste_SA"
             }
           }
         ]

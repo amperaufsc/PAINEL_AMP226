@@ -9,7 +9,6 @@ CapaPresenter::CapaPresenter(CapaView& v)
 
 void CapaPresenter::activate()
 {
-	model->reportCurrentScreen(Model::CAPA);
 }
 
 void CapaPresenter::deactivate()
@@ -22,15 +21,18 @@ void CapaPresenter::hwButtonClicked(uint8_t buttonId)
 	{
 	    if (buttonId == 3) // PB11 BOLINHA
 	    {
-	        static_cast<FrontendApplication*>(Application::getInstance())->gotoTestesScreenBlockTransition();
+	    	model->reportCurrentScreen(Model::TESTES);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoTestesScreenBlockTransition();
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {
+	    	model->reportCurrentScreen(Model::MODOPROVA);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoModoProvaScreenBlockTransition();
 	    }
 	    else if (buttonId == 1) // PA2 X
 	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotopag1_AutonomosScreenBlockTransition();
+	    	model->reportCurrentScreen(Model::AUTONOMOS);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotopag1_AutonomosScreenBlockTransition();
 	    }
 
 	}

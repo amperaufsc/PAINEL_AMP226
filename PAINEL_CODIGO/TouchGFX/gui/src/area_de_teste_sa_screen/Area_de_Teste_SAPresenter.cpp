@@ -9,7 +9,6 @@ Area_de_Teste_SAPresenter::Area_de_Teste_SAPresenter(Area_de_Teste_SAView& v)
 
 void Area_de_Teste_SAPresenter::activate()
 {
-	model->reportCurrentScreen(Model::AREA_TESTE);
 }
 
 void Area_de_Teste_SAPresenter::deactivate()
@@ -25,11 +24,13 @@ void Area_de_Teste_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {
+	    	model->reportCurrentScreen(Model::AUTONOMOS);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotopag1_AutonomosScreenSlideTransitionEast();
 	    }
 	    else if (buttonId == 1) // PA2 X
 	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotoAutoCross_SAScreenSlideTransitionWest();
+	    	model->reportCurrentScreen(Model::AUTOCROSS);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoAutoCross_SAScreenSlideTransitionWest();
 	    }
 
 	}

@@ -9,7 +9,6 @@ Trackdrive_SAPresenter::Trackdrive_SAPresenter(Trackdrive_SAView& v)
 
 void Trackdrive_SAPresenter::activate()
 {
-	model->reportCurrentScreen(Model::TRACKDRIVE);
 }
 
 void Trackdrive_SAPresenter::deactivate()
@@ -25,11 +24,13 @@ void Trackdrive_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {
+	    	model->reportCurrentScreen(Model::SKIDPED);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoSkidped_SAScreenSlideTransitionEast();
 	    }
 	    else if (buttonId == 1) // PA2 X
 	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotoEBS_Teste_SAScreenSlideTransitionWest();
+	    	model->reportCurrentScreen(Model::EBS);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoEBS_Teste_SAScreenSlideTransitionWest();
 	    }
 
 	}

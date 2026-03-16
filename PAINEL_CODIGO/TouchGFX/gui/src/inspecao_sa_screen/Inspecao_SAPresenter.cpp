@@ -9,7 +9,6 @@ Inspecao_SAPresenter::Inspecao_SAPresenter(Inspecao_SAView& v)
 
 void Inspecao_SAPresenter::activate()
 {
-	model->reportCurrentScreen(Model::INSPECAO);
 }
 
 void Inspecao_SAPresenter::deactivate()
@@ -25,11 +24,13 @@ void Inspecao_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {
+	    	model->reportCurrentScreen(Model::EBS);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoEBS_Teste_SAScreenSlideTransitionEast();
 	    }
 	    else if (buttonId == 1) // PA2 X
 	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotopag1_AutonomosScreenSlideTransitionWest();
+	    	model->reportCurrentScreen(Model::AUTONOMOS);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotopag1_AutonomosScreenSlideTransitionWest();
 	    }
 
 	}

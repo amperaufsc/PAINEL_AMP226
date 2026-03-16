@@ -28,6 +28,7 @@
 #include "cmsis_os2.h" // Para as funções de Queue do RTOS
 #include "can_types.h"
 #include <string.h>
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -39,6 +40,7 @@
 /* USER CODE BEGIN PD */
 extern FDCAN_HandleTypeDef hfdcan1;
 volatile uint8_t flagEnviarCAN = 0;
+osMessageQueueId_t Queue_CAN_TXHandle;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -54,6 +56,7 @@ volatile uint32_t ultimo_id_recebido = 0;
 volatile uint32_t erro_fila_count = 0;
 volatile uint8_t debug = 0;
 volatile uint32_t debug_id_isr = 0;
+bool estadoBotaoPA8 = false; // Estado lógico do botão
 
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
@@ -193,48 +196,60 @@ void StartDefaultTask(void *argument)
 /* USER CODE END Header_StartTaskCAN */
 void StartTaskCAN(void *argument)
 {
-  FDCAN_TxHeaderTypeDef TxHeader;
-  uint8_t TxData[1];
-  //uint32_t valorRPM = 0;
-  uint32_t valorVelocidade = 0;
-  uint32_t valorSoc = 0;
+  /* USER CODE BEGIN Task_CAN */
+  /* Infinite loop */
+	can_msg_t msg_interna;
+	    FDCAN_TxHeaderTypeDef TxHeader;
 
-  // Configurações base do Header
-  memset(&TxHeader, 0, sizeof(TxHeader));
-  TxHeader.IdType = FDCAN_STANDARD_ID;
-  TxHeader.TxFrameType = FDCAN_DATA_FRAME;
-  TxHeader.DataLength = FDCAN_DLC_BYTES_1;
-  TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
+	    for(;;)
+	    {
+	        // A Task fica dormindo (blocked) até chegar algo na fila
+	        if (osMessageQueueGet(Queue_CAN_TXHandle, &msg_interna, NULL, osWaitForever) == osOK)
+	        {
+	            // Monta o Header exatamente como você tinha antes
+	            TxHeader.Identifier = msg_interna.id;
+	            TxHeader.IdType = FDCAN_STANDARD_ID;
+	            TxHeader.TxFrameType = FDCAN_DATA_FRAME;
+	            TxHeader.DataLength = FDCAN_DLC_BYTES_1; // No FDCAN, isso mapeia para 1 byte
+	            TxHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
+	            TxHeader.BitRateSwitch = FDCAN_BRS_OFF;
+	            TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
+	            TxHeader.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
+	            TxHeader.MessageMarker = 0;
 
-  for(;;)
-  {
-    // RPM (ID 0x341 ) ---
-    //valorRPM++;
-    //if(valorRPM > 8) valorRPM = 0;
+	            // Envia para o hardware
+	            HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, msg_interna.data);
+	        }
+	    }
+	  // RPM (ID 0x123 ) ---
+	    // valorRPM++;
+	   //  if(valorRPM > 8) valorRPM = 0;
 
-   // TxHeader.Identifier = 0x341;
-   // TxData[0] = (uint8_t)screenId;
-   // HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	   //  TxHeader.Identifier = 0x123;
+	    // TxData[0] = (uint8_t)valorRPM;
+	    // HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-    // VELOCIDADE (ID 0x124 ) ---
-    valorVelocidade += 10;
-    if(valorVelocidade > 80) valorVelocidade = 0;
+	    // osDelay(250); // Pequeno intervalo entre mensagens
 
-    TxHeader.Identifier = 0x124;
-    TxData[0] = (uint8_t)valorVelocidade;
-    HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	     // VELOCIDADE (ID 0x124 ) ---
+	   //  valorVelocidade += 10;
+	   //  if(valorVelocidade > 80) valorVelocidade = 0;
 
-    // --- ENVIO 3: SOC (ID 0x125 ) ---
-    valorSoc += 1;
-    if(valorSoc > 100) valorSoc = 0;
+	  //   TxHeader.Identifier = 0x124;
+	  //   TxData[0] = (uint8_t)valorVelocidade;
+	   //  HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-    TxHeader.Identifier = 0x125;
-    TxData[0] = (uint8_t)valorSoc;
-    HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	   //  osDelay(250);
+	     // --- ENVIO 3: SOC (ID 0x125 ) ---
+	  //   valorSoc += 1;
+	   //  if(valorSoc > 100) valorSoc = 0;
 
-    osDelay(250);
-  }
-}
+	   //  TxHeader.Identifier = 0x125;
+	   //  TxData[0] = (uint8_t)valorSoc;
+	   //  HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	    // osDelay(250);
+	   }
   /* USER CODE END Task_CAN */
 
 /* Private application code --------------------------------------------------*/
@@ -269,6 +284,35 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
         // o código ignorava que a leitura falhou e lia memória vazia.
     }
   }
+}
+void StartMonitorTask(void *argument)
+{
+    static bool ultimoEstadoPino = true;
+
+    for(;;)
+    {
+        // 1. Lê o estado atual do pino PA8
+        bool estadoAtualPino = (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET);
+
+        // 2. Detecta borda de descida (High -> Low)
+        if (ultimoEstadoPino == true && estadoAtualPino == false)
+        {
+            estadoBotaoPA8 = !estadoBotaoPA8; // Toggle
+
+            // 3. Prepara a struct para a FILA
+            can_msg_t msg_botao;
+            msg_botao.id = 0x241;
+            msg_botao.data[0] = estadoBotaoPA8 ? 1 : 0;
+
+            // 4. Envia para a fila (a mesma usada pelo Model)
+            osMessageQueuePut(Queue_CAN_TXHandle, &msg_botao, 0, 0);
+        }
+
+        ultimoEstadoPino = estadoAtualPino;
+
+        // 5. Delay de 20ms para Debounce simples
+        osDelay(20);
+    }
 }
 /* USER CODE END Application */
 

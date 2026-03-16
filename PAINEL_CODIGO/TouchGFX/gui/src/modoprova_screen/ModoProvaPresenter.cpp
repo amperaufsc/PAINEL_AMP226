@@ -5,7 +5,6 @@
 ModoProvaPresenter::ModoProvaPresenter(ModoProvaView& v) : view(v) { }
 
 void ModoProvaPresenter::activate() {
-	model->reportCurrentScreen(Model::MODOPROVA);
 }
 void ModoProvaPresenter::deactivate() { }
 
@@ -13,7 +12,8 @@ void ModoProvaPresenter::hwButtonClicked(uint8_t buttonId)
 {
     if (buttonId == 3)
     {
-        static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
+    	model->reportCurrentScreen(Model::CAPA);
+    	static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
     }
 }
 
