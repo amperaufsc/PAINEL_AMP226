@@ -79,6 +79,13 @@ const osThreadAttr_t Task_CAN_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
   .stack_size = 1024 * 4
 };
+/* Definitions for READYTODRIVE */
+osThreadId_t READYTODRIVEHandle;
+const osThreadAttr_t READYTODRIVE_attributes = {
+  .name = "READYTODRIVE",
+  .priority = (osPriority_t) osPriorityLow,
+  .stack_size = 128 * 4
+};
 /* Definitions for QueueButton */
 osMessageQueueId_t QueueButtonHandle;
 const osMessageQueueAttr_t QueueButton_attributes = {
@@ -89,6 +96,11 @@ osMessageQueueId_t Queue_CAN_RXHandle;
 const osMessageQueueAttr_t Queue_CAN_RX_attributes = {
   .name = "Queue_CAN_RX"
 };
+/* Definitions for FilaReady */
+osMessageQueueId_t FilaReadyHandle;
+const osMessageQueueAttr_t FilaReady_attributes = {
+  .name = "FilaReady"
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -98,6 +110,7 @@ extern portBASE_TYPE IdleTaskHook(void* p);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 void StartTaskCAN(void *argument);
+void ReadyToDrive(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -146,6 +159,8 @@ void MX_FREERTOS_Init(void) {
   QueueButtonHandle = osMessageQueueNew (16, sizeof(uint32_t), &QueueButton_attributes);
   /* creation of Queue_CAN_RX */
   Queue_CAN_RXHandle = osMessageQueueNew (16, sizeof(can_msg_t), &Queue_CAN_RX_attributes);
+  /* creation of FilaReady */
+  FilaReadyHandle = osMessageQueueNew (16, sizeof(uint16_t), &FilaReady_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -158,6 +173,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of Task_CAN */
   Task_CANHandle = osThreadNew(StartTaskCAN, NULL, &Task_CAN_attributes);
+
+  /* creation of READYTODRIVE */
+  READYTODRIVEHandle = osThreadNew(ReadyToDrive, NULL, &READYTODRIVE_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -198,7 +216,7 @@ void StartTaskCAN(void *argument)
 {
   /* USER CODE BEGIN Task_CAN */
 	FDCAN_TxHeaderTypeDef TxHeader;
-
+	uint32_t state_recebido = 0;
 	uint8_t TxData[1];
 
 	uint32_t valorRPM = 0;
@@ -224,6 +242,20 @@ void StartTaskCAN(void *argument)
 	for(;;)
 
 	{
+		// READY TO DRIVE
+
+		osMessageQueueGet(QueueButtonHandle, &state_recebido, NULL, 0);
+		TxHeader.Identifier = 0x241;
+
+			TxData[0] = (uint8_t)state_recebido;
+
+			HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+
+
+			osDelay(250);
+
+
 
 	// RPM (ID 0x123 ) ---
 
@@ -282,8 +314,28 @@ void StartTaskCAN(void *argument)
 	osDelay(250);
 
 	}
-	/* USER CODE END Task_CAN */
-	}
+  /* USER CODE END Task_CAN */
+}
+
+/* USER CODE BEGIN Header_ReadyToDrive */
+/**
+* @brief Function implementing the READYTODRIVE thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_ReadyToDrive */
+void ReadyToDrive(void *argument)
+{
+  /* USER CODE BEGIN READYTODRIVE */
+  /* Infinite loop */
+  for(;;)
+  {
+	uint32_t state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8);
+	osMessageQueuePut(QueueButtonHandle, &state, 0, 0);
+    osDelay(20);
+  }
+  /* USER CODE END READYTODRIVE */
+}
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
