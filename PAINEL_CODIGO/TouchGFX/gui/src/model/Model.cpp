@@ -72,7 +72,7 @@ void Model::tick()
                     modelListener->updateSOCValue(valor);
                     break;
 
-                case 0x126: // Supondo o ID do Freio
+                case 0x241: // Supondo o ID do Freio
                     modelListener->updateFreioValue(valor);
                     break;
 
