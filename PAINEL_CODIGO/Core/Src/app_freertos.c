@@ -216,7 +216,7 @@ void StartTaskCAN(void *argument)
 {
   /* USER CODE BEGIN Task_CAN */
 	FDCAN_TxHeaderTypeDef TxHeader;
-	uint32_t state_recebido = 0;
+	//uint32_t state_recebido = 0;
 	uint8_t TxData[1];
 
 	uint32_t valorRPM = 0;
@@ -243,17 +243,17 @@ void StartTaskCAN(void *argument)
 
 	{
 		// READY TO DRIVE
-
-		osMessageQueueGet(QueueButtonHandle, &state_recebido, NULL, 0);
+		uint32_t state = !(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8));
+		//osMessageQueueGet(QueueButtonHandle, &state_recebido, NULL, 0);
 		TxHeader.Identifier = 0x241;
 
-			TxData[0] = (uint8_t)state_recebido;
+			TxData[0] = (uint8_t)state;
 
 			HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
 
 
-			osDelay(250);
+			osDelay(50);
 
 
 
@@ -330,9 +330,9 @@ void ReadyToDrive(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	uint32_t state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8);
-	osMessageQueuePut(QueueButtonHandle, &state, 0, 0);
-    osDelay(20);
+	//uint32_t state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8);
+	//osMessageQueuePut(QueueButtonHandle, &state, 0, 0);
+    osDelay(1);
   }
   /* USER CODE END READYTODRIVE */
 }
