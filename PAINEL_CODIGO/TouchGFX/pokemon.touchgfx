@@ -5,29 +5,20 @@
         "Name": "Capa",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_capa1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "CustomContainerDefinitionName": "Fundo_capa"
+            "RelativeFilename": "capa oficial.png"
           },
           {
             "Type": "Image",
-            "Name": "logobranca",
-            "X": 50,
-            "Y": 23,
-            "Width": 700,
-            "Height": 100,
-            "RelativeFilename": "logobrancav2.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "logoazul",
-            "X": 50,
-            "Y": 23,
-            "Width": 700,
-            "Height": 100,
-            "RelativeFilename": "logoazulv2.png"
+            "Name": "image2",
+            "X": 29,
+            "Y": -166,
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "logo_branca.png"
           }
         ],
         "Interactions": [
@@ -70,19 +61,11 @@
         "Name": "Testes",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_teste1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "CustomContainerDefinitionName": "fundo_teste"
-          },
-          {
-            "Type": "Image",
-            "Name": "menut",
-            "Y": 440,
-            "Width": 160,
-            "Height": 40,
-            "RelativeFilename": "botaoMENU.png"
+            "RelativeFilename": "FundoAMP.png"
           },
           {
             "Type": "TextArea",
@@ -115,9 +98,9 @@
             "TextId": "__SingleUse_TY5U",
             "TextRotation": "0",
             "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
+              "Red": 92,
+              "Green": 198,
+              "Blue": 208
             },
             "AutoSize": true
           },
@@ -152,9 +135,9 @@
             "TextId": "__SingleUse_0JHV",
             "TextRotation": "0",
             "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
+              "Red": 92,
+              "Green": 198,
+              "Blue": 208
             },
             "AutoSize": true
           },
@@ -189,9 +172,9 @@
             "TextId": "__SingleUse_OPWS",
             "TextRotation": "0",
             "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
+              "Red": 92,
+              "Green": 198,
+              "Blue": 208
             },
             "AutoSize": true
           },
@@ -226,9 +209,9 @@
             "TextId": "__SingleUse_OFVA",
             "TextRotation": "0",
             "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
+              "Red": 92,
+              "Green": 198,
+              "Blue": 208
             },
             "AutoSize": true
           },
@@ -263,9 +246,9 @@
             "TextId": "__SingleUse_BTZ4",
             "TextRotation": "0",
             "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
+              "Red": 92,
+              "Green": 198,
+              "Blue": 208
             },
             "AutoSize": true
           },
@@ -300,9 +283,9 @@
             "TextId": "__SingleUse_S0EV",
             "TextRotation": "0",
             "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
+              "Red": 92,
+              "Green": 198,
+              "Blue": 208
             },
             "AutoSize": true
           },
@@ -337,9 +320,9 @@
             "TextId": "__SingleUse_913G",
             "TextRotation": "0",
             "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
+              "Red": 92,
+              "Green": 198,
+              "Blue": 208
             },
             "AutoSize": true
           },
@@ -374,9 +357,9 @@
             "TextId": "__SingleUse_FKG4",
             "TextRotation": "0",
             "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
+              "Red": 92,
+              "Green": 198,
+              "Blue": 208
             },
             "AutoSize": true
           },
@@ -411,9 +394,9 @@
             "TextId": "__SingleUse_DPMA",
             "TextRotation": "0",
             "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
+              "Red": 92,
+              "Green": 198,
+              "Blue": 208
             },
             "AutoSize": true
           },
@@ -448,9 +431,9 @@
             "TextId": "__SingleUse_KUTP",
             "TextRotation": "0",
             "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
+              "Red": 92,
+              "Green": 198,
+              "Blue": 208
             },
             "AutoSize": true
           },
@@ -464,7 +447,9 @@
             "TextId": "__SingleUse_5U7Q",
             "TextRotation": "0",
             "Color": {
-              "Red": 140
+              "Red": 221,
+              "Green": 43,
+              "Blue": 125
             },
             "AutoSize": true
           },
@@ -478,7 +463,9 @@
             "TextId": "__SingleUse_WL4J",
             "TextRotation": "0",
             "Color": {
-              "Red": 140
+              "Red": 221,
+              "Green": 43,
+              "Blue": 125
             },
             "AutoSize": true
           },
@@ -492,7 +479,9 @@
             "TextId": "__SingleUse_I401",
             "TextRotation": "0",
             "Color": {
-              "Red": 140
+              "Red": 221,
+              "Green": 43,
+              "Blue": 125
             },
             "AutoSize": true
           },
@@ -579,11 +568,11 @@
         "Name": "ModoProva",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_prova1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "CustomContainerDefinitionName": "fundo_prova"
+            "RelativeFilename": "FundoAMP.png"
           },
           {
             "Type": "Gauge",
@@ -618,7 +607,7 @@
             "Y": 89,
             "Width": 240,
             "Height": 240,
-            "FileNameBackground": "velocimetro80.png",
+            "FileNameBackground": "velocimetroofc.png",
             "RotationCenterX": 120.0,
             "RotationCenterY": 120.0,
             "StartAngle": -113.0,
@@ -641,8 +630,8 @@
           {
             "Type": "ImageProgress",
             "Name": "bateria",
-            "X": 310,
-            "Y": 153,
+            "X": 305,
+            "Y": 162,
             "Width": 120,
             "Height": 90,
             "FileNameProgress": "batCheia.png",
@@ -729,7 +718,7 @@
           {
             "Type": "TextArea",
             "Name": "RPM",
-            "X": 87,
+            "X": 76,
             "Y": 51,
             "Width": 67,
             "Height": 35,
@@ -749,7 +738,7 @@
             "Y": 387,
             "Width": 141,
             "Height": 45,
-            "FileNameProgress": "BRAK.png",
+            "FileNameProgress": "progressorosa.png",
             "AnchorAtZero": true,
             "Direction": "Right",
             "FileNameBackground": "FUNDOFALSO.png",
@@ -761,7 +750,7 @@
           {
             "Type": "TextArea",
             "Name": "freio_un",
-            "X": 92,
+            "X": 91,
             "Y": 392,
             "Width": 100,
             "Height": 35,
@@ -783,7 +772,7 @@
             "Name": "freio",
             "X": 61,
             "Y": 346,
-            "Width": 107,
+            "Width": 94,
             "Height": 35,
             "TextId": "__SingleUse_3DVT",
             "TextRotation": "0",
@@ -848,7 +837,7 @@
           {
             "Type": "TextArea",
             "Name": "velocidade",
-            "X": 608,
+            "X": 595,
             "Y": 51,
             "Width": 167,
             "Height": 35,
@@ -956,7 +945,7 @@
             "Y": 392,
             "Width": 141,
             "Height": 45,
-            "FileNameProgress": "ACEL.png",
+            "FileNameProgress": "progressoazul.png",
             "AnchorAtZero": true,
             "Direction": "Right",
             "FileNameBackground": "FUNDOFALSO.png",
@@ -988,10 +977,10 @@
           {
             "Type": "TextArea",
             "Name": "acelerador",
-            "X": 596,
-            "Y": 346,
-            "Width": 165,
-            "Height": 35,
+            "X": 565,
+            "Y": 352,
+            "Width": 227,
+            "Height": 70,
             "TextId": "__SingleUse_3N7C",
             "TextRotation": "0",
             "Color": {
@@ -1002,12 +991,14 @@
             "AutoSize": true
           },
           {
-            "Type": "Image",
-            "Name": "menump",
-            "Y": 440,
-            "Width": 160,
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "Width": 24,
             "Height": 40,
-            "RelativeFilename": "botaoMENU.png"
+            "Visible": false,
+            "TextId": "__SingleUse_44IL",
+            "TextRotation": "0",
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1029,80 +1020,11 @@
         "Name": "pag1_Autonomos",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "CustomContainerDefinitionName": "Fundo_SA"
-          },
-          {
-            "Type": "Image",
-            "Name": "menusa1",
-            "X": 320,
-            "Y": 440,
-            "Width": 160,
-            "Height": 40,
-            "RelativeFilename": "botaoMENU.png"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel2",
-            "X": 625,
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "TextId": "__SingleUse_H9PM",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "TextId": "__SingleUse_VZCL",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_disabled.json"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 60,
-            "Y": 190,
-            "Width": 681,
-            "Height": 71,
-            "TextId": "__SingleUse_J5NX",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
+            "RelativeFilename": "MODODEPROVA.png"
           }
         ],
         "Interactions": [
@@ -1118,7 +1040,7 @@
             }
           },
           {
-            "InteractionName": "irDirigirManual",
+            "InteractionName": "irInspecao",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1126,7 +1048,45 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "Dirigir_manual_SA"
+              "ActionComponent": "Inspecao_SA"
+            }
+          },
+          {
+            "InteractionName": "IrAutoCross",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Area_de_Teste_SA"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Area_de_Teste_SA",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "Areatesteoficial.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "IrPagUM",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "pag1_Autonomos"
             }
           },
           {
@@ -1144,212 +1104,19 @@
         ]
       },
       {
-        "Name": "Area_de_Teste_SA",
-        "Components": [
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
-            "Width": 800,
-            "Height": 480,
-            "CustomContainerDefinitionName": "Fundo_SA"
-          },
-          {
-            "Type": "Image",
-            "Name": "menusa1_2",
-            "X": 608,
-            "Y": 390,
-            "Width": 160,
-            "Height": 40,
-            "RelativeFilename": "DIREITA.png"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "Y": 430,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_disabled.png",
-            "TextId": "__SingleUse_0HC6",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_disabled.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel2",
-            "X": 560,
-            "Y": 430,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_inactive.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_disabled.png",
-            "TextId": "__SingleUse_0TQI",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0"
-          },
-          {
-            "Type": "Image",
-            "Name": "menusa1_1",
-            "X": 32,
-            "Y": 390,
-            "Width": 160,
-            "Height": 40,
-            "RelativeFilename": "ESQUERDA.png"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 101,
-            "Y": 67,
-            "Width": 531,
-            "Height": 316,
-            "TextId": "__SingleUse_U665",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          }
-        ],
-        "Interactions": [
-          {
-            "InteractionName": "Interaction1",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "pag1_Autonomos"
-            }
-          },
-          {
-            "InteractionName": "Interaction2",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "West",
-              "ActionComponent": "AutoCross_SA"
-            }
-          }
-        ]
-      },
-      {
         "Name": "AutoCross_SA",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "CustomContainerDefinitionName": "Fundo_SA"
-          },
-          {
-            "Type": "Image",
-            "Name": "menusa1_2",
-            "X": 608,
-            "Y": 390,
-            "Width": 160,
-            "Height": 40,
-            "RelativeFilename": "DIREITA.png"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "Y": 430,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_disabled.png",
-            "TextId": "__SingleUse_6W8H",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_disabled.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel2",
-            "X": 560,
-            "Y": 430,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_inactive.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_disabled.png",
-            "TextId": "__SingleUse_7739",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0"
-          },
-          {
-            "Type": "Image",
-            "Name": "menusa1_1",
-            "X": 32,
-            "Y": 390,
-            "Width": 160,
-            "Height": 40,
-            "RelativeFilename": "ESQUERDA.png"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "Y": 136,
-            "Width": 780,
-            "Height": 177,
-            "TextId": "__SingleUse_P2D1",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
+            "RelativeFilename": "AUTOCROSS.png"
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "IrAreaTeste",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1361,7 +1128,7 @@
             }
           },
           {
-            "InteractionName": "Interaction2",
+            "InteractionName": "IrAceleracao",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1378,72 +1145,11 @@
         "Name": "Aceleracao_SA",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "CustomContainerDefinitionName": "Fundo_SA"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "TextId": "__SingleUse_LPHK",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_disabled.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel2",
-            "X": 625,
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
-            "TextId": "__SingleUse_NVF3",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 6,
-            "Y": 140,
-            "Width": 759,
-            "Height": 158,
-            "TextId": "__SingleUse_ZZ60",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
+            "RelativeFilename": "ACELERACAO.png"
           }
         ],
         "Interactions": [
@@ -1477,72 +1183,11 @@
         "Name": "Skidped_SA",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "CustomContainerDefinitionName": "Fundo_SA"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "TextId": "__SingleUse_MHK6",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_disabled.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel2",
-            "X": 625,
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
-            "TextId": "__SingleUse_R0QR",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 87,
-            "Y": 133,
-            "Width": 630,
-            "Height": 177,
-            "TextId": "__SingleUse_WI60",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
+            "RelativeFilename": "SKIDPAD.png"
           }
         ],
         "Interactions": [
@@ -1576,72 +1221,11 @@
         "Name": "Trackdrive_SA",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "CustomContainerDefinitionName": "Fundo_SA"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "TextId": "__SingleUse_3WU2",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_disabled.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel2",
-            "X": 625,
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
-            "TextId": "__SingleUse_BUTV",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 26,
-            "Y": 153,
-            "Width": 732,
-            "Height": 158,
-            "TextId": "__SingleUse_Z366",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
+            "RelativeFilename": "TRACKDRIVE.png"
           }
         ],
         "Interactions": [
@@ -1675,72 +1259,11 @@
         "Name": "EBS_Teste_SA",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "CustomContainerDefinitionName": "Fundo_SA"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "TextId": "__SingleUse_HYVB",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_disabled.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel2",
-            "X": 625,
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
-            "TextId": "__SingleUse_BNVG",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 22,
-            "Y": 144,
-            "Width": 756,
-            "Height": 177,
-            "TextId": "__SingleUse_TJBO",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
+            "RelativeFilename": "EBS.png"
           }
         ],
         "Interactions": [
@@ -1774,72 +1297,11 @@
         "Name": "Inspecao_SA",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "CustomContainerDefinitionName": "Fundo_SA"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "TextId": "__SingleUse_MRL4",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_disabled.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel2",
-            "X": 625,
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
-            "TextId": "__SingleUse_4BKM",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 56,
-            "Y": 153,
-            "Width": 688,
-            "Height": 177,
-            "TextId": "__SingleUse_JDDU",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
+            "RelativeFilename": "INSPECAO.png"
           }
         ],
         "Interactions": [
@@ -1856,106 +1318,7 @@
             }
           },
           {
-            "InteractionName": "IrDirigirManual",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "West",
-              "ActionComponent": "Dirigir_manual_SA"
-            }
-          }
-        ]
-      },
-      {
-        "Name": "Dirigir_manual_SA",
-        "Components": [
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
-            "Width": 800,
-            "Height": 480,
-            "CustomContainerDefinitionName": "Fundo_SA"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_disabled.png",
-            "TextId": "__SingleUse_AZVK",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_disabled.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel2",
-            "X": 625,
-            "Y": 430,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
-            "TextId": "__SingleUse_1PTY",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 147,
-            "Y": 82,
-            "Width": 490,
-            "Height": 316,
-            "TextId": "__SingleUse_W2WJ",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          }
-        ],
-        "Interactions": [
-          {
-            "InteractionName": "IrInspecao",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "Inspecao_SA"
-            }
-          },
-          {
-            "InteractionName": "IrPagUm",
+            "InteractionName": "IrPagUmAutonomos",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1969,68 +1332,7 @@
         ]
       }
     ],
-    "CustomContainerDefinitions": [
-      {
-        "Name": "fundo_prova",
-        "Width": 800,
-        "Height": 480,
-        "Components": [
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "Width": 800,
-            "Height": 480,
-            "RelativeFilename": "fundo_prova.png"
-          }
-        ],
-        "Interactions": []
-      },
-      {
-        "Name": "Fundo_SA",
-        "Width": 800,
-        "Height": 480,
-        "Components": [
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "Width": 800,
-            "Height": 480,
-            "RelativeFilename": "FundaSA.png"
-          }
-        ],
-        "Interactions": []
-      },
-      {
-        "Name": "fundo_teste",
-        "Width": 800,
-        "Height": 480,
-        "Components": [
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "Width": 800,
-            "Height": 480,
-            "RelativeFilename": "fundo_testes.png"
-          }
-        ],
-        "Interactions": []
-      },
-      {
-        "Name": "Fundo_capa",
-        "Width": 800,
-        "Height": 480,
-        "Components": [
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "Width": 800,
-            "Height": 480,
-            "RelativeFilename": "capav3.2.png"
-          }
-        ],
-        "Interactions": []
-      }
-    ],
+    "CustomContainerDefinitions": [],
     "Name": "pokemon",
     "Resolution": {
       "Width": 800,

@@ -29,7 +29,7 @@ void Inspecao_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	    }
 	    else if (buttonId == 1) // PA2 X
 	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotoDirigir_manual_SAScreenSlideTransitionWest();
+	         static_cast<FrontendApplication*>(Application::getInstance())->gotopag1_AutonomosScreenSlideTransitionWest();
 	    }
 
 	}

@@ -6,50 +6,8 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_U665" Alignment="Center" TypographyId="Typography3">
-        <Translation Language="GB">Área de&#10; teste</Translation>
-      </Text>
-      <Text Id="__SingleUse_0TQI" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">AutoCross</Translation>
-      </Text>
-      <Text Id="__SingleUse_0HC6" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Página 1</Translation>
-      </Text>
-      <Text Id="__SingleUse_Z366" Alignment="Left" TypographyId="Typography3">
-        <Translation Language="GB">Trackdrive</Translation>
-      </Text>
-      <Text Id="__SingleUse_W2WJ" Alignment="Left" TypographyId="Typography3">
-        <Translation Language="GB">Dirigir &#10;Manual</Translation>
-      </Text>
-      <Text Id="__SingleUse_1PTY" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Pág 1</Translation>
-      </Text>
-      <Text Id="__SingleUse_AZVK" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Inspeção</Translation>
-      </Text>
-      <Text Id="__SingleUse_JDDU" Alignment="Left" TypographyId="Typography1">
-        <Translation Language="GB">Inspeção</Translation>
-      </Text>
-      <Text Id="__SingleUse_4BKM" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Dirigir Manual</Translation>
-      </Text>
-      <Text Id="__SingleUse_MRL4" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">EBS Teste</Translation>
-      </Text>
-      <Text Id="__SingleUse_TJBO" Alignment="Left" TypographyId="Typography1">
-        <Translation Language="GB">EBS Teste</Translation>
-      </Text>
-      <Text Id="__SingleUse_BNVG" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Inspeção</Translation>
-      </Text>
-      <Text Id="__SingleUse_HYVB" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Trackdrive</Translation>
-      </Text>
-      <Text Id="__SingleUse_BUTV" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">EBS Teste</Translation>
-      </Text>
-      <Text Id="__SingleUse_3WU2" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Skidped</Translation>
+      <Text Id="__SingleUse_44IL" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1&#10;</Translation>
       </Text>
       <Text Id="__SingleUse_RFE0" Alignment="Left" TypographyId="batman">
         <Translation Language="GB">0</Translation>
@@ -68,42 +26,6 @@
       </Text>
       <Text Id="__SingleUse_20FB" Alignment="Left" TypographyId="batman">
         <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_WI60" Alignment="Left" TypographyId="Typography1">
-        <Translation Language="GB">Skidped</Translation>
-      </Text>
-      <Text Id="__SingleUse_R0QR" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Trackdrive</Translation>
-      </Text>
-      <Text Id="__SingleUse_MHK6" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Aceleração</Translation>
-      </Text>
-      <Text Id="__SingleUse_H9PM" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Autocross</Translation>
-      </Text>
-      <Text Id="__SingleUse_VZCL" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">  Dirigir Manual</Translation>
-      </Text>
-      <Text Id="__SingleUse_ZZ60" Alignment="Left" TypographyId="Typography3">
-        <Translation Language="GB">Aceleração</Translation>
-      </Text>
-      <Text Id="__SingleUse_NVF3" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Skidped</Translation>
-      </Text>
-      <Text Id="__SingleUse_LPHK" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Autocross</Translation>
-      </Text>
-      <Text Id="__SingleUse_P2D1" Alignment="Center" TypographyId="Typography1">
-        <Translation Language="GB">Autocross</Translation>
-      </Text>
-      <Text Id="__SingleUse_J5NX" Alignment="Left" TypographyId="Typography2">
-        <Translation Language="GB">MODOS DE PROVA</Translation>
-      </Text>
-      <Text Id="__SingleUse_7739" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Aceleração</Translation>
-      </Text>
-      <Text Id="__SingleUse_6W8H" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">  Área de teste</Translation>
       </Text>
       <Text Id="__SingleUse_WL4J" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Falha ECU</Translation>
@@ -151,7 +73,7 @@
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_3DVT" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">BRAKE</Translation>
+        <Translation Language="GB">FREIO</Translation>
       </Text>
       <Text Id="__SingleUse_6QZV" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Tensao HV</Translation>
@@ -202,7 +124,7 @@
         <Translation Language="GB">&lt;value&gt; °C</Translation>
       </Text>
       <Text Id="__SingleUse_3N7C" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">THROTTLE</Translation>
+        <Translation Language="GB">ACELERACAO&#10;</Translation>
       </Text>
       <Text Id="__SingleUse_CBAY" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">000</Translation>
