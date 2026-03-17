@@ -54,6 +54,8 @@ volatile uint32_t ultimo_id_recebido = 0;
 volatile uint32_t erro_fila_count = 0;
 volatile uint8_t debug = 0;
 volatile uint32_t debug_id_isr = 0;
+volatile uint8_t estadoBotaoAtual = 0;
+volatile uint8_t ultimoEstadoEnviado = 2;
 int valorSoc = 0;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
@@ -190,54 +192,98 @@ void StartDefaultTask(void *argument)
 * @param argument: Not used
 * @retval None
 */
+
 /* USER CODE END Header_StartTaskCAN */
 void StartTaskCAN(void *argument)
 {
-  FDCAN_TxHeaderTypeDef TxHeader;
-  uint8_t TxData[1];
-  uint32_t valorRPM = 0;
-  uint32_t valorVelocidade = 0;
+  /* USER CODE BEGIN Task_CAN */
+	FDCAN_TxHeaderTypeDef TxHeader;
 
-  // Configurações base do Header
-  memset(&TxHeader, 0, sizeof(TxHeader));
-  TxHeader.IdType = FDCAN_STANDARD_ID;
-  TxHeader.TxFrameType = FDCAN_DATA_FRAME;
-  TxHeader.DataLength = FDCAN_DLC_BYTES_1;
-  TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
+	uint8_t TxData[1];
 
-  for(;;)
-  {
-    // RPM (ID 0x123 ) ---
-    valorRPM++;
-    if(valorRPM > 8) valorRPM = 0;
+	uint32_t valorRPM = 0;
 
-    TxHeader.Identifier = 0x123;
-    TxData[0] = (uint8_t)valorRPM;
-    HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	uint32_t valorVelocidade = 0;
 
-    osDelay(250); // Pequeno intervalo entre mensagens
 
-    // VELOCIDADE (ID 0x124 ) ---
-    valorVelocidade += 10;
-    if(valorVelocidade > 80) valorVelocidade = 0;
 
-    TxHeader.Identifier = 0x124;
-    TxData[0] = (uint8_t)valorVelocidade;
-    HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	// Configurações base do Header
 
-    osDelay(250);
-    // --- ENVIO 3: SOC (ID 0x125 ) ---
-    valorSoc += 1;
-    if(valorSoc > 100) valorSoc = 0;
+	memset(&TxHeader, 0, sizeof(TxHeader));
 
-    TxHeader.Identifier = 0x125;
-    TxData[0] = (uint8_t)valorSoc;
-    HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	TxHeader.IdType = FDCAN_STANDARD_ID;
 
-    osDelay(250);
-  }
-}
-  /* USER CODE END Task_CAN */
+	TxHeader.TxFrameType = FDCAN_DATA_FRAME;
+
+	TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+
+	TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
+
+
+	/* Infinite loop */
+	for(;;)
+
+	{
+
+	// RPM (ID 0x123 ) ---
+
+	valorRPM++;
+
+	if(valorRPM > 8) valorRPM = 0;
+
+
+
+	TxHeader.Identifier = 0x123;
+
+	TxData[0] = (uint8_t)valorRPM;
+
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+
+
+	osDelay(250); // Pequeno intervalo entre mensagens
+
+
+
+	// VELOCIDADE (ID 0x124 ) ---
+
+	valorVelocidade += 10;
+
+	if(valorVelocidade > 80) valorVelocidade = 0;
+
+
+
+	TxHeader.Identifier = 0x124;
+
+	TxData[0] = (uint8_t)valorVelocidade;
+
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+
+
+	osDelay(250);
+
+	// --- ENVIO 3: SOC (ID 0x125 ) ---
+
+	valorSoc += 1;
+
+	if(valorSoc > 100) valorSoc = 0;
+
+
+
+	TxHeader.Identifier = 0x125;
+
+	TxData[0] = (uint8_t)valorSoc;
+
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+
+
+	osDelay(250);
+
+	}
+	/* USER CODE END Task_CAN */
+	}
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */

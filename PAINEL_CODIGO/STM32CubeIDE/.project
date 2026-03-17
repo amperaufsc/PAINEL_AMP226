@@ -900,6 +900,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_ponteira.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_tacometroofc.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_tacometroofc.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_triangulo.play_-_Editado.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_triangulo.play_-_Editado.cpp</locationURI>
