@@ -9,7 +9,7 @@ Aceleracao_SAPresenter::Aceleracao_SAPresenter(Aceleracao_SAView& v)
 
 void Aceleracao_SAPresenter::activate()
 {
-
+	 model->updateCurrentScreen(7);
 }
 
 void Aceleracao_SAPresenter::deactivate()
@@ -21,7 +21,7 @@ void Aceleracao_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	{
 	    if (buttonId == 3) // PB11 BOLINHA
 	    {
-	     //   static_cast<FrontendApplication*>(Application::getInstance())->gotoSkinped_SAScreenBlockTransition();
+	    	model->setStartAutonomos(3);
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {

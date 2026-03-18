@@ -56,6 +56,8 @@ volatile uint8_t debug = 0;
 volatile uint32_t debug_id_isr = 0;
 volatile uint8_t estadoBotaoAtual = 0;
 volatile uint8_t ultimoEstadoEnviado = 2;
+volatile uint8_t ID_DA_PAGINA = 0;
+volatile uint8_t START_AUTONOMOS = 0;
 int valorSoc = 0;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
@@ -216,7 +218,7 @@ void StartTaskCAN(void *argument)
 {
   /* USER CODE BEGIN Task_CAN */
 	FDCAN_TxHeaderTypeDef TxHeader;
-	//uint32_t state_recebido = 0;
+
 	uint8_t TxData[1];
 
 	uint32_t valorRPM = 0;
@@ -242,18 +244,33 @@ void StartTaskCAN(void *argument)
 	for(;;)
 
 	{
-		// READY TO DRIVE
-		uint32_t state = !(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8));
-		//osMessageQueueGet(QueueButtonHandle, &state_recebido, NULL, 0);
-		TxHeader.Identifier = 0x241;
 
-			TxData[0] = (uint8_t)state;
+	// SISTEMAS AUTONOMOS
 
-			HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	TxHeader.Identifier = 0x541;
+	TxData[0] = ID_DA_PAGINA;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	osDelay(50);
+
+
+	// MODO DE PROVA
+	TxHeader.Identifier = 0x341;
+	TxData[0] = START_AUTONOMOS;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	osDelay(50);
 
 
 
-			osDelay(50);
+
+	// READY TO DRIVE
+	uint32_t state = !(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8));
+	TxHeader.Identifier = 0x241;
+	TxData[0] = (uint8_t)state;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	osDelay(50);
 
 
 

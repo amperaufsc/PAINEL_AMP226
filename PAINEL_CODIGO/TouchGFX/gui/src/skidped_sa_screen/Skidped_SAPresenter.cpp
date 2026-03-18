@@ -9,7 +9,7 @@ Skidped_SAPresenter::Skidped_SAPresenter(Skidped_SAView& v)
 
 void Skidped_SAPresenter::activate()
 {
-
+	 model->updateCurrentScreen(8);
 }
 
 void Skidped_SAPresenter::deactivate()
@@ -21,7 +21,7 @@ void Skidped_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	{
 	    if (buttonId == 3) // PB11 BOLINHA
 	    {
-	     //   static_cast<FrontendApplication*>(Application::getInstance())->gotoSkinped_SAScreenBlockTransition();
+	    	model->setStartAutonomos(4);
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {

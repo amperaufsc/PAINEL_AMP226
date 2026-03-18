@@ -9,7 +9,7 @@ TestesPresenter::TestesPresenter(TestesView& v)
 
 void TestesPresenter::activate()
 {
-
+	 model->updateCurrentScreen(1);
 }
 
 void TestesPresenter::deactivate()

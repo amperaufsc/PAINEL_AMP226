@@ -4,7 +4,11 @@
 
 ModoProvaPresenter::ModoProvaPresenter(ModoProvaView& v) : view(v) { }
 
-void ModoProvaPresenter::activate() { }
+void ModoProvaPresenter::activate() {
+
+	    model->updateCurrentScreen(3); // ID para Modo Prova
+
+}
 void ModoProvaPresenter::deactivate() { }
 
 void ModoProvaPresenter::hwButtonClicked(uint8_t buttonId)

@@ -9,7 +9,7 @@ EBS_Teste_SAPresenter::EBS_Teste_SAPresenter(EBS_Teste_SAView& v)
 
 void EBS_Teste_SAPresenter::activate()
 {
-
+	 model->updateCurrentScreen(10);
 }
 
 void EBS_Teste_SAPresenter::deactivate()
@@ -21,7 +21,7 @@ void EBS_Teste_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	{
 	    if (buttonId == 3) // PB11 BOLINHA
 	    {
-	     //   static_cast<FrontendApplication*>(Application::getInstance())->gotoSkinped_SAScreenBlockTransition();
+	    	model->setStartAutonomos(6);
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {

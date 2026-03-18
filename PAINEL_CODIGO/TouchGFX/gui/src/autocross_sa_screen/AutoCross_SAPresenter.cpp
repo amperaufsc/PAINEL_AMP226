@@ -9,7 +9,7 @@ AutoCross_SAPresenter::AutoCross_SAPresenter(AutoCross_SAView& v)
 
 void AutoCross_SAPresenter::activate()
 {
-
+	 model->updateCurrentScreen(6);
 }
 
 void AutoCross_SAPresenter::deactivate()
@@ -21,7 +21,7 @@ void AutoCross_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	{
 	    if (buttonId == 3) // PB11 BOLINHA
 	    {
-	     //   static_cast<FrontendApplication*>(Application::getInstance())->gotoSkinped_SAScreenBlockTransition();
+	    	model->setStartAutonomos(2);
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {

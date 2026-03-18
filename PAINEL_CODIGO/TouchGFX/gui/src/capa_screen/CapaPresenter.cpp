@@ -9,7 +9,7 @@ CapaPresenter::CapaPresenter(CapaView& v)
 
 void CapaPresenter::activate()
 {
-
+	 model->updateCurrentScreen(0);
 }
 
 void CapaPresenter::deactivate()

@@ -12,6 +12,9 @@ extern "C" {
     extern osMessageQueueId_t Queue_CAN_RXHandle; // Handle da fila do CAN
     extern volatile uint8_t pressedButtonId;
     extern int valorSoc;
+    extern volatile uint8_t ID_DA_PAGINA;
+    extern volatile uint8_t START_AUTONOMOS;
+
 
 
     extern osMessageQueueId_t Queue_CAN_RXHandle;
@@ -31,6 +34,14 @@ extern "C" {
 uint32_t model_recebeu_fila = 0;
 uint32_t id_errado_count = 0;
 uint32_t ultimo_id_intruso = 0;
+
+void Model::updateCurrentScreen(uint8_t screenId) {
+    ID_DA_PAGINA = screenId;
+}
+
+void Model::setStartAutonomos(uint8_t valor) { // Nome deve ser IDÊNTICO ao .hpp
+    START_AUTONOMOS = valor;
+}
 
 void Model::tick()
 {
@@ -76,7 +87,7 @@ void Model::tick()
                     modelListener->updateFreioValue(valor);
                     break;
 
-                case 0x127: // Supondo o ID do Acelerador
+                case 0x341: // Supondo o ID do Acelerador
                     modelListener->updateAceleradorValue(valor);
                     break;
                 case 0x128: // ID da Tensão

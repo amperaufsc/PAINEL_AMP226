@@ -9,7 +9,7 @@ Inspecao_SAPresenter::Inspecao_SAPresenter(Inspecao_SAView& v)
 
 void Inspecao_SAPresenter::activate()
 {
-
+	 model->updateCurrentScreen(11);
 }
 
 void Inspecao_SAPresenter::deactivate()
@@ -21,7 +21,7 @@ void Inspecao_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	{
 	    if (buttonId == 3) // PB11 BOLINHA
 	    {
-	     //   static_cast<FrontendApplication*>(Application::getInstance())->gotoSkinped_SAScreenBlockTransition();
+	    	model->setStartAutonomos(7);
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {

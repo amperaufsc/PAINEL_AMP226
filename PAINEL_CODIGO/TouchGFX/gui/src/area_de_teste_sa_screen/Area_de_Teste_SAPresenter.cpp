@@ -9,7 +9,7 @@ Area_de_Teste_SAPresenter::Area_de_Teste_SAPresenter(Area_de_Teste_SAView& v)
 
 void Area_de_Teste_SAPresenter::activate()
 {
-
+	 model->updateCurrentScreen(5);
 }
 
 void Area_de_Teste_SAPresenter::deactivate()
@@ -21,7 +21,7 @@ void Area_de_Teste_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	{
 	    if (buttonId == 3) // PB11 BOLINHA
 	    {
-	     //     static_cast<FrontendApplication*>(Application::getInstance())->CapaScreenSlideTransition();
+	    	model->setStartAutonomos(1);
 	    }
 	    else if (buttonId == 2) // PA3 TRIANGULO
 	    {
