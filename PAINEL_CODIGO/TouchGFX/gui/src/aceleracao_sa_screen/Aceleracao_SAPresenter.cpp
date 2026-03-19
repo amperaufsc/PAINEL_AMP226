@@ -10,6 +10,7 @@ Aceleracao_SAPresenter::Aceleracao_SAPresenter(Aceleracao_SAView& v)
 void Aceleracao_SAPresenter::activate()
 {
 	 model->updateCurrentScreen(7);
+	 model->setStartAutonomos(0);
 }
 
 void Aceleracao_SAPresenter::deactivate()

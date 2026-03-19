@@ -27,6 +27,7 @@ public:
     virtual void hwButtonClicked(uint8_t buttonId) override;
 
     virtual ~Area_de_Teste_SAPresenter() {}
+    virtual void updateAutonomos(int val);
 
 
 private:

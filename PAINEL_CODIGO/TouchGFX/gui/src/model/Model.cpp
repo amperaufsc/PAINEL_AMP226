@@ -87,7 +87,7 @@ void Model::tick()
                     modelListener->updateFreioValue(valor);
                     break;
 
-                case 0x341: // Supondo o ID do Acelerador
+                case 0x741: // Supondo o ID do Acelerador
                     modelListener->updateAceleradorValue(valor);
                     break;
                 case 0x128: // ID da Tensão
@@ -107,6 +107,7 @@ void Model::tick()
                     case 0x135: modelListener->updateTempInversorValue(valor); break;
                     case 0x136: modelListener->updateTensaoCelulaMinValue(valor); break;
                     case 0x139: modelListener->updateTensaoHVValue(valor); break;
+                    case 0x541: modelListener->updateAutonomos(valor); break;
 
                 default:
                     // Se cair aqui, o ID que chegou não é o que esperávamos

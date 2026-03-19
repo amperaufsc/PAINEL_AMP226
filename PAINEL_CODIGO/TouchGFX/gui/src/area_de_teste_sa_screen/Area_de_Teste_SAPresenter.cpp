@@ -10,6 +10,8 @@ Area_de_Teste_SAPresenter::Area_de_Teste_SAPresenter(Area_de_Teste_SAView& v)
 void Area_de_Teste_SAPresenter::activate()
 {
 	 model->updateCurrentScreen(5);
+	 model->setStartAutonomos(0);
+
 }
 
 void Area_de_Teste_SAPresenter::deactivate()
@@ -34,3 +36,4 @@ void Area_de_Teste_SAPresenter::hwButtonClicked(uint8_t buttonId)
 
 	}
 }
+void Area_de_Teste_SAPresenter::updateAutonomos(int val) { view.updateAutonomos(val); }

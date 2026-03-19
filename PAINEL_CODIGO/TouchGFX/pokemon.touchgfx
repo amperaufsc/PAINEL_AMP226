@@ -1074,6 +1074,25 @@
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "Areatesteoficial.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TESTE_START",
+            "X": 341,
+            "Y": 302,
+            "Width": 118,
+            "Height": 35,
+            "TextId": "__SingleUse_7ZID",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 221,
+              "Green": 43,
+              "Blue": 125
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           }
         ],
         "Interactions": [

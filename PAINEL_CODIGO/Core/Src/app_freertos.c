@@ -58,7 +58,7 @@ volatile uint8_t estadoBotaoAtual = 0;
 volatile uint8_t ultimoEstadoEnviado = 2;
 volatile uint8_t ID_DA_PAGINA = 0;
 volatile uint8_t START_AUTONOMOS = 0;
-int valorSoc = 0;
+//int valorSoc = 0;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -221,9 +221,9 @@ void StartTaskCAN(void *argument)
 
 	uint8_t TxData[1];
 
-	uint32_t valorRPM = 0;
+	//uint32_t valorRPM = 0;
 
-	uint32_t valorVelocidade = 0;
+	//uint32_t valorVelocidade = 0;
 
 
 
@@ -245,17 +245,17 @@ void StartTaskCAN(void *argument)
 
 	{
 
-	// SISTEMAS AUTONOMOS
+	//  MODO DE PROVA
 
-	TxHeader.Identifier = 0x541;
+	TxHeader.Identifier = 0x341;
 	TxData[0] = ID_DA_PAGINA;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
 	osDelay(50);
 
 
-	// MODO DE PROVA
-	TxHeader.Identifier = 0x341;
+	//  SISTEMAS AUTONOMOS
+	TxHeader.Identifier = 0x541;
 	TxData[0] = START_AUTONOMOS;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
@@ -274,61 +274,61 @@ void StartTaskCAN(void *argument)
 
 
 
-	// RPM (ID 0x123 ) ---
+	// TESTE RPM (ID 0x123 ) ---
 
-	valorRPM++;
+	//valorRPM++;
 
-	if(valorRPM > 8) valorRPM = 0;
-
-
-
-	TxHeader.Identifier = 0x123;
-
-	TxData[0] = (uint8_t)valorRPM;
-
-	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	//if(valorRPM > 8) valorRPM = 0;
 
 
 
-	osDelay(250); // Pequeno intervalo entre mensagens
+	//TxHeader.Identifier = 0x123;
+
+	//TxData[0] = (uint8_t)valorRPM;
+
+	//HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+
+
+	//osDelay(250); // Pequeno intervalo entre mensagens
 
 
 
 	// VELOCIDADE (ID 0x124 ) ---
 
-	valorVelocidade += 10;
+	//valorVelocidade += 10;
 
-	if(valorVelocidade > 80) valorVelocidade = 0;
-
-
-
-	TxHeader.Identifier = 0x124;
-
-	TxData[0] = (uint8_t)valorVelocidade;
-
-	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	//if(valorVelocidade > 80) valorVelocidade = 0;
 
 
 
-	osDelay(250);
+	//TxHeader.Identifier = 0x124;
+
+	//TxData[0] = (uint8_t)valorVelocidade;
+
+	//HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+
+
+	//osDelay(250);
 
 	// --- ENVIO 3: SOC (ID 0x125 ) ---
 
-	valorSoc += 1;
+	//valorSoc += 1;
 
-	if(valorSoc > 100) valorSoc = 0;
-
-
-
-	TxHeader.Identifier = 0x125;
-
-	TxData[0] = (uint8_t)valorSoc;
-
-	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	//if(valorSoc > 100) valorSoc = 0;
 
 
 
-	osDelay(250);
+	//TxHeader.Identifier = 0x125;
+
+	//TxData[0] = (uint8_t)valorSoc;
+
+	//HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+
+
+	//osDelay(250);
 
 	}
   /* USER CODE END Task_CAN */
