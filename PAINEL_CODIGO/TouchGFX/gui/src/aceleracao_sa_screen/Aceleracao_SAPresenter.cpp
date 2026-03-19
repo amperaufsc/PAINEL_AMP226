@@ -19,7 +19,7 @@ void Aceleracao_SAPresenter::deactivate()
 void Aceleracao_SAPresenter::hwButtonClicked(uint8_t buttonId)
 {
 	{
-	    if (buttonId == 3) // PB11 BOLINHA
+	    if (buttonId == 2) // PB11 BOLINHA // PA2 TX-D1
 	    {
 	    	model->setStartAutonomos(3);
 	    }
