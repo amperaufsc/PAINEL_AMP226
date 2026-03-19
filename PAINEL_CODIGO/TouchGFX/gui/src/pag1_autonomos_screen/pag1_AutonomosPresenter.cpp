@@ -19,17 +19,17 @@ void pag1_AutonomosPresenter::deactivate()
 void pag1_AutonomosPresenter::hwButtonClicked(uint8_t buttonId)
 {
 	{
-	    if (buttonId == 3) // PB11 BOLINHA
+	    if (buttonId == 2) // PB11 BOLINHA // PA2 TX-D1
 	    {
 	          static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenBlockTransition();
 	    }
-	    else if (buttonId == 2) // PA3 TRIANGULO
+	    else if (buttonId == 3) // PA3 TRIANGULO
 	    {
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoInspecao_SAScreenSlideTransitionEast();
 	    }
 	    else if (buttonId == 1) // PA2 X
 	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotoAutoCross_SAScreenSlideTransitionWest();
+	         static_cast<FrontendApplication*>(Application::getInstance())->gotoArea_de_Teste_SAScreenSlideTransitionWest();
 	    }
 
 	}
