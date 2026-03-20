@@ -49,7 +49,7 @@
         <Translation Language="GB">Falha BMS</Translation>
       </Text>
       <Text Id="__SingleUse_POJW" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">100</Translation>
       </Text>
       <Text Id="__SingleUse_7INH" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">&lt;value&gt;  %</Translation>

@@ -630,16 +630,18 @@
           {
             "Type": "ImageProgress",
             "Name": "bateria",
-            "X": 305,
-            "Y": 162,
-            "Width": 120,
-            "Height": 90,
-            "FileNameProgress": "batCheia.png",
+            "X": 327,
+            "Y": 177,
+            "Width": 80,
+            "Height": 60,
+            "FileNameProgress": "bateriacheiaazul.png",
             "AnchorAtZero": true,
             "Direction": "Up",
-            "FileNameBackground": "batVazia.png",
-            "IndicatorPositionWidth": 120,
-            "IndicatorPositionHeight": 90,
+            "FileNameBackground": "bateriavazia.png",
+            "IndicatorPositionX": 8,
+            "IndicatorPositionY": 16,
+            "IndicatorPositionWidth": 64,
+            "IndicatorPositionHeight": 42,
             "ProgressRangeMax": 100,
             "ProgressInitialValue": 100
           },
@@ -745,12 +747,12 @@
             "IndicatorPositionWidth": 141,
             "IndicatorPositionHeight": 45,
             "ProgressRangeMax": 100,
-            "ProgressInitialValue": 75
+            "ProgressInitialValue": 1
           },
           {
             "Type": "TextArea",
             "Name": "freio_un",
-            "X": 91,
+            "X": 93,
             "Y": 392,
             "Width": 100,
             "Height": 35,
@@ -952,7 +954,7 @@
             "IndicatorPositionWidth": 141,
             "IndicatorPositionHeight": 45,
             "ProgressRangeMax": 100,
-            "ProgressInitialValue": 75
+            "ProgressInitialValue": 1
           },
           {
             "Type": "TextArea",
@@ -979,7 +981,7 @@
             "Name": "acelerador",
             "X": 565,
             "Y": 352,
-            "Width": 227,
+            "Width": 215,
             "Height": 70,
             "TextId": "__SingleUse_3N7C",
             "TextRotation": "0",
@@ -993,7 +995,7 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "Width": 24,
+            "Width": 13,
             "Height": 40,
             "Visible": false,
             "TextId": "__SingleUse_44IL",
