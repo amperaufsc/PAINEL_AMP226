@@ -31,9 +31,27 @@ void ModoProvaPresenter::updateSOCValue(int val)
 {
     view.updateSOC(val);
 }
-void ModoProvaPresenter::updateFreioValue(int val) { view.updateFreio(val); }
-void ModoProvaPresenter::updateAceleradorValue(int val) { view.updateAcelerador(val); }
-void ModoProvaPresenter::updateTensaoHVValue(int val)      { view.updateTensaoHV(val); }
-void ModoProvaPresenter::updateDistanciaValue(int val)     { view.updateDistancia(val); }
-void ModoProvaPresenter::updatePotenciaValue(int val)      { view.updatePotencia(val); }
-void ModoProvaPresenter::updateTempAcumuladorValue(int val){ view.updateTempAcumulador(val); }
+void ModoProvaPresenter::updateFreioValue(int val)
+{
+	view.updateFreio(val);
+}
+void ModoProvaPresenter::updateAceleradorValue(int val)
+{
+	view.updateAcelerador(val);
+}
+void ModoProvaPresenter::updateTensaoHVValue(int val)
+{
+	view.updateTensaoHV(val);
+}
+void ModoProvaPresenter::updateDistanciaValue(float val)
+{
+	view.updateDistancia(val);
+}
+void ModoProvaPresenter::updatePotenciaValue(int val)
+{
+	view.updatePotencia(val);
+}
+void ModoProvaPresenter::updateTempAcumuladorValue(int val)
+{
+	view.updateTempAcumulador(val);
+}

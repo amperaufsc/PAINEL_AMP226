@@ -664,10 +664,10 @@
           {
             "Type": "TextArea",
             "Name": "distancia_un",
-            "X": 463,
-            "Y": 53,
-            "Width": 100,
-            "Height": 35,
+            "X": 426,
+            "Y": 51,
+            "Width": 165,
+            "Height": 37,
             "TextId": "__SingleUse_OE0U",
             "TextRotation": "0",
             "Color": {

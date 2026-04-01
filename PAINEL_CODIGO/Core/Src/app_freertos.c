@@ -251,7 +251,7 @@ void StartTaskCAN(void *argument)
 	TxData[0] = ID_DA_PAGINA;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-	osDelay(50);
+	osDelay(200);
 
 
 	//  SISTEMAS AUTONOMOS
@@ -259,7 +259,7 @@ void StartTaskCAN(void *argument)
 	TxData[0] = START_AUTONOMOS;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-	osDelay(50);
+	osDelay(200);
 
 
 
@@ -270,7 +270,7 @@ void StartTaskCAN(void *argument)
 	TxData[0] = (uint8_t)state;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-	osDelay(50);
+	osDelay(200);
 
 
 
@@ -293,24 +293,25 @@ void StartTaskCAN(void *argument)
 	//osDelay(250); // Pequeno intervalo entre mensagens
 
 
-
+	// teste
 	// VELOCIDADE (ID 0x124 ) ---
 
-	//valorVelocidade += 10;
-
-	//if(valorVelocidade > 80) valorVelocidade = 0;
-
-
-
-	//TxHeader.Identifier = 0x124;
-
-	//TxData[0] = (uint8_t)valorVelocidade;
-
-	//HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
-
-
-
-	//osDelay(250);
+//	static float valorVelocidade = 0;
+//	valorVelocidade += 1;
+//
+//	if(valorVelocidade > 200) valorVelocidade = 0;
+//
+//
+//
+//	TxHeader.Identifier = 0x124;
+//
+//	TxData[0] = (uint8_t)valorVelocidade;
+//
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//
+//
+//
+//	osDelay(100);
 
 	// --- ENVIO 3: SOC (ID 0x125 ) ---
 
@@ -388,7 +389,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
     {
         // Debug: Se cair aqui, a função HAL falhou
     	debug++;
-        // Isso explica por que o seu ID era um contador:
+        // Isso explica por que o ID era um contador:
         // o código ignorava que a leitura falhou e lia memória vazia.
     }
   }

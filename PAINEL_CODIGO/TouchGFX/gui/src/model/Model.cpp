@@ -23,7 +23,13 @@ extern "C" {
 }
 
 
-Model::Model() : modelListener(0)
+Model::Model() :
+		modelListener(0),
+		//calculo da distancia
+		distancia_total(0.0f),
+		velocidadeatual(0.0f),
+		ultimoTick(0)
+
 {
 
 }
@@ -45,6 +51,30 @@ void Model::setStartAutonomos(uint8_t valor) { // Nome deve ser IDÊNTICO ao .hp
 
 void Model::tick()
 {
+	/* CALCULANDO A DISTANCIA */
+
+	    uint32_t now = osKernelGetTickCount(); // Pega o tempo atual em ms
+
+	    if (ultimoTick != 0) // filtro pra começar a execução
+	    {
+	        uint32_t elapsed_ms = now - ultimoTick;
+
+
+	        // Distância = velocidade * tempo (convertendo ms para segundos)
+	        // d = v * (ms / 1000)
+	        if (velocidadeatual > 0.1f) { // Filtro de ruído
+	        	distancia_total += velocidadeatual * ((float)elapsed_ms / 1000.0f);
+	        }
+
+	        // Envia para a UI
+	        if (modelListener != 0) {
+	            modelListener->updateDistanciaValue((float)(distancia_total / 1000.0f));
+	        }
+	    }
+	    ultimoTick = now;
+
+
+
     /* --- LÓGICA EXISTENTE DOS BOTÕES --- */
     static int debounceCounter = 0;
     if (debounceCounter > 0) debounceCounter--;
@@ -77,37 +107,56 @@ void Model::tick()
 
                 case 0x124:
                     modelListener->updateSpeedValue(valor);
+                    velocidadeatual = (int)valor;
                     break;
 
                 case 0x125:
                     modelListener->updateSOCValue(valor);
                     break;
 
-                case 0x241: // Supondo o ID do Freio
+                case 0x000: // Supondo o ID do Freio
                     modelListener->updateFreioValue(valor);
                     break;
 
                 case 0x741: // Supondo o ID do Acelerador
                     modelListener->updateAceleradorValue(valor);
                     break;
+
                 case 0x128: // ID da Tensão
                     modelListener->updateTensaoHVValue(valor);
                     break;
-                case 0x129: // ID da Distância
-                    modelListener->updateDistanciaValue(valor);
-                    break;
+
                 case 0x130: // ID da Potência
                     modelListener->updatePotenciaValue(valor);
                     break;
+
                 case 0x131: // ID da Temperatura
                     modelListener->updateTempAcumuladorValue(valor);
                     break;
-                case 0x132: modelListener->updateTempMotorValue(valor); break;
-                    case 0x133: modelListener->updateTensaoInversorValue(valor); break;
-                    case 0x135: modelListener->updateTempInversorValue(valor); break;
-                    case 0x136: modelListener->updateTensaoCelulaMinValue(valor); break;
-                    case 0x139: modelListener->updateTensaoHVValue(valor); break;
-                    case 0x541: modelListener->updateAutonomos(valor); break;
+
+                case 0x132:
+                	modelListener->updateTempMotorValue(valor);
+                	break;
+
+                case 0x133:
+                	modelListener->updateTensaoInversorValue(valor);
+                	break;
+
+                case 0x135:
+                	modelListener->updateTempInversorValue(valor);
+                	break;
+
+                case 0x136:
+                	modelListener->updateTensaoCelulaMinValue(valor);
+                    break;
+
+                case 0x139:
+                	modelListener->updateTensaoHVValue(valor);
+                    break;
+
+                case 0x541:
+                	modelListener->updateAutonomos(valor);
+                    break;
 
                 default:
                     // Se cair aqui, o ID que chegou não é o que esperávamos

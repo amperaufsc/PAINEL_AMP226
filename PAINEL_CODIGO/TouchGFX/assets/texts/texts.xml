@@ -55,10 +55,10 @@
         <Translation Language="GB">&lt;value&gt;  %</Translation>
       </Text>
       <Text Id="__SingleUse_WGWZ" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">00000</Translation>
       </Text>
       <Text Id="__SingleUse_OE0U" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; km</Translation>
+        <Translation Language="GB">&lt;value&gt; m</Translation>
       </Text>
       <Text Id="__SingleUse_0N1R" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>

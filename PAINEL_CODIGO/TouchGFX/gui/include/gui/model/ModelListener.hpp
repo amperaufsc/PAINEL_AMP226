@@ -33,6 +33,10 @@ public:
     virtual void updateFalhaINVValue(int val) {}
     virtual void updateFalhaECUValue(int val) {}
 
+    //calculos
+    //distancia
+
+
     void bind(Model* m)
     {
         model = m;

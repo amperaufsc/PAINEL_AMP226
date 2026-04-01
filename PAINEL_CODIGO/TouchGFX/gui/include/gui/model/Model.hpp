@@ -39,6 +39,11 @@ public:
 
 protected:
     ModelListener* modelListener;
+
+    float distancia_total; //em METROS assumindo que a velocidade é m/s e é um float alinhar pra ver como vai ser mandado
+    float velocidadeatual; //assumindo que a velocidade é m/s
+    uint32_t ultimoTick;  // Para calcular o tempo real entre execuções
+
   //  ScreenID currentScreen;
   //  bool estadoPB11;
  //   bool isTelaPermitidaParaPB11(ScreenID id);
