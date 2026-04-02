@@ -64,8 +64,8 @@ void ModoProvaView::updateTensaoHV(int val) {
     TensaoHV_un.invalidate();
 }
 
-void ModoProvaView::updateDistancia(int val) {
-    Unicode::snprintf(distancia_unBuffer, DISTANCIA_UN_SIZE, "%d", val);
+void ModoProvaView::updateDistancia(float val) {
+    Unicode::snprintfFloat(distancia_unBuffer, DISTANCIA_UN_SIZE, "%.2f" , val);
     distancia_un.invalidate();
 }
 

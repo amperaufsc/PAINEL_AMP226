@@ -6,6 +6,7 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+<<<<<<< HEAD
       <Text Id="__SingleUse_GRRB" Alignment="Left" TypographyId="EscritosBotoes">
         <Translation Language="GB">TESTE EBS</Translation>
       </Text>
@@ -98,6 +99,13 @@
       </Text>
       <Text Id="__SingleUse_TJBO" Alignment="Left" TypographyId="paginasautonomos">
         <Translation Language="GB">EBS TESTE</Translation>
+=======
+      <Text Id="__SingleUse_7ZID" Alignment="Left" TypographyId="batman">
+        <Translation Language="GB"> &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_44IL" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1&#10;</Translation>
+>>>>>>> dia1603
       </Text>
       <Text Id="__SingleUse_RFE0" Alignment="Left" TypographyId="batman">
         <Translation Language="GB">0</Translation>
@@ -117,6 +125,7 @@
       <Text Id="__SingleUse_20FB" Alignment="Left" TypographyId="batman">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
+<<<<<<< HEAD
       <Text Id="__SingleUse_WI60" Alignment="Left" TypographyId="paginasautonomos">
         <Translation Language="GB">SKIDPAD</Translation>
       </Text>
@@ -126,6 +135,8 @@
       <Text Id="__SingleUse_P2D1" Alignment="Center" TypographyId="paginasautonomos">
         <Translation Language="GB">AUTOCROSS</Translation>
       </Text>
+=======
+>>>>>>> dia1603
       <Text Id="__SingleUse_WL4J" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Falha ECU</Translation>
       </Text>
@@ -145,16 +156,16 @@
         <Translation Language="GB">Falha BMS</Translation>
       </Text>
       <Text Id="__SingleUse_POJW" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">100</Translation>
       </Text>
       <Text Id="__SingleUse_7INH" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">&lt;value&gt;  %</Translation>
       </Text>
       <Text Id="__SingleUse_WGWZ" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">00000</Translation>
       </Text>
       <Text Id="__SingleUse_OE0U" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; km</Translation>
+        <Translation Language="GB">&lt;value&gt; m</Translation>
       </Text>
       <Text Id="__SingleUse_0N1R" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
@@ -223,7 +234,11 @@
         <Translation Language="GB">&lt;value&gt; °C</Translation>
       </Text>
       <Text Id="__SingleUse_3N7C" Alignment="Center" TypographyId="coringa">
+<<<<<<< HEAD
         <Translation Language="GB">ACELERADOR</Translation>
+=======
+        <Translation Language="GB">ACELERACAO&#10;</Translation>
+>>>>>>> dia1603
       </Text>
       <Text Id="__SingleUse_CBAY" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">000</Translation>

@@ -15,9 +15,8 @@ public:
     virtual void updateSpeedValue(int val) {}
     virtual void updateFreioValue(int val) {}
     virtual void updateAceleradorValue(int val) {}
-    virtual void updateDistanciaValue(int val) {
-
-    }
+    virtual void updateDistanciaValue(int val) { }
+    virtual void updateAutonomos(int val) { }
     // Sensores e Medidas
     virtual void updateTempMotorValue(int val) {}
     virtual void updateTensaoInversorValue(int val) {}
@@ -33,6 +32,10 @@ public:
     virtual void updateFalhaBMSValue(int val) {}
     virtual void updateFalhaINVValue(int val) {}
     virtual void updateFalhaECUValue(int val) {}
+
+    //calculos
+    //distancia
+
 
     void bind(Model* m)
     {

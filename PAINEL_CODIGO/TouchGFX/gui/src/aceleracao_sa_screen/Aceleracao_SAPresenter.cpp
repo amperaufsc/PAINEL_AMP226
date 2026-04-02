@@ -9,6 +9,11 @@ Aceleracao_SAPresenter::Aceleracao_SAPresenter(Aceleracao_SAView& v)
 
 void Aceleracao_SAPresenter::activate()
 {
+<<<<<<< HEAD
+=======
+	 model->updateCurrentScreen(7);
+	 model->setStartAutonomos(0);
+>>>>>>> dia1603
 }
 
 void Aceleracao_SAPresenter::deactivate()
@@ -18,11 +23,11 @@ void Aceleracao_SAPresenter::deactivate()
 void Aceleracao_SAPresenter::hwButtonClicked(uint8_t buttonId)
 {
 	{
-	    if (buttonId == 3) // PB11 BOLINHA
+	    if (buttonId == 2) // PB11 BOLINHA // PA2 TX-D1
 	    {
-	     //   static_cast<FrontendApplication*>(Application::getInstance())->gotoSkinped_SAScreenBlockTransition();
+	    	model->setStartAutonomos(3);
 	    }
-	    else if (buttonId == 2) // PA3 TRIANGULO
+	    else if (buttonId == 3) // PA3 TRIANGULO
 	    {
 	    	model->reportCurrentScreen(Model::AUTOCROSS);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoAutoCross_SAScreenSlideTransitionEast();

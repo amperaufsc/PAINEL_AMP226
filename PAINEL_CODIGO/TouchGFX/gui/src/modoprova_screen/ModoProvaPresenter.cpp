@@ -5,12 +5,18 @@
 ModoProvaPresenter::ModoProvaPresenter(ModoProvaView& v) : view(v) { }
 
 void ModoProvaPresenter::activate() {
+<<<<<<< HEAD
+=======
+
+	    model->updateCurrentScreen(3); // ID para Modo Prova
+
+>>>>>>> dia1603
 }
 void ModoProvaPresenter::deactivate() { }
 
 void ModoProvaPresenter::hwButtonClicked(uint8_t buttonId)
 {
-    if (buttonId == 3)
+    if (buttonId == 2) // PA2 TX-D1 BOLINHA
     {
     	model->reportCurrentScreen(Model::CAPA);
     	static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
@@ -29,9 +35,27 @@ void ModoProvaPresenter::updateSOCValue(int val)
 {
     view.updateSOC(val);
 }
-void ModoProvaPresenter::updateFreioValue(int val) { view.updateFreio(val); }
-void ModoProvaPresenter::updateAceleradorValue(int val) { view.updateAcelerador(val); }
-void ModoProvaPresenter::updateTensaoHVValue(int val)      { view.updateTensaoHV(val); }
-void ModoProvaPresenter::updateDistanciaValue(int val)     { view.updateDistancia(val); }
-void ModoProvaPresenter::updatePotenciaValue(int val)      { view.updatePotencia(val); }
-void ModoProvaPresenter::updateTempAcumuladorValue(int val){ view.updateTempAcumulador(val); }
+void ModoProvaPresenter::updateFreioValue(int val)
+{
+	view.updateFreio(val);
+}
+void ModoProvaPresenter::updateAceleradorValue(int val)
+{
+	view.updateAcelerador(val);
+}
+void ModoProvaPresenter::updateTensaoHVValue(int val)
+{
+	view.updateTensaoHV(val);
+}
+void ModoProvaPresenter::updateDistanciaValue(float val)
+{
+	view.updateDistancia(val);
+}
+void ModoProvaPresenter::updatePotenciaValue(int val)
+{
+	view.updatePotencia(val);
+}
+void ModoProvaPresenter::updateTempAcumuladorValue(int val)
+{
+	view.updateTempAcumulador(val);
+}

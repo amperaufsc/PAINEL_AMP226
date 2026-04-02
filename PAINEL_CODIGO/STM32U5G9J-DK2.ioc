@@ -239,8 +239,12 @@ PA3.GPIO_ModeDefaultEXTI=GPIO_MODE_IT_FALLING
 PA3.GPIO_PuPd=GPIO_PULLUP
 PA3.Locked=true
 PA3.Signal=GPXTI3
+<<<<<<< HEAD
 PA8.GPIOParameters=GPIO_PuPd,GPIO_Label
 PA8.GPIO_Label=BOTAO_PA8
+=======
+PA8.GPIOParameters=GPIO_PuPd
+>>>>>>> dia1603
 PA8.GPIO_PuPd=GPIO_PULLUP
 PA8.Locked=true
 PA8.Signal=GPIO_Input
@@ -615,6 +619,8 @@ board=custom
 rtos.0.ip=STMicroelectronics.X-CUBE-FREERTOS.1.0.1
 rtos.0.queues.0=allocationType,Dynamic;bufferName,NULL;controlBlockName,NULL;itemNumber,16;itemSize,uint32_t;name,QueueButton
 rtos.0.queues.1=allocationType,Dynamic;bufferName,NULL;controlBlockName,NULL;itemNumber,16;itemSize,can_msg_t;name,Queue_CAN_RX
+rtos.0.queues.2=allocationType,Dynamic;bufferName,NULL;controlBlockName,NULL;itemNumber,16;itemSize,uint16_t;name,FilaReady
 rtos.0.tasks.0=allocationType,Dynamic;bufferName,NULL;codeGen,Default;controlBlockName,NULL;entry,StartDefaultTask;name,defaultTask;parameter,NULL;priority,osPriorityNormal;stackSize,128
 rtos.0.tasks.1=allocationType,Dynamic;bufferName,NULL;codeGen,As external;controlBlockName,NULL;entry,TouchGFX_Task;name,GUI_Task;parameter,NULL;priority,osPriorityNormal;stackSize,8192
 rtos.0.tasks.2=allocationType,Dynamic;bufferName,NULL;codeGen,Default;controlBlockName,NULL;entry,StartTaskCAN;name,Task_CAN;parameter,NULL;priority,osPriorityNormal;stackSize,1024
+rtos.0.tasks.3=allocationType,Dynamic;bufferName,NULL;codeGen,Default;controlBlockName,NULL;entry,ReadyToDrive;name,READYTODRIVE;parameter,NULL;priority,osPriorityLow;stackSize,128

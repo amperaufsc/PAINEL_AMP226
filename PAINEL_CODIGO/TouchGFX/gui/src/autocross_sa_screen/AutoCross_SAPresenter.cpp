@@ -9,6 +9,11 @@ AutoCross_SAPresenter::AutoCross_SAPresenter(AutoCross_SAView& v)
 
 void AutoCross_SAPresenter::activate()
 {
+<<<<<<< HEAD
+=======
+	 model->updateCurrentScreen(6);
+	 model->setStartAutonomos(0);
+>>>>>>> dia1603
 }
 
 void AutoCross_SAPresenter::deactivate()
@@ -18,11 +23,11 @@ void AutoCross_SAPresenter::deactivate()
 void AutoCross_SAPresenter::hwButtonClicked(uint8_t buttonId)
 {
 	{
-	    if (buttonId == 3) // PB11 BOLINHA
+	    if (buttonId == 2) // PB11 BOLINHA // PA2 TX-D1
 	    {
-	     //   static_cast<FrontendApplication*>(Application::getInstance())->gotoSkinped_SAScreenBlockTransition();
+	    	model->setStartAutonomos(2);
 	    }
-	    else if (buttonId == 2) // PA3 TRIANGULO
+	    else if (buttonId == 3) // PA3 TRIANGULO
 	    {
 	    	model->reportCurrentScreen(Model::AREA_TESTE);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoArea_de_Teste_SAScreenSlideTransitionEast();

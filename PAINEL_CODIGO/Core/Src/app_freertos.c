@@ -56,8 +56,16 @@ volatile uint32_t ultimo_id_recebido = 0;
 volatile uint32_t erro_fila_count = 0;
 volatile uint8_t debug = 0;
 volatile uint32_t debug_id_isr = 0;
+<<<<<<< HEAD
 bool estadoBotaoPA8 = false; // Estado lógico do botão
 
+=======
+volatile uint8_t estadoBotaoAtual = 0;
+volatile uint8_t ultimoEstadoEnviado = 2;
+volatile uint8_t ID_DA_PAGINA = 0;
+volatile uint8_t START_AUTONOMOS = 0;
+//int valorSoc = 0;
+>>>>>>> dia1603
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -80,6 +88,13 @@ const osThreadAttr_t Task_CAN_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
   .stack_size = 1024 * 4
 };
+/* Definitions for READYTODRIVE */
+osThreadId_t READYTODRIVEHandle;
+const osThreadAttr_t READYTODRIVE_attributes = {
+  .name = "READYTODRIVE",
+  .priority = (osPriority_t) osPriorityLow,
+  .stack_size = 128 * 4
+};
 /* Definitions for QueueButton */
 osMessageQueueId_t QueueButtonHandle;
 const osMessageQueueAttr_t QueueButton_attributes = {
@@ -90,6 +105,11 @@ osMessageQueueId_t Queue_CAN_RXHandle;
 const osMessageQueueAttr_t Queue_CAN_RX_attributes = {
   .name = "Queue_CAN_RX"
 };
+/* Definitions for FilaReady */
+osMessageQueueId_t FilaReadyHandle;
+const osMessageQueueAttr_t FilaReady_attributes = {
+  .name = "FilaReady"
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -99,6 +119,7 @@ extern portBASE_TYPE IdleTaskHook(void* p);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 void StartTaskCAN(void *argument);
+void ReadyToDrive(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -147,6 +168,8 @@ void MX_FREERTOS_Init(void) {
   QueueButtonHandle = osMessageQueueNew (16, sizeof(uint32_t), &QueueButton_attributes);
   /* creation of Queue_CAN_RX */
   Queue_CAN_RXHandle = osMessageQueueNew (16, sizeof(can_msg_t), &Queue_CAN_RX_attributes);
+  /* creation of FilaReady */
+  FilaReadyHandle = osMessageQueueNew (16, sizeof(uint16_t), &FilaReady_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -159,6 +182,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of Task_CAN */
   Task_CANHandle = osThreadNew(StartTaskCAN, NULL, &Task_CAN_attributes);
+
+  /* creation of READYTODRIVE */
+  READYTODRIVEHandle = osThreadNew(ReadyToDrive, NULL, &READYTODRIVE_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -193,10 +219,12 @@ void StartDefaultTask(void *argument)
 * @param argument: Not used
 * @retval None
 */
+
 /* USER CODE END Header_StartTaskCAN */
 void StartTaskCAN(void *argument)
 {
   /* USER CODE BEGIN Task_CAN */
+<<<<<<< HEAD
   /* Infinite loop */
 	can_msg_t msg_interna;
 	    FDCAN_TxHeaderTypeDef TxHeader;
@@ -251,6 +279,145 @@ void StartTaskCAN(void *argument)
 	    // osDelay(250);
 	   }
   /* USER CODE END Task_CAN */
+=======
+	FDCAN_TxHeaderTypeDef TxHeader;
+
+	uint8_t TxData[1];
+
+	//uint32_t valorRPM = 0;
+
+	//uint32_t valorVelocidade = 0;
+
+
+
+	// Configurações base do Header
+
+	memset(&TxHeader, 0, sizeof(TxHeader));
+
+	TxHeader.IdType = FDCAN_STANDARD_ID;
+
+	TxHeader.TxFrameType = FDCAN_DATA_FRAME;
+
+	TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+
+	TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
+
+
+	/* Infinite loop */
+	for(;;)
+
+	{
+
+	//  MODO DE PROVA
+
+	TxHeader.Identifier = 0x341;
+	TxData[0] = ID_DA_PAGINA;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	osDelay(200);
+
+
+	//  SISTEMAS AUTONOMOS
+	TxHeader.Identifier = 0x541;
+	TxData[0] = START_AUTONOMOS;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	osDelay(200);
+
+
+
+
+	// READY TO DRIVE
+	uint32_t state = !(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8));
+	TxHeader.Identifier = 0x241;
+	TxData[0] = (uint8_t)state;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	osDelay(200);
+
+
+
+	// TESTE RPM (ID 0x123 ) ---
+
+	//valorRPM++;
+
+	//if(valorRPM > 8) valorRPM = 0;
+
+
+
+	//TxHeader.Identifier = 0x123;
+
+	//TxData[0] = (uint8_t)valorRPM;
+
+	//HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+
+
+	//osDelay(250); // Pequeno intervalo entre mensagens
+
+
+	// teste
+	// VELOCIDADE (ID 0x124 ) ---
+
+//	static float valorVelocidade = 0;
+//	valorVelocidade += 1;
+//
+//	if(valorVelocidade > 200) valorVelocidade = 0;
+//
+//
+//
+//	TxHeader.Identifier = 0x124;
+//
+//	TxData[0] = (uint8_t)valorVelocidade;
+//
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//
+//
+//
+//	osDelay(100);
+
+	// --- ENVIO 3: SOC (ID 0x125 ) ---
+
+	//valorSoc += 1;
+
+	//if(valorSoc > 100) valorSoc = 0;
+
+
+
+	//TxHeader.Identifier = 0x125;
+
+	//TxData[0] = (uint8_t)valorSoc;
+
+	//HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+
+
+	//osDelay(250);
+
+	}
+  /* USER CODE END Task_CAN */
+}
+
+/* USER CODE BEGIN Header_ReadyToDrive */
+/**
+* @brief Function implementing the READYTODRIVE thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_ReadyToDrive */
+void ReadyToDrive(void *argument)
+{
+  /* USER CODE BEGIN READYTODRIVE */
+  /* Infinite loop */
+  for(;;)
+  {
+	//uint32_t state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8);
+	//osMessageQueuePut(QueueButtonHandle, &state, 0, 0);
+    osDelay(1);
+  }
+  /* USER CODE END READYTODRIVE */
+}
+>>>>>>> dia1603
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
@@ -280,7 +447,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
     {
         // Debug: Se cair aqui, a função HAL falhou
     	debug++;
-        // Isso explica por que o seu ID era um contador:
+        // Isso explica por que o ID era um contador:
         // o código ignorava que a leitura falhou e lia memória vazia.
     }
   }

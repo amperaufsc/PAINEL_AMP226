@@ -390,6 +390,7 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
 		</link>
 		<link>
+<<<<<<< HEAD
 			<name>Application/User/gui/Fundo_SA.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Fundo_SA.cpp</locationURI>
@@ -415,6 +416,8 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/dirigir_manual_sa_screen/Dirigir_manual_SAPresenter.cpp</locationURI>
 		</link>
 		<link>
+=======
+>>>>>>> dia1603
 			<name>Application/User/gui/EBS_Teste_SAPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/ebs_teste_sa_screen/EBS_Teste_SAPresenter.cpp</locationURI>
@@ -690,6 +693,7 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
 		</link>
 		<link>
+<<<<<<< HEAD
 			<name>Application/User/generated/Fundo_SABase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/Fundo_SABase.cpp</locationURI>
@@ -710,6 +714,8 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/fundo_testeBase.cpp</locationURI>
 		</link>
 		<link>
+=======
+>>>>>>> dia1603
 			<name>Application/User/generated/EBS_Teste_SAViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/ebs_teste_sa_screen/EBS_Teste_SAViewBase.cpp</locationURI>
@@ -755,9 +761,15 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
 		</link>
 		<link>
+<<<<<<< HEAD
 			<name>Application/User/generated/image_ACEL.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_ACEL.cpp</locationURI>
+=======
+			<name>Application/User/generated/image_Areatesteoficial.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Areatesteoficial.cpp</locationURI>
+>>>>>>> dia1603
 		</link>
 		<link>
 			<name>Application/User/generated/image_BATERIA.cpp</name>
@@ -770,14 +782,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_BRAK.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_DIREITA.cpp</name>
+			<name>Application/User/generated/image_EBS.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_DIREITA.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_ESQUERDA.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_ESQUERDA.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_EBS.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_FUNDOFALSO.cpp</name>
@@ -785,29 +792,47 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_FUNDOFALSO.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_FundaSA.cpp</name>
+			<name>Application/User/generated/image_FundoAMP.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_FundaSA.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_FundoAMP.cpp</locationURI>
 		</link>
 		<link>
+<<<<<<< HEAD
 			<name>Application/User/generated/image_Fundotesteeletricav2.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Fundotesteeletricav2.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_MENU_painel.cpp</name>
+=======
+			<name>Application/User/generated/image_MODODEPROVA.cpp</name>
+>>>>>>> dia1603
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_MENU_painel.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_MODODEPROVA.cpp</locationURI>
 		</link>
 		<link>
+<<<<<<< HEAD
 			<name>Application/User/generated/image_acelofc.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_acelofc.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_bandeirachegada.cpp</name>
+=======
+			<name>Application/User/generated/image_TRACKDRIVE.cpp</name>
+>>>>>>> dia1603
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bandeirachegada.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_TRACKDRIVE.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_aceleracao.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_aceleracao.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_autocross.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_autocross.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_bateriavazia.cpp</name>
@@ -820,36 +845,41 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriavaziaofc.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_bola.play_-_Editado.cpp</name>
+			<name>Application/User/generated/image_bateriacheiaazul.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bola.play_-_Editado.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriacheiaazul.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_botaoMENU.cpp</name>
+			<name>Application/User/generated/image_bateriavazia.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_botaoMENU.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriavazia.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_capa.cpp</name>
+			<name>Application/User/generated/image_bateriavaziaazul.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capa.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriavaziaazul.cpp</locationURI>
 		</link>
 		<link>
+<<<<<<< HEAD
 			<name>Application/User/generated/image_capaOFC.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capaOFC.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_capav2.cpp</name>
+=======
+			<name>Application/User/generated/image_bateriavaziaofc.cpp</name>
+>>>>>>> dia1603
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capav2.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriavaziaofc.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_capav3.2.cpp</name>
+			<name>Application/User/generated/image_capa_oficial.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capav3.2.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capa_oficial.cpp</locationURI>
 		</link>
 		<link>
+<<<<<<< HEAD
 			<name>Application/User/generated/image_freioofc.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_freioofc.cpp</locationURI>
@@ -861,23 +891,11 @@
 		</link>
 		<link>
 			<name>Application/User/generated/image_fundo_prova.cpp</name>
+=======
+			<name>Application/User/generated/image_inspecao.cpp</name>
+>>>>>>> dia1603
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundo_prova.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_fundo_testes.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundo_testes.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_fundobonito.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundobonito.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_fundocorrigido.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundocorrigido.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_inspecao.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_fundogeral.cpp</name>
@@ -915,14 +933,33 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logobrancav2.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_menu.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_menu.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_ponteira.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_ponteira.cpp</locationURI>
+		</link>
+		<link>
+<<<<<<< HEAD
+			<name>Application/User/generated/image_tacometroofc.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_tacometroofc.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_triangulo.play_-_Editado.cpp</name>
+=======
+			<name>Application/User/generated/image_progressoazul.cpp</name>
+>>>>>>> dia1603
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_progressoazul.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_progressorosa.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_progressorosa.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_skidpad.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_skidpad.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_tacometroofc.cpp</name>
@@ -930,34 +967,17 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_tacometroofc.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_triangulo.play_-_Editado.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_triangulo.play_-_Editado.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_velocimetro.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_velocimetro.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_velocimetro80.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_velocimetro80.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_velocimetro_template.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_velocimetro_template.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_velocimetroofc.cpp</name>
+<<<<<<< HEAD
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_velocimetroofc.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_x.play_-_Editado.cpp</name>
+=======
+>>>>>>> dia1603
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_x.play_-_Editado.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_velocimetroofc.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/LanguageGb.cpp</name>

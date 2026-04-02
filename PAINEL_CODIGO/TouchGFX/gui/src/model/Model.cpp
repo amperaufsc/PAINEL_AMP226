@@ -13,6 +13,9 @@ extern "C" {
     extern osMessageQueueId_t Queue_CAN_RXHandle; // Handle da fila do CAN
     extern volatile uint8_t pressedButtonId;
     extern int valorSoc;
+    extern volatile uint8_t ID_DA_PAGINA;
+    extern volatile uint8_t START_AUTONOMOS;
+
 
 
     extern osMessageQueueId_t Queue_CAN_RXHandle;
@@ -22,7 +25,17 @@ extern "C" {
 }
 
 
+<<<<<<< HEAD
 Model::Model() : modelListener(0), currentScreen(CAPA) , estadoPB11(false)
+=======
+Model::Model() :
+		modelListener(0),
+		//calculo da distancia
+		distancia_total(0.0f),
+		velocidadeatual(0.0f),
+		ultimoTick(0)
+
+>>>>>>> dia1603
 {
 
 }
@@ -41,11 +54,49 @@ uint32_t model_recebeu_fila = 0;
 uint32_t id_errado_count = 0;
 uint32_t ultimo_id_intruso = 0;
 
+void Model::updateCurrentScreen(uint8_t screenId) {
+    ID_DA_PAGINA = screenId;
+}
+
+void Model::setStartAutonomos(uint8_t valor) { // Nome deve ser IDÊNTICO ao .hpp
+    START_AUTONOMOS = valor;
+}
+
 void Model::tick()
 {
+<<<<<<< HEAD
 	/* --- LÓGICA EXISTENTE DO BOTÃO VIRTUAL --- */
 	    static int debounceCounter = 0;
 	    if (debounceCounter > 0) debounceCounter--;
+=======
+	/* CALCULANDO A DISTANCIA */
+
+	    uint32_t now = osKernelGetTickCount(); // Pega o tempo atual em ms
+
+	    if (ultimoTick != 0) // filtro pra começar a execução
+	    {
+	        uint32_t elapsed_ms = now - ultimoTick;
+
+
+	        // Distância = velocidade * tempo (convertendo ms para segundos)
+	        // d = v * (ms / 1000)
+	        if (velocidadeatual > 0.1f) { // Filtro de ruído
+	        	distancia_total += velocidadeatual * ((float)elapsed_ms / 1000.0f);
+	        }
+
+	        // Envia para a UI
+	        if (modelListener != 0) {
+	            modelListener->updateDistanciaValue((float)(distancia_total / 1000.0f));
+	        }
+	    }
+	    ultimoTick = now;
+
+
+
+    /* --- LÓGICA EXISTENTE DOS BOTÕES --- */
+    static int debounceCounter = 0;
+    if (debounceCounter > 0) debounceCounter--;
+>>>>>>> dia1603
 
 	    if (pressedButtonId != 0 && debounceCounter == 0)
 	    {
@@ -77,13 +128,21 @@ void Model::tick()
 	    /* --- LÓGICA DE RECEPÇÃO CAN --- */
 	    can_msg_t msg_recebida;
 
+<<<<<<< HEAD
 	    // Verifica se conseguimos tirar algo da fila
 	    if (osMessageQueueGet(Queue_CAN_RXHandle, &msg_recebida, NULL, 0) == osOK)
 	    {
 	        model_recebeu_fila++;
+=======
+                case 0x124:
+                    modelListener->updateSpeedValue(valor);
+                    velocidadeatual = (int)valor;
+                    break;
+>>>>>>> dia1603
 
 	        uint16_t valor = msg_recebida.data[0];
 
+<<<<<<< HEAD
 	        switch (msg_recebida.id)
 	        {
 	            case 0x341: modelListener->updateRPMValue(valor); break; // Aqui vai mostrar a Screen!
@@ -107,6 +166,51 @@ void Model::tick()
 	        } // FIM DO SWITCH
 	    } // FIM DO IF DA FILA CAN
 
+=======
+                case 0x000: // Supondo o ID do Freio
+                    modelListener->updateFreioValue(valor);
+                    break;
+
+                case 0x741: // Supondo o ID do Acelerador
+                    modelListener->updateAceleradorValue(valor);
+                    break;
+
+                case 0x128: // ID da Tensão
+                    modelListener->updateTensaoHVValue(valor);
+                    break;
+
+                case 0x130: // ID da Potência
+                    modelListener->updatePotenciaValue(valor);
+                    break;
+
+                case 0x131: // ID da Temperatura
+                    modelListener->updateTempAcumuladorValue(valor);
+                    break;
+
+                case 0x132:
+                	modelListener->updateTempMotorValue(valor);
+                	break;
+
+                case 0x133:
+                	modelListener->updateTensaoInversorValue(valor);
+                	break;
+
+                case 0x135:
+                	modelListener->updateTempInversorValue(valor);
+                	break;
+
+                case 0x136:
+                	modelListener->updateTensaoCelulaMinValue(valor);
+                    break;
+
+                case 0x139:
+                	modelListener->updateTensaoHVValue(valor);
+                    break;
+
+                case 0x541:
+                	modelListener->updateAutonomos(valor);
+                    break;
+>>>>>>> dia1603
 
 	}
 void Model::reportCurrentScreen(ScreenID screenId)

@@ -56,14 +56,14 @@ extern "C"
             return;
         }
 
-            if (GPIO_Pin == GPIO_PIN_2) {
-                pressedButtonId = 1;
+            if (GPIO_Pin == GPIO_PIN_2) { // PA2 TX-D1 BOLINHA
+                pressedButtonId = 2;
                 flagEnviarCAN = 1;
             }
-            else if (GPIO_Pin == GPIO_PIN_3) {
-                pressedButtonId = 2;
+            else if (GPIO_Pin == GPIO_PIN_3) { // PA3 RX/D0 X
+                pressedButtonId = 1;
             }
-            else if (GPIO_Pin == GPIO_PIN_11) {
+            else if (GPIO_Pin == GPIO_PIN_11) { // PB11 D2 TRIANGULO
                 pressedButtonId = 3;
             }
         }

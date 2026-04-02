@@ -9,6 +9,12 @@ Area_de_Teste_SAPresenter::Area_de_Teste_SAPresenter(Area_de_Teste_SAView& v)
 
 void Area_de_Teste_SAPresenter::activate()
 {
+<<<<<<< HEAD
+=======
+	 model->updateCurrentScreen(5);
+	 model->setStartAutonomos(0);
+
+>>>>>>> dia1603
 }
 
 void Area_de_Teste_SAPresenter::deactivate()
@@ -18,11 +24,11 @@ void Area_de_Teste_SAPresenter::deactivate()
 void Area_de_Teste_SAPresenter::hwButtonClicked(uint8_t buttonId)
 {
 	{
-	    if (buttonId == 3) // PB11 BOLINHA
+	    if (buttonId == 2) // PB11 BOLINHA // PA2 TX-D1
 	    {
-	     //     static_cast<FrontendApplication*>(Application::getInstance())->CapaScreenSlideTransition();
+	    	model->setStartAutonomos(1);
 	    }
-	    else if (buttonId == 2) // PA3 TRIANGULO
+	    else if (buttonId == 3) // PA3 TRIANGULO
 	    {
 	    	model->reportCurrentScreen(Model::AUTONOMOS);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotopag1_AutonomosScreenSlideTransitionEast();
@@ -35,3 +41,4 @@ void Area_de_Teste_SAPresenter::hwButtonClicked(uint8_t buttonId)
 
 	}
 }
+void Area_de_Teste_SAPresenter::updateAutonomos(int val) { view.updateAutonomos(val); }

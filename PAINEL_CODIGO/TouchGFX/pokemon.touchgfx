@@ -5,20 +5,29 @@
         "Name": "Capa",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_capa1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "CustomContainerDefinitionName": "Fundo_capa"
+            "RelativeFilename": "capa oficial.png"
           },
           {
             "Type": "Image",
+<<<<<<< HEAD
             "Name": "logobranca",
             "X": 200,
             "Y": -20,
             "Width": 400,
             "Height": 200,
             "RelativeFilename": "logobranca.png"
+=======
+            "Name": "image2",
+            "X": 29,
+            "Y": -166,
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "logo_branca.png"
+>>>>>>> dia1603
           }
         ],
         "Interactions": [
@@ -61,11 +70,15 @@
         "Name": "Testes",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_teste1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
+<<<<<<< HEAD
             "CustomContainerDefinitionName": "fundo_teste"
+=======
+            "RelativeFilename": "FundoAMP.png"
+>>>>>>> dia1603
           },
           {
             "Type": "TextArea",
@@ -582,11 +595,19 @@
         "Name": "ModoProva",
         "Components": [
           {
+<<<<<<< HEAD
             "Type": "CustomContainerInstance",
             "Name": "fundo_teste1",
             "Width": 800,
             "Height": 480,
             "CustomContainerDefinitionName": "fundo_teste"
+=======
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "FundoAMP.png"
+>>>>>>> dia1603
           },
           {
             "Type": "Gauge",
@@ -645,18 +666,32 @@
           {
             "Type": "ImageProgress",
             "Name": "bateria",
+<<<<<<< HEAD
             "X": 320,
             "Y": 174,
             "Width": 80,
             "Height": 60,
             "FileNameProgress": "bateriavaziaofc.png",
+=======
+            "X": 327,
+            "Y": 177,
+            "Width": 80,
+            "Height": 60,
+            "FileNameProgress": "bateriacheiaazul.png",
+>>>>>>> dia1603
             "AnchorAtZero": true,
             "Direction": "Up",
             "FileNameBackground": "bateriavazia.png",
             "IndicatorPositionX": 8,
+<<<<<<< HEAD
             "IndicatorPositionY": 15,
             "IndicatorPositionWidth": 64,
             "IndicatorPositionHeight": 44,
+=======
+            "IndicatorPositionY": 16,
+            "IndicatorPositionWidth": 64,
+            "IndicatorPositionHeight": 42,
+>>>>>>> dia1603
             "ProgressRangeMax": 100,
             "ProgressInitialValue": 100
           },
@@ -679,10 +714,17 @@
           {
             "Type": "TextArea",
             "Name": "distancia_un",
+<<<<<<< HEAD
             "X": 452,
             "Y": 53,
             "Width": 100,
             "Height": 35,
+=======
+            "X": 426,
+            "Y": 51,
+            "Width": 165,
+            "Height": 37,
+>>>>>>> dia1603
             "TextId": "__SingleUse_OE0U",
             "TextRotation": "0",
             "Color": {
@@ -735,7 +777,11 @@
           {
             "Type": "TextArea",
             "Name": "RPM",
+<<<<<<< HEAD
             "X": 98,
+=======
+            "X": 76,
+>>>>>>> dia1603
             "Y": 51,
             "Width": 67,
             "Height": 35,
@@ -755,19 +801,27 @@
             "Y": 387,
             "Width": 141,
             "Height": 45,
+<<<<<<< HEAD
             "FileNameProgress": "freioofc.png",
+=======
+            "FileNameProgress": "progressorosa.png",
+>>>>>>> dia1603
             "AnchorAtZero": true,
             "Direction": "Right",
             "FileNameBackground": "FUNDOFALSO.png",
             "IndicatorPositionWidth": 141,
             "IndicatorPositionHeight": 45,
             "ProgressRangeMax": 100,
+<<<<<<< HEAD
             "ProgressInitialValue": 25
+=======
+            "ProgressInitialValue": 1
+>>>>>>> dia1603
           },
           {
             "Type": "TextArea",
             "Name": "freio_un",
-            "X": 92,
+            "X": 93,
             "Y": 392,
             "Width": 100,
             "Height": 35,
@@ -787,8 +841,13 @@
           {
             "Type": "TextArea",
             "Name": "freio",
+<<<<<<< HEAD
             "X": 73,
             "Y": 348,
+=======
+            "X": 61,
+            "Y": 346,
+>>>>>>> dia1603
             "Width": 94,
             "Height": 35,
             "TextId": "__SingleUse_3DVT",
@@ -854,7 +913,11 @@
           {
             "Type": "TextArea",
             "Name": "velocidade",
+<<<<<<< HEAD
             "X": 589,
+=======
+            "X": 595,
+>>>>>>> dia1603
             "Y": 51,
             "Width": 167,
             "Height": 35,
@@ -962,14 +1025,22 @@
             "Y": 392,
             "Width": 141,
             "Height": 45,
+<<<<<<< HEAD
             "FileNameProgress": "acelofc.png",
+=======
+            "FileNameProgress": "progressoazul.png",
+>>>>>>> dia1603
             "AnchorAtZero": true,
             "Direction": "Right",
             "FileNameBackground": "FUNDOFALSO.png",
             "IndicatorPositionWidth": 141,
             "IndicatorPositionHeight": 45,
             "ProgressRangeMax": 100,
+<<<<<<< HEAD
             "ProgressInitialValue": 10
+=======
+            "ProgressInitialValue": 1
+>>>>>>> dia1603
           },
           {
             "Type": "TextArea",
@@ -994,10 +1065,17 @@
           {
             "Type": "TextArea",
             "Name": "acelerador",
+<<<<<<< HEAD
             "X": 584,
             "Y": 353,
             "Width": 214,
             "Height": 35,
+=======
+            "X": 565,
+            "Y": 352,
+            "Width": 215,
+            "Height": 70,
+>>>>>>> dia1603
             "TextId": "__SingleUse_3N7C",
             "TextRotation": "0",
             "Color": {
@@ -1009,6 +1087,7 @@
           },
           {
             "Type": "TextArea",
+<<<<<<< HEAD
             "Name": "menu",
             "X": 65,
             "Y": 446,
@@ -1021,6 +1100,14 @@
               "Green": 255,
               "Blue": 255
             },
+=======
+            "Name": "textArea1",
+            "Width": 13,
+            "Height": 40,
+            "Visible": false,
+            "TextId": "__SingleUse_44IL",
+            "TextRotation": "0",
+>>>>>>> dia1603
             "AutoSize": true
           }
         ],
@@ -1043,10 +1130,11 @@
         "Name": "pag1_Autonomos",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
+<<<<<<< HEAD
             "CustomContainerDefinitionName": "Fundo_SA"
           },
           {
@@ -1112,6 +1200,9 @@
               "Blue": 255
             },
             "AutoSize": true
+=======
+            "RelativeFilename": "MODODEPROVA.png"
+>>>>>>> dia1603
           }
         ],
         "Interactions": [
@@ -1127,7 +1218,7 @@
             }
           },
           {
-            "InteractionName": "irDirigirManual",
+            "InteractionName": "irInspecao",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1136,6 +1227,8 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "Inspecao_SA"
+<<<<<<< HEAD
+=======
             }
           },
           {
@@ -1153,6 +1246,65 @@
         ]
       },
       {
+        "Name": "Area_de_Teste_SA",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "Areatesteoficial.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TESTE_START",
+            "X": 341,
+            "Y": 302,
+            "Width": 118,
+            "Height": 35,
+            "TextId": "__SingleUse_7ZID",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 221,
+              "Green": 43,
+              "Blue": 125
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "IrPagUM",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "pag1_Autonomos"
+>>>>>>> dia1603
+            }
+          },
+          {
+            "InteractionName": "IrAutoCross",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Area_de_Teste_SA"
+            }
+          }
+        ]
+      },
+      {
+<<<<<<< HEAD
         "Name": "Area_de_Teste_SA",
         "Components": [
           {
@@ -1255,13 +1407,16 @@
         ]
       },
       {
+=======
+>>>>>>> dia1603
         "Name": "AutoCross_SA",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
+<<<<<<< HEAD
             "CustomContainerDefinitionName": "Fundo_SA"
           },
           {
@@ -1327,11 +1482,14 @@
               "Blue": 255
             },
             "AutoSize": true
+=======
+            "RelativeFilename": "AUTOCROSS.png"
+>>>>>>> dia1603
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "IrAreaTeste",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1343,7 +1501,7 @@
             }
           },
           {
-            "InteractionName": "Interaction2",
+            "InteractionName": "IrAceleracao",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1360,10 +1518,11 @@
         "Name": "Aceleracao_SA",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
+<<<<<<< HEAD
             "CustomContainerDefinitionName": "Fundo_SA"
           },
           {
@@ -1429,6 +1588,9 @@
               "Blue": 255
             },
             "AutoSize": true
+=======
+            "RelativeFilename": "ACELERACAO.png"
+>>>>>>> dia1603
           }
         ],
         "Interactions": [
@@ -1462,10 +1624,11 @@
         "Name": "Skidped_SA",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
+<<<<<<< HEAD
             "CustomContainerDefinitionName": "Fundo_SA"
           },
           {
@@ -1531,6 +1694,9 @@
               "Blue": 255
             },
             "AutoSize": true
+=======
+            "RelativeFilename": "SKIDPAD.png"
+>>>>>>> dia1603
           }
         ],
         "Interactions": [
@@ -1564,10 +1730,11 @@
         "Name": "Trackdrive_SA",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
+<<<<<<< HEAD
             "CustomContainerDefinitionName": "Fundo_SA"
           },
           {
@@ -1633,6 +1800,9 @@
               "Blue": 255
             },
             "AutoSize": true
+=======
+            "RelativeFilename": "TRACKDRIVE.png"
+>>>>>>> dia1603
           }
         ],
         "Interactions": [
@@ -1666,10 +1836,11 @@
         "Name": "EBS_Teste_SA",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
+<<<<<<< HEAD
             "CustomContainerDefinitionName": "Fundo_SA"
           },
           {
@@ -1735,6 +1906,9 @@
               "Blue": 255
             },
             "AutoSize": true
+=======
+            "RelativeFilename": "EBS.png"
+>>>>>>> dia1603
           }
         ],
         "Interactions": [
@@ -1768,10 +1942,11 @@
         "Name": "Inspecao_SA",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "fundo_SA1",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
+<<<<<<< HEAD
             "CustomContainerDefinitionName": "Fundo_SA"
           },
           {
@@ -1837,6 +2012,9 @@
               "Blue": 255
             },
             "AutoSize": true
+=======
+            "RelativeFilename": "INSPECAO.png"
+>>>>>>> dia1603
           }
         ],
         "Interactions": [
@@ -1853,7 +2031,11 @@
             }
           },
           {
+<<<<<<< HEAD
             "InteractionName": "IrDirigirManual",
+=======
+            "InteractionName": "IrPagUmAutonomos",
+>>>>>>> dia1603
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1867,6 +2049,7 @@
         ]
       }
     ],
+<<<<<<< HEAD
     "CustomContainerDefinitions": [
       {
         "Name": "fundo_prova",
@@ -1929,6 +2112,9 @@
         "Interactions": []
       }
     ],
+=======
+    "CustomContainerDefinitions": [],
+>>>>>>> dia1603
     "Name": "pokemon",
     "Resolution": {
       "Width": 800,

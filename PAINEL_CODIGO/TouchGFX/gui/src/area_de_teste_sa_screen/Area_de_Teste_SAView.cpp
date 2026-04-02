@@ -14,3 +14,7 @@ void Area_de_Teste_SAView::tearDownScreen()
 {
     Area_de_Teste_SAViewBase::tearDownScreen();
 }
+void Area_de_Teste_SAView::updateAutonomos(int val) {
+    Unicode::snprintf(TESTE_STARTBuffer, TESTE_START_SIZE, "%d", val);
+    TESTE_START.invalidate();
+}

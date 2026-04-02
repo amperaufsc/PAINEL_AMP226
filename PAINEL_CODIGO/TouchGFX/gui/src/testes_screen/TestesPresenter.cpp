@@ -9,7 +9,7 @@ TestesPresenter::TestesPresenter(TestesView& v)
 
 void TestesPresenter::activate()
 {
-
+	 model->updateCurrentScreen(1);
 }
 
 void TestesPresenter::deactivate()
@@ -36,7 +36,7 @@ void TestesPresenter::updateFalhaECUValue(int val)       { view.updateFalhaECU(v
 void TestesPresenter::hwButtonClicked(uint8_t buttonId)
 {
 
-	    if (buttonId == 3) // PB11
+	    if (buttonId == 2) //  // BOLINHA
 	    {
 	    	model->reportCurrentScreen(Model::CAPA);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();

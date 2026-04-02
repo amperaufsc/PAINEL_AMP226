@@ -28,6 +28,9 @@ void CapaView::setCANValue(int value)
 void CapaView::modoespera()
 {
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dia1603
 }
 

@@ -25,7 +25,7 @@ public:
     virtual void updateAceleradorValue(int val);
     virtual void hwButtonClicked(uint8_t buttonId);
     virtual void updateTensaoHVValue(int val);
-    virtual void updateDistanciaValue(int val);
+    virtual void updateDistanciaValue(float val);
     virtual void updatePotenciaValue(int val);
     virtual void updateTempAcumuladorValue(int val);
 
