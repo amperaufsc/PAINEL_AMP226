@@ -105,7 +105,8 @@ void Model::tick()
                     modelListener->updateRPMValue(valor);
                     break;
 
-                case 0x124:
+                case 0x124: //colocar velocidade em km/h
+
                     modelListener->updateSpeedValue(valor);
                     velocidadeatual = (int)valor;
                     break;
