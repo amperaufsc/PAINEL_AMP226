@@ -9,7 +9,7 @@ Area_de_Teste_SAPresenter::Area_de_Teste_SAPresenter(Area_de_Teste_SAView& v)
 
 void Area_de_Teste_SAPresenter::activate()
 {
-	 model->updateCurrentScreen(5);
+	 model->updateCurrentScreen(4);
 	 model->setStartAutonomos(0);
 
 }

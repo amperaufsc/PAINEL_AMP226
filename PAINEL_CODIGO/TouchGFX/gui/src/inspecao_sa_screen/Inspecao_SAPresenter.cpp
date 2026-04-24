@@ -9,7 +9,7 @@ Inspecao_SAPresenter::Inspecao_SAPresenter(Inspecao_SAView& v)
 
 void Inspecao_SAPresenter::activate()
 {
-	 model->updateCurrentScreen(11);
+	 model->updateCurrentScreen(4);
 	 model->setStartAutonomos(0);
 }
 

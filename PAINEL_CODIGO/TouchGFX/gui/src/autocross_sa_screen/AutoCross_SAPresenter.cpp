@@ -9,7 +9,7 @@ AutoCross_SAPresenter::AutoCross_SAPresenter(AutoCross_SAView& v)
 
 void AutoCross_SAPresenter::activate()
 {
-	 model->updateCurrentScreen(6);
+	 model->updateCurrentScreen(4);
 	 model->setStartAutonomos(0);
 }
 

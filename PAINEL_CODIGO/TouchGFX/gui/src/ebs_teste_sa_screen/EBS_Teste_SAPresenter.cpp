@@ -9,7 +9,7 @@ EBS_Teste_SAPresenter::EBS_Teste_SAPresenter(EBS_Teste_SAView& v)
 
 void EBS_Teste_SAPresenter::activate()
 {
-	 model->updateCurrentScreen(10);
+	 model->updateCurrentScreen(4);
 	 model->setStartAutonomos(0);
 }
 

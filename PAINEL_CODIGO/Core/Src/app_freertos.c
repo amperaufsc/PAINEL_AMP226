@@ -58,7 +58,7 @@ volatile uint8_t estadoBotaoAtual = 0;
 volatile uint8_t ultimoEstadoEnviado = 2;
 volatile uint8_t ID_DA_PAGINA = 0;
 volatile uint8_t START_AUTONOMOS = 0;
-//int valorSoc = 0;
+int valorSoc = 0;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -315,17 +315,17 @@ void StartTaskCAN(void *argument)
 
 	// --- ENVIO 3: SOC (ID 0x125 ) ---
 
-	//valorSoc += 1;
+	valorSoc += 1;
 
-	//if(valorSoc > 100) valorSoc = 0;
+	if(valorSoc > 100) valorSoc = 0;
 
 
 
-	//TxHeader.Identifier = 0x125;
+	TxHeader.Identifier = 0x125;
 
-	//TxData[0] = (uint8_t)valorSoc;
+	TxData[0] = (uint8_t)valorSoc;
 
-	//HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
 
 

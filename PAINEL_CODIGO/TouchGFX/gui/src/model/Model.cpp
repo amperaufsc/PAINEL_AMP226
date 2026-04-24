@@ -45,35 +45,32 @@ void Model::updateCurrentScreen(uint8_t screenId) {
     ID_DA_PAGINA = screenId;
 }
 
-void Model::setStartAutonomos(uint8_t valor) { // Nome deve ser IDÊNTICO ao .hpp
+void Model::setStartAutonomos(uint8_t valor) {
     START_AUTONOMOS = valor;
 }
 
 void Model::tick()
 {
 	/* CALCULANDO A DISTANCIA */
+	uint32_t now = osKernelGetTickCount();
 
-	    uint32_t now = osKernelGetTickCount(); // Pega o tempo atual em ms
-
-	    if (ultimoTick != 0) // filtro pra começar a execução
+	    if (this->ultimoTick != 0)
 	    {
-	        uint32_t elapsed_ms = now - ultimoTick;
+	        uint32_t elapsed_ms = now - this->ultimoTick;
 
-
-	        // Distância = velocidade * tempo (convertendo ms para segundos)
-	        // d = v * (ms / 1000)
-	        if (velocidadeatual > 0.1f) { // Filtro de ruído
-	        	distancia_total += velocidadeatual * ((float)elapsed_ms / 1000.0f);
+	        // Se você fixou 100.0f e não funciona, o erro está aqui ou no Listener
+	        if (this->velocidadeatual > 0.1f) {
+	            float tempo_s = (float)elapsed_ms / 1000.0f;
+	            this->distancia_total += (this->velocidadeatual / 3.6f) * tempo_s;
 	        }
 
-	        // Envia para a UI
 	        if (modelListener != 0) {
-	            modelListener->updateDistanciaValue((float)(distancia_total / 1000.0f));
+	            // Teste: force um valor fixo aqui para ver se a tela atualiza
+	            // modelListener->updateDistanciaValue(99.9f);
+	            modelListener->updateDistanciaValue((float)(this->distancia_total / 1000.0f));
 	        }
 	    }
-	    ultimoTick = now;
-
-
+	    this->ultimoTick = now;
 
     /* --- LÓGICA EXISTENTE DOS BOTÕES --- */
     static int debounceCounter = 0;
@@ -97,67 +94,81 @@ void Model::tick()
         {
             model_recebeu_fila++; // Se este número subir, o Model está lendo a fila!
 
-            uint16_t valor = msg_recebida.data[0];
+
+
 
             switch (msg_recebida.id)
             {
-                case 0x123:
+
+                case 0x420:
                     modelListener->updateRPMValue(valor);
                     break;
 
-                case 0x124: //colocar velocidade em km/h
-
+                case 0x000: //colocar velocidade em km/h(olhar com pedro)
                     modelListener->updateSpeedValue(valor);
-                    velocidadeatual = (int)valor;
+                    modelListener->updateDistanciaValue(valor);
+
                     break;
 
-                case 0x125:
+                case 0x000:
                     modelListener->updateSOCValue(valor);
                     break;
 
-                case 0x000: // Supondo o ID do Freio
+                case 0x121: // Supondo o ID do Freio
                     modelListener->updateFreioValue(valor);
                     break;
 
-                case 0x741: // Supondo o ID do Acelerador
+                case 0x121: // Supondo o ID do Acelerador
                     modelListener->updateAceleradorValue(valor);
                     break;
 
-                case 0x128: // ID da Tensão
+                case 0x421: // ID da Tensão
                     modelListener->updateTensaoHVValue(valor);
                     break;
 
-                case 0x130: // ID da Potência
+                case 0x000: // ID da Potência
                     modelListener->updatePotenciaValue(valor);
                     break;
 
-                case 0x131: // ID da Temperatura
+                case 0x121: // ID da Temperatura
                     modelListener->updateTempAcumuladorValue(valor);
                     break;
 
-                case 0x132:
+                case 0x420:
                 	modelListener->updateTempMotorValue(valor);
                 	break;
 
-                case 0x133:
+                case 0x421:
                 	modelListener->updateTensaoInversorValue(valor);
                 	break;
 
-                case 0x135:
+                case 0x420:
                 	modelListener->updateTempInversorValue(valor);
                 	break;
 
-                case 0x136:
+                case 0x000:
                 	modelListener->updateTensaoCelulaMinValue(valor);
-                    break;
-
-                case 0x139:
-                	modelListener->updateTensaoHVValue(valor);
                     break;
 
                 case 0x541:
                 	modelListener->updateAutonomos(valor);
                     break;
+
+                    //esses tres ainda precisa declarar
+                    // falhas
+
+//                case 0x120:
+//                	modelListener->falha_TMS(valor);
+//                    break;
+//
+//                case 0x120:
+//                	modelListener->falha_ECU(valor);
+//                    break;
+//
+//                case 0x120:
+//                	modelListener->falha_INVERTER(valor);
+//                    break;
+
 
                 default:
                     // Se cair aqui, o ID que chegou não é o que esperávamos

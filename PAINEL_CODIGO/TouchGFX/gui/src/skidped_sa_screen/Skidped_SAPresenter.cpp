@@ -9,7 +9,7 @@ Skidped_SAPresenter::Skidped_SAPresenter(Skidped_SAView& v)
 
 void Skidped_SAPresenter::activate()
 {
-	 model->updateCurrentScreen(8);
+	 model->updateCurrentScreen(4);
 	 model->setStartAutonomos(0);
 }
 

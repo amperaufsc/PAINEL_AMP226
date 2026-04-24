@@ -9,7 +9,7 @@ Trackdrive_SAPresenter::Trackdrive_SAPresenter(Trackdrive_SAView& v)
 
 void Trackdrive_SAPresenter::activate()
 {
-	 model->updateCurrentScreen(9);
+	 model->updateCurrentScreen(4);
 	 model->setStartAutonomos(0);
 }
 
