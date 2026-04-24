@@ -97,70 +97,73 @@ void Model::tick()
 
             // vou fazer de maneira poluida primeiro pq é mais provavel de funcionar, depois
             // de garantir que funciona ajusto pra deixar bonito
-            uint16_t rpm = (msg_recebida.data[0] << 8 | msg_recebida.data[1]);
-            uint16_t TempMotor = (msg_recebida.data[2] << 8 | msg_recebida.data[3]);
-            uint16_t TempInversor = (msg_recebida.data[6] << 8 | msg_recebida.data[7]);
-            uint16_t freio = msg_recebida.data[5];
-            uint16_t acelerador = msg_recebida.data[4];
-            uint16_t TempAcumulador = msg_recebida.data[7];
-            uint16_t TensaoHV = memcpy(&AcumCurrent, &RxData[4], sizeof(float));
-            uint16_t TensaoInversor = memcpy(&AcumCurrent, &RxData[0], sizeof(float));
-            uint16_t valor = msg_recebida.data[0];
+//            uint16_t rpm = (msg_recebida.data[0] << 8 | msg_recebida.data[1]);
+//            uint16_t TempMotor = (msg_recebida.data[2] << 8 | msg_recebida.data[3]);
+//            uint16_t TempInversor = (msg_recebida.data[6] << 8 | msg_recebida.data[7]);
+//            uint16_t freio = msg_recebida.data[5];
+//            uint16_t acelerador = msg_recebida.data[4];
+//            uint16_t TempAcumulador = msg_recebida.data[7];
+//            uint16_t TensaoHV = memcpy(&AcumCurrent, &RxData[4], sizeof(float));
+//            uint16_t TensaoInversor = memcpy(&AcumCurrent, &RxData[0], sizeof(float));
+//            uint16_t valor = msg_recebida.data[0];
 
 
             switch (msg_recebida.id)
             {
+            case 0x121: {
+                            uint16_t freio = msg_recebida.data[5];
+                            uint16_t acelerador = msg_recebida.data[4];
+                            uint16_t TempAcumulador = msg_recebida.data[7];
 
-                case 0x420:
-                    modelListener->updateRPMValue(rpm);
-                    break;
+                            modelListener->updateFreioValue(freio);
+                            modelListener->updateAceleradorValue(acelerador);
+                            modelListener->updateTempAcumuladorValue(TempAcumulador);
+                            break;
+                        }
 
-                case 0x420:
-                	modelListener->updateTempMotorValue(TempMotor);
-                	break;
+            case 0x420: {
+                            uint16_t rpm = (msg_recebida.data[0] << 8) | msg_recebida.data[1];
+                            uint16_t TempMotor = (msg_recebida.data[2] << 8) | msg_recebida.data[3];
+                            uint16_t TempInversor = (msg_recebida.data[6] << 8) | msg_recebida.data[7];
 
-                case 0x420:
-                    modelListener->updateTempInversorValue(TempInversor);
-                    break;
+                            modelListener->updateRPMValue(rpm);
+                            modelListener->updateTempMotorValue(TempMotor);
+                            modelListener->updateTempInversorValue(TempInversor);
+                            break;
+                        }
 
-                case 0x000: //colocar velocidade em km/h(olhar com pedro)
-                    modelListener->updateSpeedValue(valor);
-                    modelListener->updateDistanciaValue(valor);
+            case 0x421: {
 
-                    break;
-                    //(olhar com matheus)
-                case 0x000:
-                    modelListener->updateSOCValue(valor);
-                    break;
-
-                case 0x000: // ID da Potência
-                    modelListener->updatePotenciaValue(valor);
-                    break;
-
-                case 0x000:
-                	modelListener->updateTensaoCelulaMinValue(valor);
-                    break;
+                            float tensaoHV_float = 0.0f; //acumulador
+                            float tensaoInversor_float = 0.0f; //trifasico
 
 
-                case 0x121: // Supondo o ID do Freio
-                    modelListener->updateFreioValue(freio);
-                    break;
+                            memcpy(&tensaoInversor_float, &msg_recebida.data[0], sizeof(float));
+                            memcpy(&tensaoHV_float, &msg_recebida.data[4], sizeof(float));
 
-                case 0x121: // Supondo o ID do Acelerador
-                    modelListener->updateAceleradorValue(acelerador);
-                    break;
 
-                case 0x121: // ID da Temperatura
-                    modelListener->updateTempAcumuladorValue(TempAcumulador);
-                    break;
+                            modelListener->updateTensaoHVValue((uint16_t)tensaoHV_float);
+                            modelListener->updateTensaoInversorValue((uint16_t)tensaoInversor_float);
+                            break;
+                        }
 
-                case 0x421: // ID da Tensão
-                    modelListener->updateTensaoHVValue(TensaoHV);
-                    break;
 
-                case 0x421: //trifasico
-                	modelListener->updateTensaoInversorValue(TensaoInversor);
-                	break;
+//                case 0x000: //colocar velocidade em km/h(olhar com pedro)
+//                    modelListener->updateSpeedValue(valor);
+//                    modelListener->updateDistanciaValue(valor);
+//                    break;
+//                    //(olhar com matheus)
+//                case 0x000:
+//                    modelListener->updateSOCValue(valor);
+//                    break;
+//
+//                case 0x000: // ID da Potência
+//                    modelListener->updatePotenciaValue(valor);
+//                    break;
+//
+//                case 0x000:
+//                	modelListener->updateTensaoCelulaMinValue(valor);
+//                    break;
 
 //                case 0x541: // olhar com pedro e ver se é necessario e oq que isso realmente significa
 
