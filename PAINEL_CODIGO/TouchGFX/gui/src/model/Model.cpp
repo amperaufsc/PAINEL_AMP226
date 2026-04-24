@@ -1,3 +1,4 @@
+//AQUI É GALO
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
@@ -94,14 +95,32 @@ void Model::tick()
         {
             model_recebeu_fila++; // Se este número subir, o Model está lendo a fila!
 
-
+            // vou fazer de maneira poluida primeiro pq é mais provavel de funcionar, depois
+            // de garantir que funciona ajusto pra deixar bonito
+            uint16_t rpm = (msg_recebida.data[0] << 8 | msg_recebida.data[1]);
+            uint16_t TempMotor = (msg_recebida.data[2] << 8 | msg_recebida.data[3]);
+            uint16_t TempInversor = (msg_recebida.data[6] << 8 | msg_recebida.data[7]);
+            uint16_t freio = msg_recebida.data[5];
+            uint16_t acelerador = msg_recebida.data[4];
+            uint16_t TempAcumulador = msg_recebida.data[7];
+            uint16_t TensaoHV = memcpy(&AcumCurrent, &RxData[4], sizeof(float));
+            uint16_t TensaoInversor = memcpy(&AcumCurrent, &RxData[0], sizeof(float));
+            uint16_t valor = msg_recebida.data[0];
 
 
             switch (msg_recebida.id)
             {
 
                 case 0x420:
-                    modelListener->updateRPMValue(valor);
+                    modelListener->updateRPMValue(rpm);
+                    break;
+
+                case 0x420:
+                	modelListener->updateTempMotorValue(TempMotor);
+                	break;
+
+                case 0x420:
+                    modelListener->updateTempInversorValue(TempInversor);
                     break;
 
                 case 0x000: //colocar velocidade em km/h(olhar com pedro)
@@ -109,50 +128,44 @@ void Model::tick()
                     modelListener->updateDistanciaValue(valor);
 
                     break;
-
+                    //(olhar com matheus)
                 case 0x000:
                     modelListener->updateSOCValue(valor);
-                    break;
-
-                case 0x121: // Supondo o ID do Freio
-                    modelListener->updateFreioValue(valor);
-                    break;
-
-                case 0x121: // Supondo o ID do Acelerador
-                    modelListener->updateAceleradorValue(valor);
-                    break;
-
-                case 0x421: // ID da Tensão
-                    modelListener->updateTensaoHVValue(valor);
                     break;
 
                 case 0x000: // ID da Potência
                     modelListener->updatePotenciaValue(valor);
                     break;
 
-                case 0x121: // ID da Temperatura
-                    modelListener->updateTempAcumuladorValue(valor);
-                    break;
-
-                case 0x420:
-                	modelListener->updateTempMotorValue(valor);
-                	break;
-
-                case 0x421:
-                	modelListener->updateTensaoInversorValue(valor);
-                	break;
-
-                case 0x420:
-                	modelListener->updateTempInversorValue(valor);
-                	break;
-
                 case 0x000:
                 	modelListener->updateTensaoCelulaMinValue(valor);
                     break;
 
-                case 0x541:
-                	modelListener->updateAutonomos(valor);
+
+                case 0x121: // Supondo o ID do Freio
+                    modelListener->updateFreioValue(freio);
                     break;
+
+                case 0x121: // Supondo o ID do Acelerador
+                    modelListener->updateAceleradorValue(acelerador);
+                    break;
+
+                case 0x121: // ID da Temperatura
+                    modelListener->updateTempAcumuladorValue(TempAcumulador);
+                    break;
+
+                case 0x421: // ID da Tensão
+                    modelListener->updateTensaoHVValue(TensaoHV);
+                    break;
+
+                case 0x421: //trifasico
+                	modelListener->updateTensaoInversorValue(TensaoInversor);
+                	break;
+
+//                case 0x541: // olhar com pedro e ver se é necessario e oq que isso realmente significa
+
+//                	modelListener->updateAutonomos(valor);
+//                    break;
 
                     //esses tres ainda precisa declarar
                     // falhas
