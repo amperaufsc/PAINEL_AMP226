@@ -219,7 +219,7 @@ void StartTaskCAN(void *argument)
   /* USER CODE BEGIN Task_CAN */
 	FDCAN_TxHeaderTypeDef TxHeader;
 
-	uint8_t TxData[1];
+	uint8_t TxData[8];
 
 	//uint32_t valorRPM = 0;
 
@@ -235,9 +235,11 @@ void StartTaskCAN(void *argument)
 
 	TxHeader.TxFrameType = FDCAN_DATA_FRAME;
 
-	TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+	TxHeader.DataLength = FDCAN_DLC_BYTES_8;
 
 	TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
+
+
 
 
 	/* Infinite loop */
@@ -251,7 +253,7 @@ void StartTaskCAN(void *argument)
 	TxData[0] = ID_DA_PAGINA;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-	osDelay(200);
+	osDelay(211); //pra debug depois tem que mudar pra 200
 
 
 	//  SISTEMAS AUTONOMOS
@@ -259,7 +261,7 @@ void StartTaskCAN(void *argument)
 	TxData[0] = START_AUTONOMOS;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-	osDelay(200);
+	osDelay(181); //pra debug depois tem que mudar pra 200
 
 
 
@@ -270,7 +272,7 @@ void StartTaskCAN(void *argument)
 	TxData[0] = (uint8_t)state;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-	osDelay(200);
+	osDelay(199);  //pra debug depois tem que mudar pra 200
 
 
 
@@ -294,38 +296,127 @@ void StartTaskCAN(void *argument)
 
 
 	// teste
-	// VELOCIDADE (ID 0x124 ) ---
+//	 ACELERADOR  ---
+    static uint8_t acelerador = 0;
+	acelerador += 2;
+	if(acelerador > 100) acelerador = 0;
+	TxHeader.Identifier = 0x121;
+	memset(TxData, 0, 8);
+	TxData[4] = acelerador;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-//	static float valorVelocidade = 0;
-//	valorVelocidade += 1;
-//
-//	if(valorVelocidade > 200) valorVelocidade = 0;
-//
-//
-//
-//	TxHeader.Identifier = 0x124;
-//
-//	TxData[0] = (uint8_t)valorVelocidade;
-//
+	// teste
+//	 FREIO  ---
+	static uint8_t freio = 0;
+	freio += 2;
+	if(freio > 100) freio = 0;
+	TxHeader.Identifier = 0x121;
+	memset(TxData, 0, 8);
+	TxData[5] = freio;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	// teste
+//	 TEMPERATURA ACUMULADOR  ---
+	static uint8_t tempacumulador = 0;
+	tempacumulador += 1;
+	if(tempacumulador > 70) tempacumulador = 0;
+	TxHeader.Identifier = 0x121;
+	memset(TxData, 0, 8);
+	TxData[7] = tempacumulador;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+// teste
+//	 RPM  ---
+	static uint16_t rpm = 0;
+	rpm += 250;
+	if(rpm > 7000) rpm = 0;
+	TxHeader.Identifier = 0x420;
+	TxData[0] = rpm;
+	TxData[1] = rpm;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	// teste
+//	 TEMPERATURA MOTOR ---
+	static uint16_t tempmotor = 0;
+	tempmotor += 13;
+	if(tempmotor > 200) tempmotor = 0;
+	TxHeader.Identifier = 0x420;
+	TxData[2] = (uint8_t)(tempmotor >> 8);
+	TxData[3] = tempmotor;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	// teste
+//	 TEMPERATURA INVERSOR  ---
+	static uint16_t tempinversor = 0;
+	tempinversor += 11;
+	if(tempinversor > 200) tempinversor = 0;
+	TxHeader.Identifier = 0x420;
+	TxData[6] = (uint8_t)(tempinversor >> 8);
+	TxData[7] = tempinversor;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+//	// teste
+////	 TEMPERATURA ACUMULADOR  ---
+//	static uint8_t tempacumulador = 0;
+//	tempacumulador += 1;
+//	if(tempacumulador > 70) tempacumulador = 0;
+//	TxHeader.Identifier = 0x420;
+//	TxData[7] = tempacumulador;
 //	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
-//
-//
-//
-//	osDelay(100);
+//	// teste
+////	 TEMPERATURA ACUMULADOR  ---
+//	static uint8_t tempacumulador = 0;
+//	tempacumulador += 1;
+//	if(tempacumulador > 70) tempacumulador = 0;
+//	TxHeader.Identifier = 0x121;
+//	TxData[7] = tempacumulador;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	// teste
+////	 TEMPERATURA ACUMULADOR  ---
+//	static uint8_t tempacumulador = 0;
+//	tempacumulador += 1;
+//	if(tempacumulador > 70) tempacumulador = 0;
+//	TxHeader.Identifier = 0x121;
+//	TxData[7] = tempacumulador;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	// teste
+////	 TEMPERATURA ACUMULADOR  ---
+//	static uint8_t tempacumulador = 0;
+//	tempacumulador += 1;
+//	if(tempacumulador > 70) tempacumulador = 0;
+//	TxHeader.Identifier = 0x121;
+//	TxData[7] = tempacumulador;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	// teste
+////	 TEMPERATURA ACUMULADOR  ---
+//	static uint8_t tempacumulador = 0;
+//	tempacumulador += 1;
+//	if(tempacumulador > 70) tempacumulador = 0;
+//	TxHeader.Identifier = 0x121;
+//	TxData[7] = tempacumulador;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+
+	osDelay(100);
+
+
+
+
+
 
 	// --- ENVIO 3: SOC (ID 0x125 ) ---
-
-	valorSoc += 1;
-
-	if(valorSoc > 100) valorSoc = 0;
-
-
-
-	TxHeader.Identifier = 0x125;
-
-	TxData[0] = (uint8_t)valorSoc;
-
-	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//
+//	valorSoc += 1;
+//
+//	if(valorSoc > 100) valorSoc = 0;
+//
+//
+//
+//	TxHeader.Identifier = 0x125;
+//
+//	TxData[0] = (uint8_t)valorSoc;
+//
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
 
 

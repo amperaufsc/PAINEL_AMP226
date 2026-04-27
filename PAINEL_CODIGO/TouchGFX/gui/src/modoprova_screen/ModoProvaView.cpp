@@ -1,4 +1,5 @@
 #include <gui/modoprova_screen/ModoProvaView.hpp>
+#include <touchgfx/Color.hpp>
 
 ModoProvaView::ModoProvaView()
 {
@@ -17,10 +18,10 @@ void ModoProvaView::tearDownScreen()
 
 void ModoProvaView::updateRPMValue(int val)
 {
-    tacografo.setValue(val);
+    float rpm_dividido = val / 1000.0f;
+    tacografo.setValue(rpm_dividido);
     tacografo.invalidate();
-
-    Unicode::snprintf(RPM_unBuffer, RPM_UN_SIZE, "%d", val);
+    Unicode::snprintfFloat(RPM_unBuffer, RPM_UN_SIZE, "%.1f", rpm_dividido);
     RPM_un.invalidate();
 }
 void ModoProvaView::updateSpeedValue(int val) {
@@ -75,6 +76,11 @@ void ModoProvaView::updatePotencia(int val) {
 }
 
 void ModoProvaView::updateTempAcumulador(int val) {
-    Unicode::snprintf(TempAcumulador_unBuffer, TEMPACUMULADOR_UN_SIZE, "%d", val);
-    TempAcumulador_un.invalidate();
+	    Unicode::snprintf(TempAcumulador_unBuffer, TEMPACUMULADOR_UN_SIZE, "%d", val);
+	    if (val > 50) {
+	        TempAcumulador_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+	    } else {
+	        TempAcumulador_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+	    }
+	    TempAcumulador_un.invalidate();
 }

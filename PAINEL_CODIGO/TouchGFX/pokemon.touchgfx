@@ -70,7 +70,7 @@
           {
             "Type": "TextArea",
             "Name": "RPM_un",
-            "X": 354,
+            "X": 351,
             "Y": 317,
             "Width": 93,
             "Height": 35,
@@ -990,16 +990,6 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "Width": 13,
-            "Height": 40,
-            "Visible": false,
-            "TextId": "__SingleUse_44IL",
-            "TextRotation": "0",
             "AutoSize": true
           }
         ],
