@@ -331,8 +331,8 @@ void StartTaskCAN(void *argument)
 	rpm += 250;
 	if(rpm > 7000) rpm = 0;
 	TxHeader.Identifier = 0x420;
-	TxData[0] = rpm;
-	TxData[1] = rpm;
+	TxData[0] = (uint8_t)(rpm >> 8);
+	TxData[1] = (uint8_t)rpm;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
 	// teste
