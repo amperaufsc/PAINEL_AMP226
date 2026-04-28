@@ -67,10 +67,10 @@
         <Translation Language="GB">RPM</Translation>
       </Text>
       <Text Id="__SingleUse_NZBD" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">00</Translation>
       </Text>
       <Text Id="__SingleUse_8ABU" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB">  &lt;value&gt;  </Translation>
       </Text>
       <Text Id="__SingleUse_3DVT" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">FREIO</Translation>
@@ -154,7 +154,7 @@
         <Translation Language="GB">000</Translation>
       </Text>
       <Text Id="__SingleUse_KLPD" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; °C</Translation>
+        <Translation Language="GB"> &lt;value&gt; °C </Translation>
       </Text>
       <Text Id="__SingleUse_DPMA" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">SOC</Translation>
@@ -175,7 +175,7 @@
         <Translation Language="GB">Potência</Translation>
       </Text>
       <Text Id="__SingleUse_J676" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; rpm</Translation>
+        <Translation Language="GB">    &lt;value&gt; rpm    </Translation>
       </Text>
       <Text Id="__SingleUse_OFVA" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Tensão Inversor</Translation>
@@ -196,7 +196,7 @@
         <Translation Language="GB">Temp. ACC</Translation>
       </Text>
       <Text Id="__SingleUse_3AJU" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; °C</Translation>
+        <Translation Language="GB"> &lt;value&gt; °C </Translation>
       </Text>
       <Text Id="__SingleUse_JK1H" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">&lt;value&gt; V</Translation>
@@ -205,7 +205,7 @@
         <Translation Language="GB">Temp. inversor</Translation>
       </Text>
       <Text Id="__SingleUse_5JSZ" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; °C</Translation>
+        <Translation Language="GB"> &lt;value&gt; °C </Translation>
       </Text>
     </TextGroup>
   </Texts>

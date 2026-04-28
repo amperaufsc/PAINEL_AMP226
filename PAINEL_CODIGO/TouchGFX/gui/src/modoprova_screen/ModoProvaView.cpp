@@ -16,12 +16,14 @@ void ModoProvaView::tearDownScreen()
     ModoProvaViewBase::tearDownScreen();
 }
 
+
+//ainda nao funciona
 void ModoProvaView::updateRPMValue(int val)
 {
-    float rpm_dividido = val / 1000.0f;
-    tacografo.setValue(rpm_dividido);
+//   int16_t rpm_dividido = val / 1000;
+    tacografo.setValue(val);
     tacografo.invalidate();
-    Unicode::snprintfFloat(RPM_unBuffer, RPM_UN_SIZE, "%.1f", rpm_dividido);
+    Unicode::snprintfFloat(RPM_unBuffer, RPM_UN_SIZE, "%d", val);
     RPM_un.invalidate();
 }
 void ModoProvaView::updateSpeedValue(int val) {

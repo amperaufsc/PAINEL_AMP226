@@ -57,7 +57,7 @@ void TestesView::updateTensaoHV(int val) {
 
 
 void TestesView::updateRPM(int val) {
-    int rpm100 = val / 10;
+    int rpm100 = val;
     Unicode::snprintf(RPM_unBuffer, RPM_UN_SIZE, "%d", rpm100);
     RPM_un.invalidate();
 }

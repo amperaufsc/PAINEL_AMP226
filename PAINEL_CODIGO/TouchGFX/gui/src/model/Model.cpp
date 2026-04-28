@@ -98,7 +98,7 @@ void Model::tick()
 
             switch (msg_recebida.id)
             {
-            case 0x121: {
+            case 0x121: {	//funciona mensagens 1 byte
                             uint8_t freio = msg_recebida.data[5];
                             uint8_t acelerador = msg_recebida.data[4];
                             uint8_t TempAcumulador = msg_recebida.data[7];
@@ -109,7 +109,8 @@ void Model::tick()
                             break;
                         }
 
-            case 0x420: {
+            case 0x420: {	//funciona mensagens 2bytes, mas tem um problema, quando faz o loopback anterior junto este nao funciona
+            				// o loopba
                             uint16_t rpm = ((uint16_t)msg_recebida.data[0] << 8) | msg_recebida.data[1];
                             uint16_t TempMotor = ((uint16_t)msg_recebida.data[2] << 8) | msg_recebida.data[3];
                             uint16_t TempInversor = ((uint16_t)msg_recebida.data[6] << 8) | msg_recebida.data[7];
@@ -121,10 +122,9 @@ void Model::tick()
                         }
 
             case 0x421: {
-
-                            float tensaoHV_float = 0.0f; //acumulador
+            			// ainda não testado
                             float tensaoInversor_float = 0.0f; //trifasico
-
+                            float tensaoHV_float = 0.0f; //acumulador
 
                             memcpy(&tensaoInversor_float, &msg_recebida.data[0], sizeof(float));
                             memcpy(&tensaoHV_float, &msg_recebida.data[4], sizeof(float));
