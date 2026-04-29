@@ -21,16 +21,25 @@ void TestesPresenter::updateTempMotorValue(int val)
 {
 	view.updateTempMotor(val);
 }
-void TestesPresenter::updateTensaoInversorValue(int val) { view.updateTensaoInversor(val); }
+void TestesPresenter::updateTensaoInversorValue(float val)
+{
+	view.updateTensaoInversor(val);
+}
 void TestesPresenter::updateSOCValue(int val) { view.updateCorrenteAcumulador(val); }
-void TestesPresenter::updateTempInversorValue(int val)   { view.updateTempInversor(val); }
+void TestesPresenter::updateTempInversorValue(int val)
+{
+	view.updateTempInversor(val);
+}
 void TestesPresenter::updateTensaoCelulaMinValue(int val){ view.updateTensaoCelulaMin(val); }
-void TestesPresenter::updatePotenciaValue(int val)       { view.updatePotencia(val); }
+
 void TestesPresenter::updateTempAcumuladorValue(int val)
 {
 	view.updateTempAcumulador(val);
 }
-void TestesPresenter::updateTensaoHVValue(int val)       { view.updateTensaoHV(val); }
+void TestesPresenter::updateTensaoHVValue(float val)
+{
+	view.updateTensaoHV(val);
+}
 void TestesPresenter::updateCorrenteAcumuladorValue(int val){ view.updateCorrenteAcumulador(val); }
 void TestesPresenter::updateRPMValue(int val)
 {

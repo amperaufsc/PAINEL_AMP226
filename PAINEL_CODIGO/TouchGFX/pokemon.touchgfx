@@ -70,9 +70,9 @@
           {
             "Type": "TextArea",
             "Name": "RPM_un",
-            "X": 318,
-            "Y": 317,
-            "Width": 165,
+            "X": 581,
+            "Y": 165,
+            "Width": 183,
             "Height": 35,
             "TextId": "__SingleUse_J676",
             "TextRotation": "0",
@@ -91,8 +91,8 @@
           {
             "Type": "TextArea",
             "Name": "RPM",
-            "X": 367,
-            "Y": 282,
+            "X": 630,
+            "Y": 130,
             "Width": 67,
             "Height": 35,
             "TextId": "__SingleUse_TY5U",
@@ -107,9 +107,9 @@
           {
             "Type": "TextArea",
             "Name": "TensaoCelulamaisbaixa_un",
-            "X": 351,
+            "X": 338,
             "Y": 165,
-            "Width": 98,
+            "Width": 143,
             "Height": 35,
             "TextId": "__SingleUse_JK1H",
             "TextRotation": "0",
@@ -144,9 +144,9 @@
           {
             "Type": "TextArea",
             "Name": "TensaoHV_un",
-            "X": 351,
+            "X": 338,
             "Y": 247,
-            "Width": 98,
+            "Width": 143,
             "Height": 35,
             "TextId": "__SingleUse_HFVM",
             "TextRotation": "0",
@@ -159,7 +159,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_NJC4",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 16
             }
           },
           {
@@ -181,9 +181,9 @@
           {
             "Type": "TextArea",
             "Name": "TensaoInversor_un",
-            "X": 351,
+            "X": 338,
             "Y": 83,
-            "Width": 98,
+            "Width": 143,
             "Height": 35,
             "TextId": "__SingleUse_5HLU",
             "TextRotation": "0",
@@ -196,7 +196,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_ZFV1",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 12
             }
           },
           {
@@ -328,47 +328,10 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Potencia_un",
-            "X": 614,
-            "Y": 165,
-            "Width": 99,
-            "Height": 35,
-            "TextId": "__SingleUse_L2RK",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 245,
-              "Green": 247,
-              "Blue": 247
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_CXAF",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Potencia",
-            "X": 597,
-            "Y": 126,
-            "Width": 133,
-            "Height": 35,
-            "TextId": "__SingleUse_FKG4",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 92,
-              "Green": 198,
-              "Blue": 208
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
             "Name": "CargaAcumulador_un",
-            "X": 639,
+            "X": 622,
             "Y": 247,
-            "Width": 48,
+            "Width": 110,
             "Height": 35,
             "TextId": "__SingleUse_2SWE",
             "TextRotation": "0",
@@ -403,9 +366,9 @@
           {
             "Type": "TextArea",
             "Name": "Correnteacumulador_un",
-            "X": 617,
+            "X": 600,
             "Y": 83,
-            "Width": 99,
+            "Width": 144,
             "Height": 35,
             "TextId": "__SingleUse_NY2N",
             "TextRotation": "0",
@@ -630,8 +593,8 @@
           {
             "Type": "ImageProgress",
             "Name": "bateria",
-            "X": 327,
-            "Y": 177,
+            "X": 367,
+            "Y": 269,
             "Width": 80,
             "Height": 60,
             "FileNameProgress": "bateriacheiaazul.png",
@@ -684,8 +647,8 @@
           {
             "Type": "TextArea",
             "Name": "bateria_un",
-            "X": 430,
-            "Y": 190,
+            "X": 360,
+            "Y": 335,
             "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_7INH",
@@ -704,16 +667,16 @@
           {
             "Type": "TextArea",
             "Name": "RPM_un",
-            "X": 80,
-            "Y": 234,
-            "Width": 80,
-            "Height": 35,
+            "X": 75,
+            "Y": 232,
+            "Width": 90,
+            "Height": 37,
             "TextId": "__SingleUse_8ABU",
             "TextRotation": "0",
             "Wildcard1": {
               "TextId": "__SingleUse_NZBD",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 16
             }
           },
           {
@@ -787,8 +750,8 @@
           {
             "Type": "TextArea",
             "Name": "TensaoHV_un",
-            "X": 260,
-            "Y": 53,
+            "X": 286,
+            "Y": 52,
             "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_T4IY",
@@ -854,8 +817,8 @@
           {
             "Type": "TextArea",
             "Name": "Bateria",
-            "X": 367,
-            "Y": 128,
+            "X": 374,
+            "Y": 381,
             "Width": 66,
             "Height": 35,
             "TextId": "__SingleUse_AXGA",
@@ -869,45 +832,9 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Potencia_un",
-            "X": 336,
-            "Y": 321,
-            "Width": 100,
-            "Height": 35,
-            "TextId": "__SingleUse_PDU7",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 245,
-              "Green": 247,
-              "Blue": 247
-            },
-            "Wildcard1": {
-              "TextId": "__SingleUse_OJQO",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "potencia",
-            "X": 326,
-            "Y": 277,
-            "Width": 133,
-            "Height": 35,
-            "TextId": "__SingleUse_KH82",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
             "Name": "TempAcumulador_un",
             "X": 350,
-            "Y": 405,
+            "Y": 192,
             "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_C8P5",
@@ -927,7 +854,7 @@
             "Type": "TextArea",
             "Name": "TempAcumulador",
             "X": 256,
-            "Y": 372,
+            "Y": 142,
             "Width": 289,
             "Height": 35,
             "TextId": "__SingleUse_ECCU",
@@ -983,6 +910,43 @@
             "Width": 215,
             "Height": 70,
             "TextId": "__SingleUse_3N7C",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "xmil",
+            "X": 90,
+            "Y": 159,
+            "Width": 53,
+            "Height": 18,
+            "TextId": "__SingleUse_YA30",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_AEP2",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "kmph",
+            "X": 658,
+            "Y": 275,
+            "Width": 40,
+            "Height": 18,
+            "TextId": "__SingleUse_2NCR",
             "TextRotation": "0",
             "Color": {
               "Red": 255,

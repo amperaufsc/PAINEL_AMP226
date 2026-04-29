@@ -490,9 +490,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/FontCache.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Font_Gotham_Bold_otf_30_4bpp_0.cpp</name>
+			<name>Application/User/generated/Font_Gotham_Bold_otf_15_4bpp_0.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_Gotham_Bold_otf_30_4bpp_0.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_Gotham_Bold_otf_15_4bpp_0.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Font_Gotham_Bold_otf_30_8bpp_0.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_Gotham_Bold_otf_30_8bpp_0.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Font_Gotham_Bold_otf_70_4bpp_0.cpp</name>
@@ -535,9 +540,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/GeneratedFont.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Kerning_Gotham_Bold_otf_30_4bpp.cpp</name>
+			<name>Application/User/generated/Kerning_Gotham_Bold_otf_15_4bpp.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_Gotham_Bold_otf_30_4bpp.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_Gotham_Bold_otf_15_4bpp.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Kerning_Gotham_Bold_otf_30_8bpp.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_Gotham_Bold_otf_30_8bpp.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Kerning_Gotham_Bold_otf_70_4bpp.cpp</name>
@@ -575,9 +585,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_verdana_40_4bpp.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Table_Gotham_Bold_otf_30_4bpp.cpp</name>
+			<name>Application/User/generated/Table_Gotham_Bold_otf_15_4bpp.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_Gotham_Bold_otf_30_4bpp.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_Gotham_Bold_otf_15_4bpp.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Table_Gotham_Bold_otf_30_8bpp.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_Gotham_Bold_otf_30_8bpp.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Table_Gotham_Bold_otf_70_4bpp.cpp</name>

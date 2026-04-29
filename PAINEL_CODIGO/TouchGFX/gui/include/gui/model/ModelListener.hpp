@@ -19,12 +19,12 @@ public:
     virtual void updateAutonomos(int val) { }
     // Sensores e Medidas
     virtual void updateTempMotorValue(int val) {}
-    virtual void updateTensaoInversorValue(int val) {}
+    virtual void updateTensaoInversorValue(float val) {}
     virtual void updateTempInversorValue(int val) {}
     virtual void updateTensaoCelulaMinValue(int val) {}
-    virtual void updatePotenciaValue(int val) {}
+
     virtual void updateTempAcumuladorValue(int val) {}
-    virtual void updateTensaoHVValue(int val) {}
+    virtual void updateTensaoHVValue(float val) {}
     virtual void updateCorrenteAcumuladorValue(int val) {}
     virtual void updateRPMValue(int val) {}
 

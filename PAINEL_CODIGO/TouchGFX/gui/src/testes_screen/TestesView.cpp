@@ -1,4 +1,6 @@
 #include <gui/testes_screen/TestesView.hpp>
+#include <touchgfx/Color.hpp>
+#include <stdio.h>
 
 TestesView::TestesView()
 {
@@ -20,8 +22,8 @@ void TestesView::updateTempMotor(int val) {
     Tempmotor_un.invalidate();
 }
 
-void TestesView::updateTensaoInversor(int val) {
-    Unicode::snprintf(TensaoInversor_unBuffer, TENSAOINVERSOR_UN_SIZE, "%d", val);
+void TestesView::updateTensaoInversor(float val) {
+	Unicode::snprintfFloat(TensaoInversor_unBuffer, TENSAOINVERSOR_UN_SIZE, "%.1f", val);
     TensaoInversor_un.invalidate();
 }
 
@@ -40,18 +42,18 @@ void TestesView::updateTensaoCelulaMin(int val) {
     TensaoCelulamaisbaixa_un.invalidate();
 }
 
-void TestesView::updatePotencia(int val) {
-    Unicode::snprintf(Potencia_unBuffer, POTENCIA_UN_SIZE, "%d", val);
-    Potencia_un.invalidate();
-}
-
 void TestesView::updateTempAcumulador(int val) {
     Unicode::snprintf(TempAcumulador_unBuffer, TEMPACUMULADOR_UN_SIZE, "%d", val);
+    if (val > 50) {
+        TempAcumulador_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    } else {
+        TempAcumulador_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    }
     TempAcumulador_un.invalidate();
 }
 
-void TestesView::updateTensaoHV(int val) {
-    Unicode::snprintf(TensaoHV_unBuffer, TENSAOHV_UN_SIZE, "%d", val);
+void TestesView::updateTensaoHV(float val) {
+	Unicode::snprintfFloat(TensaoHV_unBuffer, TENSAOHV_UN_SIZE, "%.1f", val);
     TensaoHV_un.invalidate();
 }
 

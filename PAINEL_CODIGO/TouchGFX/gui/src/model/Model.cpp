@@ -122,7 +122,7 @@ void Model::tick()
                         }
 
             case 0x421: {
-            			// ainda não testado
+            			// funciona
                             float tensaoInversor_float = 0.0f; //trifasico
                             float tensaoHV_float = 0.0f; //acumulador
 
@@ -130,8 +130,8 @@ void Model::tick()
                             memcpy(&tensaoHV_float, &msg_recebida.data[4], sizeof(float));
 
 
-                            modelListener->updateTensaoHVValue((uint16_t)tensaoHV_float);
-                            modelListener->updateTensaoInversorValue((uint16_t)tensaoInversor_float);
+                            modelListener->updateTensaoHVValue((float)tensaoHV_float);
+                            modelListener->updateTensaoInversorValue((float)tensaoInversor_float);
                             break;
                         }
 
@@ -145,9 +145,9 @@ void Model::tick()
 //                    modelListener->updateSOCValue(valor);
 //                    break;
 //
-//                case 0x000: // ID da Potência
-//                    modelListener->updatePotenciaValue(valor);
-//                    break;
+//                case 0x000: // ID da Potência NÃO TEM
+
+
 //
 //                case 0x000:
 //                	modelListener->updateTensaoCelulaMinValue(valor);

@@ -16,9 +16,8 @@ public:
     virtual void updateSpeedValue(int val);
     virtual void updateFreio(int val);
     virtual void updateAcelerador(int val);
-    virtual void updateTensaoHV(int val);
+    virtual void updateTensaoHV(float val);
     virtual void updateDistancia(float val);
-    virtual void updatePotencia(int val);
     virtual void updateTempAcumulador(int val);
 
 

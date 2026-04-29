@@ -26,13 +26,12 @@ public:
     virtual void deactivate();
     virtual void hwButtonClicked(uint8_t buttonId) override;
     virtual void updateTempMotorValue(int val) override;
-            virtual void updateTensaoInversorValue(int val) override;
+            virtual void updateTensaoInversorValue(float val) override;
             virtual void updateSOCValue(int val) override;
             virtual void updateTempInversorValue(int val) override;
             virtual void updateTensaoCelulaMinValue(int val) override;
-            virtual void updatePotenciaValue(int val) override;
             virtual void updateTempAcumuladorValue(int val) override;
-            virtual void updateTensaoHVValue(int val) override;
+            virtual void updateTensaoHVValue(float val) override;
             virtual void updateCorrenteAcumuladorValue(int val) override;
             virtual void updateRPMValue(int val) override;
 

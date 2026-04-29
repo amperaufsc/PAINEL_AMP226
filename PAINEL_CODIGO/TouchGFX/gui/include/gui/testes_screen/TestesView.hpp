@@ -13,13 +13,12 @@ public:
     virtual void tearDownScreen();
     void updateButtonState(uint32_t buttonID);
     virtual void updateTempMotor(int val);
-        virtual void updateTensaoInversor(int val);
+        virtual void updateTensaoInversor(float val);
         virtual void updateSOC(int val);
         virtual void updateTempInversor(int val);
         virtual void updateTensaoCelulaMin(int val);
-        virtual void updatePotencia(int val);
         virtual void updateTempAcumulador(int val);
-        virtual void updateTensaoHV(int val);
+        virtual void updateTensaoHV(float num);
         virtual void updateRPM(int val);
         virtual void updateCorrenteAcumulador(int val);
             virtual void updateFalhaBMS(int val);
