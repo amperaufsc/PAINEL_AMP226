@@ -92,12 +92,22 @@ void Model::tick()
     can_msg_t msg_recebida;
 
         // 1. Verifica se conseguimos tirar algo da fila
-        if (osMessageQueueGet(Queue_CAN_RXHandle, &msg_recebida, NULL, 0) == osOK)
+        while (osMessageQueueGet(Queue_CAN_RXHandle, &msg_recebida, NULL, 0) == osOK)
         {
             model_recebeu_fila++; // Se este número subir, o Model está lendo a fila!
 
             switch (msg_recebida.id)
             {
+            case 0x120: { // falhas validar
+            			    uint8_t falha_TMS = msg_recebida.data[4];
+                            uint16_t falha_ECU = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
+                            uint8_t falha_INVERTER = msg_recebida.data[0];
+
+                            modelListener->updateFalhaTMSValue(falha_TMS);
+                            modelListener->updateFalhaECUValue(falha_ECU);
+                            modelListener->updateFalhaINVValue(falha_INVERTER);
+                            break;
+                         }
             case 0x121: {	//funciona mensagens 1 byte
                             uint8_t freio = msg_recebida.data[5];
                             uint8_t acelerador = msg_recebida.data[4];
@@ -106,6 +116,15 @@ void Model::tick()
                             modelListener->updateFreioValue(freio);
                             modelListener->updateAceleradorValue(acelerador);
                             modelListener->updateTempAcumuladorValue(TempAcumulador);
+                            break;
+                        }
+
+            case 0x220: { //validar
+                            float correnteHV_float = 0.0f; //acumulador
+
+                            memcpy(&correnteHV_float, &msg_recebida.data[4], sizeof(float));
+
+                            modelListener->updateCorrenteAcumuladorValue((float)correnteHV_float);
                             break;
                         }
 
@@ -129,7 +148,6 @@ void Model::tick()
                             memcpy(&tensaoInversor_float, &msg_recebida.data[0], sizeof(float));
                             memcpy(&tensaoHV_float, &msg_recebida.data[4], sizeof(float));
 
-
                             modelListener->updateTensaoHVValue((float)tensaoHV_float);
                             modelListener->updateTensaoInversorValue((float)tensaoInversor_float);
                             break;
@@ -144,14 +162,15 @@ void Model::tick()
 //                case 0x000:
 //                    modelListener->updateSOCValue(valor);
 //                    break;
+//                case 0x000:
+//                	modelListener->updateTensaoCelulaMinValue(valor);
+//                    break;
 //
 //                case 0x000: // ID da Potência NÃO TEM
 
 
 //
-//                case 0x000:
-//                	modelListener->updateTensaoCelulaMinValue(valor);
-//                    break;
+
 
 //                case 0x541: // olhar com pedro e ver se é necessario e oq que isso realmente significa
 
@@ -159,19 +178,7 @@ void Model::tick()
 //                    break;
 
                     //esses tres ainda precisa declarar
-                    // falhas
 
-//                case 0x120:
-//                	modelListener->falha_TMS(valor);
-//                    break;
-//
-//                case 0x120:
-//                	modelListener->falha_ECU(valor);
-//                    break;
-//
-//                case 0x120:
-//                	modelListener->falha_INVERTER(valor);
-//                    break;
 
 
                 default:

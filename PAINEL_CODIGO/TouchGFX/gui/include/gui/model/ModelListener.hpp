@@ -25,11 +25,11 @@ public:
 
     virtual void updateTempAcumuladorValue(int val) {}
     virtual void updateTensaoHVValue(float val) {}
-    virtual void updateCorrenteAcumuladorValue(int val) {}
+    virtual void updateCorrenteAcumuladorValue(float val) {}
     virtual void updateRPMValue(int val) {}
 
     // Falhas
-    virtual void updateFalhaBMSValue(int val) {}
+    virtual void updateFalhaTMSValue(int val) {}
     virtual void updateFalhaINVValue(int val) {}
     virtual void updateFalhaECUValue(int val) {}
 

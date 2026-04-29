@@ -25,12 +25,18 @@ void TestesPresenter::updateTensaoInversorValue(float val)
 {
 	view.updateTensaoInversor(val);
 }
-void TestesPresenter::updateSOCValue(int val) { view.updateCorrenteAcumulador(val); }
+void TestesPresenter::updateSOCValue(int val)
+{
+	view.updateCorrenteAcumulador(val);
+}
 void TestesPresenter::updateTempInversorValue(int val)
 {
 	view.updateTempInversor(val);
 }
-void TestesPresenter::updateTensaoCelulaMinValue(int val){ view.updateTensaoCelulaMin(val); }
+void TestesPresenter::updateTensaoCelulaMinValue(int val)
+{
+	view.updateTensaoCelulaMin(val);
+}
 
 void TestesPresenter::updateTempAcumuladorValue(int val)
 {
@@ -40,16 +46,28 @@ void TestesPresenter::updateTensaoHVValue(float val)
 {
 	view.updateTensaoHV(val);
 }
-void TestesPresenter::updateCorrenteAcumuladorValue(int val){ view.updateCorrenteAcumulador(val); }
+void TestesPresenter::updateCorrenteAcumuladorValue(float val)
+{
+	view.updateCorrenteAcumulador(val);
+}
 void TestesPresenter::updateRPMValue(int val)
 {
 	view.updateRPM(val);
 }
 
 // --- Implementação das Falhas ---
-void TestesPresenter::updateFalhaBMSValue(int val)       { view.updateFalhaBMS(val); }
-void TestesPresenter::updateFalhaINVValue(int val)       { view.updateFalhaINV(val); }
-void TestesPresenter::updateFalhaECUValue(int val)       { view.updateFalhaECU(val); }
+void TestesPresenter::updateFalhaTMSValue(int val)
+{
+	view.updateFalhaTMS(val);
+}
+void TestesPresenter::updateFalhaINVValue(int val)
+{
+	view.updateFalhaINV(val);
+}
+void TestesPresenter::updateFalhaECUValue(int val)
+{
+	view.updateFalhaECU(val);
+}
 
 void TestesPresenter::hwButtonClicked(uint8_t buttonId)
 {

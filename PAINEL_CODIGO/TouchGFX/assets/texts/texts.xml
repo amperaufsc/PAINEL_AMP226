@@ -6,6 +6,15 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_HQLU" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">ECU OK</Translation>
+      </Text>
+      <Text Id="__SingleUse_NPCG" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">INVERSOR OK</Translation>
+      </Text>
+      <Text Id="__SingleUse_8YAI" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">TMS OK</Translation>
+      </Text>
       <Text Id="__SingleUse_AEP2" Alignment="Left" TypographyId="letra_miuda">
         <Translation Language="GB">x 1000</Translation>
       </Text>
@@ -30,13 +39,13 @@
       <Text Id="__SingleUse_KIRL" Alignment="Left" TypographyId="batman">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_POQR" Alignment="Left" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+      <Text Id="__SingleUse_POQR" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB"> &lt;value&gt; </Translation>
       </Text>
-      <Text Id="__SingleUse_ZXI4" Alignment="Left" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+      <Text Id="__SingleUse_ZXI4" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB"> &lt;value&gt; </Translation>
       </Text>
-      <Text Id="__SingleUse_20FB" Alignment="Left" TypographyId="batman">
+      <Text Id="__SingleUse_20FB" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_WL4J" Alignment="Center" TypographyId="coringa">
@@ -49,7 +58,7 @@
         <Translation Language="GB">Falha INV.</Translation>
       </Text>
       <Text Id="__SingleUse_I401" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Falha BMS</Translation>
+        <Translation Language="GB">Falha TMS</Translation>
       </Text>
       <Text Id="__SingleUse_POJW" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">100</Translation>
@@ -169,7 +178,7 @@
         <Translation Language="GB">    &lt;value&gt; rpm      </Translation>
       </Text>
       <Text Id="__SingleUse_OFVA" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Tensão Inversor</Translation>
+        <Translation Language="GB"> Tensão Inversor </Translation>
       </Text>
       <Text Id="__SingleUse_5HLU" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">  &lt;value&gt;  V  </Translation>

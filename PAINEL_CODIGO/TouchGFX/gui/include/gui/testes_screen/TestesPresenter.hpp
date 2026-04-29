@@ -32,11 +32,11 @@ public:
             virtual void updateTensaoCelulaMinValue(int val) override;
             virtual void updateTempAcumuladorValue(int val) override;
             virtual void updateTensaoHVValue(float val) override;
-            virtual void updateCorrenteAcumuladorValue(int val) override;
+            virtual void updateCorrenteAcumuladorValue(float val) override;
             virtual void updateRPMValue(int val) override;
 
             // --- Falhas ---
-            virtual void updateFalhaBMSValue(int val) override;
+            virtual void updateFalhaTMSValue(int val) override;
             virtual void updateFalhaINVValue(int val) override;
             virtual void updateFalhaECUValue(int val) override;
 

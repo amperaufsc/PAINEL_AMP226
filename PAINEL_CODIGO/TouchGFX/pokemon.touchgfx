@@ -81,7 +81,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_0NCS",
               "UseBuffer": true,
@@ -118,7 +117,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_AYI9",
               "UseBuffer": true,
@@ -128,7 +126,7 @@
           {
             "Type": "TextArea",
             "Name": "TensaoCelulamaisbaixa",
-            "X": 323,
+            "X": 318,
             "Y": 126,
             "Width": 164,
             "Height": 35,
@@ -155,7 +153,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_NJC4",
               "UseBuffer": true,
@@ -165,7 +162,7 @@
           {
             "Type": "TextArea",
             "Name": "TensaoHV",
-            "X": 316,
+            "X": 319,
             "Y": 205,
             "Width": 162,
             "Height": 35,
@@ -192,7 +189,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_ZFV1",
               "UseBuffer": true,
@@ -202,9 +198,9 @@
           {
             "Type": "TextArea",
             "Name": "TensaoInversor",
-            "X": 279,
+            "X": 271,
             "Y": 42,
-            "Width": 242,
+            "Width": 258,
             "Height": 35,
             "TextId": "__SingleUse_OFVA",
             "TextRotation": "0",
@@ -229,7 +225,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_0P77",
               "UseBuffer": true,
@@ -266,7 +261,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_KC4C",
               "UseBuffer": true,
@@ -303,7 +297,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_CBAY",
               "UseBuffer": true,
@@ -340,7 +333,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_ON7B",
               "UseBuffer": true,
@@ -377,7 +369,6 @@
               "Green": 247,
               "Blue": 247
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_4WMP",
               "UseBuffer": true,
@@ -407,6 +398,7 @@
             "Y": 352,
             "Width": 150,
             "Height": 35,
+            "Visible": false,
             "TextId": "__SingleUse_5U7Q",
             "TextRotation": "0",
             "Color": {
@@ -418,11 +410,28 @@
           },
           {
             "Type": "TextArea",
+            "Name": "falhainversor_azul",
+            "X": 292,
+            "Y": 352,
+            "Width": 216,
+            "Height": 35,
+            "TextId": "__SingleUse_NPCG",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
             "Name": "falhaECU",
             "X": 589,
             "Y": 352,
             "Width": 155,
             "Height": 35,
+            "Visible": false,
             "TextId": "__SingleUse_WL4J",
             "TextRotation": "0",
             "Color": {
@@ -434,11 +443,28 @@
           },
           {
             "Type": "TextArea",
+            "Name": "falhaECU_azul",
+            "X": 604,
+            "Y": 352,
+            "Width": 119,
+            "Height": 35,
+            "TextId": "__SingleUse_HQLU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
             "Name": "falhaBMS",
             "X": 61,
             "Y": 352,
-            "Width": 157,
+            "Width": 156,
             "Height": 35,
+            "Visible": false,
             "TextId": "__SingleUse_I401",
             "TextRotation": "0",
             "Color": {
@@ -450,11 +476,28 @@
           },
           {
             "Type": "TextArea",
-            "Name": "valor_falhaBMS",
-            "X": 128,
-            "Y": 387,
-            "Width": 22,
+            "Name": "falhaBMS_azul",
+            "X": 79,
+            "Y": 352,
+            "Width": 120,
             "Height": 35,
+            "TextId": "__SingleUse_8YAI",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "valor_falhaBMS",
+            "X": 79,
+            "Y": 387,
+            "Width": 120,
+            "Height": 35,
+            "Visible": false,
             "TextId": "__SingleUse_20FB",
             "TextRotation": "0",
             "Color": {
@@ -462,20 +505,20 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_KIRL",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 16
             }
           },
           {
             "Type": "TextArea",
             "Name": "valor_falha_INV",
-            "X": 389,
+            "X": 292,
             "Y": 387,
-            "Width": 22,
+            "Width": 216,
             "Height": 35,
+            "Visible": false,
             "TextId": "__SingleUse_ZXI4",
             "TextRotation": "0",
             "Color": {
@@ -483,20 +526,20 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_FQ9I",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 16
             }
           },
           {
             "Type": "TextArea",
             "Name": "valor_falha_ECU",
-            "X": 655,
+            "X": 604,
             "Y": 387,
-            "Width": 22,
+            "Width": 119,
             "Height": 35,
+            "Visible": false,
             "TextId": "__SingleUse_POQR",
             "TextRotation": "0",
             "Color": {
@@ -504,11 +547,10 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_RFE0",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 16
             }
           }
         ],
@@ -1313,7 +1355,7 @@
       "Height": 480
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "ModoProva",
+    "StartupScreenName": "Testes",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

@@ -64,26 +64,64 @@ void TestesView::updateRPM(int val) {
     RPM_un.invalidate();
 }
 
-void TestesView::updateCorrenteAcumulador(int val) {
-    Unicode::snprintf(Correnteacumulador_unBuffer, CORRENTEACUMULADOR_UN_SIZE, "%d", val);
-    RPM_un.invalidate();
+void TestesView::updateCorrenteAcumulador(float val) {
+	Unicode::snprintfFloat(Correnteacumulador_unBuffer, CORRENTEACUMULADOR_UN_SIZE, "%.1f", val);
+    Correnteacumulador_un.invalidate();
 }
 
+  //Atualizações de Falhas
+void TestesView::updateFalhaTMS(int val) {
+    if (val != 0) {
+        valor_falhaBMS.setVisible(true);
+        falhaBMS.setVisible(true);
+        falhaBMS_azul.setVisible(false);
+    } else {
+        valor_falhaBMS.setVisible(false);
+        falhaBMS.setVisible(false);
+        falhaBMS_azul.setVisible(true);
+    }
 
-// --- Atualizações de Falhas ---
-
-void TestesView::updateFalhaBMS(int val) {
     Unicode::snprintf(valor_falhaBMSBuffer, VALOR_FALHABMS_SIZE, "%d", val);
+
     valor_falhaBMS.invalidate();
+    falhaBMS.invalidate();
+    falhaBMS_azul.invalidate();
 }
 
 void TestesView::updateFalhaINV(int val) {
+    if (val != 0) {
+    	valor_falha_INV.setVisible(true);
+    	falhainversor.setVisible(true);
+        falhainversor_azul.setVisible(false);
+    } else {
+    	valor_falha_INV.setVisible(false);
+    	falhainversor.setVisible(false);
+        falhainversor_azul.setVisible(true);
+    }
+
     Unicode::snprintf(valor_falha_INVBuffer, VALOR_FALHA_INV_SIZE, "%d", val);
+
+    falhainversor_azul.invalidate();
+    falhainversor.invalidate();
     valor_falha_INV.invalidate();
 }
 
 void TestesView::updateFalhaECU(int val) {
+    if (val != 0) {
+    	valor_falha_ECU.setVisible(true);
+    	falhaECU.setVisible(true);
+    	falhaECU_azul.setVisible(false);
+    } else {
+    	valor_falha_ECU.setVisible(false);
+    	falhaECU.setVisible(false);
+    	falhaECU_azul.setVisible(true);
+    }
+
     Unicode::snprintf(valor_falha_ECUBuffer, VALOR_FALHA_ECU_SIZE, "%d", val);
+
+    falhaECU_azul.invalidate();
+    falhaECU.invalidate();
     valor_falha_ECU.invalidate();
+
 }
 
