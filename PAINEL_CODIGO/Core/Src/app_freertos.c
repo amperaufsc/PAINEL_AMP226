@@ -247,28 +247,25 @@ void StartTaskCAN(void *argument)
 
 	{
 
-	//  MODO DE PROVA
-
-	TxHeader.Identifier = 0x341;
-	TxData[0] = ID_DA_PAGINA;
+	//  START AUTONOMOS
+	TxHeader.Identifier = 0x347;
+	TxData[0] = START_AUTONOMOS;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
 	osDelay(211); //pra debug depois tem que mudar pra 200
 
 
-	//  SISTEMAS AUTONOMOS
-	TxHeader.Identifier = 0x541;
-	TxData[0] = START_AUTONOMOS;
+	//  IDENTIFICAÇÃO DA PÁGINA
+	TxHeader.Identifier = 0x54B;
+	TxData[0] = ID_DA_PAGINA;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
 	osDelay(181); //pra debug depois tem que mudar pra 200
 
 
-
-
 	// READY TO DRIVE
 	uint32_t state = !(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8));
-	TxHeader.Identifier = 0x241;
+	TxHeader.Identifier = 0x141;
 	TxData[0] = (uint8_t)state;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
