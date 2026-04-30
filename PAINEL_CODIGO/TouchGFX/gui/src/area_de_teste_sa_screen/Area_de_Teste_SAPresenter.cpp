@@ -23,7 +23,7 @@ void Area_de_Teste_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	{
 	    if (buttonId == 2) // PB11 BOLINHA // PA2 TX-D1
 	    {
-	    	model->setStartAutonomos(1);
+	    	model->setStartAutonomos(4);
 	    }
 	    else if (buttonId == 3) // PA3 TRIANGULO
 	    {

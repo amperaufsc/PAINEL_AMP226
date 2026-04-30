@@ -9,7 +9,7 @@ Trackdrive_SAPresenter::Trackdrive_SAPresenter(Trackdrive_SAView& v)
 
 void Trackdrive_SAPresenter::activate()
 {
-	 model->updateCurrentScreen(4);
+	 model->updateCurrentScreen(8);
 	 model->setStartAutonomos(0);
 }
 
@@ -22,7 +22,7 @@ void Trackdrive_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	{
 	    if (buttonId == 2) // PB11 BOLINHA // PA2 TX-D1
 	    {
-	    	model->setStartAutonomos(5);
+	    	model->setStartAutonomos(8);
 	    }
 	    else if (buttonId == 3) // PA3 TRIANGULO
 	    {

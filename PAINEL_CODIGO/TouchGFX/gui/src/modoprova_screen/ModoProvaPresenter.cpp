@@ -6,7 +6,7 @@ ModoProvaPresenter::ModoProvaPresenter(ModoProvaView& v) : view(v) { }
 
 void ModoProvaPresenter::activate() {
 
-	    model->updateCurrentScreen(3); // ID para Modo Prova
+	    model->updateCurrentScreen(2); // ID para Modo Prova
 
 }
 void ModoProvaPresenter::deactivate() { }
