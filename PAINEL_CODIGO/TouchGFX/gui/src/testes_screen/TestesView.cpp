@@ -101,9 +101,9 @@ void TestesView::updateFalhaINV(int val) {
 
     Unicode::snprintf(valor_falha_INVBuffer, VALOR_FALHA_INV_SIZE, "%d", val);
 
-    falhainversor_azul.invalidate();
-    falhainversor.invalidate();
-    valor_falha_INV.invalidate();
+    falhainversor_azul.invalidateContent();
+    falhainversor.invalidateContent();
+    valor_falha_INV.invalidateContent();
 }
 
 void TestesView::updateFalhaECU(int val) {

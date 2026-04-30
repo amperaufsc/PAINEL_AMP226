@@ -169,9 +169,6 @@ void Model::tick()
 //                case 0x000: // ID da Potência NÃO TEM
 
 
-//
-
-
 //                case 0x541: // olhar com pedro e ver se é necessario e oq que isso realmente significa
 
 //                	modelListener->updateAutonomos(valor);
