@@ -221,9 +221,6 @@ void StartTaskCAN(void *argument)
 
 	uint8_t TxData[8];
 
-	//uint32_t valorRPM = 0;
-
-	//uint32_t valorVelocidade = 0;
 
 
 
@@ -270,26 +267,6 @@ void StartTaskCAN(void *argument)
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
 	osDelay(199);  //pra debug depois tem que mudar pra 200
-
-
-
-	// TESTE ANTIGO RPM (ID 0x123 ) ---
-
-	//valorRPM++;
-
-	//if(valorRPM > 8) valorRPM = 0;
-
-
-
-	//TxHeader.Identifier = 0x123;
-
-	//TxData[0] = (uint8_t)valorRPM;
-
-	//HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
-
-
-
-	//osDelay(250); // Pequeno intervalo entre mensagens
 
 
 	 // testes
@@ -405,28 +382,17 @@ void StartTaskCAN(void *argument)
 //	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 //    osDelay(470);
 
-
-
-
-
-
-	// --- ENVIO 3: SOC (ID 0x125 ) ---
-//
-//	valorSoc += 1;
-//
-//	if(valorSoc > 100) valorSoc = 0;
-//
-//
-//
-//	TxHeader.Identifier = 0x125;
-//
-//	TxData[0] = (uint8_t)valorSoc;
-//
+//	//RODA   ---
+//	static float coracumulador = 0.0f;
+//	coracumulador += 5.5f;
+//	if(coracumulador > 700.0f) coracumulador = 0.0f;
+//	TxHeader.Identifier = 0x220;
+//	memcpy(&TxData[4], &coracumulador, sizeof(float));
 //	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(370);
 
 
 
-	//osDelay(250);
 
 	}
   /* USER CODE END Task_CAN */

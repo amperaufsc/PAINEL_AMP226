@@ -53,11 +53,12 @@ void ModoProvaView::updateRPMValue(int val)
     RPM_un.invalidate();
 }
 
-void ModoProvaView::updateSpeedValue(int val) {
+void ModoProvaView::updateSpeedValue(float val) { //aqui calcular a distancia integrando a velocidade media(velocimetro)
+												  //melhor usar aqui pra distancia alterando em tempo real de acordo com a velocidade
     velocimetro.setValue(val);
     velocimetro.invalidate();
 
-    Unicode::snprintf(velocidade_unBuffer, VELOCIDADE_UN_SIZE, "%d", val);
+    Unicode::snprintfFloat(velocidade_unBuffer, VELOCIDADE_UN_SIZE, "%.1f", val);
     velocidade_un.invalidate();
 }
 

@@ -12,7 +12,7 @@ public:
     virtual ~ModelListener() {}
     virtual void hwButtonClicked(uint8_t buttonId) {}
     virtual void updateSOCValue(int val) {}
-    virtual void updateSpeedValue(int val) {}
+    virtual void updateSpeedValue(float val) {}
     virtual void updateFreioValue(int val) {}
     virtual void updateAceleradorValue(int val) {}
     virtual void updateDistanciaValue(int val) { }

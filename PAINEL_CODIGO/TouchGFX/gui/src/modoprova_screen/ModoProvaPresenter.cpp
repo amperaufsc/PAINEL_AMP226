@@ -23,7 +23,7 @@ void ModoProvaPresenter::updateRPMValue(int val)
 {
     view.updateRPMValue(val);
 }
-void ModoProvaPresenter::updateSpeedValue(int val)
+void ModoProvaPresenter::updateSpeedValue(float val)
 {
     view.updateSpeedValue(val);
 }
@@ -39,7 +39,7 @@ void ModoProvaPresenter::updateAceleradorValue(int val)
 {
 	view.updateAcelerador(val);
 }
-void ModoProvaPresenter::updateTensaoHVValue(int val)
+void ModoProvaPresenter::updateTensaoHVValue(float val)
 {
 	view.updateTensaoHV(val);
 }

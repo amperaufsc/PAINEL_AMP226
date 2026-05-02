@@ -98,10 +98,11 @@ void Model::tick()
 
             switch (msg_recebida.id)
             {
-            case 0x120: { // falhas validar
+            case 0x120: { // falhas validado
             			    uint8_t falha_TMS = msg_recebida.data[4];
                             uint16_t falha_ECU = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
                             uint8_t falha_INVERTER = msg_recebida.data[0];
+                            uint8_t readtodrive = msg_recebida.data[3];
 
                             modelListener->updateFalhaTMSValue(falha_TMS);
                             modelListener->updateFalhaECUValue(falha_ECU);
@@ -119,7 +120,7 @@ void Model::tick()
                             break;
                         }
 
-            case 0x220: { //validar
+            case 0x220: { //validado
                             float correnteHV_float = 0.0f; //acumulador
 
                             memcpy(&correnteHV_float, &msg_recebida.data[4], sizeof(float));
@@ -128,8 +129,7 @@ void Model::tick()
                             break;
                         }
 
-            case 0x420: {	//funciona mensagens 2bytes, mas tem um problema, quando faz o loopback anterior junto este nao funciona
-            				// o loopba
+            case 0x420: {	//funciona mensagens 2bytes
                             uint16_t rpm = ((uint16_t)msg_recebida.data[0] << 8) | msg_recebida.data[1];
                             uint16_t TempMotor = ((uint16_t)msg_recebida.data[2] << 8) | msg_recebida.data[3];
                             uint16_t TempInversor = ((uint16_t)msg_recebida.data[6] << 8) | msg_recebida.data[7];
@@ -140,8 +140,7 @@ void Model::tick()
                             break;
                         }
 
-            case 0x421: {
-            			// funciona
+            case 0x421: {	// funciona
                             float tensaoInversor_float = 0.0f; //trifasico
                             float tensaoHV_float = 0.0f; //acumulador
 
@@ -154,10 +153,26 @@ void Model::tick()
                         }
 
 
-//                case 0x000: //colocar velocidade em km/h(olhar com pedro)
-//                    modelListener->updateSpeedValue(valor);
+//                case 0x000: { //velocidade e distancia SA vai mandar pra mim olhar com o carlos ou pedro quando ficar pronto
+
+//                    float RodaDianteiraEsq = 0.0f;
+//                    float RodaDianteiraDir = 0.0f;
+
+//					  memcpy(&RodaDianteiraEsq, &msg_recebida.data[4], sizeof(float));
+//            		  memcpy(&RodaDianteiraDir, &msg_recebida.data[0], sizeof(float));
+
+
+//            			// calculo velocidade media
+//					  float VelMediaDianteira = (RodaDianteiraEsq + RodaDianteiraDir)/2;
+
+
+//                    modelListener->updateSpeedValue((float)VelMediaDianteira);
 //                    modelListener->updateDistanciaValue(valor);
 //                    break;
+
+//								}
+
+
 //                    //(olhar com matheus)
 //                case 0x000:
 //                    modelListener->updateSOCValue(valor);
@@ -166,15 +181,6 @@ void Model::tick()
 //                	modelListener->updateTensaoCelulaMinValue(valor);
 //                    break;
 //
-//                case 0x000: // ID da Potência NÃO TEM
-
-
-//                case 0x541: // olhar com pedro e ver se é necessario e oq que isso realmente significa
-
-//                	modelListener->updateAutonomos(valor);
-//                    break;
-
-                    //esses tres ainda precisa declarar
 
 
 
