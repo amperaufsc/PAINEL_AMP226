@@ -32,7 +32,7 @@ public:
     virtual void updateFalhaTMSValue(int val) {}
     virtual void updateFalhaINVValue(int val) {}
     virtual void updateFalhaECUValue(int val) {}
-
+    virtual void RTDativo(int val) {}
     //calculos
     //distancia
 

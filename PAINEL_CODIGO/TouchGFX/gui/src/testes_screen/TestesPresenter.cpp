@@ -37,7 +37,6 @@ void TestesPresenter::updateTensaoCelulaMinValue(int val)
 {
 	view.updateTensaoCelulaMin(val);
 }
-
 void TestesPresenter::updateTempAcumuladorValue(int val)
 {
 	view.updateTempAcumulador(val);
@@ -68,7 +67,10 @@ void TestesPresenter::updateFalhaECUValue(int val)
 {
 	view.updateFalhaECU(val);
 }
-
+void TestesPresenter::RTDativo(int val)
+{
+	view.RTDativo(val);
+}
 void TestesPresenter::hwButtonClicked(uint8_t buttonId)
 {
 

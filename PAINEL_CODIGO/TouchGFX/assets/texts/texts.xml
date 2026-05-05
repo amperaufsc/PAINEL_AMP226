@@ -6,6 +6,9 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_ZXAY" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">RTD ATIVO</Translation>
+      </Text>
       <Text Id="__SingleUse_HQLU" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">ECU OK</Translation>
       </Text>
@@ -108,9 +111,6 @@
       <Text Id="__SingleUse_4H7T" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_AXGA" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">SOC</Translation>
-      </Text>
       <Text Id="__SingleUse_4951" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Hodometro</Translation>
       </Text>
@@ -130,7 +130,7 @@
         <Translation Language="GB">&lt;value&gt; °C</Translation>
       </Text>
       <Text Id="__SingleUse_3N7C" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">ACELERACAO&#10;</Translation>
+        <Translation Language="GB">ACELERACAO</Translation>
       </Text>
       <Text Id="__SingleUse_CBAY" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">000</Translation>

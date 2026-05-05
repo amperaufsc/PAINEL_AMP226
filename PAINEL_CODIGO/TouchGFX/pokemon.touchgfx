@@ -552,6 +552,22 @@
               "UseBuffer": true,
               "BufferSize": 16
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "rtdtestes",
+            "X": 309,
+            "Y": 435,
+            "Width": 200,
+            "Height": 35,
+            "Visible": false,
+            "TextId": "__SingleUse_ZXAY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
           }
         ],
         "Interactions": [
@@ -689,7 +705,7 @@
           {
             "Type": "TextArea",
             "Name": "bateria_un",
-            "X": 360,
+            "X": 357,
             "Y": 335,
             "Width": 100,
             "Height": 35,
@@ -858,22 +874,6 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Bateria",
-            "X": 374,
-            "Y": 381,
-            "Width": 66,
-            "Height": 35,
-            "TextId": "__SingleUse_AXGA",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
             "Name": "TempAcumulador_un",
             "X": 350,
             "Y": 192,
@@ -950,7 +950,7 @@
             "X": 565,
             "Y": 352,
             "Width": 215,
-            "Height": 70,
+            "Height": 35,
             "TextId": "__SingleUse_3N7C",
             "TextRotation": "0",
             "Color": {

@@ -24,6 +24,7 @@ public:
     virtual void updateFalhaTMS(int val);
     virtual void updateFalhaINV(int val);
     virtual void updateFalhaECU(int val);
+    virtual void RTDativo(int val);
 
 protected:
 };

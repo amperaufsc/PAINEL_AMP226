@@ -26,12 +26,7 @@ extern "C" {
 
 
 Model::Model() :
-		modelListener(0),
-		//calculo da distancia
-		distancia_total(0.0f),
-		velocidadeatual(0.0f),
-		ultimoTick(0)
-
+		modelListener(0)
 {
 
 }
@@ -53,26 +48,26 @@ void Model::setStartAutonomos(uint8_t valor) {
 
 void Model::tick()
 {
-	/* CALCULANDO A DISTANCIA */
-	uint32_t now = osKernelGetTickCount();
-
-	    if (this->ultimoTick != 0)
-	    {
-	        uint32_t elapsed_ms = now - this->ultimoTick;
-
-	        // Se você fixou 100.0f e não funciona, o erro está aqui ou no Listener
-	        if (this->velocidadeatual > 0.1f) {
-	            float tempo_s = (float)elapsed_ms / 1000.0f;
-	            this->distancia_total += (this->velocidadeatual / 3.6f) * tempo_s;
-	        }
-
-	        if (modelListener != 0) {
-	            // Teste: force um valor fixo aqui para ver se a tela atualiza
-	            // modelListener->updateDistanciaValue(99.9f);
-	            modelListener->updateDistanciaValue((float)(this->distancia_total / 1000.0f));
-	        }
-	    }
-	    this->ultimoTick = now;
+//	/* CALCULANDO A DISTANCIA */ Isso se tornará inutil se Sistemas autonomos mandar tanto a distancia quanto a velocidade pra mim
+//	uint32_t now = osKernelGetTickCount();
+//
+//	    if (this->ultimoTick != 0)
+//	    {
+//	        uint32_t elapsed_ms = now - this->ultimoTick;
+//
+//	        // Se você fixou 100.0f e não funciona, o erro está aqui ou no Listener
+//	        if (this->velocidadeatual > 0.1f) {
+//	            float tempo_s = (float)elapsed_ms / 1000.0f;
+//	            this->distancia_total += (this->velocidadeatual / 3.6f) * tempo_s;
+//	        }
+//
+//	        if (modelListener != 0) {
+//	            // Teste: force um valor fixo aqui para ver se a tela atualiza
+//	            // modelListener->updateDistanciaValue(99.9f);
+//	            modelListener->updateDistanciaValue((float)(this->distancia_total / 1000.0f));
+//	        }
+//	    }
+//	    this->ultimoTick = now;
 
     /* --- LÓGICA EXISTENTE DOS BOTÕES --- */
     static int debounceCounter = 0;
@@ -103,10 +98,14 @@ void Model::tick()
                             uint16_t falha_ECU = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
                             uint8_t falha_INVERTER = msg_recebida.data[0];
                             uint8_t readtodrive = msg_recebida.data[3];
+                            if (readtodrive == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+                            } else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
 
+							modelListener->RTDativo(readtodrive);
                             modelListener->updateFalhaTMSValue(falha_TMS);
                             modelListener->updateFalhaECUValue(falha_ECU);
                             modelListener->updateFalhaINVValue(falha_INVERTER);
+
                             break;
                          }
             case 0x121: {	//funciona mensagens 1 byte

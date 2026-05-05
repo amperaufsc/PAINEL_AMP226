@@ -124,4 +124,12 @@ void TestesView::updateFalhaECU(int val) {
     valor_falha_ECU.invalidate();
 
 }
+void TestesView::RTDativo(int val) {
+    if (val == 3) {
+    	rtdtestes.setVisible(true);
+    } else {
+    	rtdtestes.setVisible(false);
+    }
 
+    rtdtestes.invalidate();
+}

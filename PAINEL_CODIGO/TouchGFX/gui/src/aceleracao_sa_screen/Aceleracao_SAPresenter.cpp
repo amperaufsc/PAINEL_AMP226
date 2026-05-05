@@ -24,11 +24,11 @@ void Aceleracao_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	    {
 	    	model->setStartAutonomos(6);
 	    }
-	    else if (buttonId == 3) // PA3 TRIANGULO
+	    else if (buttonId == 1) // PA3 TRIANGULO
 	    {
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoAutoCross_SAScreenSlideTransitionEast();
 	    }
-	    else if (buttonId == 1) // PA2 X
+	    else if (buttonId == 2) // PA2 X
 	    {
 	         static_cast<FrontendApplication*>(Application::getInstance())->gotoSkidped_SAScreenSlideTransitionWest();
 	    }

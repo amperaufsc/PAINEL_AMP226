@@ -269,7 +269,7 @@ void StartTaskCAN(void *argument)
 	osDelay(199);  //pra debug depois tem que mudar pra 200
 
 
-	 // testes
+//	 // testes
 //	// ACELERADOR  ---
 //    static uint8_t acelerador = 0;
 //	acelerador += 2;
@@ -306,7 +306,7 @@ void StartTaskCAN(void *argument)
 //	TxData[1] = (uint8_t)rpm;
 //	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 //	osDelay(190);
-//
+
 //	//TEMPERATURA MOTOR ---
 //	static uint16_t tempmotor = 0;
 //	tempmotor += 29;
@@ -391,6 +391,14 @@ void StartTaskCAN(void *argument)
 //	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 //	osDelay(370);
 
+//	// Read to drive  ---
+//    static uint8_t rtd = 3;
+//    rtd += 1 ;
+//	if(rtd > 4) rtd = 3;
+//	TxHeader.Identifier = 0x120;
+//	TxData[3] = rtd;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(5000);
 
 
 

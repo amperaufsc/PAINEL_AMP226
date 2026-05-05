@@ -39,7 +39,7 @@ public:
             virtual void updateFalhaTMSValue(int val) override;
             virtual void updateFalhaINVValue(int val) override;
             virtual void updateFalhaECUValue(int val) override;
-
+            virtual void RTDativo(int val) override;
 
     virtual ~TestesPresenter() {}
     void notifyButtonChanged(uint32_t buttonID);
