@@ -17,67 +17,66 @@ void TestesPresenter::deactivate()
 
 }
 
-void TestesPresenter::updateTempMotorValue(int val)
+void TestesPresenter::updateTempMotorValue(int tmot)
 {
-	view.updateTempMotor(val);
+	view.updateTempMotor(tmot);
 }
-void TestesPresenter::updateTensaoInversorValue(float val)
+void TestesPresenter::updateTensaoInversorValue(float inv)
 {
-	view.updateTensaoInversor(val);
+	view.updateTensaoInversor(inv);
 }
-void TestesPresenter::updateSOCValue(int val)
+void TestesPresenter::updateSOCValue(int soc)
 {
-	view.updateCorrenteAcumulador(val);
+	view.updateCorrenteAcumulador(soc);
 }
-void TestesPresenter::updateTempInversorValue(int val)
+void TestesPresenter::updateTempInversorValue(int tinv)
 {
-	view.updateTempInversor(val);
+	view.updateTempInversor(tinv);
 }
-void TestesPresenter::updateTensaoCelulaMinValue(int val)
+void TestesPresenter::updateTensaoCelulaMinValue(int mc)
 {
-	view.updateTensaoCelulaMin(val);
+	view.updateTensaoCelulaMin(mc);
 }
-void TestesPresenter::updateTempAcumuladorValue(int val)
+void TestesPresenter::updateTempAcumuladorValue(int tacu)
 {
-	view.updateTempAcumulador(val);
+	view.updateTempAcumulador(tacu);
 }
-void TestesPresenter::updateTensaoHVValue(float val)
+void TestesPresenter::updateTensaoHVValue(float hv)
 {
-	view.updateTensaoHV(val);
+	view.updateTensaoHV(hv);
 }
-void TestesPresenter::updateCorrenteAcumuladorValue(float val)
+void TestesPresenter::updateCorrenteAcumuladorValue(float acu)
 {
-	view.updateCorrenteAcumulador(val);
+	view.updateCorrenteAcumulador(acu);
 }
-void TestesPresenter::updateRPMValue(int val)
+void TestesPresenter::updateRPMValue(int rpm)
 {
-	view.updateRPM(val);
+	view.updateRPM(rpm);
 }
 
 // --- Implementação das Falhas ---
-void TestesPresenter::updateFalhaTMSValue(int val)
+void TestesPresenter::updateFalhaTMSValue(int tms)
 {
-	view.updateFalhaTMS(val);
+	view.updateFalhaTMS(tms);
 }
-void TestesPresenter::updateFalhaINVValue(int val)
+void TestesPresenter::updateFalhaINVValue(int finv)
 {
-	view.updateFalhaINV(val);
+	view.updateFalhaINV(finv);
 }
-void TestesPresenter::updateFalhaECUValue(int val)
+void TestesPresenter::updateFalhaECUValue(int ecu)
 {
-	view.updateFalhaECU(val);
+	view.updateFalhaECU(ecu);
 }
-void TestesPresenter::RTDativo(int val)
+void TestesPresenter::RTDativo(int rtd)
 {
-	view.RTDativo(val);
+	view.RTDativo(rtd);
 }
 void TestesPresenter::hwButtonClicked(uint8_t buttonId)
 {
-
-	    if (buttonId == 2) //  // BOLINHA
-	    {
-	        static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
-	    }
+	if (buttonId == 2)// BOLINHA
+	{
+		static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
+	}
 
 }
 

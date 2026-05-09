@@ -355,9 +355,9 @@ void StartTaskCAN(void *argument)
 //	osDelay(370);
 //
 //	//FALHA ECU  ---
-//	static uint16_t ecu = 0;
-//	ecu += 10;
-//	if(ecu > 260) ecu = 0;
+//	static uint16_t ecu = 1;
+//	ecu *= 2;
+//	if(ecu > 260) ecu = 1;
 //	TxHeader.Identifier = 0x120;
 //	TxData[1] = (uint8_t)(ecu >> 8);
 //	TxData[2] = (uint8_t)ecu;

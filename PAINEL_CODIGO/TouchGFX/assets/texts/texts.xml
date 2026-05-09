@@ -28,7 +28,7 @@
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_ZFV1" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_7ZID" Alignment="Left" TypographyId="batman">
         <Translation Language="GB"> &lt;value&gt;</Translation>
@@ -70,7 +70,7 @@
         <Translation Language="GB">&lt;value&gt;  %</Translation>
       </Text>
       <Text Id="__SingleUse_WGWZ" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">00000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_OE0U" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">&lt;value&gt; m</Translation>
@@ -100,7 +100,7 @@
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_T4IY" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">  &lt;value&gt; V      </Translation>
+        <Translation Language="GB">     &lt;value&gt; V     </Translation>
       </Text>
       <Text Id="__SingleUse_ZFN3" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">velocidade</Translation>
@@ -121,7 +121,7 @@
         <Translation Language="GB">&lt;value&gt; %</Translation>
       </Text>
       <Text Id="__SingleUse_ECCU" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Temp. Acumulador</Translation>
+        <Translation Language="GB">Temperatura&#10;Acumulador</Translation>
       </Text>
       <Text Id="__SingleUse_KAQ0" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
@@ -133,28 +133,28 @@
         <Translation Language="GB">ACELERACAO</Translation>
       </Text>
       <Text Id="__SingleUse_CBAY" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_ON7B" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">100</Translation>
       </Text>
       <Text Id="__SingleUse_4WMP" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_AYI9" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_NJC4" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_0NCS" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_0P77" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_KC4C" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_KLPD" Alignment="Center" TypographyId="batman">
         <Translation Language="GB"> &lt;value&gt; °C </Translation>

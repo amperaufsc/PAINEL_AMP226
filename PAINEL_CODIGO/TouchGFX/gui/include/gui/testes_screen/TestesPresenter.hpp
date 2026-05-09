@@ -25,21 +25,27 @@ public:
      */
     virtual void deactivate();
     virtual void hwButtonClicked(uint8_t buttonId) override;
-    virtual void updateTempMotorValue(int val) override;
-            virtual void updateTensaoInversorValue(float val) override;
-            virtual void updateSOCValue(int val) override;
-            virtual void updateTempInversorValue(int val) override;
-            virtual void updateTensaoCelulaMinValue(int val) override;
-            virtual void updateTempAcumuladorValue(int val) override;
-            virtual void updateTensaoHVValue(float val) override;
-            virtual void updateCorrenteAcumuladorValue(float val) override;
-            virtual void updateRPMValue(int val) override;
 
-            // --- Falhas ---
-            virtual void updateFalhaTMSValue(int val) override;
-            virtual void updateFalhaINVValue(int val) override;
-            virtual void updateFalhaECUValue(int val) override;
-            virtual void RTDativo(int val) override;
+    // Sensores e Medidas
+    virtual void updateRPMValue(int rpm) override;
+
+    //temperatura
+    virtual void updateTempAcumuladorValue(int tacu) override;
+    virtual void updateTempInversorValue(int tinv) override;
+    virtual void updateTempMotorValue(int tmot) override;
+
+    //tensao e corrente
+    virtual void updateMinCel(int mc) override;
+    virtual void updateSOCValue(int soc) override;
+    virtual void updateTensaoHVValue(float hv) override;
+    virtual void updateTensaoInversorValue(float inv) override;
+    virtual void updateCorrenteAcumuladorValue(float acu) override;
+
+    // Falhas
+    virtual void updateFalhaTMSValue(int tms) override;
+    virtual void updateFalhaINVValue(int finv) override;
+    virtual void updateFalhaECUValue(int ecu) override;
+    virtual void RTDativo(int rtd) override;
 
     virtual ~TestesPresenter() {}
     void notifyButtonChanged(uint32_t buttonID);

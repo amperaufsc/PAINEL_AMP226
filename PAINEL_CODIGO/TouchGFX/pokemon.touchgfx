@@ -82,9 +82,7 @@
               "Blue": 247
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_0NCS",
-              "UseBuffer": true,
-              "BufferSize": 10
+              "TextId": "__SingleUse_0NCS"
             }
           },
           {
@@ -118,9 +116,7 @@
               "Blue": 247
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_AYI9",
-              "UseBuffer": true,
-              "BufferSize": 10
+              "TextId": "__SingleUse_AYI9"
             }
           },
           {
@@ -154,9 +150,7 @@
               "Blue": 247
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_NJC4",
-              "UseBuffer": true,
-              "BufferSize": 16
+              "TextId": "__SingleUse_NJC4"
             }
           },
           {
@@ -190,9 +184,7 @@
               "Blue": 247
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_ZFV1",
-              "UseBuffer": true,
-              "BufferSize": 12
+              "TextId": "__SingleUse_ZFV1"
             }
           },
           {
@@ -226,9 +218,7 @@
               "Blue": 247
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_0P77",
-              "UseBuffer": true,
-              "BufferSize": 10
+              "TextId": "__SingleUse_0P77"
             }
           },
           {
@@ -262,9 +252,7 @@
               "Blue": 247
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_KC4C",
-              "UseBuffer": true,
-              "BufferSize": 10
+              "TextId": "__SingleUse_KC4C"
             }
           },
           {
@@ -298,9 +286,7 @@
               "Blue": 247
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_CBAY",
-              "UseBuffer": true,
-              "BufferSize": 10
+              "TextId": "__SingleUse_CBAY"
             }
           },
           {
@@ -334,9 +320,7 @@
               "Blue": 247
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_ON7B",
-              "UseBuffer": true,
-              "BufferSize": 10
+              "TextId": "__SingleUse_ON7B"
             }
           },
           {
@@ -370,9 +354,7 @@
               "Blue": 247
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_4WMP",
-              "UseBuffer": true,
-              "BufferSize": 10
+              "TextId": "__SingleUse_4WMP"
             }
           },
           {
@@ -506,9 +488,7 @@
               "Blue": 255
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_KIRL",
-              "UseBuffer": true,
-              "BufferSize": 16
+              "TextId": "__SingleUse_KIRL"
             }
           },
           {
@@ -527,9 +507,7 @@
               "Blue": 255
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_FQ9I",
-              "UseBuffer": true,
-              "BufferSize": 16
+              "TextId": "__SingleUse_FQ9I"
             }
           },
           {
@@ -548,9 +526,7 @@
               "Blue": 255
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_RFE0",
-              "UseBuffer": true,
-              "BufferSize": 16
+              "TextId": "__SingleUse_RFE0"
             }
           },
           {
@@ -697,9 +673,7 @@
               "Blue": 247
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_WGWZ",
-              "UseBuffer": true,
-              "BufferSize": 10
+              "TextId": "__SingleUse_WGWZ"
             }
           },
           {
@@ -808,9 +782,9 @@
           {
             "Type": "TextArea",
             "Name": "TensaoHV_un",
-            "X": 286,
-            "Y": 52,
-            "Width": 100,
+            "X": 224,
+            "Y": 51,
+            "Width": 162,
             "Height": 35,
             "TextId": "__SingleUse_T4IY",
             "TextRotation": "0",
@@ -820,9 +794,7 @@
               "Blue": 247
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_0N3L",
-              "UseBuffer": true,
-              "BufferSize": 10
+              "TextId": "__SingleUse_0N3L"
             }
           },
           {
@@ -895,10 +867,10 @@
           {
             "Type": "TextArea",
             "Name": "TempAcumulador",
-            "X": 256,
-            "Y": 142,
-            "Width": 289,
-            "Height": 35,
+            "X": 296,
+            "Y": 124,
+            "Width": 208,
+            "Height": 70,
             "TextId": "__SingleUse_ECCU",
             "TextRotation": "0",
             "Color": {

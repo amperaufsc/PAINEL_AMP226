@@ -109,10 +109,14 @@ void Model::tick()
                             break;
                          }
             case 0x121: {	//funciona mensagens 1 byte
-                            uint8_t freio = msg_recebida.data[5];
+            				uint8_t MinCel = msg_recebida.data[0];
+            				uint8_t soc = msg_recebida.data[3];
                             uint8_t acelerador = msg_recebida.data[4];
+                            uint8_t freio = msg_recebida.data[5];
                             uint8_t TempAcumulador = msg_recebida.data[7];
 
+                            modelListener->updateMinCel(MinCel);
+                            modelListener->updateSOCValue(soc);
                             modelListener->updateFreioValue(freio);
                             modelListener->updateAceleradorValue(acelerador);
                             modelListener->updateTempAcumuladorValue(TempAcumulador);

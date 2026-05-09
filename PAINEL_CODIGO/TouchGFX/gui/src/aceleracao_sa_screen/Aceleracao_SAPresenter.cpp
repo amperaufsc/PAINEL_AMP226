@@ -28,7 +28,7 @@ void Aceleracao_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	    {
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoAutoCross_SAScreenSlideTransitionEast();
 	    }
-	    else if (buttonId == 2) // PA2 X
+	    else if (buttonId == 3) // PA2 X
 	    {
 	         static_cast<FrontendApplication*>(Application::getInstance())->gotoSkidped_SAScreenSlideTransitionWest();
 	    }

@@ -12,19 +12,27 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     void updateButtonState(uint32_t buttonID);
-    virtual void updateTempMotor(int val);
-    virtual void updateTensaoInversor(float val);
-    virtual void updateSOC(int val);
-    virtual void updateTempInversor(int val);
-    virtual void updateTensaoCelulaMin(int val);
-    virtual void updateTempAcumulador(int val);
-    virtual void updateTensaoHV(float num);
-    virtual void updateRPM(int val);
-    virtual void updateCorrenteAcumulador(float val);
-    virtual void updateFalhaTMS(int val);
-    virtual void updateFalhaINV(int val);
-    virtual void updateFalhaECU(int val);
-    virtual void RTDativo(int val);
+
+    // Sensores e Medidas
+    virtual void updateRPMValue(int rpm);
+
+
+    //temperatura
+    virtual void updateTempAcumuladorValue(int tacu);
+    virtual void updateTempInversorValue(int tinv);
+    virtual void updateTempMotorValue(int tmot);
+
+    //tensao e corrente
+    virtual void updateMinCel(int mc);
+    virtual void updateTensaoHVValue(float hv);
+    virtual void updateTensaoInversorValue(float inv);
+    virtual void updateCorrenteAcumuladorValue(float acu);
+
+    // Falhas
+    virtual void updateFalhaTMSValue(int tms);
+    virtual void updateFalhaINVValue(int finv);
+    virtual void updateFalhaECUValue(int ecu);
+    virtual void RTDativo(int rtd);
 
 protected:
 };
