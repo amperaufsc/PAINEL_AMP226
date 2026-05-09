@@ -3,7 +3,7 @@
 
 ModoProvaView::ModoProvaView()
 {
-    // Construtor vazio
+
 }
 
 void ModoProvaView::setupScreen()
@@ -16,6 +16,8 @@ void ModoProvaView::tearDownScreen()
     ModoProvaViewBase::tearDownScreen();
 }
 
+
+
 void ModoProvaView::updateRPMValue(int val)
 {
     float rpm_dividido = val / 1000.0f;
@@ -25,7 +27,6 @@ void ModoProvaView::updateRPMValue(int val)
     xmil.invalidate();
 
     //animação da cor da rotação do motor
-    //depois ver quais cores ficarao mais bonitinhas e o range da rotaçao do motor
     if (val < 100) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255)); // branco
     }
@@ -35,16 +36,16 @@ void ModoProvaView::updateRPMValue(int val)
     else if (val > 1000 && val <= 2000) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208)); // azul claro
     }
-    else if (val > 2000 && val <= 2500) {
+    else if (val > 2000 && val <= 2995) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0)); // verde
     }
-    else if (val > 2500 && val <= 3400) {
+    else if (val > 2995 && val <= 3500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0)); // amarelo
     }
-    else if (val > 3400 && val <= 4000) {
+    else if (val > 3500 && val <= 4500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110)); // rosa escuro
     }
-    else if (val > 4000) {
+    else if (val > 4500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0)); // vermelho
     }
 
@@ -53,8 +54,7 @@ void ModoProvaView::updateRPMValue(int val)
     RPM_un.invalidate();
 }
 
-void ModoProvaView::updateSpeedValue(float val) { //aqui calcular a distancia integrando a velocidade media(velocimetro)
-												  //melhor usar aqui pra distancia alterando em tempo real de acordo com a velocidade
+void ModoProvaView::updateSpeedValue(float val) {
     velocimetro.setValue(val);
     velocimetro.invalidate();
 
@@ -63,7 +63,16 @@ void ModoProvaView::updateSpeedValue(float val) { //aqui calcular a distancia in
 }
 
 void ModoProvaView::updateSOC(int val)
-{
+{	if (val >= 40) {
+		bateria_un.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208)); // azul claro
+	}
+	else if (val < 40 && val >= 20) {
+		bateria_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0)); // amarelo
+	}
+	else if (val < 20 ) {
+		bateria_un.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110)); // rosa escuro
+	}
+
     bateria.setValue(val);
     Unicode::snprintf(bateria_unBuffer, BATERIA_UN_SIZE, "%d", val);
     bateria_un.invalidate();
@@ -96,7 +105,7 @@ void ModoProvaView::updateDistancia(float val) {
 
 void ModoProvaView::updateTempAcumulador(int val) {
 	    Unicode::snprintf(TempAcumulador_unBuffer, TEMPACUMULADOR_UN_SIZE, "%d", val);
-	    if (val > 50) {
+	    if (val > 45) {
 	        TempAcumulador_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
 	    } else {
 	        TempAcumulador_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));

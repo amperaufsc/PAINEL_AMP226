@@ -94,10 +94,10 @@ void Model::tick()
             switch (msg_recebida.id)
             {
             case 0x120: { // falhas validado
+            				uint8_t falha_INVERTER = msg_recebida.data[0];
+            				uint8_t readtodrive = msg_recebida.data[3];
             			    uint8_t falha_TMS = msg_recebida.data[4];
                             uint16_t falha_ECU = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
-                            uint8_t falha_INVERTER = msg_recebida.data[0];
-                            uint8_t readtodrive = msg_recebida.data[3];
                             if (readtodrive == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
                             } else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
 
@@ -109,10 +109,14 @@ void Model::tick()
                             break;
                          }
             case 0x121: {	//funciona mensagens 1 byte
+            				uint8_t tensCelMin = msg_recebida.data[0];
+            				uint8_t soc = msg_recebida.data[3];
+            				uint8_t acelerador = msg_recebida.data[4];
                             uint8_t freio = msg_recebida.data[5];
-                            uint8_t acelerador = msg_recebida.data[4];
                             uint8_t TempAcumulador = msg_recebida.data[7];
 
+                            modelListener->updateTensaoCelulaMinValue(tensCelMin);
+                            modelListener->updateSOCValue(soc);
                             modelListener->updateFreioValue(freio);
                             modelListener->updateAceleradorValue(acelerador);
                             modelListener->updateTempAcumuladorValue(TempAcumulador);

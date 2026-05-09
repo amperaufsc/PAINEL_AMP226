@@ -38,13 +38,17 @@ void TestesView::updateTempInversor(int val) {
 }
 
 void TestesView::updateTensaoCelulaMin(int val) {
+	if (val < 30){
+		TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+	} else { TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255)); }
+
     Unicode::snprintf(TensaoCelulamaisbaixa_unBuffer, TENSAOCELULAMAISBAIXA_UN_SIZE, "%d", val);
     TensaoCelulamaisbaixa_un.invalidate();
 }
 
 void TestesView::updateTempAcumulador(int val) {
     Unicode::snprintf(TempAcumulador_unBuffer, TEMPACUMULADOR_UN_SIZE, "%d", val);
-    if (val > 50) {
+    if (val > 45) {
         TempAcumulador_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     } else {
         TempAcumulador_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -56,7 +60,6 @@ void TestesView::updateTensaoHV(float val) {
 	Unicode::snprintfFloat(TensaoHV_unBuffer, TENSAOHV_UN_SIZE, "%.1f", val);
     TensaoHV_un.invalidate();
 }
-
 
 void TestesView::updateRPM(int val) {
     int rpm100 = val;
@@ -71,7 +74,7 @@ void TestesView::updateCorrenteAcumulador(float val) {
 
   //Atualizações de Falhas
 void TestesView::updateFalhaTMS(int val) {
-    if (val != 0) {
+    if (val > 0) {
         valor_falhaBMS.setVisible(true);
         falhaBMS.setVisible(true);
         falhaBMS_azul.setVisible(false);
@@ -89,7 +92,7 @@ void TestesView::updateFalhaTMS(int val) {
 }
 
 void TestesView::updateFalhaINV(int val) {
-    if (val != 0) {
+    if (val > 0) {
     	valor_falha_INV.setVisible(true);
     	falhainversor.setVisible(true);
         falhainversor_azul.setVisible(false);
@@ -107,7 +110,7 @@ void TestesView::updateFalhaINV(int val) {
 }
 
 void TestesView::updateFalhaECU(int val) {
-    if (val != 0) {
+    if (val > 0) {
     	valor_falha_ECU.setVisible(true);
     	falhaECU.setVisible(true);
     	falhaECU_azul.setVisible(false);

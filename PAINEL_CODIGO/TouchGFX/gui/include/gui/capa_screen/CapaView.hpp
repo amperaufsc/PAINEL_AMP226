@@ -9,13 +9,14 @@ class CapaView : public CapaViewBase
 public:
     CapaView();
     virtual ~CapaView() {}
+    virtual void animacaologo();
     virtual void setupScreen();
     virtual void tearDownScreen();
     void updateButtonState(uint32_t buttonID);
     void setCANValue(int value);
     virtual void modoespera();
 protected:
-    int piscarimagem = 0;
+    int tickCounter;
 };
 
 #endif // CAPAVIEW_HPP

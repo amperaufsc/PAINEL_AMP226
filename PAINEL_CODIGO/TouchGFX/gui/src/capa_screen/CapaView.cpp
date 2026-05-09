@@ -2,7 +2,7 @@
 
 CapaView::CapaView()
 {
-
+	tickCounter = 0;
 }
 
 void CapaView::setupScreen()
@@ -17,12 +17,7 @@ void CapaView::tearDownScreen()
 
 void CapaView::setCANValue(int value)
 {
-    // 1. Limpa o buffer e escreve o novo valor formatado como decimal (%d)
-    // textAreaCANBuffer é criado automaticamente pelo Designer se você ativou o Wildcard
-    //criei este comentario aqui mas depois pode apagar pra testar o can // Unicode::snprintf(textAreaCANBuffer, TEXTAREACAN_SIZE, "%d", value);
 
-    // 2. Avisa o TouchGFX que o texto mudou e precisa ser redesenhado na tela
-    //criei este comentario aqui mas depois pode apagar pra testar o can // textAreaCAN.invalidate();
 }
 
 void CapaView::modoespera()
@@ -30,3 +25,13 @@ void CapaView::modoespera()
 
 }
 
+void CapaView::animacaologo()
+{
+    tickCounter++;
+    if (tickCounter >= 120)
+    {
+        tickCounter = 0;
+        logobranca.setVisible(!logobranca.isVisible());
+        logobranca.invalidate();
+    }
+}

@@ -6,16 +6,15 @@
         "Components": [
           {
             "Type": "Image",
-            "Name": "image1",
+            "Name": "capa",
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "capa oficial.png"
           },
           {
             "Type": "Image",
-            "Name": "image2",
-            "X": 29,
-            "Y": -166,
+            "Name": "logobranca",
+            "Y": -165,
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "logo_branca.png"
@@ -84,7 +83,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_0NCS",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 12
             }
           },
           {
@@ -120,7 +119,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_AYI9",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 7
             }
           },
           {
@@ -156,7 +155,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_NJC4",
               "UseBuffer": true,
-              "BufferSize": 16
+              "BufferSize": 7
             }
           },
           {
@@ -192,7 +191,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_ZFV1",
               "UseBuffer": true,
-              "BufferSize": 12
+              "BufferSize": 7
             }
           },
           {
@@ -228,7 +227,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_0P77",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 7
             }
           },
           {
@@ -264,7 +263,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_KC4C",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 7
             }
           },
           {
@@ -300,7 +299,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_CBAY",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 7
             }
           },
           {
@@ -322,9 +321,9 @@
           {
             "Type": "TextArea",
             "Name": "CargaAcumulador_un",
-            "X": 622,
+            "X": 604,
             "Y": 247,
-            "Width": 110,
+            "Width": 128,
             "Height": 35,
             "TextId": "__SingleUse_2SWE",
             "TextRotation": "0",
@@ -336,7 +335,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_ON7B",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 7
             }
           },
           {
@@ -372,7 +371,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_4WMP",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 7
             }
           },
           {
@@ -508,7 +507,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_KIRL",
               "UseBuffer": true,
-              "BufferSize": 16
+              "BufferSize": 7
             }
           },
           {
@@ -529,7 +528,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_FQ9I",
               "UseBuffer": true,
-              "BufferSize": 16
+              "BufferSize": 7
             }
           },
           {
@@ -550,7 +549,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_RFE0",
               "UseBuffer": true,
-              "BufferSize": 16
+              "BufferSize": 7
             }
           },
           {
@@ -699,7 +698,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_WGWZ",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 11
             }
           },
           {
@@ -719,7 +718,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_POJW",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 7
             }
           },
           {
@@ -734,7 +733,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_NZBD",
               "UseBuffer": true,
-              "BufferSize": 16
+              "BufferSize": 5
             }
           },
           {
@@ -772,10 +771,10 @@
           {
             "Type": "TextArea",
             "Name": "freio_un",
-            "X": 93,
-            "Y": 392,
-            "Width": 100,
-            "Height": 35,
+            "X": 50,
+            "Y": 387,
+            "Width": 141,
+            "Height": 45,
             "TextId": "__SingleUse_5ZQ7",
             "TextRotation": "0",
             "Color": {
@@ -786,7 +785,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_0N1R",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 7
             }
           },
           {
@@ -822,7 +821,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_0N3L",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 7
             }
           },
           {
@@ -853,7 +852,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_H95H",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 5
             }
           },
           {
@@ -927,10 +926,10 @@
           {
             "Type": "TextArea",
             "Name": "acelerador_un",
-            "X": 663,
-            "Y": 397,
-            "Width": 100,
-            "Height": 35,
+            "X": 621,
+            "Y": 392,
+            "Width": 141,
+            "Height": 45,
             "TextId": "__SingleUse_X7T1",
             "TextRotation": "0",
             "Color": {
@@ -941,7 +940,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_AF0Y",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 7
             }
           },
           {
