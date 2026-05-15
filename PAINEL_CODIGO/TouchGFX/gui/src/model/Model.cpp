@@ -97,7 +97,7 @@ void Model::tick()
             				uint8_t falha_INVERTER = msg_recebida.data[0];
             				uint8_t readtodrive = msg_recebida.data[3];
             			    uint8_t falha_TMS = msg_recebida.data[4];
-                            uint16_t falha_ECU = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
+                            uint16_t falha_ECU = (uint16_t)msg_recebida.data[1] | ((uint16_t)msg_recebida.data[2] << 8);
                             if (readtodrive == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
                             } else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
 
@@ -133,9 +133,9 @@ void Model::tick()
                         }
 
             case 0x420: {	//funciona mensagens 2bytes
-                            uint16_t rpm = ((uint16_t)msg_recebida.data[0] << 8) | msg_recebida.data[1];
-                            uint16_t TempMotor = ((uint16_t)msg_recebida.data[2] << 8) | msg_recebida.data[3];
-                            uint16_t TempInversor = ((uint16_t)msg_recebida.data[6] << 8) | msg_recebida.data[7];
+                            uint16_t rpm = (uint16_t)msg_recebida.data[0] | ((uint16_t)msg_recebida.data[1] << 8);
+                            uint16_t TempMotor = (uint16_t)msg_recebida.data[2] | ((uint16_t)msg_recebida.data[3] << 8);
+                            uint16_t TempInversor = (uint16_t)msg_recebida.data[6] | ((uint16_t)msg_recebida.data[7] << 8);
 
                             modelListener->updateRPMValue(rpm);
                             modelListener->updateTempMotorValue(TempMotor);
