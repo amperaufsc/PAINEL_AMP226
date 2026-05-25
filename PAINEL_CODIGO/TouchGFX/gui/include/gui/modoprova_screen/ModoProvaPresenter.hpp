@@ -27,6 +27,7 @@ public:
     virtual void updateTensaoHVValue(float val);
     virtual void updateDistanciaValue(int val);
     virtual void updateTempAcumuladorValue(int val);
+    virtual void updateTempInversorValue(int val);
 
 private:
     ModoProvaPresenter();

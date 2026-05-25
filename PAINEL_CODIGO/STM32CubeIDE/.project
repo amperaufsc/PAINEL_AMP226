@@ -495,6 +495,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_Gotham_Bold_otf_15_4bpp_0.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Font_Gotham_Bold_otf_20_8bpp_0.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_Gotham_Bold_otf_20_8bpp_0.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/Font_Gotham_Bold_otf_30_8bpp_0.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_Gotham_Bold_otf_30_8bpp_0.cpp</locationURI>
@@ -545,6 +550,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_Gotham_Bold_otf_15_4bpp.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Kerning_Gotham_Bold_otf_20_8bpp.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_Gotham_Bold_otf_20_8bpp.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/Kerning_Gotham_Bold_otf_30_8bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_Gotham_Bold_otf_30_8bpp.cpp</locationURI>
@@ -588,6 +598,11 @@
 			<name>Application/User/generated/Table_Gotham_Bold_otf_15_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_Gotham_Bold_otf_15_4bpp.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Table_Gotham_Bold_otf_20_8bpp.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_Gotham_Bold_otf_20_8bpp.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Table_Gotham_Bold_otf_30_8bpp.cpp</name>
@@ -785,6 +800,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriavaziaofc.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_c.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_c.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_capa_oficial.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capa_oficial.cpp</locationURI>
@@ -838,6 +858,16 @@
 			<name>Application/User/generated/image_tacometroofc.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_tacometroofc.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_v.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_v.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_velocimetro.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_velocimetro.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_velocimetroofc.cpp</name>

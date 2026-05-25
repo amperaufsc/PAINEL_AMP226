@@ -19,6 +19,7 @@ public:
     virtual void updateTensaoHV(float val);
     virtual void updateDistancia(float val);
     virtual void updateTempAcumulador(int val);
+    virtual void updateTempInversor(int val);
 
 
 };

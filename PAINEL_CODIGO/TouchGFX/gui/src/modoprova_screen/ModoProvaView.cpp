@@ -25,21 +25,36 @@ void ModoProvaView::updateRPMValue(int val)
     tacografo.invalidate();
     Unicode::snprintfFloat(RPM_unBuffer, RPM_UN_SIZE, "%.1f", rpm_dividido);
     xmil.invalidate();
+    rpm0.invalidate();
+    rpm1.invalidate();
+    rpm2.invalidate();
+    rpm3.invalidate();
+    rpm4.invalidate();
+    rpm5.invalidate();
+    rpm6.invalidate();
+
 
     //animação da cor da rotação do motor
     if (val < 100) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255)); // branco
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     }
-    else if (val >= 100 && val <= 1000) {
-        xmil.setColor(touchgfx::Color::getColorFromRGB(0, 0, 255)); // azul frio
+    else if (val >= 100 && val <= 1500) {
+        xmil.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0)); // vermelho
     }
-    else if (val > 1000 && val <= 2000) {
+    else if (val > 1500 && val <= 2500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208)); // azul claro
     }
-    else if (val > 2000 && val <= 2995) {
+    else if (val > 2500 && val <= 3100) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0)); // verde
     }
-    else if (val > 2995 && val <= 3500) {
+    else if (val > 3100 && val <= 3500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0)); // amarelo
     }
     else if (val > 3500 && val <= 4500) {
@@ -51,6 +66,13 @@ void ModoProvaView::updateRPMValue(int val)
 
 
     xmil.invalidate();
+    rpm0.invalidate();
+    rpm1.invalidate();
+    rpm2.invalidate();
+    rpm3.invalidate();
+    rpm4.invalidate();
+    rpm5.invalidate();
+    rpm6.invalidate();
     RPM_un.invalidate();
 }
 
@@ -93,8 +115,13 @@ void ModoProvaView::updateAcelerador(int val)
     Acelarador_bar.invalidate();
     acelerador_un.invalidate();
 }
-void ModoProvaView::updateTensaoHV(float val) {
-	Unicode::snprintfFloat(TensaoHV_unBuffer, TENSAOHV_UN_SIZE, "%.1f", val);
+void ModoProvaView::updateTempInversor(int val) {
+	Unicode::snprintfFloat(TensaoHV_unBuffer, TENSAOHV_UN_SIZE, "%d", val);
+	 if (val > 45) {
+		 TensaoHV_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+		    } else {
+		 TensaoHV_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+		    }
     TensaoHV_un.invalidate();
 }
 

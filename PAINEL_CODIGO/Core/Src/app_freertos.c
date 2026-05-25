@@ -58,6 +58,8 @@ volatile uint8_t estadoBotaoAtual = 0;
 volatile uint8_t ultimoEstadoEnviado = 2;
 volatile uint8_t ID_DA_PAGINA = 0;
 volatile uint8_t START_AUTONOMOS = 0;
+extern FDCAN_RxHeaderTypeDef RxHeader;
+extern FDCAN_TxHeaderTypeDef TxHeader;
 int valorSoc = 0;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
@@ -217,7 +219,7 @@ void StartDefaultTask(void *argument)
 void StartTaskCAN(void *argument)
 {
   /* USER CODE BEGIN Task_CAN */
-	FDCAN_TxHeaderTypeDef TxHeader;
+
 
 	uint8_t TxData[8];
 
@@ -432,7 +434,6 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 {
   if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != 0)
   {
-    FDCAN_RxHeaderTypeDef RxHeader;
     can_msg_t msg_recebida;
 
     // 1. Limpa as estruturas para garantir que não estamos lendo lixo de memória

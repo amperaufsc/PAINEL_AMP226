@@ -22,6 +22,8 @@ extern "C" {
     extern osMessageQueueId_t Queue_CAN_RXHandle;
     extern osMessageQueueId_t QueueButtonHandle;
     extern volatile uint8_t pressedButtonId;
+    extern float tensaoHV_float;
+    extern float tensaoInversor_float;
 }
 
 
@@ -144,8 +146,8 @@ void Model::tick()
                         }
 
             case 0x421: {	// funciona
-                            float tensaoInversor_float = 0.0f; //trifasico
-                            float tensaoHV_float = 0.0f; //acumulador
+                            tensaoInversor_float = 0.0f; //trifasico
+                            tensaoHV_float = 0.0f; //acumulador
 
                             memcpy(&tensaoInversor_float, &msg_recebida.data[0], sizeof(float));
                             memcpy(&tensaoHV_float, &msg_recebida.data[4], sizeof(float));
@@ -175,15 +177,6 @@ void Model::tick()
 
 //								}
 
-
-//                    //(olhar com matheus)
-//                case 0x000:
-//                    modelListener->updateSOCValue(valor);
-//                    break;
-//                case 0x000:
-//                	modelListener->updateTensaoCelulaMinValue(valor);
-//                    break;
-//
 
 
 

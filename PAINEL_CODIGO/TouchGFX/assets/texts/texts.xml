@@ -6,6 +6,54 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_I746" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">80</Translation>
+      </Text>
+      <Text Id="__SingleUse_AL9I" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">70</Translation>
+      </Text>
+      <Text Id="__SingleUse_IX2N" Alignment="Left" TypographyId="velocimetro">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_3GWK" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">30</Translation>
+      </Text>
+      <Text Id="__SingleUse_4RK3" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">40</Translation>
+      </Text>
+      <Text Id="__SingleUse_XK56" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">20</Translation>
+      </Text>
+      <Text Id="__SingleUse_3X1P" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">50</Translation>
+      </Text>
+      <Text Id="__SingleUse_1I7U" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">10</Translation>
+      </Text>
+      <Text Id="__SingleUse_PPO3" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">60</Translation>
+      </Text>
+      <Text Id="__SingleUse_9NW0" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">5</Translation>
+      </Text>
+      <Text Id="__SingleUse_3NHT" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_TXLV" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_VWT9" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_CM10" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">6</Translation>
+      </Text>
+      <Text Id="__SingleUse_YU34" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_WPJQ" Alignment="Left" TypographyId="velocimetro">
+        <Translation Language="GB">0</Translation>
+      </Text>
       <Text Id="__SingleUse_ZXAY" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">RTD ATIVO</Translation>
       </Text>
@@ -94,13 +142,13 @@
         <Translation Language="GB">FREIO</Translation>
       </Text>
       <Text Id="__SingleUse_6QZV" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Tensao HV</Translation>
+        <Translation Language="GB">Temp. INV</Translation>
       </Text>
       <Text Id="__SingleUse_0N3L" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_T4IY" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">  &lt;value&gt; V      </Translation>
+      <Text Id="__SingleUse_T4IY" Alignment="Right" TypographyId="batman">
+        <Translation Language="GB">  &lt;value&gt; °C     </Translation>
       </Text>
       <Text Id="__SingleUse_ZFN3" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">velocidade</Translation>
@@ -219,5 +267,6 @@
     <Typography Id="Typography2" Font="Gotham_Bold.otf" Size="70" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography3" Font="Gotham_Ultra.otf" Size="134" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" />
     <Typography Id="letra_miuda" Font="Gotham_Bold.otf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="velocimetro" Font="Gotham_Bold.otf" Size="20" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=",.-%" WildcardCharacterRanges="a-z,A-Z,0-9" />
   </Typographies>
 </TextDatabase>

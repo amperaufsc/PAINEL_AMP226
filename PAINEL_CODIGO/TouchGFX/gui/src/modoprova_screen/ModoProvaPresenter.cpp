@@ -51,3 +51,7 @@ void ModoProvaPresenter::updateTempAcumuladorValue(int val)
 {
 	view.updateTempAcumulador(val);
 }
+void ModoProvaPresenter::updateTempInversorValue(int val)
+{
+	view.updateTempInversor(val);
+}

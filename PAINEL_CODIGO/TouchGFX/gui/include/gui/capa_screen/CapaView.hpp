@@ -9,7 +9,7 @@ class CapaView : public CapaViewBase
 public:
     CapaView();
     virtual ~CapaView() {}
-    virtual void animacaologo();
+    virtual void handleTickEvent();
     virtual void setupScreen();
     virtual void tearDownScreen();
     void updateButtonState(uint32_t buttonID);
