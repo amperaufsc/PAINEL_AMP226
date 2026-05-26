@@ -17,7 +17,6 @@
             "Y": -165,
             "Width": 800,
             "Height": 480,
-            "Visible": false,
             "RelativeFilename": "logo_branca.png"
           }
         ],
@@ -661,6 +660,11 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_3V84",
+              "UseBuffer": true,
+              "BufferSize": 3
             }
           },
           {
@@ -676,6 +680,11 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_8ODT",
+              "UseBuffer": true,
+              "BufferSize": 3
             }
           },
           {
@@ -691,6 +700,11 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_5X78",
+              "UseBuffer": true,
+              "BufferSize": 3
             }
           },
           {
@@ -706,6 +720,11 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_TBH2",
+              "UseBuffer": true,
+              "BufferSize": 3
             }
           },
           {
@@ -721,6 +740,11 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_RKP0",
+              "UseBuffer": true,
+              "BufferSize": 3
             }
           },
           {
@@ -736,6 +760,11 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_OH2R",
+              "UseBuffer": true,
+              "BufferSize": 3
             }
           },
           {
@@ -751,6 +780,11 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_QU6I",
+              "UseBuffer": true,
+              "BufferSize": 3
             }
           },
           {
@@ -1218,7 +1252,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_AEP2",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 7
             }
           },
           {

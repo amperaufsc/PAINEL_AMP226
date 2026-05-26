@@ -47,21 +47,64 @@ void ModoProvaView::updateRPMValue(int val)
     }
     else if (val >= 100 && val <= 1500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0)); // vermelho
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     }
     else if (val > 1500 && val <= 2500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208)); // azul claro
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     }
     else if (val > 2500 && val <= 3100) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0)); // verde
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     }
     else if (val > 3100 && val <= 3500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0)); // amarelo
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     }
     else if (val > 3500 && val <= 4500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110)); // rosa escuro
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+
     }
     else if (val > 4500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0)); // vermelho
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     }
 
 
