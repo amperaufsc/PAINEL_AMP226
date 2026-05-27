@@ -75,8 +75,8 @@ extern FDCAN_RxHeaderTypeDef RxHeader;
 extern FDCAN_TxHeaderTypeDef TxHeader;
 extern uint8_t debug; // so pra debugar e ver se nao esta lendo rx
 //variaveis das mensagens que recebo pra debug
-extern float tensaoHV_float;
-extern float tensaoInversor_float;
+float tensaoHV_float;
+float tensaoInversor_float;
 
 
 /* USER CODE END PV */

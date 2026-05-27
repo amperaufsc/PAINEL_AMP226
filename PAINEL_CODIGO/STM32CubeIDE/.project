@@ -760,6 +760,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_TRACKDRIVE.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_acelatual.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_acelatual.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_aceleracao.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_aceleracao.cpp</locationURI>
@@ -800,6 +805,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriavaziaofc.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_bch.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bch.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_bva.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bva.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_c.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_c.cpp</locationURI>
@@ -808,6 +823,11 @@
 			<name>Application/User/generated/image_capa_oficial.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capa_oficial.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_freioatual.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_freioatual.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_inspecao.cpp</name>

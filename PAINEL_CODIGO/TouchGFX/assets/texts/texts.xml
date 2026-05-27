@@ -169,7 +169,7 @@
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_T4IY" Alignment="Right" TypographyId="batman">
-        <Translation Language="GB">  &lt;value&gt; °C     </Translation>
+        <Translation Language="GB">&lt;value&gt; °C     </Translation>
       </Text>
       <Text Id="__SingleUse_ZFN3" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">velocidade</Translation>
@@ -241,7 +241,7 @@
         <Translation Language="GB">  &lt;value&gt;  A  </Translation>
       </Text>
       <Text Id="__SingleUse_0JHV" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Tensao MC</Translation>
+        <Translation Language="GB">Tensão MinCel</Translation>
       </Text>
       <Text Id="__SingleUse_J676" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">    &lt;value&gt; rpm      </Translation>

@@ -19,7 +19,8 @@ extern "C" {
 
 
 
-    extern osMessageQueueId_t Queue_CAN_RXHandle;
+    extern osMessageQueueId_t Queue_CAN_RXHandle
+	;
     extern osMessageQueueId_t QueueButtonHandle;
     extern volatile uint8_t pressedButtonId;
     extern float tensaoHV_float;

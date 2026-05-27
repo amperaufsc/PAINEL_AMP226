@@ -47,64 +47,64 @@ void ModoProvaView::updateRPMValue(int val)
     }
     else if (val >= 100 && val <= 1500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0)); // vermelho
-        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     }
     else if (val > 1500 && val <= 2500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208)); // azul claro
-        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208));
     }
     else if (val > 2500 && val <= 3100) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0)); // verde
-        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
     }
     else if (val > 3100 && val <= 3500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0)); // amarelo
-        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
     }
     else if (val > 3500 && val <= 4500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110)); // rosa escuro
-        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
 
     }
     else if (val > 4500) {
         xmil.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0)); // vermelho
-        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     }
 
 
@@ -128,10 +128,13 @@ void ModoProvaView::updateSpeedValue(float val) {
 }
 
 void ModoProvaView::updateSOC(int val)
-{	if (val >= 40) {
-		bateria_un.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208)); // azul claro
+{	if (val >= 90) {
+		bateria_un.setColor(touchgfx::Color::getColorFromRGB(0, 250, 0)); // verde
 	}
-	else if (val < 40 && val >= 20) {
+	else if (val > 40 && val < 90) {
+		bateria_un.setColor(touchgfx::Color::getColorFromRGB(92, 108, 208)); //azul claro
+	}
+	else if (val <= 40 && val >= 20) {
 		bateria_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0)); // amarelo
 	}
 	else if (val < 20 ) {
@@ -159,13 +162,13 @@ void ModoProvaView::updateAcelerador(int val)
     acelerador_un.invalidate();
 }
 void ModoProvaView::updateTempInversor(int val) {
-	Unicode::snprintfFloat(TensaoHV_unBuffer, TENSAOHV_UN_SIZE, "%d", val);
-	 if (val > 45) {
-		 TensaoHV_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+		Unicode::snprintfFloat(TensaoHV_unBuffer, TENSAOHV_UN_SIZE,"%d", val);
+		if (val > 45) {
+			TensaoHV_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
 		    } else {
-		 TensaoHV_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+		    TensaoHV_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 		    }
-    TensaoHV_un.invalidate();
+		TensaoHV_un.invalidate();
 }
 
 void ModoProvaView::updateDistancia(float val) {
@@ -181,4 +184,8 @@ void ModoProvaView::updateTempAcumulador(int val) {
 	        TempAcumulador_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 	    }
 	    TempAcumulador_un.invalidate();
+}
+void ModoProvaView::updateTensaoHV(float val)
+{
+
 }

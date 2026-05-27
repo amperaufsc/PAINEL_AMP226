@@ -38,11 +38,12 @@ void TestesView::updateTempInversor(int val) {
 }
 
 void TestesView::updateTensaoCelulaMin(int val) {
-	if (val < 30){
+	float tesao = val;
+	if (tesao < 3){
 		TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-	} else { TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255)); }
+	} else { TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(0, 155, 0)); }
 
-    Unicode::snprintf(TensaoCelulamaisbaixa_unBuffer, TENSAOCELULAMAISBAIXA_UN_SIZE, "%d", val);
+    Unicode::snprintfFloat(TensaoCelulamaisbaixa_unBuffer, TENSAOCELULAMAISBAIXA_UN_SIZE, "%.f", tesao);
     TensaoCelulamaisbaixa_un.invalidate();
 }
 
@@ -68,7 +69,8 @@ void TestesView::updateRPM(int val) {
 }
 
 void TestesView::updateCorrenteAcumulador(float val) {
-	Unicode::snprintfFloat(Correnteacumulador_unBuffer, CORRENTEACUMULADOR_UN_SIZE, "%.1f", val);
+	float corrente = val/100;
+	Unicode::snprintfFloat(Correnteacumulador_unBuffer, CORRENTEACUMULADOR_UN_SIZE, "%.1f", corrente);
     Correnteacumulador_un.invalidate();
 }
 
