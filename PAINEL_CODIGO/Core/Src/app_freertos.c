@@ -39,7 +39,7 @@
 /* USER CODE BEGIN PD */
 extern FDCAN_HandleTypeDef hfdcan1;
 volatile uint8_t flagEnviarCAN = 0;
-volatile can_msg_t msg_recebida_global;
+volatile can_msg_t msg_recebida;
 
 /* USER CODE END PD */
 
@@ -442,7 +442,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 //    // 3. Só prossegue se a leitura foi 100% bem-sucedida
     if (status == HAL_OK)
     {
-    	  msg_recebida_global.id = RxHeader.Identifier;
+    	  msg_recebida.id = RxHeader.Identifier;
 //        msg_recebida.id = RxHeader.Identifier;
 //        debug_id_isr = msg_recebida.id;
 
