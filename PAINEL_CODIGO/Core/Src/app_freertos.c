@@ -39,6 +39,8 @@
 /* USER CODE BEGIN PD */
 extern FDCAN_HandleTypeDef hfdcan1;
 volatile uint8_t flagEnviarCAN = 0;
+volatile can_msg_t msg_recebida;
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -58,9 +60,10 @@ volatile uint8_t estadoBotaoAtual = 0;
 volatile uint8_t ultimoEstadoEnviado = 2;
 volatile uint8_t ID_DA_PAGINA = 0;
 volatile uint8_t START_AUTONOMOS = 0;
-extern FDCAN_RxHeaderTypeDef RxHeader;
-extern FDCAN_TxHeaderTypeDef TxHeader;
 int valorSoc = 0;
+FDCAN_RxHeaderTypeDef RxHeader;
+FDCAN_TxHeaderTypeDef TxHeader;
+
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -223,9 +226,6 @@ void StartTaskCAN(void *argument)
 
 	uint8_t TxData[8];
 
-
-
-
 	// Configurações base do Header
 
 	memset(&TxHeader, 0, sizeof(TxHeader));
@@ -237,9 +237,6 @@ void StartTaskCAN(void *argument)
 	TxHeader.DataLength = FDCAN_DLC_BYTES_8;
 
 	TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
-
-
-
 
 	/* Infinite loop */
 	for(;;)
@@ -432,9 +429,8 @@ void ReadyToDrive(void *argument)
 /* USER CODE BEGIN Application */
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 {
-  if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != 0)
-  {
-    can_msg_t msg_recebida;
+
+    // can_msg_t msg_recebida;
 
     // 1. Limpa as estruturas para garantir que não estamos lendo lixo de memória
       memset(&RxHeader, 0, sizeof(RxHeader));
@@ -446,9 +442,9 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 //    // 3. Só prossegue se a leitura foi 100% bem-sucedida
     if (status == HAL_OK)
     {
-//        can_recepcoes_count++;
-        msg_recebida.id = RxHeader.Identifier;
-        debug_id_isr = msg_recebida.id;
+    	  msg_recebida.id = RxHeader.Identifier;
+//        msg_recebida.id = RxHeader.Identifier;
+//        debug_id_isr = msg_recebida.id;
 
         // Agora sim, garantimos que o ID é real
         if (osMessageQueuePut(Queue_CAN_RXHandle, &msg_recebida, 0, 0) != osOK)
@@ -464,7 +460,6 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
         // Isso explica por que o ID era um contador:
         // o código ignorava que a leitura falhou e lia memória vazia.
     }
-  }
+
 }
 /* USER CODE END Application */
-

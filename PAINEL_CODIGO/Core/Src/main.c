@@ -71,11 +71,13 @@ LTDC_HandleTypeDef hltdc;
 volatile uint32_t teste_clique = 0;
 
 extern osMessageQueueId_t QueueButtonHandle;
+extern FDCAN_RxHeaderTypeDef RxHeader;
+extern FDCAN_TxHeaderTypeDef TxHeader;
+extern uint8_t debug; // so pra debugar e ver se nao esta lendo rx
+//variaveis das mensagens que recebo pra debug
+extern float tensaoHV_float;
+extern float tensaoInversor_float;
 
-float tensaoInversor_float = 0;
-float tensaoHV_float = 0;
-FDCAN_RxHeaderTypeDef RxHeader;
-FDCAN_TxHeaderTypeDef TxHeader;
 
 /* USER CODE END PV */
 
@@ -96,6 +98,7 @@ static void MX_HSPI1_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_JPEG_Init(void);
 static void MX_FDCAN1_Init(void);
+void HAL_FDCAN_ErrorCallback(FDCAN_HandleTypeDef *hfdcan);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -162,12 +165,15 @@ int main(void)
   sFilterConfig.FilterID1 = 0x000;
   sFilterConfig.FilterID2 = 0x000; // Máscara 0 aceita tudo
 
+
+
   if (HAL_FDCAN_ConfigFilter(&hfdcan1, &sFilterConfig) != HAL_OK)
   {
     Error_Handler();
   }
-
+  HAL_FDCAN_ConfigGlobalFilter(&hfdcan1, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_REJECT_REMOTE, FDCAN_REJECT_REMOTE);
   HAL_FDCAN_Start(&hfdcan1);
+
   HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
 
   /* USER CODE END 2 */
@@ -406,12 +412,12 @@ static void MX_FDCAN1_Init(void)
   hfdcan1.Instance = FDCAN1;
   hfdcan1.Init.ClockDivider = FDCAN_CLOCK_DIV1;
   hfdcan1.Init.FrameFormat = FDCAN_FRAME_CLASSIC;
-  hfdcan1.Init.Mode = FDCAN_MODE_EXTERNAL_LOOPBACK;
+  hfdcan1.Init.Mode = FDCAN_MODE_NORMAL;
   hfdcan1.Init.AutoRetransmission = ENABLE;
   hfdcan1.Init.TransmitPause = DISABLE;
   hfdcan1.Init.ProtocolException = DISABLE;
   hfdcan1.Init.NominalPrescaler = 16;
-  hfdcan1.Init.NominalSyncJumpWidth = 1;
+  hfdcan1.Init.NominalSyncJumpWidth = 4;
   hfdcan1.Init.NominalTimeSeg1 = 15;
   hfdcan1.Init.NominalTimeSeg2 = 4;
   hfdcan1.Init.DataPrescaler = 1;
@@ -419,7 +425,7 @@ static void MX_FDCAN1_Init(void)
   hfdcan1.Init.DataTimeSeg1 = 1;
   hfdcan1.Init.DataTimeSeg2 = 1;
   hfdcan1.Init.StdFiltersNbr = 1;
-  hfdcan1.Init.ExtFiltersNbr = 1;
+  hfdcan1.Init.ExtFiltersNbr = 0;
   hfdcan1.Init.TxFifoQueueMode = FDCAN_TX_FIFO_OPERATION;
   if (HAL_FDCAN_Init(&hfdcan1) != HAL_OK)
   {
@@ -874,6 +880,18 @@ void Error_Handler(void)
   {
   }
   /* USER CODE END Error_Handler_Debug */
+}
+
+void HAL_FDCAN_ErrorCallback(FDCAN_HandleTypeDef *hfdcan)
+{
+	if(hfdcan->Instance==FDCAN1)
+	{
+		HAL_FDCAN_Stop(hfdcan);
+		HAL_FDCAN_Start(hfdcan);
+
+		HAL_FDCAN_ActivateNotification(hfdcan, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
+
+	}
 }
 #ifdef USE_FULL_ASSERT
 /**
