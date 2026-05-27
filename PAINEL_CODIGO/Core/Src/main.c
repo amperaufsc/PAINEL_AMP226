@@ -71,6 +71,9 @@ LTDC_HandleTypeDef hltdc;
 volatile uint32_t teste_clique = 0;
 
 extern osMessageQueueId_t QueueButtonHandle;
+extern FDCAN_RxHeaderTypeDef RxHeader;
+extern FDCAN_TxHeaderTypeDef TxHeader;
+extern uint8_t debug; // so pra debugar e ver se nao esta lendo rx
 
 
 /* USER CODE END PV */
@@ -162,6 +165,8 @@ int main(void)
   {
     Error_Handler();
   }
+  HAL_FDCAN_ConfigGlobalFilter(&hfdcan1, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_FILTER_REMOTE, FDCAN_FILTER_REMOTE);
+  HAL_FDCAN_Start(&hfdcan1);
 
   HAL_FDCAN_Start(&hfdcan1);
   HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
@@ -402,7 +407,7 @@ static void MX_FDCAN1_Init(void)
   hfdcan1.Instance = FDCAN1;
   hfdcan1.Init.ClockDivider = FDCAN_CLOCK_DIV1;
   hfdcan1.Init.FrameFormat = FDCAN_FRAME_CLASSIC;
-  hfdcan1.Init.Mode = FDCAN_MODE_INTERNAL_LOOPBACK;
+  hfdcan1.Init.Mode = FDCAN_MODE_NORMAL;
   hfdcan1.Init.AutoRetransmission = ENABLE;
   hfdcan1.Init.TransmitPause = DISABLE;
   hfdcan1.Init.ProtocolException = DISABLE;
