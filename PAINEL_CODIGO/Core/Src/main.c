@@ -78,6 +78,7 @@ extern uint8_t debug; // so pra debugar e ver se nao esta lendo rx
 extern float tensaoHV_float;
 extern float tensaoInversor_float;
 
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -97,6 +98,7 @@ static void MX_HSPI1_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_JPEG_Init(void);
 static void MX_FDCAN1_Init(void);
+void HAL_FDCAN_ErrorCallback(FDCAN_HandleTypeDef *hfdcan);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -164,11 +166,12 @@ int main(void)
   sFilterConfig.FilterID2 = 0x000; // Máscara 0 aceita tudo
 
 
+
   if (HAL_FDCAN_ConfigFilter(&hfdcan1, &sFilterConfig) != HAL_OK)
   {
     Error_Handler();
   }
-  HAL_FDCAN_ConfigGlobalFilter(&hfdcan1, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_FILTER_REMOTE, FDCAN_FILTER_REMOTE);
+  HAL_FDCAN_ConfigGlobalFilter(&hfdcan1, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_FILTER_REMOTE);
   HAL_FDCAN_Start(&hfdcan1);
 
   HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
@@ -877,6 +880,18 @@ void Error_Handler(void)
   {
   }
   /* USER CODE END Error_Handler_Debug */
+}
+
+void HAL_FDCAN_ErrorCallback(FDCAN_HandleTypeDef *hfdcan)
+{
+	if(hfdcan->Instance==FDCAN1)
+	{
+		HAL_FDCAN_Stop(hfdcan);
+		HAL_FDCAN_Start(hfdcan);
+
+		HAL_FDCAN_ActivateNotification(hfdcan, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
+
+	}
 }
 #ifdef USE_FULL_ASSERT
 /**
