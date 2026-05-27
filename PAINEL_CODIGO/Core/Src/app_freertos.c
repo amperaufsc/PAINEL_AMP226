@@ -427,6 +427,7 @@ void ReadyToDrive(void *argument)
 /* USER CODE BEGIN Application */
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 {
+
     can_msg_t msg_recebida;
 
     // 1. Limpa as estruturas para garantir que não estamos lendo lixo de memória
