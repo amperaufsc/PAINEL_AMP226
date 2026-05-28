@@ -163,7 +163,7 @@ void MX_FREERTOS_Init(void) {
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
   /* creation of QueueButton */
-  QueueButtonHandle = osMessageQueueNew (16, sizeof(uint32_t), &QueueButton_attributes);
+  QueueButtonHandle = osMessageQueueNew (25, sizeof(uint32_t), &QueueButton_attributes);
   /* creation of Queue_CAN_RX */
   Queue_CAN_RXHandle = osMessageQueueNew (16, sizeof(can_msg_t), &Queue_CAN_RX_attributes);
   /* creation of FilaReady */
@@ -463,3 +463,4 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 
 }
 /* USER CODE END Application */
+
