@@ -248,7 +248,7 @@ void StartTaskCAN(void *argument)
 	TxData[0] = START_AUTONOMOS;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-	osDelay(211); //pra debug depois tem que mudar pra 200
+	osDelay(200); //pra debug depois tem que mudar pra 200
 
 
 	//  IDENTIFICAÇÃO DA PÁGINA
@@ -256,7 +256,7 @@ void StartTaskCAN(void *argument)
 	TxData[0] = ID_DA_PAGINA;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-	osDelay(181); //pra debug depois tem que mudar pra 200
+	osDelay(200); //pra debug depois tem que mudar pra 200
 
 
 	// READY TO DRIVE
@@ -265,7 +265,7 @@ void StartTaskCAN(void *argument)
 	TxData[0] = (uint8_t)state;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-	osDelay(199);  //pra debug depois tem que mudar pra 200
+	osDelay(200);  //pra debug depois tem que mudar pra 200
 
 
 //	 // testes
@@ -430,7 +430,7 @@ void ReadyToDrive(void *argument)
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 {
 
-    // can_msg_t msg_recebida;
+     can_msg_t msg_recebida;
 
     // 1. Limpa as estruturas para garantir que não estamos lendo lixo de memória
       memset(&RxHeader, 0, sizeof(RxHeader));
