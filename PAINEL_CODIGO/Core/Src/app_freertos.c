@@ -38,6 +38,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 extern FDCAN_HandleTypeDef hfdcan1;
+extern volatile uint8_t flag_can_recovery;
 volatile uint8_t flagEnviarCAN = 0;
 /* USER CODE END PD */
 
@@ -244,6 +245,20 @@ void StartTaskCAN(void *argument)
 
 	{
 
+	if (flag_can_recovery)
+	{
+		HAL_FDCAN_Stop(&hfdcan1);
+		HAL_FDCAN_Start(&hfdcan1);
+		HAL_FDCAN_ActivateNotification(&hfdcan1,
+									   FDCAN_IT_RX_FIFO0_NEW_MESSAGE
+									   | FDCAN_IT_RX_FIFO0_MESSAGE_LOST
+									   | FDCAN_IT_BUS_OFF
+									   | FDCAN_IT_ERROR_PASSIVE
+									   | FDCAN_IT_ERROR_WARNING,
+									   0);
+		flag_can_recovery = 0;
+	}
+
 	//  START AUTONOMOS
 	TxHeader.Identifier = 0x347;
 	TxData[0] = START_AUTONOMOS;
@@ -428,40 +443,36 @@ void ReadyToDrive(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+volatile uint32_t can_msg_lost_count = 0;
+
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 {
-  if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != 0)
+  if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_MESSAGE_LOST) != 0U)
   {
-    FDCAN_RxHeaderTypeDef RxHeader;
-    can_msg_t msg_recebida;
+    can_msg_lost_count++;
+  }
 
-    // 1. Limpa as estruturas para garantir que não estamos lendo lixo de memória
-      memset(&RxHeader, 0, sizeof(RxHeader));
-      memset(&msg_recebida, 0, sizeof(msg_recebida));
-//
-//    // 2. Tenta ler o hardware e captura o status
-      HAL_StatusTypeDef status = HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msg_recebida.data);
-//
-//    // 3. Só prossegue se a leitura foi 100% bem-sucedida
-    if (status == HAL_OK)
+  if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != 0U)
+  {
+    while (HAL_FDCAN_GetRxFifoFillLevel(hfdcan, FDCAN_RX_FIFO0) > 0U)
     {
-//        can_recepcoes_count++;
-        msg_recebida.id = RxHeader.Identifier;
-        debug_id_isr = msg_recebida.id;
+      FDCAN_RxHeaderTypeDef RxHeader;
+      can_msg_t msg_recebida;
 
-        // Agora sim, garantimos que o ID é real
-        if (osMessageQueuePut(Queue_CAN_RXHandle, &msg_recebida, 0, 0) != osOK)
-        {
-            erro_fila_count++;
-        }
-    }
+      if (HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msg_recebida.data) != HAL_OK)
+      {
+        debug++;
+        break;
+      }
 
-    else
-    {
-        // Debug: Se cair aqui, a função HAL falhou
-    	debug++;
-        // Isso explica por que o ID era um contador:
-        // o código ignorava que a leitura falhou e lia memória vazia.
+      msg_recebida.id = RxHeader.Identifier;
+      debug_id_isr = msg_recebida.id;
+      can_recepcoes_count++;
+
+      if (osMessageQueuePut(Queue_CAN_RXHandle, &msg_recebida, 0, 0) != osOK)
+      {
+        erro_fila_count++;
+      }
     }
   }
 }

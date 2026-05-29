@@ -163,8 +163,20 @@ int main(void)
     Error_Handler();
   }
 
+  HAL_FDCAN_ConfigGlobalFilter(&hfdcan1,
+                               FDCAN_ACCEPT_IN_RX_FIFO0,
+                               FDCAN_REJECT,
+                               FDCAN_REJECT_REMOTE,
+                               FDCAN_REJECT_REMOTE);
+
   HAL_FDCAN_Start(&hfdcan1);
-  HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
+  HAL_FDCAN_ActivateNotification(&hfdcan1,
+                                 FDCAN_IT_RX_FIFO0_NEW_MESSAGE
+                                 | FDCAN_IT_RX_FIFO0_MESSAGE_LOST
+                                 | FDCAN_IT_BUS_OFF
+                                 | FDCAN_IT_ERROR_PASSIVE
+                                 | FDCAN_IT_ERROR_WARNING,
+                                 0);
 
   /* USER CODE END 2 */
 
@@ -402,12 +414,12 @@ static void MX_FDCAN1_Init(void)
   hfdcan1.Instance = FDCAN1;
   hfdcan1.Init.ClockDivider = FDCAN_CLOCK_DIV1;
   hfdcan1.Init.FrameFormat = FDCAN_FRAME_CLASSIC;
-  hfdcan1.Init.Mode = FDCAN_MODE_INTERNAL_LOOPBACK;
+  hfdcan1.Init.Mode = FDCAN_MODE_NORMAL;
   hfdcan1.Init.AutoRetransmission = ENABLE;
   hfdcan1.Init.TransmitPause = DISABLE;
   hfdcan1.Init.ProtocolException = DISABLE;
   hfdcan1.Init.NominalPrescaler = 16;
-  hfdcan1.Init.NominalSyncJumpWidth = 1;
+  hfdcan1.Init.NominalSyncJumpWidth = 4;
   hfdcan1.Init.NominalTimeSeg1 = 15;
   hfdcan1.Init.NominalTimeSeg2 = 4;
   hfdcan1.Init.DataPrescaler = 1;
@@ -832,6 +844,30 @@ static void MX_GPIO_Init(void)
 
 
 volatile uint8_t pressedButtonId = 0;
+
+volatile uint8_t flag_can_recovery = 0;
+volatile uint32_t can_bus_off_count = 0;
+volatile uint32_t can_error_passive_count = 0;
+volatile uint32_t can_error_warning_count = 0;
+
+void HAL_FDCAN_ErrorStatusCallback(FDCAN_HandleTypeDef *hfdcan, uint32_t ErrorStatusITs)
+{
+  if (hfdcan->Instance != FDCAN1) return;
+
+  if ((ErrorStatusITs & FDCAN_IT_BUS_OFF) != 0U)
+  {
+    can_bus_off_count++;
+    flag_can_recovery = 1;
+  }
+  if ((ErrorStatusITs & FDCAN_IT_ERROR_PASSIVE) != 0U)
+  {
+    can_error_passive_count++;
+  }
+  if ((ErrorStatusITs & FDCAN_IT_ERROR_WARNING) != 0U)
+  {
+    can_error_warning_count++;
+  }
+}
 
 /* USER CODE END 4 */
 
