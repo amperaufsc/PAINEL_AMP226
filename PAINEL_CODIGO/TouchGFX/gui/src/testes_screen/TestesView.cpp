@@ -1,4 +1,6 @@
 #include <gui/testes_screen/TestesView.hpp>
+#include <touchgfx/Color.hpp>
+#include <stdio.h>
 
 TestesView::TestesView()
 {
@@ -20,8 +22,8 @@ void TestesView::updateTempMotor(int val) {
     Tempmotor_un.invalidate();
 }
 
-void TestesView::updateTensaoInversor(int val) {
-    Unicode::snprintf(TensaoInversor_unBuffer, TENSAOINVERSOR_UN_SIZE, "%d", val);
+void TestesView::updateTensaoInversor(float val) {
+	Unicode::snprintfFloat(TensaoInversor_unBuffer, TENSAOINVERSOR_UN_SIZE, "%.1f", val);
     TensaoInversor_un.invalidate();
 }
 
@@ -36,51 +38,103 @@ void TestesView::updateTempInversor(int val) {
 }
 
 void TestesView::updateTensaoCelulaMin(int val) {
-    Unicode::snprintf(TensaoCelulamaisbaixa_unBuffer, TENSAOCELULAMAISBAIXA_UN_SIZE, "%d", val);
-    TensaoCelulamaisbaixa_un.invalidate();
-}
+	float tesao = val;
+	if (tesao < 3){
+		TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+	} else { TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(0, 155, 0)); }
 
-void TestesView::updatePotencia(int val) {
-    Unicode::snprintf(Potencia_unBuffer, POTENCIA_UN_SIZE, "%d", val);
-    Potencia_un.invalidate();
+    Unicode::snprintfFloat(TensaoCelulamaisbaixa_unBuffer, TENSAOCELULAMAISBAIXA_UN_SIZE, "%.f", tesao);
+    TensaoCelulamaisbaixa_un.invalidate();
 }
 
 void TestesView::updateTempAcumulador(int val) {
     Unicode::snprintf(TempAcumulador_unBuffer, TEMPACUMULADOR_UN_SIZE, "%d", val);
+    if (val > 45) {
+        TempAcumulador_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    } else {
+        TempAcumulador_un.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    }
     TempAcumulador_un.invalidate();
 }
 
-void TestesView::updateTensaoHV(int val) {
-    Unicode::snprintf(TensaoHV_unBuffer, TENSAOHV_UN_SIZE, "%d", val);
+void TestesView::updateTensaoHV(float val) {
+	Unicode::snprintfFloat(TensaoHV_unBuffer, TENSAOHV_UN_SIZE, "%.1f", val);
     TensaoHV_un.invalidate();
 }
 
-
 void TestesView::updateRPM(int val) {
-    Unicode::snprintf(RPM_unBuffer, RPM_UN_SIZE, "%d", val);
+    int rpm100 = val;
+    Unicode::snprintf(RPM_unBuffer, RPM_UN_SIZE, "%d", rpm100);
     RPM_un.invalidate();
 }
 
-void TestesView::updateCorrenteAcumulador(int val) {
-    Unicode::snprintf(Correnteacumulador_unBuffer, CORRENTEACUMULADOR_UN_SIZE, "%d", val);
-    RPM_un.invalidate();
+void TestesView::updateCorrenteAcumulador(float val) {
+	float corrente = val/100;
+	Unicode::snprintfFloat(Correnteacumulador_unBuffer, CORRENTEACUMULADOR_UN_SIZE, "%.1f", corrente);
+    Correnteacumulador_un.invalidate();
 }
 
+  //Atualizações de Falhas
+void TestesView::updateFalhaTMS(int val) {
+    if (val > 0) {
+        valor_falhaBMS.setVisible(true);
+        falhaBMS.setVisible(true);
+        falhaBMS_azul.setVisible(false);
+    } else {
+        valor_falhaBMS.setVisible(false);
+        falhaBMS.setVisible(false);
+        falhaBMS_azul.setVisible(true);
+    }
 
-// --- Atualizações de Falhas ---
-
-void TestesView::updateFalhaBMS(int val) {
     Unicode::snprintf(valor_falhaBMSBuffer, VALOR_FALHABMS_SIZE, "%d", val);
+
     valor_falhaBMS.invalidate();
+    falhaBMS.invalidate();
+    falhaBMS_azul.invalidate();
 }
 
 void TestesView::updateFalhaINV(int val) {
+    if (val > 0) {
+    	valor_falha_INV.setVisible(true);
+    	falhainversor.setVisible(true);
+        falhainversor_azul.setVisible(false);
+    } else {
+    	valor_falha_INV.setVisible(false);
+    	falhainversor.setVisible(false);
+        falhainversor_azul.setVisible(true);
+    }
+
     Unicode::snprintf(valor_falha_INVBuffer, VALOR_FALHA_INV_SIZE, "%d", val);
-    valor_falha_INV.invalidate();
+
+    falhainversor_azul.invalidateContent();
+    falhainversor.invalidateContent();
+    valor_falha_INV.invalidateContent();
 }
 
 void TestesView::updateFalhaECU(int val) {
-    Unicode::snprintf(valor_falha_ECUBuffer, VALOR_FALHA_ECU_SIZE, "%d", val);
-    valor_falha_ECU.invalidate();
-}
+    if (val > 0) {
+    	valor_falha_ECU.setVisible(true);
+    	falhaECU.setVisible(true);
+    	falhaECU_azul.setVisible(false);
+    } else {
+    	valor_falha_ECU.setVisible(false);
+    	falhaECU.setVisible(false);
+    	falhaECU_azul.setVisible(true);
+    }
 
+    Unicode::snprintf(valor_falha_ECUBuffer, VALOR_FALHA_ECU_SIZE, "%d", val);
+
+    falhaECU_azul.invalidate();
+    falhaECU.invalidate();
+    valor_falha_ECU.invalidate();
+
+}
+void TestesView::RTDativo(int val) {
+    if (val == 3) {
+    	rtdtestes.setVisible(true);
+    } else {
+    	rtdtestes.setVisible(false);
+    }
+
+    rtdtestes.invalidate();
+}

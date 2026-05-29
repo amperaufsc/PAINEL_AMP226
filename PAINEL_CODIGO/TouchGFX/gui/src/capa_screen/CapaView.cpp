@@ -2,7 +2,7 @@
 
 CapaView::CapaView()
 {
-
+	tickCounter = 0;
 }
 
 void CapaView::setupScreen()
@@ -17,12 +17,7 @@ void CapaView::tearDownScreen()
 
 void CapaView::setCANValue(int value)
 {
-    // 1. Limpa o buffer e escreve o novo valor formatado como decimal (%d)
-    // textAreaCANBuffer é criado automaticamente pelo Designer se você ativou o Wildcard
-    //criei este comentario aqui mas depois pode apagar pra testar o can // Unicode::snprintf(textAreaCANBuffer, TEXTAREACAN_SIZE, "%d", value);
 
-    // 2. Avisa o TouchGFX que o texto mudou e precisa ser redesenhado na tela
-    //criei este comentario aqui mas depois pode apagar pra testar o can // textAreaCAN.invalidate();
 }
 
 void CapaView::modoespera()
@@ -34,3 +29,32 @@ void CapaView::modoespera()
 >>>>>>> dia1603
 }
 
+void CapaView::handleTickEvent()
+{
+    // Sempre chama a função da base primeiro
+	CapaViewBase::handleTickEvent();
+
+    tickCounter++; // Conta 1 frame
+
+    // Fase 1: Do tick 0 ao 59 (1 segundo) -> Deixa a imagem INVISÍVEL
+    if (tickCounter < 60)
+    {
+        if (logobranca.isVisible()) {
+        	logobranca.setVisible(false);
+        	logobranca.invalidate();
+        }
+    }
+    // Fase 2: Do tick 60 ao 179 (2 segundos) -> Deixa a imagem VISÍVEL
+    else if (tickCounter < 180)
+    {
+        if (!logobranca.isVisible()) {
+        	logobranca.setVisible(true);
+        	logobranca.invalidate();
+        }
+    }
+    // Fase 3: Chegou em 180 (3 segundos totais) -> Zera o ciclo e recomeça
+    else
+    {
+        tickCounter = 0;
+    }
+}

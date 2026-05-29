@@ -1,3 +1,4 @@
+//AQUI É GALO
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
@@ -5,6 +6,7 @@
 #include <stdint.h>
 #include "cmsis_os2.h"
 #include "can_types.h"
+#include <cstring>
 
 extern "C" {
     #include "main.h" // Para garantir que can_msg_t seja reconhecida
@@ -18,24 +20,17 @@ extern "C" {
 
 
 
-    extern osMessageQueueId_t Queue_CAN_RXHandle;
-    extern osMessageQueueId_t Queue_CAN_TXHandle;
+    extern osMessageQueueId_t Queue_CAN_RXHandle
+	;
     extern osMessageQueueId_t QueueButtonHandle;
     extern volatile uint8_t pressedButtonId;
+    extern float tensaoHV_float;
+    extern float tensaoInversor_float;
 }
 
 
-<<<<<<< HEAD
 Model::Model() : modelListener(0), currentScreen(CAPA) , estadoPB11(false)
-=======
-Model::Model() :
-		modelListener(0),
-		//calculo da distancia
-		distancia_total(0.0f),
-		velocidadeatual(0.0f),
-		ultimoTick(0)
-
->>>>>>> dia1603
+		modelListener(0)
 {
 
 }
@@ -58,91 +53,96 @@ void Model::updateCurrentScreen(uint8_t screenId) {
     ID_DA_PAGINA = screenId;
 }
 
-void Model::setStartAutonomos(uint8_t valor) { // Nome deve ser IDÊNTICO ao .hpp
+void Model::setStartAutonomos(uint8_t valor) {
     START_AUTONOMOS = valor;
 }
 
 void Model::tick()
 {
-<<<<<<< HEAD
+//	/* CALCULANDO A DISTANCIA */ Isso se tornará inutil se Sistemas autonomos mandar tanto a distancia quanto a velocidade pra mim
+//	uint32_t now = osKernelGetTickCount();
+//
+//	    if (this->ultimoTick != 0)
+//	    {
+//	        uint32_t elapsed_ms = now - this->ultimoTick;
+//
+//	        // Se você fixou 100.0f e não funciona, o erro está aqui ou no Listener
+//	        if (this->velocidadeatual > 0.1f) {
+//	            float tempo_s = (float)elapsed_ms / 1000.0f;
+//	            this->distancia_total += (this->velocidadeatual / 3.6f) * tempo_s;
+//	        }
+//
+//	        if (modelListener != 0) {
+//	            // Teste: force um valor fixo aqui para ver se a tela atualiza
+//	            // modelListener->updateDistanciaValue(99.9f);
+//	            modelListener->updateDistanciaValue((float)(this->distancia_total / 1000.0f));
+//	        }
+//	    }
+//	    this->ultimoTick = now;
 	/* --- LÓGICA EXISTENTE DO BOTÃO VIRTUAL --- */
 	    static int debounceCounter = 0;
 	    if (debounceCounter > 0) debounceCounter--;
-=======
-	/* CALCULANDO A DISTANCIA */
-
-	    uint32_t now = osKernelGetTickCount(); // Pega o tempo atual em ms
-
-	    if (ultimoTick != 0) // filtro pra começar a execução
-	    {
-	        uint32_t elapsed_ms = now - ultimoTick;
-
-
-	        // Distância = velocidade * tempo (convertendo ms para segundos)
-	        // d = v * (ms / 1000)
-	        if (velocidadeatual > 0.1f) { // Filtro de ruído
-	        	distancia_total += velocidadeatual * ((float)elapsed_ms / 1000.0f);
-	        }
-
-	        // Envia para a UI
-	        if (modelListener != 0) {
-	            modelListener->updateDistanciaValue((float)(distancia_total / 1000.0f));
-	        }
-	    }
-	    ultimoTick = now;
-
-
 
     /* --- LÓGICA EXISTENTE DOS BOTÕES --- */
     static int debounceCounter = 0;
     if (debounceCounter > 0) debounceCounter--;
->>>>>>> dia1603
 
-	    if (pressedButtonId != 0 && debounceCounter == 0)
-	    {
-	    	modelListener->hwButtonClicked(pressedButtonId);
-	        pressedButtonId = 0;
-	        debounceCounter = 15;
-	        if (pressedButtonId == 3)
-	                {
-	                    // REGRA 1: Só funciona se estiver nas telas específicas
-	                    if (isTelaPermitidaParaPB11(currentScreen))
-	                    {
-	                        estadoPB11 = !estadoPB11; // Inverte: se era 0 vira 1, se era 1 vira 0
+    if (pressedButtonId != 0 && debounceCounter == 0)
+    {
+        // Aqui o TouchGFX ainda reage normalmente ao clique (mudar tela, etc)
+        modelListener->hwButtonClicked(pressedButtonId);
+        pressedButtonId = 0;
+        debounceCounter = 15;
+    }
+    else if (pressedButtonId != 0)
+    {
+        pressedButtonId = 0;
+    }
+    can_msg_t msg_recebida;
 
-	                        // REGRA 2: Prepara e envia a CAN (só funciona na área do FreeRTOS graças à fila)
-	                        can_msg_t msg_pb11;
-	                        msg_pb11.id = 0x541; //
-	                        msg_pb11.data[0] = estadoPB11 ? 1 : 0;
+        // 1. Verifica se conseguimos tirar algo da fila
+        while (osMessageQueueGet(Queue_CAN_RXHandle, &msg_recebida, NULL, 0) == osOK)
+        {
+            model_recebeu_fila++; // Se este número subir, o Model está lendo a fila!
 
-	                        // Envia para o FreeRTOS transmitir
-	                        osMessageQueuePut(Queue_CAN_TXHandle, &msg_pb11, 0, 0);
-	                    }
-	                }
-	    }
-	    else if (pressedButtonId != 0)
-	    {
-	        pressedButtonId = 0;
-	    }
+            switch (msg_recebida.id)
+            {
+            case 0x120: { // falhas validado
+            				uint8_t falha_INVERTER = msg_recebida.data[0];
+            				uint8_t readtodrive = msg_recebida.data[3];
+            			    uint8_t falha_TMS = msg_recebida.data[4];
+                            uint16_t falha_ECU = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
+                            if (readtodrive == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+                            } else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
 
-	    /* --- LÓGICA DE RECEPÇÃO CAN --- */
-	    can_msg_t msg_recebida;
+							modelListener->RTDativo(readtodrive);
+                            modelListener->updateFalhaTMSValue(falha_TMS);
+                            modelListener->updateFalhaECUValue(falha_ECU);
+                            modelListener->updateFalhaINVValue(falha_INVERTER);
 
-<<<<<<< HEAD
+                            break;
+                         }
+            case 0x121: {	//funciona mensagens 1 byte
+            				uint8_t tensCelMin = msg_recebida.data[0];
+            				uint8_t soc = msg_recebida.data[3];
+            				uint8_t acelerador = msg_recebida.data[4];
+                            uint8_t freio = msg_recebida.data[5];
+                            uint8_t TempAcumulador = msg_recebida.data[7];
+
+                            modelListener->updateTensaoCelulaMinValue(tensCelMin);
+                            modelListener->updateSOCValue(soc);
+                            modelListener->updateFreioValue(freio);
+                            modelListener->updateAceleradorValue(acelerador);
+                            modelListener->updateTempAcumuladorValue(TempAcumulador);
+                            break;
+                        }
 	    // Verifica se conseguimos tirar algo da fila
 	    if (osMessageQueueGet(Queue_CAN_RXHandle, &msg_recebida, NULL, 0) == osOK)
 	    {
 	        model_recebeu_fila++;
-=======
-                case 0x124:
-                    modelListener->updateSpeedValue(valor);
-                    velocidadeatual = (int)valor;
-                    break;
->>>>>>> dia1603
 
 	        uint16_t valor = msg_recebida.data[0];
 
-<<<<<<< HEAD
 	        switch (msg_recebida.id)
 	        {
 	            case 0x341: modelListener->updateRPMValue(valor); break; // Aqui vai mostrar a Screen!
@@ -166,51 +166,61 @@ void Model::tick()
 	        } // FIM DO SWITCH
 	    } // FIM DO IF DA FILA CAN
 
-=======
-                case 0x000: // Supondo o ID do Freio
-                    modelListener->updateFreioValue(valor);
-                    break;
 
-                case 0x741: // Supondo o ID do Acelerador
-                    modelListener->updateAceleradorValue(valor);
-                    break;
+            case 0x220: { //validado
+                            float correnteHV_float = 0.0f; //acumulador
 
-                case 0x128: // ID da Tensão
-                    modelListener->updateTensaoHVValue(valor);
-                    break;
+                            memcpy(&correnteHV_float, &msg_recebida.data[4], sizeof(float));
 
-                case 0x130: // ID da Potência
-                    modelListener->updatePotenciaValue(valor);
-                    break;
+                            modelListener->updateCorrenteAcumuladorValue((float)correnteHV_float);
+                            break;
+                        }
 
-                case 0x131: // ID da Temperatura
-                    modelListener->updateTempAcumuladorValue(valor);
-                    break;
+            case 0x420: {	//funciona mensagens 2bytes
+                            uint16_t rpm = ((uint16_t)msg_recebida.data[0] << 8) | msg_recebida.data[1];
+                            uint16_t TempMotor = ((uint16_t)msg_recebida.data[2] << 8) | msg_recebida.data[3];
+                            uint16_t TempInversor = ((uint16_t)msg_recebida.data[6] << 8) | msg_recebida.data[7];
 
-                case 0x132:
-                	modelListener->updateTempMotorValue(valor);
-                	break;
+                            modelListener->updateRPMValue(rpm);
+                            modelListener->updateTempMotorValue(TempMotor);
+                            modelListener->updateTempInversorValue(TempInversor);
+                            break;
+                        }
 
-                case 0x133:
-                	modelListener->updateTensaoInversorValue(valor);
-                	break;
+            case 0x421: {	// funciona
+                            tensaoInversor_float = 0.0f; //trifasico
+                            tensaoHV_float = 0.0f; //acumulador
 
-                case 0x135:
-                	modelListener->updateTempInversorValue(valor);
-                	break;
+                            memcpy(&tensaoInversor_float, &msg_recebida.data[0], sizeof(float));
+                            memcpy(&tensaoHV_float, &msg_recebida.data[4], sizeof(float));
 
-                case 0x136:
-                	modelListener->updateTensaoCelulaMinValue(valor);
-                    break;
+                            modelListener->updateTensaoHVValue((float)tensaoHV_float);
+                            modelListener->updateTensaoInversorValue((float)tensaoInversor_float);
+                            break;
+                        }
 
-                case 0x139:
-                	modelListener->updateTensaoHVValue(valor);
-                    break;
 
-                case 0x541:
-                	modelListener->updateAutonomos(valor);
-                    break;
->>>>>>> dia1603
+//                case 0x000: { //velocidade e distancia SA vai mandar pra mim olhar com o carlos ou pedro quando ficar pronto
+
+//                    float RodaDianteiraEsq = 0.0f;
+//                    float RodaDianteiraDir = 0.0f;
+
+//					  memcpy(&RodaDianteiraEsq, &msg_recebida.data[4], sizeof(float));
+//            		  memcpy(&RodaDianteiraDir, &msg_recebida.data[0], sizeof(float));
+
+
+//            			// calculo velocidade media
+//					  float VelMediaDianteira = (RodaDianteiraEsq + RodaDianteiraDir)/2;
+
+
+//                    modelListener->updateSpeedValue((float)VelMediaDianteira);
+//                    modelListener->updateDistanciaValue(valor);
+//                    break;
+
+//								}
+
+
+
 
 	}
 void Model::reportCurrentScreen(ScreenID screenId)

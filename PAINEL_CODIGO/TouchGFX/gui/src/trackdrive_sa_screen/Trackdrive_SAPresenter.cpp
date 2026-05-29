@@ -9,11 +9,8 @@ Trackdrive_SAPresenter::Trackdrive_SAPresenter(Trackdrive_SAView& v)
 
 void Trackdrive_SAPresenter::activate()
 {
-<<<<<<< HEAD
-=======
-	 model->updateCurrentScreen(9);
+	 model->updateCurrentScreen(8);
 	 model->setStartAutonomos(0);
->>>>>>> dia1603
 }
 
 void Trackdrive_SAPresenter::deactivate()
@@ -25,14 +22,14 @@ void Trackdrive_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	{
 	    if (buttonId == 2) // PB11 BOLINHA // PA2 TX-D1
 	    {
-	    	model->setStartAutonomos(5);
+	    	model->setStartAutonomos(8);
 	    }
-	    else if (buttonId == 3) // PA3 TRIANGULO
+	    else if (buttonId == 1) // PA3 TRIANGULO
 	    {
 	    	model->reportCurrentScreen(Model::SKIDPED);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoSkidped_SAScreenSlideTransitionEast();
 	    }
-	    else if (buttonId == 1) // PA2 X
+	    else if (buttonId == 3) // PA2 X
 	    {
 	    	model->reportCurrentScreen(Model::EBS);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoEBS_Teste_SAScreenSlideTransitionWest();

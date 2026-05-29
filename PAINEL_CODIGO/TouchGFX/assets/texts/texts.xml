@@ -6,7 +6,102 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-<<<<<<< HEAD
+      <Text Id="__SingleUse_3V84" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">6</Translation>
+      </Text>
+      <Text Id="__SingleUse_8ODT" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">5</Translation>
+      </Text>
+      <Text Id="__SingleUse_5X78" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_TBH2" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_RKP0" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_OH2R" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_QU6I" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_I746" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">80</Translation>
+      </Text>
+      <Text Id="__SingleUse_AL9I" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">70</Translation>
+      </Text>
+      <Text Id="__SingleUse_IX2N" Alignment="Left" TypographyId="velocimetro">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_3GWK" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">30</Translation>
+      </Text>
+      <Text Id="__SingleUse_4RK3" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">40</Translation>
+      </Text>
+      <Text Id="__SingleUse_XK56" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">20</Translation>
+      </Text>
+      <Text Id="__SingleUse_3X1P" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">50</Translation>
+      </Text>
+      <Text Id="__SingleUse_1I7U" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">10</Translation>
+      </Text>
+      <Text Id="__SingleUse_PPO3" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">60</Translation>
+      </Text>
+      <Text Id="__SingleUse_9NW0" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_3NHT" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_TXLV" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_VWT9" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_CM10" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_YU34" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_WPJQ" Alignment="Left" TypographyId="velocimetro">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZXAY" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">RTD ATIVO</Translation>
+      </Text>
+      <Text Id="__SingleUse_HQLU" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">ECU OK</Translation>
+      </Text>
+      <Text Id="__SingleUse_NPCG" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">INVERSOR OK</Translation>
+      </Text>
+      <Text Id="__SingleUse_8YAI" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">TMS OK</Translation>
+      </Text>
+      <Text Id="__SingleUse_AEP2" Alignment="Left" TypographyId="letra_miuda">
+        <Translation Language="GB">x 1000</Translation>
+      </Text>
+      <Text Id="__SingleUse_2NCR" Alignment="Left" TypographyId="letra_miuda">
+        <Translation Language="GB">km/h</Translation>
+      </Text>
+      <Text Id="__SingleUse_YA30" Alignment="Center" TypographyId="letra_miuda">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZFV1" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_7ZID" Alignment="Left" TypographyId="batman">
+        <Translation Language="GB"> &lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_GRRB" Alignment="Left" TypographyId="EscritosBotoes">
         <Translation Language="GB">TESTE EBS</Translation>
       </Text>
@@ -99,13 +194,6 @@
       </Text>
       <Text Id="__SingleUse_TJBO" Alignment="Left" TypographyId="paginasautonomos">
         <Translation Language="GB">EBS TESTE</Translation>
-=======
-      <Text Id="__SingleUse_7ZID" Alignment="Left" TypographyId="batman">
-        <Translation Language="GB"> &lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_44IL" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1&#10;</Translation>
->>>>>>> dia1603
       </Text>
       <Text Id="__SingleUse_RFE0" Alignment="Left" TypographyId="batman">
         <Translation Language="GB">0</Translation>
@@ -116,16 +204,15 @@
       <Text Id="__SingleUse_KIRL" Alignment="Left" TypographyId="batman">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_POQR" Alignment="Left" TypographyId="batman">
+      <Text Id="__SingleUse_POQR" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB"> &lt;value&gt; </Translation>
+      </Text>
+      <Text Id="__SingleUse_ZXI4" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB"> &lt;value&gt; </Translation>
+      </Text>
+      <Text Id="__SingleUse_20FB" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_ZXI4" Alignment="Left" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_20FB" Alignment="Left" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-<<<<<<< HEAD
       <Text Id="__SingleUse_WI60" Alignment="Left" TypographyId="paginasautonomos">
         <Translation Language="GB">SKIDPAD</Translation>
       </Text>
@@ -135,8 +222,6 @@
       <Text Id="__SingleUse_P2D1" Alignment="Center" TypographyId="paginasautonomos">
         <Translation Language="GB">AUTOCROSS</Translation>
       </Text>
-=======
->>>>>>> dia1603
       <Text Id="__SingleUse_WL4J" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Falha ECU</Translation>
       </Text>
@@ -146,14 +231,8 @@
       <Text Id="__SingleUse_5U7Q" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Falha INV.</Translation>
       </Text>
-      <Text Id="__SingleUse_CXAF" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
-      </Text>
-      <Text Id="__SingleUse_L2RK" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; A</Translation>
-      </Text>
       <Text Id="__SingleUse_I401" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Falha BMS</Translation>
+        <Translation Language="GB">Falha TMS</Translation>
       </Text>
       <Text Id="__SingleUse_POJW" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">100</Translation>
@@ -162,7 +241,7 @@
         <Translation Language="GB">&lt;value&gt;  %</Translation>
       </Text>
       <Text Id="__SingleUse_WGWZ" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">00000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_OE0U" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">&lt;value&gt; m</Translation>
@@ -180,19 +259,19 @@
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_8ABU" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB">  &lt;value&gt;  </Translation>
       </Text>
       <Text Id="__SingleUse_3DVT" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">FREIO</Translation>
       </Text>
       <Text Id="__SingleUse_6QZV" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Tensao HV</Translation>
+        <Translation Language="GB">Temp. INV</Translation>
       </Text>
       <Text Id="__SingleUse_0N3L" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_T4IY" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; V</Translation>
+      <Text Id="__SingleUse_T4IY" Alignment="Right" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; °C     </Translation>
       </Text>
       <Text Id="__SingleUse_ZFN3" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">velocidade</Translation>
@@ -203,15 +282,6 @@
       <Text Id="__SingleUse_4H7T" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_OJQO" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">0</Translation>
-      </Text>
-      <Text Id="__SingleUse_PDU7" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt;  kw</Translation>
-      </Text>
-      <Text Id="__SingleUse_AXGA" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">SOC</Translation>
-      </Text>
       <Text Id="__SingleUse_4951" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Hodometro</Translation>
       </Text>
@@ -220,9 +290,6 @@
       </Text>
       <Text Id="__SingleUse_X7T1" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">&lt;value&gt; %</Translation>
-      </Text>
-      <Text Id="__SingleUse_KH82" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Potencia</Translation>
       </Text>
       <Text Id="__SingleUse_ECCU" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Temp. Acumulador</Translation>
@@ -234,68 +301,59 @@
         <Translation Language="GB">&lt;value&gt; °C</Translation>
       </Text>
       <Text Id="__SingleUse_3N7C" Alignment="Center" TypographyId="coringa">
-<<<<<<< HEAD
+        <Translation Language="GB">ACELERACAO</Translation>
         <Translation Language="GB">ACELERADOR</Translation>
-=======
-        <Translation Language="GB">ACELERACAO&#10;</Translation>
->>>>>>> dia1603
       </Text>
       <Text Id="__SingleUse_CBAY" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
-      </Text>
-      <Text Id="__SingleUse_ON7B" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_4WMP" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+      <Text Id="__SingleUse_ON7B" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">100</Translation>
       </Text>
-      <Text Id="__SingleUse_ZFV1" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+      <Text Id="__SingleUse_4WMP" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_AYI9" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_NJC4" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_0NCS" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_0P77" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_KC4C" Alignment="Left" TypographyId="coringa">
-        <Translation Language="GB">000</Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_KLPD" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; °C</Translation>
+        <Translation Language="GB"> &lt;value&gt; °C </Translation>
       </Text>
       <Text Id="__SingleUse_DPMA" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">SOC</Translation>
       </Text>
-      <Text Id="__SingleUse_2SWE" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt;%</Translation>
+      <Text Id="__SingleUse_2SWE" Alignment="Right" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt;%   </Translation>
       </Text>
       <Text Id="__SingleUse_KUTP" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Corrente ACC</Translation>
       </Text>
       <Text Id="__SingleUse_NY2N" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; A</Translation>
+        <Translation Language="GB">  &lt;value&gt;  A  </Translation>
       </Text>
       <Text Id="__SingleUse_0JHV" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Tensao MC</Translation>
-      </Text>
-      <Text Id="__SingleUse_FKG4" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Potência</Translation>
+        <Translation Language="GB">Tensão MinCel</Translation>
       </Text>
       <Text Id="__SingleUse_J676" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; rpm</Translation>
+        <Translation Language="GB">    &lt;value&gt; rpm      </Translation>
       </Text>
       <Text Id="__SingleUse_OFVA" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Tensão Inversor</Translation>
+        <Translation Language="GB"> Tensão Inversor </Translation>
       </Text>
       <Text Id="__SingleUse_5HLU" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; V</Translation>
+        <Translation Language="GB">  &lt;value&gt;  V  </Translation>
       </Text>
       <Text Id="__SingleUse_S0EV" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Temp. motor</Translation>
@@ -304,22 +362,22 @@
         <Translation Language="GB">Tensao HV</Translation>
       </Text>
       <Text Id="__SingleUse_HFVM" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; V</Translation>
+        <Translation Language="GB">  &lt;value&gt;  V  </Translation>
       </Text>
       <Text Id="__SingleUse_913G" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Temp. ACC</Translation>
       </Text>
       <Text Id="__SingleUse_3AJU" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; °C</Translation>
+        <Translation Language="GB"> &lt;value&gt; °C </Translation>
       </Text>
       <Text Id="__SingleUse_JK1H" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; V</Translation>
+        <Translation Language="GB">  &lt;value&gt;  V  </Translation>
       </Text>
       <Text Id="__SingleUse_BTZ4" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Temp. inversor</Translation>
       </Text>
       <Text Id="__SingleUse_5JSZ" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">&lt;value&gt; °C</Translation>
+        <Translation Language="GB"> &lt;value&gt; °C </Translation>
       </Text>
     </TextGroup>
   </Texts>
@@ -327,12 +385,12 @@
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="batman" Font="Gotham_Bold.otf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
-    <Typography Id="coringa" Font="Gotham_Ultra.otf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="batman" Font="Gotham_Bold.otf" Size="30" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=",.-%" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="coringa" Font="Gotham_Ultra.otf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacters=",.-%" WildcardCharacterRanges="a-z,A-Z,0-9" />
     <Typography Id="Typography1" Font="Gotham_Ultra.otf" Size="150" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="paginasautonomos" Font="Gotham_Bold.otf" Size="70" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography3" Font="Gotham_Ultra.otf" Size="134" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" />
-    <Typography Id="Typography4" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="EscritosBotoes" Font="Gotham_Bold.otf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="letra_miuda" Font="Gotham_Bold.otf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="velocimetro" Font="Gotham_Bold.otf" Size="20" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=",.-%" WildcardCharacterRanges="a-z,A-Z,0-9" />
   </Typographies>
 </TextDatabase>

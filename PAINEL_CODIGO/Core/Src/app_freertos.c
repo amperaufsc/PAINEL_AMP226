@@ -40,7 +40,8 @@
 /* USER CODE BEGIN PD */
 extern FDCAN_HandleTypeDef hfdcan1;
 volatile uint8_t flagEnviarCAN = 0;
-osMessageQueueId_t Queue_CAN_TXHandle;
+volatile can_msg_t msg_recebida;
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -56,16 +57,12 @@ volatile uint32_t ultimo_id_recebido = 0;
 volatile uint32_t erro_fila_count = 0;
 volatile uint8_t debug = 0;
 volatile uint32_t debug_id_isr = 0;
-<<<<<<< HEAD
 bool estadoBotaoPA8 = false; // Estado lógico do botão
 
-=======
-volatile uint8_t estadoBotaoAtual = 0;
-volatile uint8_t ultimoEstadoEnviado = 2;
-volatile uint8_t ID_DA_PAGINA = 0;
-volatile uint8_t START_AUTONOMOS = 0;
-//int valorSoc = 0;
->>>>>>> dia1603
+int valorSoc = 0;
+FDCAN_RxHeaderTypeDef RxHeader;
+FDCAN_TxHeaderTypeDef TxHeader;
+
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -165,7 +162,7 @@ void MX_FREERTOS_Init(void) {
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
   /* creation of QueueButton */
-  QueueButtonHandle = osMessageQueueNew (16, sizeof(uint32_t), &QueueButton_attributes);
+  QueueButtonHandle = osMessageQueueNew (25, sizeof(uint32_t), &QueueButton_attributes);
   /* creation of Queue_CAN_RX */
   Queue_CAN_RXHandle = osMessageQueueNew (16, sizeof(can_msg_t), &Queue_CAN_RX_attributes);
   /* creation of FilaReady */
@@ -224,11 +221,10 @@ void StartDefaultTask(void *argument)
 void StartTaskCAN(void *argument)
 {
   /* USER CODE BEGIN Task_CAN */
-<<<<<<< HEAD
   /* Infinite loop */
 	can_msg_t msg_interna;
 	    FDCAN_TxHeaderTypeDef TxHeader;
-
+  
 	    for(;;)
 	    {
 	        // A Task fica dormindo (blocked) até chegar algo na fila
@@ -279,16 +275,9 @@ void StartTaskCAN(void *argument)
 	    // osDelay(250);
 	   }
   /* USER CODE END Task_CAN */
-=======
-	FDCAN_TxHeaderTypeDef TxHeader;
-
-	uint8_t TxData[1];
-
-	//uint32_t valorRPM = 0;
-
-	//uint32_t valorVelocidade = 0;
 
 
+	uint8_t TxData[8];
 
 	// Configurações base do Header
 
@@ -298,101 +287,172 @@ void StartTaskCAN(void *argument)
 
 	TxHeader.TxFrameType = FDCAN_DATA_FRAME;
 
-	TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+	TxHeader.DataLength = FDCAN_DLC_BYTES_8;
 
 	TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
-
 
 	/* Infinite loop */
 	for(;;)
 
 	{
 
-	//  MODO DE PROVA
-
-	TxHeader.Identifier = 0x341;
-	TxData[0] = ID_DA_PAGINA;
-	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
-
-	osDelay(200);
-
-
-	//  SISTEMAS AUTONOMOS
-	TxHeader.Identifier = 0x541;
+	//  START AUTONOMOS
+	TxHeader.Identifier = 0x347;
 	TxData[0] = START_AUTONOMOS;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-	osDelay(200);
+	osDelay(200); //pra debug depois tem que mudar pra 200
 
 
+	//  IDENTIFICAÇÃO DA PÁGINA
+	TxHeader.Identifier = 0x54B;
+	TxData[0] = ID_DA_PAGINA;
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+	osDelay(200); //pra debug depois tem que mudar pra 200
 
 
 	// READY TO DRIVE
 	uint32_t state = !(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8));
-	TxHeader.Identifier = 0x241;
+	TxHeader.Identifier = 0x141;
 	TxData[0] = (uint8_t)state;
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-	osDelay(200);
+	osDelay(200);  //pra debug depois tem que mudar pra 200
 
 
-
-	// TESTE RPM (ID 0x123 ) ---
-
-	//valorRPM++;
-
-	//if(valorRPM > 8) valorRPM = 0;
-
-
-
-	//TxHeader.Identifier = 0x123;
-
-	//TxData[0] = (uint8_t)valorRPM;
-
-	//HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
-
-
-
-	//osDelay(250); // Pequeno intervalo entre mensagens
-
-
-	// teste
-	// VELOCIDADE (ID 0x124 ) ---
-
-//	static float valorVelocidade = 0;
-//	valorVelocidade += 1;
-//
-//	if(valorVelocidade > 200) valorVelocidade = 0;
-//
-//
-//
-//	TxHeader.Identifier = 0x124;
-//
-//	TxData[0] = (uint8_t)valorVelocidade;
-//
+//	 // testes
+//	// ACELERADOR  ---
+//    static uint8_t acelerador = 0;
+//	acelerador += 2;
+//	if(acelerador > 100) acelerador = 0;
+//	TxHeader.Identifier = 0x121;
+//	TxData[4] = acelerador;
 //	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(110);
 //
+//	//FREIO  ---
+//	static uint8_t freio = 0;
+//	freio += 2;
+//	if(freio > 100) freio = 0;
+//	TxHeader.Identifier = 0x121;
+//	TxData[5] = freio;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(130);
 //
+//	//TEMPERATURA ACUMULADOR  ---
+//	static uint8_t tempacumulador = 0;
+//	tempacumulador += 1;
+//	if(tempacumulador > 70) tempacumulador = 0;
+//	TxHeader.Identifier = 0x121;
+//	TxData[7] = tempacumulador;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(170);
 //
-//	osDelay(100);
+//	// RPM  ---
+//	static uint16_t rpm = 0;
+//	rpm += 123;
+//	if(rpm > 9000) rpm = 0;
+//	TxHeader.Identifier = 0x420;
+//	TxData[0] = (uint8_t)(rpm >> 8);
+//	TxData[1] = (uint8_t)rpm;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(190);
 
-	// --- ENVIO 3: SOC (ID 0x125 ) ---
+//	//TEMPERATURA MOTOR ---
+//	static uint16_t tempmotor = 0;
+//	tempmotor += 29;
+//	if(tempmotor > 1000) tempmotor = 0;
+//	TxHeader.Identifier = 0x420;
+//	TxData[2] = (uint8_t)(tempmotor >> 8);
+//	TxData[3] = (uint8_t)tempmotor;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(230);
+//
+//	//TEMPERATURA INVERSOR  ---
+//	static uint16_t tempinversor = 0;
+//	tempinversor += 37;
+//	if(tempinversor > 900) tempinversor = 0;
+//	TxHeader.Identifier = 0x420;
+//	TxData[6] = (uint8_t)(tempinversor >> 8);
+//	TxData[7] = (uint8_t)tempinversor;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(290);
+//
+//	//TENSAO INVERSOR  ---
+//	static float tensaoInversor = 0.0f;
+//	tensaoInversor += 50.5f;
+//	if(tensaoInversor > 700.0f) tensaoInversor = 0.0f;
+//	TxHeader.Identifier = 0x421;
+//	memcpy(&TxData[0], &tensaoInversor, sizeof(float));
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(310);
+//
+//	//TENSAO ACUMULADOR(HV)  ---
+//	static float acumuladorhv = 0.0f;
+//	acumuladorhv += 5.5f;
+//	if(acumuladorhv > 700.0f) acumuladorhv = 0.0f;
+//	TxHeader.Identifier = 0x421;
+//	memcpy(&TxData[4], &acumuladorhv, sizeof(float));
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(370);
+//
+//	//CORRENTE ACUMULADOR(HV)  ---
+//	static float coracumulador = 0.0f;
+//	coracumulador += 5.5f;
+//	if(coracumulador > 700.0f) coracumulador = 0.0f;
+//	TxHeader.Identifier = 0x220;
+//	memcpy(&TxData[4], &coracumulador, sizeof(float));
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(370);
+//
+//	//FALHA ECU  ---
+//	static uint16_t ecu = 0;
+//	ecu += 10;
+//	if(ecu > 260) ecu = 0;
+//	TxHeader.Identifier = 0x120;
+//	TxData[1] = (uint8_t)(ecu >> 8);
+//	TxData[2] = (uint8_t)ecu;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(410);
+//
+//	 // FALHA TMS  ---
+//    static uint8_t tms = 0;
+//    tms += 2;
+//	if(tms > 16) tms = 0;
+//	TxHeader.Identifier = 0x120;
+//	TxData[4] = tms;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(430);
+//
+//	 // FALHA INVERSOR  ---
+//    static uint8_t INV = 0;
+//    INV += 2;
+//	if(INV > 16) INV = 0;
+//	TxHeader.Identifier = 0x120;
+//	TxData[0] = INV;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//    osDelay(470);
 
-	//valorSoc += 1;
+//	//RODA   ---
+//	static float coracumulador = 0.0f;
+//	coracumulador += 5.5f;
+//	if(coracumulador > 700.0f) coracumulador = 0.0f;
+//	TxHeader.Identifier = 0x220;
+//	memcpy(&TxData[4], &coracumulador, sizeof(float));
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(370);
 
-	//if(valorSoc > 100) valorSoc = 0;
+//	// Read to drive  ---
+//    static uint8_t rtd = 3;
+//    rtd += 1 ;
+//	if(rtd > 4) rtd = 3;
+//	TxHeader.Identifier = 0x120;
+//	TxData[3] = rtd;
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//	osDelay(5000);
 
 
-
-	//TxHeader.Identifier = 0x125;
-
-	//TxData[0] = (uint8_t)valorSoc;
-
-	//HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
-
-
-
-	//osDelay(250);
 
 	}
   /* USER CODE END Task_CAN */
@@ -417,16 +477,13 @@ void ReadyToDrive(void *argument)
   }
   /* USER CODE END READYTODRIVE */
 }
->>>>>>> dia1603
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 {
-  if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != 0)
-  {
-    FDCAN_RxHeaderTypeDef RxHeader;
-    can_msg_t msg_recebida;
+
+     can_msg_t msg_recebida;
 
     // 1. Limpa as estruturas para garantir que não estamos lendo lixo de memória
       memset(&RxHeader, 0, sizeof(RxHeader));
@@ -438,9 +495,15 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 //    // 3. Só prossegue se a leitura foi 100% bem-sucedida
     if (status == HAL_OK)
     {
-//        can_recepcoes_count++;
-        msg_recebida.id = RxHeader.Identifier;
-        debug_id_isr = msg_recebida.id;
+    	  msg_recebida.id = RxHeader.Identifier;
+//        msg_recebida.id = RxHeader.Identifier;
+//        debug_id_isr = msg_recebida.id;
+
+        // Agora sim, garantimos que o ID é real
+        if (osMessageQueuePut(Queue_CAN_RXHandle, &msg_recebida, 0, 0) != osOK)
+        {
+            erro_fila_count++;
+        }
     }
 
     else
@@ -450,7 +513,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
         // Isso explica por que o ID era um contador:
         // o código ignorava que a leitura falhou e lia memória vazia.
     }
-  }
+
 }
 void StartMonitorTask(void *argument)
 {

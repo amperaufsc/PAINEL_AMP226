@@ -32,12 +32,12 @@ void CapaPresenter::hwButtonClicked(uint8_t buttonId)
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotopag1_AutonomosScreenBlockTransition();
 >>>>>>> dia1603
 	    }
-	    else if (buttonId == 3) // PA3 TRIANGULO
+	    else if (buttonId == 1) // PA3 TRIANGULO
 	    {
 	    	model->reportCurrentScreen(Model::MODOPROVA);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoModoProvaScreenBlockTransition();
 	    }
-	    else if (buttonId == 1) // PA2 X
+	    else if (buttonId == 3) // PA2 X
 	    {
 <<<<<<< HEAD
 	    	model->reportCurrentScreen(Model::AUTONOMOS);

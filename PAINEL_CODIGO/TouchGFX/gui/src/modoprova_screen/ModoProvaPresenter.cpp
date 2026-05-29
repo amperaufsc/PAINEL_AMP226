@@ -8,7 +8,7 @@ void ModoProvaPresenter::activate() {
 <<<<<<< HEAD
 =======
 
-	    model->updateCurrentScreen(3); // ID para Modo Prova
+	    model->updateCurrentScreen(2); // ID para Modo Prova
 
 >>>>>>> dia1603
 }
@@ -27,7 +27,7 @@ void ModoProvaPresenter::updateRPMValue(int val)
 {
     view.updateRPMValue(val);
 }
-void ModoProvaPresenter::updateSpeedValue(int val)
+void ModoProvaPresenter::updateSpeedValue(float val)
 {
     view.updateSpeedValue(val);
 }
@@ -43,19 +43,19 @@ void ModoProvaPresenter::updateAceleradorValue(int val)
 {
 	view.updateAcelerador(val);
 }
-void ModoProvaPresenter::updateTensaoHVValue(int val)
+void ModoProvaPresenter::updateTensaoHVValue(float val)
 {
 	view.updateTensaoHV(val);
 }
-void ModoProvaPresenter::updateDistanciaValue(float val)
+void ModoProvaPresenter::updateDistanciaValue(int val)
 {
 	view.updateDistancia(val);
-}
-void ModoProvaPresenter::updatePotenciaValue(int val)
-{
-	view.updatePotencia(val);
 }
 void ModoProvaPresenter::updateTempAcumuladorValue(int val)
 {
 	view.updateTempAcumulador(val);
+}
+void ModoProvaPresenter::updateTempInversorValue(int val)
+{
+	view.updateTempInversor(val);
 }
