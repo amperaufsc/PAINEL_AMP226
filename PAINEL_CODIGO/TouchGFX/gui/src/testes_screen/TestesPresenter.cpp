@@ -76,7 +76,8 @@ void TestesPresenter::hwButtonClicked(uint8_t buttonId)
 
 	    if (buttonId == 2) //  // BOLINHA
 	    {
-	        static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
+	    	model->reportCurrentScreen(Model::CAPA);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
 	    }
 
 }

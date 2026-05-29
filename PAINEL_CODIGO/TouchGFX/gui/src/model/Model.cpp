@@ -10,6 +10,7 @@
 
 extern "C" {
     #include "main.h" // Para garantir que can_msg_t seja reconhecida
+    extern FDCAN_HandleTypeDef hfdcan1;
     extern osMessageQueueId_t QueueButtonHandle;
     extern osMessageQueueId_t Queue_CAN_RXHandle; // Handle da fila do CAN
     extern volatile uint8_t pressedButtonId;
@@ -28,14 +29,21 @@ extern "C" {
 }
 
 
-Model::Model() :
+Model::Model() : modelListener(0), currentScreen(CAPA) , estadoPB11(false)
 		modelListener(0)
 {
 
 }
+bool Model::isTelaPermitidaParaPB11(ScreenID id)
+{
+    // Retorna true apenas se for uma das telas que você listou
+    return (id == AREA_TESTE || id == AUTOCROSS || id == ACELERACAO ||
+            id == SKIDPED || id == TRACKDRIVE || id == EBS || id == INSPECAO);
+}
 
 extern "C" {
-    extern volatile uint8_t pressedButtonId; // Variável que vem do main.c
+    extern bool estadoBotaoPA8; // 1. Mantenha esta aqui (FORA da classe)
+    extern volatile uint8_t pressedButtonId;
 }
 uint32_t model_recebeu_fila = 0;
 uint32_t id_errado_count = 0;
@@ -71,6 +79,9 @@ void Model::tick()
 //	        }
 //	    }
 //	    this->ultimoTick = now;
+	/* --- LÓGICA EXISTENTE DO BOTÃO VIRTUAL --- */
+	    static int debounceCounter = 0;
+	    if (debounceCounter > 0) debounceCounter--;
 
     /* --- LÓGICA EXISTENTE DOS BOTÕES --- */
     static int debounceCounter = 0;
@@ -125,6 +136,36 @@ void Model::tick()
                             modelListener->updateTempAcumuladorValue(TempAcumulador);
                             break;
                         }
+	    // Verifica se conseguimos tirar algo da fila
+	    if (osMessageQueueGet(Queue_CAN_RXHandle, &msg_recebida, NULL, 0) == osOK)
+	    {
+	        model_recebeu_fila++;
+
+	        uint16_t valor = msg_recebida.data[0];
+
+	        switch (msg_recebida.id)
+	        {
+	            case 0x341: modelListener->updateRPMValue(valor); break; // Aqui vai mostrar a Screen!
+	            case 0x124: modelListener->updateSpeedValue(valor); break;
+	            case 0x125: modelListener->updateSOCValue(valor); break;
+	            case 0x126: modelListener->updateFreioValue(valor); break;
+	            case 0x127: modelListener->updateAceleradorValue(valor); break;
+	            case 0x241: modelListener->updateTensaoHVValue(valor); break;
+	            case 0x123: modelListener->updateDistanciaValue(valor); break;
+	            case 0x130: modelListener->updatePotenciaValue(valor); break;
+	            case 0x131: modelListener->updateTempAcumuladorValue(valor); break;
+	            case 0x132: modelListener->updateTempMotorValue(valor); break;
+	            case 0x133: modelListener->updateTensaoInversorValue(valor); break;
+	            case 0x135: modelListener->updateTempInversorValue(valor); break;
+	            case 0x136: modelListener->updateTensaoCelulaMinValue(valor); break;
+	            case 0x139: modelListener->updateTensaoHVValue(valor); break;
+	            default:
+	                ultimo_id_intruso = msg_recebida.id;
+	                id_errado_count++;
+	                break;
+	        } // FIM DO SWITCH
+	    } // FIM DO IF DA FILA CAN
+
 
             case 0x220: { //validado
                             float correnteHV_float = 0.0f; //acumulador
@@ -181,11 +222,29 @@ void Model::tick()
 
 
 
-                default:
-                    // Se cair aqui, o ID que chegou não é o que esperávamos
-                	ultimo_id_intruso = msg_recebida.id;
-                    id_errado_count++;
-                    break;
-            }
-        }
-    }
+	}
+void Model::reportCurrentScreen(ScreenID screenId)
+{
+	if (estadoPB11 == true)
+	    {
+	        estadoPB11 = false;
+
+	        can_msg_t msg_reset;
+	        msg_reset.id = 0x541; // IMPORTANTE: Escolha o ID CAN para essa mensagem! Usei 0x441 como exemplo.
+	        msg_reset.data[0] = 0;
+
+	        // Envia para o FreeRTOS
+	        osMessageQueuePut(Queue_CAN_TXHandle, &msg_reset, 0, 0);
+	    }
+
+	currentScreen = screenId;
+
+	    can_msg_t msg_tx;
+	    msg_tx.id = 0x341;
+	  //  msg_tx.dlc = 1;
+	    msg_tx.data[0] = (uint8_t)currentScreen;
+
+	    // Coloca na fila de transmissão.
+	    // O timeout 0 garante que a UI não trave se a fila estiver cheia.
+	    osMessageQueuePut(Queue_CAN_TXHandle, &msg_tx, 0, 0);
+}

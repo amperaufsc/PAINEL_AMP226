@@ -240,7 +240,12 @@ PA3.GPIO_ModeDefaultEXTI=GPIO_MODE_IT_FALLING
 PA3.GPIO_PuPd=GPIO_PULLUP
 PA3.Locked=true
 PA3.Signal=GPXTI3
+<<<<<<< HEAD
+PA8.GPIOParameters=GPIO_PuPd,GPIO_Label
+PA8.GPIO_Label=BOTAO_PA8
+=======
 PA8.GPIOParameters=GPIO_PuPd
+>>>>>>> dia1603
 PA8.GPIO_PuPd=GPIO_PULLUP
 PA8.Locked=true
 PA8.Signal=GPIO_Input

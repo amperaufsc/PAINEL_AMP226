@@ -21,15 +21,18 @@ void pag1_AutonomosPresenter::hwButtonClicked(uint8_t buttonId)
 	{
 	    if (buttonId == 2) // PB11 BOLINHA // PA2 TX-D1
 	    {
-	          static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenBlockTransition();
+	    	model->reportCurrentScreen(Model::CAPA);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenBlockTransition();
 	    }
 	    else if (buttonId == 1) // PA3 TRIANGULO
 	    {
+	    	model->reportCurrentScreen(Model::INSPECAO);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoInspecao_SAScreenSlideTransitionEast();
 	    }
 	    else if (buttonId == 3) // PA2 X
 	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotoArea_de_Teste_SAScreenSlideTransitionWest();
+	    	model->reportCurrentScreen(Model::AREA_TESTE);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoArea_de_Teste_SAScreenSlideTransitionWest();
 	    }
 
 	}

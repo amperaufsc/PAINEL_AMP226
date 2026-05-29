@@ -26,11 +26,13 @@ void AutoCross_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	    }
 	    else if (buttonId == 1) // PA3 TRIANGULO
 	    {
+	    	model->reportCurrentScreen(Model::AREA_TESTE);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoArea_de_Teste_SAScreenSlideTransitionEast();
 	    }
 	    else if (buttonId == 3) // PA2 X
 	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotoAceleracao_SAScreenSlideTransitionWest();
+	    	model->reportCurrentScreen(Model::ACELERACAO);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoAceleracao_SAScreenSlideTransitionWest();
 	    }
 
 	}

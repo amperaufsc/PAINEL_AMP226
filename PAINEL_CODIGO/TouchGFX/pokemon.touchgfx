@@ -15,6 +15,12 @@
             "Type": "Image",
             "Name": "logobranca",
             "Y": -165,
+            "Name": "logobranca",
+            "X": 200,
+            "Y": -20,
+            "Width": 400,
+            "Height": 200,
+            "RelativeFilename": "logobranca.png"
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "logo_branca.png"
@@ -64,7 +70,7 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "FundoAMP.png"
+            "CustomContainerDefinitionName": "fundo_teste"
           },
           {
             "Type": "TextArea",
@@ -567,6 +573,22 @@
               "Green": 255,
               "Blue": 255
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "menu",
+            "X": 65,
+            "Y": 446,
+            "Width": 74,
+            "Height": 29,
+            "TextId": "__SingleUse_O679",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -588,15 +610,16 @@
         "Name": "ModoProva",
         "Components": [
           {
-            "Type": "Image",
-            "Name": "image1",
+            "Type": "CustomContainerInstance",
+            "Name": "fundo_teste1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "FundoAMP.png"
+            "CustomContainerDefinitionName": "fundo_teste"
           },
           {
             "Type": "Gauge",
             "Name": "tacografo",
+            "X": 11,
             "Y": 89,
             "Width": 240,
             "Height": 240,
@@ -623,7 +646,7 @@
           {
             "Type": "Gauge",
             "Name": "velocimetro",
-            "X": 558,
+            "X": 552,
             "Y": 89,
             "Width": 240,
             "Height": 240,
@@ -937,6 +960,18 @@
             "IndicatorPositionY": 31,
             "IndicatorPositionWidth": 126,
             "IndicatorPositionHeight": 85,
+            "X": 320,
+            "Y": 174,
+            "Width": 80,
+            "Height": 60,
+            "FileNameProgress": "bateriavaziaofc.png",
+            "AnchorAtZero": true,
+            "Direction": "Up",
+            "FileNameBackground": "bateriavazia.png",
+            "IndicatorPositionX": 8,
+            "IndicatorPositionY": 15,
+            "IndicatorPositionWidth": 64,
+            "IndicatorPositionHeight": 44,
             "ProgressRangeMax": 100,
             "ProgressInitialValue": 100
           },
@@ -961,6 +996,10 @@
             "Name": "distancia_un",
             "X": 409,
             "Y": 72,
+            "X": 452,
+            "Y": 53,
+            "Width": 100,
+            "Height": 35,
             "Width": 165,
             "Height": 37,
             "TextId": "__SingleUse_OE0U",
@@ -1014,7 +1053,7 @@
           {
             "Type": "TextArea",
             "Name": "RPM",
-            "X": 76,
+            "X": 98,
             "Y": 51,
             "Width": 67,
             "Height": 35,
@@ -1035,13 +1074,14 @@
             "Width": 141,
             "Height": 45,
             "FileNameProgress": "freioatual.png",
+            "FileNameProgress": "freioofc.png",
             "AnchorAtZero": true,
             "Direction": "Right",
             "FileNameBackground": "FUNDOFALSO.png",
             "IndicatorPositionWidth": 141,
             "IndicatorPositionHeight": 45,
             "ProgressRangeMax": 100,
-            "ProgressInitialValue": 1
+            "ProgressInitialValue": 25
           },
           {
             "Type": "TextArea",
@@ -1068,6 +1108,8 @@
             "Name": "freio",
             "X": 74,
             "Y": 329,
+            "X": 73,
+            "Y": 348,
             "Width": 94,
             "Height": 35,
             "TextId": "__SingleUse_3DVT",
@@ -1118,7 +1160,7 @@
           {
             "Type": "TextArea",
             "Name": "velocidade_un",
-            "X": 638,
+            "X": 632,
             "Y": 232,
             "Width": 80,
             "Height": 37,
@@ -1133,7 +1175,7 @@
           {
             "Type": "TextArea",
             "Name": "velocidade",
-            "X": 595,
+            "X": 589,
             "Y": 51,
             "Width": 167,
             "Height": 35,
@@ -1190,13 +1232,14 @@
             "Width": 141,
             "Height": 45,
             "FileNameProgress": "acelatual.png",
+            "FileNameProgress": "acelofc.png",
             "AnchorAtZero": true,
             "Direction": "Right",
             "FileNameBackground": "FUNDOFALSO.png",
             "IndicatorPositionWidth": 141,
             "IndicatorPositionHeight": 45,
             "ProgressRangeMax": 100,
-            "ProgressInitialValue": 1
+            "ProgressInitialValue": 10
           },
           {
             "Type": "TextArea",
@@ -1225,6 +1268,10 @@
             "Y": 329,
             "Width": 215,
             "Height": 35,
+            "X": 584,
+            "Y": 353,
+            "Width": 214,
+            "Height": 35,
             "TextId": "__SingleUse_3N7C",
             "TextRotation": "0",
             "Color": {
@@ -1242,6 +1289,12 @@
             "Width": 53,
             "Height": 18,
             "TextId": "__SingleUse_YA30",
+            "Name": "menu",
+            "X": 65,
+            "Y": 446,
+            "Width": 74,
+            "Height": 29,
+            "TextId": "__SingleUse_VPF4",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1295,7 +1348,71 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "MODODEPROVA.png"
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_menu",
+            "X": 383,
+            "Y": 438,
+            "Width": 74,
+            "Height": 29,
+            "TextId": "__SingleUse_WCPZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "xtext_areateste",
+            "X": 620,
+            "Y": 438,
+            "Width": 94,
+            "Height": 29,
+            "TextId": "__SingleUse_IRS7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Atext_inspecao",
+            "X": 75,
+            "Y": 438,
+            "Width": 130,
+            "Height": 29,
+            "TextId": "__SingleUse_M0MB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ptext_modoautonomo",
+            "X": 49,
+            "Y": 184,
+            "Width": 702,
+            "Height": 82,
+            "TextId": "__SingleUse_J5NX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1340,35 +1457,80 @@
         "Name": "Area_de_Teste_SA",
         "Components": [
           {
-            "Type": "Image",
-            "Name": "image1",
+            "Type": "CustomContainerInstance",
+            "Name": "fundo_SA1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "Areatesteoficial.png"
+            "CustomContainerDefinitionName": "Fundo_SA"
           },
           {
             "Type": "TextArea",
-            "Name": "TESTE_START",
-            "X": 341,
-            "Y": 302,
-            "Width": 118,
-            "Height": 35,
-            "TextId": "__SingleUse_7ZID",
+            "Name": "text_start",
+            "X": 387,
+            "Y": 438,
+            "Width": 81,
+            "Height": 29,
+            "TextId": "__SingleUse_7KVB",
             "TextRotation": "0",
             "Color": {
-              "Red": 221,
-              "Green": 43,
-              "Blue": 125
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
-            "Wildcard1": {
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "xtext_autocross",
+            "X": 587,
+            "Y": 438,
+            "Width": 156,
+            "Height": 29,
+            "TextId": "__SingleUse_7JIB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Atext_voltar",
+            "X": 92,
+            "Y": 438,
+            "Width": 100,
+            "Height": 29,
+            "TextId": "__SingleUse_GGSA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ptext_areadeteste",
+            "X": 110,
+            "Y": 205,
+            "Width": 580,
+            "Height": 82,
+            "TextId": "__SingleUse_U665",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "IrPagUM",
+            "InteractionName": "Interaction1",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1380,7 +1542,7 @@
             }
           },
           {
-            "InteractionName": "IrAutoCross",
+            "InteractionName": "Interaction2",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1401,7 +1563,71 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "AUTOCROSS.png"
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_start",
+            "X": 383,
+            "Y": 438,
+            "Width": 81,
+            "Height": 29,
+            "TextId": "__SingleUse_ZFG5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "xtext_aceleracao",
+            "X": 578,
+            "Y": 438,
+            "Width": 174,
+            "Height": 29,
+            "TextId": "__SingleUse_DUDH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Atext_teste",
+            "X": 98,
+            "Y": 438,
+            "Width": 79,
+            "Height": 29,
+            "TextId": "__SingleUse_0XJ2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ptext_autocross",
+            "X": 170,
+            "Y": 205,
+            "Width": 461,
+            "Height": 82,
+            "TextId": "__SingleUse_P2D1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1439,7 +1665,71 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "ACELERACAO.png"
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ptext_aceleracao",
+            "X": 146,
+            "Y": 199,
+            "Width": 529,
+            "Height": 82,
+            "TextId": "__SingleUse_ZZ60",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_start",
+            "X": 383,
+            "Y": 438,
+            "Width": 81,
+            "Height": 29,
+            "TextId": "__SingleUse_72V7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "xtext_skidpad",
+            "X": 614,
+            "Y": 438,
+            "Width": 112,
+            "Height": 29,
+            "TextId": "__SingleUse_UM46",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Atext_autocross",
+            "X": 63,
+            "Y": 438,
+            "Width": 156,
+            "Height": 29,
+            "TextId": "__SingleUse_Q49C",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1477,7 +1767,71 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "SKIDPAD.png"
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "xtext_trackdrive",
+            "X": 579,
+            "Y": 438,
+            "Width": 172,
+            "Height": 29,
+            "TextId": "__SingleUse_U7DG",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Atext_aceleracao",
+            "X": 54,
+            "Y": 438,
+            "Width": 174,
+            "Height": 29,
+            "TextId": "__SingleUse_UT5O",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ptext_skidpad",
+            "X": 220,
+            "Y": 199,
+            "Width": 327,
+            "Height": 82,
+            "TextId": "__SingleUse_WI60",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_start",
+            "X": 383,
+            "Y": 438,
+            "Width": 81,
+            "Height": 29,
+            "TextId": "__SingleUse_NE17",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1515,7 +1869,71 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "TRACKDRIVE.png"
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_start",
+            "X": 383,
+            "Y": 438,
+            "Width": 81,
+            "Height": 29,
+            "TextId": "__SingleUse_V7IO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Atext_skidped",
+            "X": 83,
+            "Y": 438,
+            "Width": 111,
+            "Height": 29,
+            "TextId": "__SingleUse_V53F",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ptext_trackdrive",
+            "X": 149,
+            "Y": 199,
+            "Width": 502,
+            "Height": 82,
+            "TextId": "__SingleUse_Z366",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "xtext_testeebs",
+            "X": 601,
+            "Y": 438,
+            "Width": 134,
+            "Height": 29,
+            "TextId": "__SingleUse_VTP3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1553,7 +1971,71 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "EBS.png"
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ptext_ebsteste",
+            "X": 204,
+            "Y": 199,
+            "Width": 392,
+            "Height": 82,
+            "TextId": "__SingleUse_TJBO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_start",
+            "X": 383,
+            "Y": 438,
+            "Width": 81,
+            "Height": 29,
+            "TextId": "__SingleUse_3HOC",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "xtext_inspecao",
+            "X": 606,
+            "Y": 438,
+            "Width": 130,
+            "Height": 29,
+            "TextId": "__SingleUse_2TD0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Atext_trackdrive",
+            "X": 53,
+            "Y": 438,
+            "Width": 172,
+            "Height": 29,
+            "TextId": "__SingleUse_IN3K",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1591,7 +2073,71 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "INSPECAO.png"
+            "CustomContainerDefinitionName": "Fundo_SA"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_start",
+            "X": 383,
+            "Y": 438,
+            "Width": 81,
+            "Height": 29,
+            "TextId": "__SingleUse_FZIB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Atext_testeebs",
+            "X": 72,
+            "Y": 438,
+            "Width": 134,
+            "Height": 29,
+            "TextId": "__SingleUse_GRRB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "xtext_voltar",
+            "X": 620,
+            "Y": 438,
+            "Width": 100,
+            "Height": 29,
+            "TextId": "__SingleUse_VW2G",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ptext_inspecao",
+            "X": 192,
+            "Y": 199,
+            "Width": 382,
+            "Height": 82,
+            "TextId": "__SingleUse_JDDU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1608,7 +2154,7 @@
             }
           },
           {
-            "InteractionName": "IrPagUmAutonomos",
+            "InteractionName": "IrDirigirManual",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1622,7 +2168,68 @@
         ]
       }
     ],
-    "CustomContainerDefinitions": [],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "fundo_prova",
+        "Width": 800,
+        "Height": 480,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "fundo_prova.png"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Fundo_SA",
+        "Width": 800,
+        "Height": 480,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "fundoSA.png"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "fundo_teste",
+        "Width": 800,
+        "Height": 480,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "Fundotesteeletricav2.png"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Fundo_capa",
+        "Width": 800,
+        "Height": 480,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "capaOFC.png"
+          }
+        ],
+        "Interactions": []
+      }
+    ],
     "Name": "pokemon",
     "Resolution": {
       "Width": 800,

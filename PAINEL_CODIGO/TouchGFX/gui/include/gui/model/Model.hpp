@@ -21,6 +21,31 @@ public:
     void setStartAutonomos(uint8_t valor);
 
 
+<<<<<<< HEAD
+    enum ScreenID {
+            CAPA = 0,
+            TESTES = 1,
+            MODOPROVA = 2,          // O terceiro agora é o ID 2
+            AUTONOMOS = 3,          // pag1_Autonomos
+            AREA_TESTE = 4,         // Area_de_Teste_SA
+            AUTOCROSS = 5,          // AutoCross_SA
+            ACELERACAO = 6,         // Aceleracao_SA
+            SKIDPED = 7,            // Skidped_SA
+            TRACKDRIVE = 8,         // Trackdrive_SA
+            EBS = 9,                // EBS_Teste_SA
+            MANUAL = 10,            // Dirigir_manual_SA
+            INSPECAO = 11           // Inspecao_SA
+        };
+
+        void reportCurrentScreen(ScreenID screenId);
+
+protected:
+    ModelListener* modelListener;
+    ScreenID currentScreen;
+    bool estadoPB11;
+    bool isTelaPermitidaParaPB11(ScreenID id);
+
+=======
 protected:
     ModelListener* modelListener;
 
@@ -28,6 +53,7 @@ protected:
         uint32_t ultimo_id_intruso;
         int id_errado_count;
 
+>>>>>>> dia1603
 };
 
 #endif // MODEL_HPP

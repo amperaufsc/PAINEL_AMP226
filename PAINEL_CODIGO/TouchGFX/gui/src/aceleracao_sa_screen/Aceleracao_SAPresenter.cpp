@@ -26,11 +26,13 @@ void Aceleracao_SAPresenter::hwButtonClicked(uint8_t buttonId)
 	    }
 	    else if (buttonId == 1) // PA3 TRIANGULO
 	    {
+	    	model->reportCurrentScreen(Model::AUTOCROSS);
 	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoAutoCross_SAScreenSlideTransitionEast();
 	    }
 	    else if (buttonId == 2) // PA2 X
 	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotoSkidped_SAScreenSlideTransitionWest();
+	    	model->reportCurrentScreen(Model::SKIDPED);
+	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoSkidped_SAScreenSlideTransitionWest();
 	    }
 
 	}

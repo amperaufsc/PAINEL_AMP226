@@ -390,6 +390,31 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/Fundo_SA.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Fundo_SA.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Fundo_capa.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Fundo_capa.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/fundo_prova.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/fundo_prova.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/fundo_teste.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/fundo_teste.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Dirigir_manual_SAPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/dirigir_manual_sa_screen/Dirigir_manual_SAPresenter.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/EBS_Teste_SAPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/ebs_teste_sa_screen/EBS_Teste_SAPresenter.cpp</locationURI>
@@ -680,6 +705,26 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Fundo_SABase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/Fundo_SABase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Fundo_capaBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/Fundo_capaBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/fundo_provaBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/fundo_provaBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/fundo_testeBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/fundo_testeBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/EBS_Teste_SAViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/ebs_teste_sa_screen/EBS_Teste_SAViewBase.cpp</locationURI>
@@ -725,9 +770,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_Areatesteoficial.cpp</name>
+			<name>Application/User/generated/image_ACEL.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Areatesteoficial.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_ACEL.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_BATERIA.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_BATERIA.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_BRAK.cpp</name>
@@ -750,12 +800,22 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_FundoAMP.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_MODODEPROVA.cpp</name>
+			<name>Application/User/generated/image_Fundotesteeletricav2.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Fundotesteeletricav2.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_MENU_painel.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_MODODEPROVA.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_TRACKDRIVE.cpp</name>
+			<name>Application/User/generated/image_acelofc.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_acelofc.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_bandeirachegada.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_TRACKDRIVE.cpp</locationURI>
 		</link>
@@ -775,14 +835,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_autocross.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_batCheia.cpp</name>
+			<name>Application/User/generated/image_bateriavazia.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_batCheia.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriavazia.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_batVazia.cpp</name>
+			<name>Application/User/generated/image_bateriavaziaofc.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_batVazia.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriavaziaofc.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_bateriacheiaazul.cpp</name>
@@ -800,7 +860,12 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriavaziaazul.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_bateriavaziaofc.cpp</name>
+			<name>Application/User/generated/image_capaOFC.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capaOFC.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_capav2.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bateriavaziaofc.cpp</locationURI>
 		</link>
@@ -830,9 +895,30 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_freioatual.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_freioofc.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_freioofc.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_fundoSA.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundoSA.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_fundo_prova.cpp</name>
 			<name>Application/User/generated/image_inspecao.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_inspecao.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_fundogeral.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundogeral.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_fundotesteeletrica.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundotesteeletrica.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_logo_branca.cpp</name>
@@ -850,6 +936,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logoazulv2.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_logobranca.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logobranca.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_logobrancav2.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logobrancav2.cpp</locationURI>
@@ -860,7 +951,12 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_ponteira.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_progressoazul.cpp</name>
+			<name>Application/User/generated/image_tacometroofc.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_tacometroofc.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_triangulo.play_-_Editado.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_progressoazul.cpp</locationURI>
 		</link>
@@ -891,6 +987,11 @@
 		</link>
 		<link>
 			<name>Application/User/generated/image_velocimetroofc.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_velocimetroofc.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_x.play_-_Editado.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_velocimetroofc.cpp</locationURI>
 		</link>

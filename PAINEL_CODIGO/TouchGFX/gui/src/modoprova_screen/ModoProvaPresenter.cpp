@@ -5,9 +5,12 @@
 ModoProvaPresenter::ModoProvaPresenter(ModoProvaView& v) : view(v) { }
 
 void ModoProvaPresenter::activate() {
+<<<<<<< HEAD
+=======
 
 	    model->updateCurrentScreen(2); // ID para Modo Prova
 
+>>>>>>> dia1603
 }
 void ModoProvaPresenter::deactivate() { }
 
@@ -15,7 +18,8 @@ void ModoProvaPresenter::hwButtonClicked(uint8_t buttonId)
 {
     if (buttonId == 2) // PA2 TX-D1 BOLINHA
     {
-        static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
+    	model->reportCurrentScreen(Model::CAPA);
+    	static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenSlideTransitionWest();
     }
 }
 
