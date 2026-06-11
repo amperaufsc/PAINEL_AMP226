@@ -125,9 +125,9 @@
           {
             "Type": "TextArea",
             "Name": "TensaoCelulamaisbaixa",
-            "X": 318,
+            "X": 300,
             "Y": 200,
-            "Width": 164,
+            "Width": 219,
             "Height": 35,
             "TextId": "__SingleUse_0JHV",
             "TextRotation": "0",
@@ -161,7 +161,7 @@
           {
             "Type": "TextArea",
             "Name": "TensaoCelulamaisalta",
-            "X": 318,
+            "X": 296,
             "Y": 270,
             "Width": 227,
             "Height": 35,
@@ -177,7 +177,7 @@
           {
             "Type": "TextArea",
             "Name": "TensaoHV_un",
-            "X": 338,
+            "X": 329,
             "Y": 165,
             "Width": 143,
             "Height": 35,
@@ -213,7 +213,7 @@
           {
             "Type": "TextArea",
             "Name": "TensaoInversor_un",
-            "X": 338,
+            "X": 329,
             "Y": 83,
             "Width": 143,
             "Height": 35,

@@ -181,7 +181,7 @@
         <Translation Language="GB">  &lt;value&gt;  A  </Translation>
       </Text>
       <Text Id="__SingleUse_0JHV" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Tensao MC</Translation>
+        <Translation Language="GB">Tensao CelMin</Translation>
       </Text>
       <Text Id="__SingleUse_J676" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">    &lt;value&gt; rpm      </Translation>
