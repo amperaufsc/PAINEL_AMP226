@@ -98,7 +98,6 @@ static void MX_HSPI1_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_JPEG_Init(void);
 static void MX_FDCAN1_Init(void);
-void HAL_FDCAN_ErrorCallback(FDCAN_HandleTypeDef *hfdcan);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -171,10 +170,17 @@ int main(void)
   {
     Error_Handler();
   }
-  HAL_FDCAN_ConfigGlobalFilter(&hfdcan1, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_REJECT_REMOTE, FDCAN_REJECT_REMOTE);
-  HAL_FDCAN_Start(&hfdcan1);
+  HAL_FDCAN_ConfigGlobalFilter(&hfdcan1,
+  FDCAN_ACCEPT_IN_RX_FIFO0,
+  FDCAN_REJECT,
+  FDCAN_FILTER_REMOTE,
+  FDCAN_FILTER_REMOTE);
 
-  HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
+  //liga o start can
+  if (HAL_FDCAN_Start(&hfdcan1) != HAL_OK)
+  {
+  	Error_Handler();
+  }
 
   /* USER CODE END 2 */
 
@@ -412,12 +418,12 @@ static void MX_FDCAN1_Init(void)
   hfdcan1.Instance = FDCAN1;
   hfdcan1.Init.ClockDivider = FDCAN_CLOCK_DIV1;
   hfdcan1.Init.FrameFormat = FDCAN_FRAME_CLASSIC;
-  hfdcan1.Init.Mode = FDCAN_MODE_NORMAL;
+  hfdcan1.Init.Mode = FDCAN_MODE_EXTERNAL_LOOPBACK;
   hfdcan1.Init.AutoRetransmission = ENABLE;
   hfdcan1.Init.TransmitPause = DISABLE;
   hfdcan1.Init.ProtocolException = DISABLE;
   hfdcan1.Init.NominalPrescaler = 16;
-  hfdcan1.Init.NominalSyncJumpWidth = 4;
+  hfdcan1.Init.NominalSyncJumpWidth = 1;
   hfdcan1.Init.NominalTimeSeg1 = 15;
   hfdcan1.Init.NominalTimeSeg2 = 4;
   hfdcan1.Init.DataPrescaler = 1;
@@ -880,18 +886,6 @@ void Error_Handler(void)
   {
   }
   /* USER CODE END Error_Handler_Debug */
-}
-
-void HAL_FDCAN_ErrorCallback(FDCAN_HandleTypeDef *hfdcan)
-{
-	if(hfdcan->Instance==FDCAN1)
-	{
-		HAL_FDCAN_Stop(hfdcan);
-		HAL_FDCAN_Start(hfdcan);
-
-		HAL_FDCAN_ActivateNotification(hfdcan, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
-
-	}
 }
 #ifdef USE_FULL_ASSERT
 /**
