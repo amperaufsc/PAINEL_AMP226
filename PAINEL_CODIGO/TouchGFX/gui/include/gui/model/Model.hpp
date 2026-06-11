@@ -17,8 +17,6 @@ public:
     }
 
     void tick();
-    void updateCurrentScreen(uint8_t screenId);
-    void setStartAutonomos(uint8_t valor);
 
 
 protected:

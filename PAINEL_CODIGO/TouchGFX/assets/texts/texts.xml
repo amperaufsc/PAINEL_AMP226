@@ -6,6 +6,15 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_CNRD" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_G75T" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">  &lt;value&gt;  V  </Translation>
+      </Text>
+      <Text Id="__SingleUse_M9XP" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Tensao CelMax</Translation>
+      </Text>
       <Text Id="__SingleUse_ZXAY" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">RTD ATIVO</Translation>
       </Text>
@@ -94,13 +103,13 @@
         <Translation Language="GB">FREIO</Translation>
       </Text>
       <Text Id="__SingleUse_6QZV" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Tensao HV</Translation>
+        <Translation Language="GB">Temp. Motor</Translation>
       </Text>
       <Text Id="__SingleUse_0N3L" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_T4IY" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">  &lt;value&gt; V      </Translation>
+        <Translation Language="GB">&lt;value&gt;  °C</Translation>
       </Text>
       <Text Id="__SingleUse_ZFN3" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">velocidade</Translation>
@@ -121,7 +130,7 @@
         <Translation Language="GB">&lt;value&gt; %</Translation>
       </Text>
       <Text Id="__SingleUse_ECCU" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Temp. Acumulador</Translation>
+        <Translation Language="GB">Temp. Acc</Translation>
       </Text>
       <Text Id="__SingleUse_KAQ0" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>

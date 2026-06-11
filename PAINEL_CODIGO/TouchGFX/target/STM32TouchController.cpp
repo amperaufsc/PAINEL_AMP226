@@ -33,40 +33,7 @@ extern "C" I2C_HandleTypeDef hi2c2;
 using namespace touchgfx;
 extern "C"
 {
-    extern volatile uint8_t pressedButtonId;
-    extern volatile uint8_t flagEnviarCAN;
 
-    void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin)
-    {
-        if (GPIO_Pin == TP_IRQ_Pin)
-        {
-            /* Communication with TS is done via I2C.
-            Often the sw requires ISRs (interrupt service routines) to be quick while communication
-            with I2C can be considered relatively long (depending on SW requirements).
-            Considering that the TS feature don't need immediate reaction,
-            it is suggested to use polling mode instead of EXTI mode,
-            in order to avoid blocking I2C communication on interrupt service routines */
-
-            /* Here an example of implementation is proposed which is a mix between pooling and exit mode:
-            On ISR a flag is set (exti5_received), the main loop polls on the flag rather then polling the TS;
-            Mcu communicates with TS only when the flag has been set by ISR. This is just an example:
-            the users should choose they strategy depending on their application needs.*/
-
-            doSampleTouch = true;
-            return;
-        }
-
-            if (GPIO_Pin == GPIO_PIN_2) { // PA2 TX-D1 BOLINHA
-                pressedButtonId = 2;
-                flagEnviarCAN = 1;
-            }
-            else if (GPIO_Pin == GPIO_PIN_3) { // PA3 RX/D0 X
-                pressedButtonId = 1;
-            }
-            else if (GPIO_Pin == GPIO_PIN_11) { // PB11 D2 TRIANGULO
-                pressedButtonId = 3;
-            }
-        }
 }
 
 void STM32TouchController::init()

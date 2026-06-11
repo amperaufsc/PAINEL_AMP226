@@ -790,6 +790,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_capa_oficial.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_fundoprovas.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_fundoprovas.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_inspecao.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_inspecao.cpp</locationURI>

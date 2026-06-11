@@ -11,7 +11,6 @@ public:
     virtual ~Area_de_Teste_SAView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-    virtual void updateAutonomos(int val);
 protected:
 };
 

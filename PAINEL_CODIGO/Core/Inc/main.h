@@ -68,6 +68,16 @@ void Error_Handler(void);
 #define USER_BUTTON_GPIO_Port GPIOC
 #define VSYNC_FREQ_Pin GPIO_PIN_0
 #define VSYNC_FREQ_GPIO_Port GPIOC
+#define botao2_Pin GPIO_PIN_2
+#define botao2_GPIO_Port GPIOA
+#define botao1_Pin GPIO_PIN_3
+#define botao1_GPIO_Port GPIOA
+#define led_rtd_Pin GPIO_PIN_10
+#define led_rtd_GPIO_Port GPIOB
+#define botao3_Pin GPIO_PIN_11
+#define botao3_GPIO_Port GPIOB
+#define botaortd_Pin GPIO_PIN_8
+#define botaortd_GPIO_Port GPIOA
 #define RENDER_TIME_Pin GPIO_PIN_10
 #define RENDER_TIME_GPIO_Port GPIOC
 #define FRAME_RATE_Pin GPIO_PIN_11

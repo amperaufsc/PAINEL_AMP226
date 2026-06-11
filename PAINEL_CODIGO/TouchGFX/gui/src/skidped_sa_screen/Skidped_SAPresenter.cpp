@@ -9,30 +9,10 @@ Skidped_SAPresenter::Skidped_SAPresenter(Skidped_SAView& v)
 
 void Skidped_SAPresenter::activate()
 {
-	 model->updateCurrentScreen(7);
-	 model->setStartAutonomos(0);
+
 }
 
 void Skidped_SAPresenter::deactivate()
 {
 
 }
-void Skidped_SAPresenter::hwButtonClicked(uint8_t buttonId)
-{
-	{
-	    if (buttonId == 2) // PB11 BOLINHA // PA2 TX-D1
-	    {
-	    	model->setStartAutonomos(7);
-	    }
-	    else if (buttonId == 1) // PA3 TRIANGULO
-	    {
-	    	static_cast<FrontendApplication*>(Application::getInstance())->gotoAceleracao_SAScreenSlideTransitionEast();
-	    }
-	    else if (buttonId == 3) // PA2 X
-	    {
-	         static_cast<FrontendApplication*>(Application::getInstance())->gotoTrackdrive_SAScreenSlideTransitionWest();
-	    }
-
-	}
-}
-

@@ -24,11 +24,8 @@ public:
      * (ie. made inactive). Teardown functionality can be placed here.
      */
     virtual void deactivate();
-    virtual void hwButtonClicked(uint8_t buttonId) override;
 
     virtual ~Area_de_Teste_SAPresenter() {}
-    virtual void updateAutonomos(int val);
-
 
 private:
     Area_de_Teste_SAPresenter();

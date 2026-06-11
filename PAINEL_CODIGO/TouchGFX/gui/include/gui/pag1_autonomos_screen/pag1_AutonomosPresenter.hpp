@@ -24,10 +24,8 @@ public:
      * (ie. made inactive). Teardown functionality can be placed here.
      */
     virtual void deactivate();
-    virtual void hwButtonClicked(uint8_t buttonId) override;
-
     virtual ~pag1_AutonomosPresenter() {}
-    void notifyButtonChanged(uint32_t buttonID);
+
 
 private:
     pag1_AutonomosPresenter();

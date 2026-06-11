@@ -68,15 +68,38 @@ LTDC_HandleTypeDef hltdc;
 
 /* USER CODE BEGIN PV */
 
-volatile uint32_t teste_clique = 0;
+//variaveis que recebo do barramento can
+uint8_t falha_inversor; //
+uint8_t falha_tms; //
+uint8_t readtodrive_led;
+uint8_t readtodrive_botao;//
+uint8_t tensao_cel_min; //
+uint8_t tensao_cel_max; //
+uint8_t soc; //
+uint8_t acelerador; //
+uint8_t freio; //
+uint8_t temperatura_acc; //
 
-extern osMessageQueueId_t QueueButtonHandle;
-extern FDCAN_RxHeaderTypeDef RxHeader;
-extern FDCAN_TxHeaderTypeDef TxHeader;
-extern uint8_t debug; // so pra debugar e ver se nao esta lendo rx
-//variaveis das mensagens que recebo pra debug
-extern float tensaoHV_float;
-extern float tensaoInversor_float;
+uint16_t falha_ecu; //
+uint16_t rpm; //
+uint16_t temperatura_motor; //
+uint16_t temperatura_inv; //
+float tensaoHV; //
+float tensao_inv; //
+float corrente_inv; //
+float correnteHV; //
+
+//variaveis recebidas de sa
+int velocidade;
+int distancia;
+
+//variaveis de comunicação externa
+FDCAN_RxHeaderTypeDef RxHeader;
+FDCAN_TxHeaderTypeDef TxHeader;
+
+//variavel da pagina
+volatile uint8_t pagina_atual;
+volatile uint8_t start_autonomo;
 
 
 /* USER CODE END PV */
@@ -104,6 +127,11 @@ static void MX_FDCAN1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+typedef struct {
+    uint32_t id;
+    uint8_t data[8];
+} CAN_Message_t;
 
 /* USER CODE END 0 */
 
@@ -418,14 +446,14 @@ static void MX_FDCAN1_Init(void)
   hfdcan1.Instance = FDCAN1;
   hfdcan1.Init.ClockDivider = FDCAN_CLOCK_DIV1;
   hfdcan1.Init.FrameFormat = FDCAN_FRAME_CLASSIC;
-  hfdcan1.Init.Mode = FDCAN_MODE_EXTERNAL_LOOPBACK;
+  hfdcan1.Init.Mode = FDCAN_MODE_NORMAL;
   hfdcan1.Init.AutoRetransmission = ENABLE;
   hfdcan1.Init.TransmitPause = DISABLE;
   hfdcan1.Init.ProtocolException = DISABLE;
   hfdcan1.Init.NominalPrescaler = 16;
   hfdcan1.Init.NominalSyncJumpWidth = 1;
-  hfdcan1.Init.NominalTimeSeg1 = 15;
-  hfdcan1.Init.NominalTimeSeg2 = 4;
+  hfdcan1.Init.NominalTimeSeg1 = 13;
+  hfdcan1.Init.NominalTimeSeg2 = 6;
   hfdcan1.Init.DataPrescaler = 1;
   hfdcan1.Init.DataSyncJumpWidth = 1;
   hfdcan1.Init.DataTimeSeg1 = 1;
@@ -757,7 +785,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, VSYNC_FREQ_Pin|RENDER_TIME_Pin|FRAME_RATE_Pin|MCU_ACTIVE_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10|GPIO_PIN_13, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, led_rtd_Pin|GPIO_PIN_13, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, USER_LD2_RED_Pin|USER_LD3_GREEN_Pin, GPIO_PIN_SET);
@@ -795,30 +823,24 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PA2 PA3 */
-  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_3;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  /*Configure GPIO pins : botao2_Pin botao1_Pin botaortd_Pin */
+  GPIO_InitStruct.Pin = botao2_Pin|botao1_Pin|botaortd_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PB10 PB13 */
-  GPIO_InitStruct.Pin = GPIO_PIN_10|GPIO_PIN_13;
+  /*Configure GPIO pins : led_rtd_Pin PB13 */
+  GPIO_InitStruct.Pin = led_rtd_Pin|GPIO_PIN_13;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PB11 */
-  GPIO_InitStruct.Pin = GPIO_PIN_11;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : PA8 */
-  GPIO_InitStruct.Pin = GPIO_PIN_8;
+  /*Configure GPIO pin : botao3_Pin */
+  GPIO_InitStruct.Pin = botao3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  HAL_GPIO_Init(botao3_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : USER_LD2_RED_Pin USER_LD3_GREEN_Pin */
   GPIO_InitStruct.Pin = USER_LD2_RED_Pin|USER_LD3_GREEN_Pin;
@@ -828,17 +850,8 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI2_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(EXTI2_IRQn);
-
-  HAL_NVIC_SetPriority(EXTI3_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
-
   HAL_NVIC_SetPriority(EXTI5_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(EXTI5_IRQn);
-
-  HAL_NVIC_SetPriority(EXTI11_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(EXTI11_IRQn);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
   /* USER CODE END MX_GPIO_Init_2 */
