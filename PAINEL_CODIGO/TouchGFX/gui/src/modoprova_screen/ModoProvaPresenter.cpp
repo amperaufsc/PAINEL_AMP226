@@ -12,3 +12,14 @@ void ModoProvaPresenter::deactivate()
 {
 
 }
+void ModoProvaPresenter::Botao1(int bn1){}
+
+void ModoProvaPresenter::Botao2(int bn2)
+{
+	if (bn2 == 1){
+		static_cast<FrontendApplication*>(Application::getInstance())->gotoCapaScreenBlockTransition();
+
+	}
+}
+
+void ModoProvaPresenter::Botao3(int bn3){}

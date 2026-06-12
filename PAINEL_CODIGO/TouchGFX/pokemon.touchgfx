@@ -20,7 +20,30 @@
             "RelativeFilename": "logo_branca.png"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "teste",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ActionComponent": "Testes"
+            }
+          },
+          {
+            "InteractionName": "mododeprova",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ActionComponent": "ModoProva"
+            }
+          }
+        ]
       },
       {
         "Name": "Testes",

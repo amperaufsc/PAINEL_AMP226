@@ -225,7 +225,7 @@ void Model::tick()
 	        modelListener->Botao3(btn_apertado_3);
 	    }
 	    else { btn_apertado_3 = 0;
-	    modelListener-> btn_apertado_3;}
+	    modelListener->Botao3(btn_apertado_3);}
 
 	    //***** BOTAO 3 END *****//
 
