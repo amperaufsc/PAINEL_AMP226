@@ -4,8 +4,11 @@
 
 ModoProvaPresenter::ModoProvaPresenter(ModoProvaView& v) : view(v) { }
 
-void ModoProvaPresenter::activate() {
-
+void ModoProvaPresenter::activate()
+{
+	model->idpagina(2);
+}
+void ModoProvaPresenter::deactivate()
+{
 
 }
-void ModoProvaPresenter::deactivate() { }

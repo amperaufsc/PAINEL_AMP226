@@ -925,7 +925,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "TensaoHV",
+            "Name": "TempMotor",
             "X": 191,
             "Y": 16,
             "Width": 192,
@@ -992,7 +992,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "TempAcumulador",
+            "Name": "TempAcc",
             "X": 436,
             "Y": 16,
             "Width": 159,
