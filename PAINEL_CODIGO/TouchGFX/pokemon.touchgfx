@@ -20,41 +20,7 @@
             "RelativeFilename": "logo_branca.png"
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "capa_to_testes",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionBlock",
-              "ActionComponent": "Testes"
-            }
-          },
-          {
-            "InteractionName": "capa_to_modoprova",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionBlock",
-              "ActionComponent": "ModoProva"
-            }
-          },
-          {
-            "InteractionName": "capa_to_sistemaautonomo",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionBlock",
-              "ActionComponent": "pag1_Autonomos"
-            }
-          }
-        ]
+        "Interactions": []
       },
       {
         "Name": "Testes",
@@ -669,15 +635,13 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "menubotao",
+            "InteractionName": "menu",
             "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked",
-              "ButtonKey": 1
+              "Type": "TriggerNone"
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
+              "ScreenTransitionType": "ScreenTransitionBlock",
               "ActionComponent": "Capa"
             }
           }

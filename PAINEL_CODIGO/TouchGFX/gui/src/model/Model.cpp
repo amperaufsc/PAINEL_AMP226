@@ -177,7 +177,8 @@ void Model::tick()
 		modelListener->Botao1(btn_apertado_1);
 
 	}
-	else { btn_apertado_1 = 0; }
+	else { btn_apertado_1 = 0;
+	modelListener->Botao1(btn_apertado_1);}
 	//***** BOTAO 1 END *****//
 
 	//***** BOTAO 2 START *****//
@@ -198,7 +199,8 @@ void Model::tick()
 	    {
 	        modelListener->Botao2(btn_apertado_2);
 	    }
-	    else { btn_apertado_2 = 0; }
+	    else { btn_apertado_2 = 0;
+	    modelListener->Botao2(btn_apertado_2);}
 	    //***** BOTAO 2 END *****//
 
 	    //***** BOTAO 3 START *****//
@@ -222,7 +224,8 @@ void Model::tick()
 	    {
 	        modelListener->Botao3(btn_apertado_3);
 	    }
-	    else { btn_apertado_3 = 0; }
+	    else { btn_apertado_3 = 0;
+	    modelListener-> btn_apertado_3;}
 
 	    //***** BOTAO 3 END *****//
 

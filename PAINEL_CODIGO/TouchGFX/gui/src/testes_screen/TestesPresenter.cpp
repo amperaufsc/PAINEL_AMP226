@@ -27,6 +27,10 @@ void TestesPresenter::Botao1(int bn1)
 void TestesPresenter::Botao2(int bn2)
 {
 
+	if (bn2 == 1){
+
+	}
+
 }
 
 void TestesPresenter::Botao3(int bn3)
