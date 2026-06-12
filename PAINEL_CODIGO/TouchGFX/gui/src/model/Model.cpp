@@ -10,13 +10,16 @@
 #include <string.h>
 #include <main.h>
 
+#define CAN_ID_RTD  0x141  // ID do botao RTD
+#define CAN_ID_PAG  0x54B  // ID das paginas
+#define CAN_ID_SA  0x347  // ID do modo de prova do sistema autonomo
 
 //botao RTD
 static uint8_t  btn_contador = 0; //pra evitar de apertar o botao sem querer e ruido
 static uint8_t  btn_apertado  = 0;
 #define BTN_TICKS  5      // ticks necessarios pra confirmar a leitura do botao
 
-uint8_t CAN_RTD_mensagem = 1;   // valor enviado enquanto botao rtd pressionado
+uint8_t CAN_rtd_msg = 1;   // valor enviado enquanto botao rtd pressionado
 
 //botao 1 *^* triangulo
 static uint8_t  btn_contador_1 = 0; //pra evitar de apertar o botao sem querer e ruido
@@ -94,7 +97,7 @@ void Model::tick()
 	frequenciaautonomos++;
 //	frequenciartd++;
 
-	if (frequenciapag >= 12)
+	if (frequenciapag >= 14)
 	{
 		frequenciapag = 0;
 		//id pagina
@@ -103,7 +106,7 @@ void Model::tick()
         HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &dadoPag);
 
 	}
-	if (frequenciaautonomos >= 12)
+	if (frequenciaautonomos >= 13)
 	{
 		frequenciaautonomos = 0;
 		//id pagina
@@ -138,7 +141,8 @@ void Model::tick()
 
 	if (btn_apertado == 1)
 	{  // envio da mensagem no can
-		uint8_t valorRTD = CAN_RTD_mensagem;
+		uint8_t valorRTD = CAN_rtd_msg;
+		TxHeader.Identifier = CAN_ID_RTD;
 		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &valorRTD);
 		modelListener->RTDbotao(btn_apertado); //aqui vou mandar o valor do botão ate pq
 		//se ele aperta vai mandar um msm mas o um é so pra conferir se apertou

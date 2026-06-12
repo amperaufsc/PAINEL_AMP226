@@ -183,7 +183,6 @@ int main(void)
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
-
   //configuração pra mandar mensagem can
   //TxHeader.Identifier no model.c
    TxHeader.IdType              = FDCAN_STANDARD_ID; //mensagem standart
@@ -194,12 +193,6 @@ int main(void)
    TxHeader.TxEventFifoControl  = FDCAN_NO_TX_EVENTS;
    TxHeader.MessageMarker       = 0;
    TxHeader.DataLength = FDCAN_DLC_BYTES_1;
-
-
-   if (HAL_FDCAN_Start(&hfdcan1) != HAL_OK)
-     {
-         Error_Handler();
-     }
 
   HAL_FDCAN_ConfigGlobalFilter(&hfdcan1,
   FDCAN_ACCEPT_IN_RX_FIFO0,
@@ -455,7 +448,7 @@ static void MX_FDCAN1_Init(void)
   hfdcan1.Instance = FDCAN1;
   hfdcan1.Init.ClockDivider = FDCAN_CLOCK_DIV1;
   hfdcan1.Init.FrameFormat = FDCAN_FRAME_CLASSIC;
-  hfdcan1.Init.Mode = FDCAN_MODE_NORMAL;
+  hfdcan1.Init.Mode = FDCAN_MODE_EXTERNAL_LOOPBACK;
   hfdcan1.Init.AutoRetransmission = ENABLE;
   hfdcan1.Init.TransmitPause = DISABLE;
   hfdcan1.Init.ProtocolException = DISABLE;

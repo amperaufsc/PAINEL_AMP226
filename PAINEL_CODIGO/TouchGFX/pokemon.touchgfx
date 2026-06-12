@@ -679,7 +679,8 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
               "ActionComponent": "Capa"
             }
           }
@@ -1171,53 +1172,9 @@
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "Areatesteoficial.png"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "TESTE_START",
-            "X": 341,
-            "Y": 302,
-            "Width": 118,
-            "Height": 35,
-            "TextId": "__SingleUse_7ZID",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 221,
-              "Green": 43,
-              "Blue": 125
-            },
-            "Wildcard1": {
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "IrPagUM",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "pag1_Autonomos"
-            }
-          },
-          {
-            "InteractionName": "IrAutoCross",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "West",
-              "ActionComponent": "AutoCross_SA"
-            }
-          }
-        ]
+        "Interactions": []
       },
       {
         "Name": "AutoCross_SA",
@@ -1230,32 +1187,7 @@
             "RelativeFilename": "AUTOCROSS.png"
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "IrAreaTeste",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "Area_de_Teste_SA"
-            }
-          },
-          {
-            "InteractionName": "IrAceleracao",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "West",
-              "ActionComponent": "Aceleracao_SA"
-            }
-          }
-        ]
+        "Interactions": []
       },
       {
         "Name": "Aceleracao_SA",
@@ -1268,32 +1200,7 @@
             "RelativeFilename": "ACELERACAO.png"
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "irSkinped",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "West",
-              "ActionComponent": "Skidped_SA"
-            }
-          },
-          {
-            "InteractionName": "irAutoCross",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "AutoCross_SA"
-            }
-          }
-        ]
+        "Interactions": []
       },
       {
         "Name": "Skidped_SA",
@@ -1306,32 +1213,7 @@
             "RelativeFilename": "SKIDPAD.png"
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "irAceleracao",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "Aceleracao_SA"
-            }
-          },
-          {
-            "InteractionName": "IrTrackdrive",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "West",
-              "ActionComponent": "Trackdrive_SA"
-            }
-          }
-        ]
+        "Interactions": []
       },
       {
         "Name": "Trackdrive_SA",
@@ -1344,32 +1226,7 @@
             "RelativeFilename": "TRACKDRIVE.png"
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "IrSkkidped",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "Skidped_SA"
-            }
-          },
-          {
-            "InteractionName": "IrEBSTeste",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "West",
-              "ActionComponent": "EBS_Teste_SA"
-            }
-          }
-        ]
+        "Interactions": []
       },
       {
         "Name": "EBS_Teste_SA",

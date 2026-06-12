@@ -54,9 +54,6 @@
       <Text Id="__SingleUse_ZFV1" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_7ZID" Alignment="Left" TypographyId="batman">
-        <Translation Language="GB"> &lt;value&gt;</Translation>
-      </Text>
       <Text Id="__SingleUse_RFE0" Alignment="Left" TypographyId="batman">
         <Translation Language="GB">0</Translation>
       </Text>
