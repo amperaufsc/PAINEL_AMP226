@@ -90,7 +90,9 @@ void Error_Handler(void);
 #define USER_LD3_GREEN_GPIO_Port GPIOD
 
 /* USER CODE BEGIN Private defines */
-
+#define CAN_ID_RTD  0x141  // ID do botao RTD
+#define CAN_ID_PAG  0x54B  // ID das paginas
+#define CAN_ID_SA  0x347  // ID do modo de prova do sistema autonomo
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

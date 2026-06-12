@@ -6,6 +6,24 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_Y0XX" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">DESATIVADO</Translation>
+      </Text>
+      <Text Id="__SingleUse_YY9Q" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB"> ATIVADO</Translation>
+      </Text>
+      <Text Id="__SingleUse_IU3T" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Botão RTD</Translation>
+      </Text>
+      <Text Id="__SingleUse_LEPM" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_3FQH" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">  &lt;value&gt;  A  </Translation>
+      </Text>
+      <Text Id="__SingleUse_XK4X" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Corrente HV</Translation>
+      </Text>
       <Text Id="__SingleUse_CNRD" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
       </Text>
@@ -14,9 +32,6 @@
       </Text>
       <Text Id="__SingleUse_M9XP" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Tensao CelMax</Translation>
-      </Text>
-      <Text Id="__SingleUse_ZXAY" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">RTD ATIVO</Translation>
       </Text>
       <Text Id="__SingleUse_HQLU" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">ECU OK</Translation>
@@ -175,7 +190,7 @@
         <Translation Language="GB">&lt;value&gt;%   </Translation>
       </Text>
       <Text Id="__SingleUse_KUTP" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Corrente ACC</Translation>
+        <Translation Language="GB">Corrente Inv.</Translation>
       </Text>
       <Text Id="__SingleUse_NY2N" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">  &lt;value&gt;  A  </Translation>
@@ -187,7 +202,7 @@
         <Translation Language="GB">    &lt;value&gt; rpm      </Translation>
       </Text>
       <Text Id="__SingleUse_OFVA" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB"> Tensão Inversor </Translation>
+        <Translation Language="GB"> Tensão Inv.</Translation>
       </Text>
       <Text Id="__SingleUse_5HLU" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">  &lt;value&gt;  V  </Translation>
