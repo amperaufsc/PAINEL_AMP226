@@ -21,6 +21,8 @@
 #include "jpeg_utils_conf.h"
 #include "cmsis_os2.h"
 #include "app_touchgfx.h"
+#include <string.h>
+#include <stdint.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -94,7 +96,7 @@ int velocidade;
 int distancia;
 
 //variaveis de comunicação externa
-FDCAN_RxHeaderTypeDef RxHeader;
+FDCAN_RxHeaderTypeDef rxHeader;
 FDCAN_TxHeaderTypeDef TxHeader;
 
 //variavel da pagina
@@ -861,8 +863,22 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+//configura recebimento do can
+extern osMessageQueueId_t msg_canHandle;
 
-volatile uint8_t pressedButtonId = 0;
+void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
+{
+    FDCAN_RxHeaderTypeDef RxHeader;
+    CAN_Message_t msg;
+    uint8_t rx[8] = {0};
+
+    if (HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, rx) == HAL_OK)
+    {
+        msg.id = RxHeader.Identifier;
+        memcpy(msg.data, rx, 8);
+        osMessageQueuePut(msg_canHandle, &msg, 0, 0);
+    }
+}
 
 /* USER CODE END 4 */
 

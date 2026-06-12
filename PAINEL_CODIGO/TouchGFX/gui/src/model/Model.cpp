@@ -229,7 +229,7 @@ void Model::tick()
 		{
 			switch (msg_recebida.id)
 			{
-			case 0x120: {
+			case 0x141: {
 							falha_inversor = msg_recebida.data[0];
 							readtodrive_led = msg_recebida.data[3];
 							falha_tms = msg_recebida.data[4];
