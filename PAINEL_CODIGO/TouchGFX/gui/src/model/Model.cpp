@@ -11,7 +11,7 @@
 #include <main.h>
 
 #define CAN_ID_RTD  0x141  // ID do botao RTD
-#define CAN_ID_PAG  0x141  // ID das paginas //0x54B original qualquer outro é teste
+#define CAN_ID_PAG  0x54B  // ID das paginas //0x54B original qualquer outro é teste
 #define CAN_ID_SA  0x347  // ID do modo de prova do sistema autonomo
 
 //botao RTD
@@ -147,10 +147,9 @@ void Model::tick()
 		modelListener->RTDbotao(btn_apertado); //aqui vou mandar o valor do botão ate pq
 		//se ele aperta vai mandar um msm mas o um é so pra conferir se apertou
 
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET); //só pra teste de ligar o led
 
 	}
-		else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET); //só pra teste de ligar o led
+		else {
 		btn_apertado = 0;
 		modelListener->RTDbotao(btn_apertado);
 		}
@@ -229,7 +228,7 @@ void Model::tick()
 		{
 			switch (msg_recebida.id)
 			{
-			case 0x141: { //0x120 //0x141so pra teste
+			case 0x120: { //0x120 //0x141so pra teste
 							falha_inversor = msg_recebida.data[0];
 							readtodrive_led = msg_recebida.data[3];
 							falha_tms = msg_recebida.data[4];
