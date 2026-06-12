@@ -76,9 +76,9 @@
             "TextId": "__SingleUse_J676",
             "TextRotation": "0",
             "Color": {
-              "Red": 245,
-              "Green": 247,
-              "Blue": 247
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
             "Wildcard1": {
               "TextId": "__SingleUse_0NCS",
@@ -119,7 +119,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_AYI9",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           },
           {
@@ -140,7 +140,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "TensaoCelulamaisalta_un_1",
+            "Name": "TensaoCelulamaisalta_un",
             "X": 329,
             "Y": 329,
             "Width": 143,
@@ -155,7 +155,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_CNRD",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           },
           {
@@ -191,7 +191,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_NJC4",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           },
           {
@@ -227,7 +227,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_ZFV1",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           },
           {
@@ -263,7 +263,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_0P77",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           },
           {
@@ -299,7 +299,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_KC4C",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           },
           {
@@ -320,7 +320,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "TempAcumulador_un",
+            "Name": "Tempacc_un",
             "X": 75,
             "Y": 245,
             "Width": 129,
@@ -335,7 +335,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_CBAY",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           },
           {
@@ -365,9 +365,7 @@
             "TextId": "__SingleUse_YY9Q",
             "TextRotation": "0",
             "Color": {
-              "Red": 64,
-              "Green": 126,
-              "Blue": 147
+              "Green": 255
             }
           },
           {
@@ -403,7 +401,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "CargaAcumulador_un",
+            "Name": "Soc_un",
             "X": 595,
             "Y": 329,
             "Width": 128,
@@ -418,12 +416,12 @@
             "Wildcard1": {
               "TextId": "__SingleUse_ON7B",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
-            "Name": "CargaAcumulador",
+            "Name": "soc",
             "X": 621,
             "Y": 291,
             "Width": 66,
@@ -454,7 +452,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_4WMP",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           },
           {
@@ -490,7 +488,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_LEPM",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           },
           {
@@ -610,7 +608,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "falhatmsuni",
+            "Name": "Falhatmsuni",
             "X": 79,
             "Y": 405,
             "Width": 120,
@@ -625,12 +623,12 @@
             "Wildcard1": {
               "TextId": "__SingleUse_KIRL",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
-            "Name": "falhainvuni",
+            "Name": "Falhainvuni",
             "X": 292,
             "Y": 405,
             "Width": 216,
@@ -645,12 +643,12 @@
             "Wildcard1": {
               "TextId": "__SingleUse_FQ9I",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
-            "Name": "falhaecuuni",
+            "Name": "Falhaecuuni",
             "X": 604,
             "Y": 405,
             "Width": 119,
@@ -665,7 +663,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_RFE0",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 10
             }
           }
         ],
@@ -674,8 +672,7 @@
             "InteractionName": "menubotao",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked",
-              "ButtonKey": 1,
-              "Name": "USER_BUTTON"
+              "ButtonKey": 1
             },
             "Action": {
               "Type": "ActionGotoScreen",

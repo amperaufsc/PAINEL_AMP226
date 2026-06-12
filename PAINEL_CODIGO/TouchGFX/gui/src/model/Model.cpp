@@ -175,7 +175,9 @@ void Model::tick()
 	if (btn_apertado_1 == 1)
 	{
 		modelListener->Botao1(btn_apertado_1);
+
 	}
+	else { btn_apertado_1 = 0; }
 	//***** BOTAO 1 END *****//
 
 	//***** BOTAO 2 START *****//
@@ -196,7 +198,7 @@ void Model::tick()
 	    {
 	        modelListener->Botao2(btn_apertado_2);
 	    }
-
+	    else { btn_apertado_2 = 0; }
 	    //***** BOTAO 2 END *****//
 
 	    //***** BOTAO 3 START *****//
@@ -220,6 +222,7 @@ void Model::tick()
 	    {
 	        modelListener->Botao3(btn_apertado_3);
 	    }
+	    else { btn_apertado_3 = 0; }
 
 	    //***** BOTAO 3 END *****//
 
@@ -233,7 +236,7 @@ void Model::tick()
 							readtodrive_led = msg_recebida.data[3];
 							falha_tms = msg_recebida.data[4];
 							falha_ecu = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
-							if (readtodrive_led == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+							if (readtodrive_led == 1) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
 							} else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
 
 							modelListener->updateFalhaTMS(falha_tms);

@@ -19,7 +19,7 @@
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_3FQH" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">  &lt;value&gt;  A  </Translation>
+        <Translation Language="GB">&lt;value&gt;  A</Translation>
       </Text>
       <Text Id="__SingleUse_XK4X" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Corrente HV</Translation>
@@ -28,10 +28,10 @@
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_G75T" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">  &lt;value&gt;  V  </Translation>
+        <Translation Language="GB">&lt;value&gt;  V</Translation>
       </Text>
       <Text Id="__SingleUse_M9XP" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Tensao CelMax</Translation>
+        <Translation Language="GB">Tensão CelMax</Translation>
       </Text>
       <Text Id="__SingleUse_HQLU" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">ECU OK</Translation>
@@ -190,28 +190,28 @@
         <Translation Language="GB">Corrente Inv.</Translation>
       </Text>
       <Text Id="__SingleUse_NY2N" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">  &lt;value&gt;  A  </Translation>
+        <Translation Language="GB">&lt;value&gt;  A</Translation>
       </Text>
       <Text Id="__SingleUse_0JHV" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Tensao CelMin</Translation>
+        <Translation Language="GB">Tensão CelMin</Translation>
       </Text>
       <Text Id="__SingleUse_J676" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">    &lt;value&gt; rpm      </Translation>
+        <Translation Language="GB">&lt;value&gt; rpm</Translation>
       </Text>
       <Text Id="__SingleUse_OFVA" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB"> Tensão Inv.</Translation>
       </Text>
       <Text Id="__SingleUse_5HLU" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">  &lt;value&gt;  V  </Translation>
+        <Translation Language="GB">&lt;value&gt;  V</Translation>
       </Text>
       <Text Id="__SingleUse_S0EV" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Temp. motor</Translation>
       </Text>
       <Text Id="__SingleUse_OPWS" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Tensao HV</Translation>
+        <Translation Language="GB">Tensão HV</Translation>
       </Text>
       <Text Id="__SingleUse_HFVM" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">  &lt;value&gt;  V  </Translation>
+        <Translation Language="GB">&lt;value&gt;  V</Translation>
       </Text>
       <Text Id="__SingleUse_913G" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Temp. ACC</Translation>
@@ -220,7 +220,7 @@
         <Translation Language="GB"> &lt;value&gt; °C </Translation>
       </Text>
       <Text Id="__SingleUse_JK1H" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">  &lt;value&gt;  V  </Translation>
+        <Translation Language="GB">&lt;value&gt;  V</Translation>
       </Text>
       <Text Id="__SingleUse_BTZ4" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Temp. inversor</Translation>
