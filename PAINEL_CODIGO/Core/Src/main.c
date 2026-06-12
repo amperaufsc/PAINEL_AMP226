@@ -96,7 +96,7 @@ int velocidade;
 int distancia;
 
 //variaveis de comunicação externa
-FDCAN_RxHeaderTypeDef rxHeader;
+FDCAN_RxHeaderTypeDef RxHeader;
 FDCAN_TxHeaderTypeDef TxHeader;
 
 //variavel da pagina
@@ -129,11 +129,11 @@ static void MX_FDCAN1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 typedef struct {
     uint32_t id;
     uint8_t data[8];
 } CAN_Message_t;
+
 
 /* USER CODE END 0 */
 
@@ -198,9 +198,9 @@ int main(void)
 
   HAL_FDCAN_ConfigGlobalFilter(&hfdcan1,
   FDCAN_ACCEPT_IN_RX_FIFO0,
-  FDCAN_REJECT,
-  FDCAN_FILTER_REMOTE,
-  FDCAN_FILTER_REMOTE); //filtro
+  FDCAN_ACCEPT_IN_RX_FIFO0,
+  FDCAN_REJECT_REMOTE,
+  FDCAN_REJECT_REMOTE); //filtro pra aceitar tudo
 
   //liga o start can
   if (HAL_FDCAN_Start(&hfdcan1) != HAL_OK)
@@ -450,7 +450,7 @@ static void MX_FDCAN1_Init(void)
   hfdcan1.Instance = FDCAN1;
   hfdcan1.Init.ClockDivider = FDCAN_CLOCK_DIV1;
   hfdcan1.Init.FrameFormat = FDCAN_FRAME_CLASSIC;
-  hfdcan1.Init.Mode = FDCAN_MODE_EXTERNAL_LOOPBACK;
+  hfdcan1.Init.Mode = FDCAN_MODE_NORMAL;
   hfdcan1.Init.AutoRetransmission = ENABLE;
   hfdcan1.Init.TransmitPause = DISABLE;
   hfdcan1.Init.ProtocolException = DISABLE;
@@ -862,6 +862,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+//to repetindo USER CODE BEGIN 0 pra ver se consigo debugar
 
 //configura recebimento do can
 extern osMessageQueueId_t msg_canHandle;

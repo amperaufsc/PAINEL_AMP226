@@ -11,7 +11,7 @@
 #include <main.h>
 
 #define CAN_ID_RTD  0x141  // ID do botao RTD
-#define CAN_ID_PAG  0x54B  // ID das paginas
+#define CAN_ID_PAG  0x141  // ID das paginas //0x54B original qualquer outro é teste
 #define CAN_ID_SA  0x347  // ID do modo de prova do sistema autonomo
 
 //botao RTD
@@ -229,13 +229,13 @@ void Model::tick()
 		{
 			switch (msg_recebida.id)
 			{
-			case 0x141: {
+			case 0x141: { //0x120 //0x141so pra teste
 							falha_inversor = msg_recebida.data[0];
 							readtodrive_led = msg_recebida.data[3];
 							falha_tms = msg_recebida.data[4];
 							falha_ecu = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
-//							if (readtodrive_led == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
-//							} else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
+							if (readtodrive_led == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+							} else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
 
 							modelListener->updateFalhaTMS(falha_tms);
 							modelListener->updateFalhaECU(falha_ecu);
@@ -259,11 +259,7 @@ void Model::tick()
 							modelListener->updateTempAcc(temperatura_acc);
 							break;
 						}
-//			case 0x141: {
-//							readtodrive_botao = msg_recebida.data[0];
-//							modelListener->RTDbotao(readtodrive_botao);
-//							break;
-//						}
+
 			case 0x220: {
 							correnteHV = 0.0f; //acumulador
 							corrente_inv = 0.0f; //inversor

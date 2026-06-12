@@ -19,59 +19,62 @@ void TestesView::tearDownScreen()
 
 void TestesView::updateFalhaTMS(int falha)
 {
-//    Unicode::snprintf(falhatmsuniBuffer, FALHATMSUNI_SIZE, "%d", falha);
-//
-//    if (falha != 0)
-//    {
-//        tmsok.setVisible(false);
-//        falhatmsuni.setVisible(true);
-//    }
-//    else
-//    {
-//        tmsok.setVisible(true);
-//        falhatmsuni.setVisible(false);
-//    }
-//
-//    tmsok.invalidate();
-//    falhatmsuni.invalidate();
+    Unicode::snprintf(falhatmsuniBuffer, FALHATMSUNI_SIZE, "%d", falha);
+
+    if (falha != 0)
+    {
+        tmsok.setVisible(false);
+        falhatms.setVisible(true);
+    }
+    else
+    {
+        tmsok.setVisible(true);
+        falhatms.setVisible(false);
+    }
+
+    tmsok.invalidate();
+    falhatms.invalidate();
+    falhatmsuni.invalidate();
 }
 
 void TestesView::updateFalhaECU(int falha)
 {
-//    Unicode::snprintf(falhaecuuniBuffer, FALHAECUUNI_SIZE, "%d", falha);
-//
-//    if (falha != 0)
-//    {
-//        ecuok.setVisible(false);
-//        falhaecuuni.setVisible(true);
-//    }
-//    else
-//    {
-//        ecuok.setVisible(true);
-//        falhaecuuni.setVisible(false);
-//    }
-//
-//    ecuok.invalidate();
-//    falhaecuuni.invalidate();
+    Unicode::snprintf(falhaecuuniBuffer, FALHAECUUNI_SIZE, "%d", falha);
+
+    if (falha != 0)
+    {
+        ecuok.setVisible(false);
+        falhaecu.setVisible(true);
+    }
+    else
+    {
+        ecuok.setVisible(true);
+        falhaecu.setVisible(false);
+    }
+
+    ecuok.invalidate();
+    falhaecu.invalidate();
+    falhaecuuni.invalidate();
 }
 
 void TestesView::updateFalhaINV(int falha)
 {
-//    Unicode::snprintf(falhainvuniBuffer, FALHAINVUNI_SIZE, "%d", falha);
-//
-//    if (falha != 0)
-//    {
-//        invok.setVisible(false);
-//        falhainvuni.setVisible(true);
-//    }
-//    else
-//    {
-//        invok.setVisible(true);
-//        falhainvuni.setVisible(false);
-//    }
-//
-//    invok.invalidate();
-//    falhainvuni.invalidate();
+    Unicode::snprintf(falhainvuniBuffer, FALHAINVUNI_SIZE, "%d", falha);
+
+    if (falha != 0)
+    {
+        invok.setVisible(false);
+        falhainv.setVisible(true);
+    }
+    else
+    {
+        invok.setVisible(true);
+        falhainv.setVisible(false);
+    }
+
+    invok.invalidate();
+    falhainv.invalidate();
+    falhainvuni.invalidate();
 }
 
 void TestesView::RTDbotao(int rtd)

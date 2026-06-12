@@ -358,7 +358,7 @@
             "Type": "TextArea",
             "Name": "rtdativado",
             "X": 55,
-            "Y": 323,
+            "Y": 329,
             "Width": 163,
             "Height": 35,
             "Visible": false,
@@ -511,7 +511,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "falhainversor",
+            "Name": "falhainv",
             "X": 328,
             "Y": 370,
             "Width": 150,
@@ -528,7 +528,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "falhainversor_azul",
+            "Name": "invok",
             "X": 292,
             "Y": 370,
             "Width": 216,
@@ -544,7 +544,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "falhaECU",
+            "Name": "falhaecu",
             "X": 589,
             "Y": 370,
             "Width": 155,
@@ -561,7 +561,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "falhaECU_azul",
+            "Name": "ecuok",
             "X": 604,
             "Y": 370,
             "Width": 119,
@@ -577,7 +577,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "falhaBMS",
+            "Name": "falhatms",
             "X": 61,
             "Y": 370,
             "Width": 156,
@@ -594,8 +594,8 @@
           },
           {
             "Type": "TextArea",
-            "Name": "falhaBMS_azul",
-            "X": 79,
+            "Name": "tmsok",
+            "X": 75,
             "Y": 370,
             "Width": 120,
             "Height": 35,
@@ -610,7 +610,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "valor_falhaBMS",
+            "Name": "falhatmsuni",
             "X": 79,
             "Y": 405,
             "Width": 120,
@@ -630,7 +630,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "valor_falha_INV",
+            "Name": "falhainvuni",
             "X": 292,
             "Y": 405,
             "Width": 216,
@@ -650,7 +650,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "valor_falha_ECU",
+            "Name": "falhaecuuni",
             "X": 604,
             "Y": 405,
             "Width": 119,

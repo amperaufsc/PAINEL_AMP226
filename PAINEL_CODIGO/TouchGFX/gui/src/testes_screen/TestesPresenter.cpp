@@ -9,7 +9,7 @@ TestesPresenter::TestesPresenter(TestesView& v)
 
 void TestesPresenter::activate()
 {
-	model->idpagina(1);
+	model->idpagina(2); //id = 1 qualquer outro é teste
 }
 
 void TestesPresenter::deactivate()
