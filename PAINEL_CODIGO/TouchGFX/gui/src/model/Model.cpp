@@ -146,8 +146,8 @@ void Model::tick()
 	if (frequenciapag >= 14)
 	{
 		//id pagina
+		dadoPag[0] = pagina_atual;
         TxHeader.Identifier = CAN_ID_PAG; //na main.h
-        dadoPag[0] = pagina_atual;
         HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, dadoPag);
 
         frequenciapag = 0;
