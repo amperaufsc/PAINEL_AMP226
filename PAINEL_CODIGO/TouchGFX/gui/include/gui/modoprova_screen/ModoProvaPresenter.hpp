@@ -18,6 +18,8 @@ public:
     virtual void deactivate();
     virtual ~ModoProvaPresenter() {};
 ;
+	virtual void updateTempMotor(int temp) override;
+	virtual void updateTempAcc(int temp) override;
 
 	//botoes
 	virtual void Botao1(int bn1) override;

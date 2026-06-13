@@ -23,3 +23,13 @@ void ModoProvaPresenter::Botao2(int bn2)
 }
 
 void ModoProvaPresenter::Botao3(int bn3){}
+
+void ModoProvaPresenter::updateTempMotor(int temp)
+{
+    view.updateTempMotor(temp);
+}
+
+void ModoProvaPresenter::updateTempAcc(int temp)
+{
+    view.updateTempAcc(temp);
+}

@@ -14,12 +14,16 @@
 #define CAN_ID_PAG  0x54B  // ID das paginas //0x54B original qualquer outro é teste
 #define CAN_ID_SA  0x347  // ID do modo de prova do sistema autonomo
 
+//id da pagina can
+uint8_t dadoPag[8] = {0};
+
 //botao RTD
+uint8_t valorRTD[8] = {0};
 static uint8_t  btn_contador = 0; //pra evitar de apertar o botao sem querer e ruido
 static uint8_t  btn_apertado  = 0;
 #define BTN_TICKS  5      // ticks necessarios pra confirmar a leitura do botao
 
-uint8_t CAN_rtd_msg = 1;   // valor enviado enquanto botao rtd pressionado
+uint8_t CAN_rtd_msg;   // valor enviado enquanto botao rtd pressionado
 
 //botao 1 *^* triangulo
 static uint8_t  btn_contador_1 = 0; //pra evitar de apertar o botao sem querer e ruido
@@ -87,7 +91,49 @@ void Model::startautonomos(uint8_t sa)
 }
 
 void Model::tick()
-{
+{	//**teste de can em loopback init**//
+//	static int freq = 0; //frequencia
+//	freq++;
+//	static uint8_t msgteste = 0; //variaveis  de teste do loopback
+//	static uint8_t msgteste2 = 0;
+//	static uint8_t msgteste3 = 0;
+//
+//	static float msg_float = 0.0f; //se quiser mandar mensagens float
+//	static float msg_float2 = 0.0f;
+//
+//	static uint8_t dt[8] = {0}; // buffer can
+//	static uint8_t dt2_float[8] = {0};
+//
+//	#define ID_teste 0x121
+//	#define ID_teste2 0x220
+//
+//	if(freq >= 12){
+//		freq = 0;
+//
+//
+//		memcpy(&dt2_float[0], &msg_float, 4); // se quiser enviar um float usa o memcpy igual pra receber
+//		memcpy(&dt2_float[4], &msg_float2, 4);
+//		dt[0] = msgteste; //pra colocar a mensagem no byte que quero
+//		dt[2] = msgteste2;
+//		dt[7] = msgteste3;
+//
+//		TxHeader.Identifier = ID_teste;
+//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, dt);
+//
+//		TxHeader.Identifier = ID_teste2;
+//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, dt2_float);
+//
+//		//só pra mudar o valor
+//		msgteste++;
+//		msgteste2 += 2;
+//		msgteste3 += 3;
+//		msg_float += 1.1f;
+//		msg_float2 += 2.475f;
+//	}
+
+	//**teste de can em loopback end**//
+
+
 	//configurando frequencia de envio das mensagens
 	//enviadas a cada 12 ticks ou 192ms ou 5hz
 	static uint8_t frequenciapag = 0;
@@ -99,21 +145,21 @@ void Model::tick()
 
 	if (frequenciapag >= 14)
 	{
-		frequenciapag = 0;
 		//id pagina
         TxHeader.Identifier = CAN_ID_PAG; //na main.h
-        uint8_t dadoPag = pagina_atual;
-        HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &dadoPag);
+        dadoPag[0] = pagina_atual;
+        HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, dadoPag);
 
+        frequenciapag = 0;
 	}
 	if (frequenciaautonomos >= 13)
 	{
-		frequenciaautonomos = 0;
 		//id pagina
         TxHeader.Identifier = CAN_ID_SA; //na main.h
-        uint8_t dado_SA = start_autonomo;
+        uint8_t dado_SA = start_autonomo; //mandando como no teste loopback se nao funcionar volta mandar a variavel uint8
         HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &dado_SA);
 
+        frequenciaautonomos = 0;
 	}
 
 
@@ -141,9 +187,10 @@ void Model::tick()
 
 	if (btn_apertado == 1)
 	{  // envio da mensagem no can
-		uint8_t valorRTD = CAN_rtd_msg;
+		CAN_rtd_msg = 1;
+		valorRTD[0] = CAN_rtd_msg;
 		TxHeader.Identifier = CAN_ID_RTD;
-		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &valorRTD);
+		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, valorRTD);
 		modelListener->RTDbotao(btn_apertado); //aqui vou mandar o valor do botão ate pq
 		//se ele aperta vai mandar um msm mas o um é so pra conferir se apertou
 
@@ -151,6 +198,10 @@ void Model::tick()
 	}
 		else {
 		btn_apertado = 0;
+		CAN_rtd_msg = 0;
+		valorRTD[0] = CAN_rtd_msg;
+		TxHeader.Identifier = CAN_ID_RTD;
+		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, valorRTD);
 		modelListener->RTDbotao(btn_apertado);
 		}
 
@@ -239,7 +290,7 @@ void Model::tick()
 							readtodrive_led = msg_recebida.data[3];
 							falha_tms = msg_recebida.data[4];
 							falha_ecu = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
-							if (readtodrive_led == 1) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+							if (readtodrive_led == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
 							} else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
 
 							modelListener->updateFalhaTMS(falha_tms);
@@ -254,7 +305,7 @@ void Model::tick()
 							soc = msg_recebida.data[3];
 							acelerador = msg_recebida.data[4];
 							freio = msg_recebida.data[5];
-							temperatura_acc = msg_recebida.data[7];
+							temperatura_acc = msg_recebida.data[7]; //certo [7] qualquer outro teste
 
 							modelListener->updateTensaoCelulaMin(tensao_cel_min);
 							modelListener->updateTensaoCelulaMax(tensao_cel_max);

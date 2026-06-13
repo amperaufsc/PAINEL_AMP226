@@ -1,6 +1,7 @@
 #include <gui/testes_screen/TestesView.hpp>
 #include <touchgfx/Color.hpp>
 #include <stdio.h>
+#include "stm32u5xx_hal.h"
 
 TestesView::TestesView()
 {
@@ -45,6 +46,7 @@ void TestesView::updateFalhaECU(int falha)
     {
         ecuok.setVisible(false);
         falhaecu.setVisible(true);
+
     }
     else
     {
@@ -121,12 +123,12 @@ void TestesView::updateTempAcc(int temp)
 {
 	    Unicode::snprintf(Tempacc_unBuffer, TEMPACC_UN_SIZE, "%d", temp);
 
-	    if (temp < 20)
+	    if (temp < 15)
 	    {
 
 	    	Tempacc_un.setColor(touchgfx::Color::getColorFromRGB(92,198,208));
 	    }
-	    else if (temp > 40)
+	    else if (temp > 55)
 	    {
 
 	    	Tempacc_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));

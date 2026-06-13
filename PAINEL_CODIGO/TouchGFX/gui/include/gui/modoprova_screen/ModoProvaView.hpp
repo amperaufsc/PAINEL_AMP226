@@ -12,6 +12,9 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    virtual void updateTempMotor(int temp);
+    virtual void updateTempAcc(int temp);
+
 };
 
 

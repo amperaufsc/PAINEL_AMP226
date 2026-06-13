@@ -74,7 +74,6 @@ LTDC_HandleTypeDef hltdc;
 uint8_t falha_inversor; //
 uint8_t falha_tms; //
 uint8_t readtodrive_led;
-uint8_t readtodrive_botao;//
 uint8_t tensao_cel_min; //
 uint8_t tensao_cel_max; //
 uint8_t soc; //
@@ -102,6 +101,10 @@ FDCAN_TxHeaderTypeDef TxHeader;
 //variavel da pagina
 volatile uint8_t pagina_atual;
 volatile uint8_t start_autonomo;
+
+//mando
+extern uint8_t valorRTD;
+extern uint8_t dadoPag;
 
 
 /* USER CODE END PV */
@@ -194,7 +197,7 @@ int main(void)
    TxHeader.FDFormat            = FDCAN_CLASSIC_CAN; //
    TxHeader.TxEventFifoControl  = FDCAN_NO_TX_EVENTS;
    TxHeader.MessageMarker       = 0;
-   TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+   TxHeader.DataLength = FDCAN_DLC_BYTES_8;
 
   HAL_FDCAN_ConfigGlobalFilter(&hfdcan1,
   FDCAN_ACCEPT_IN_RX_FIFO0,
