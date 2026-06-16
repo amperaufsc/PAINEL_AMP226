@@ -872,7 +872,6 @@ extern osMessageQueueId_t msg_canHandle;
 
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 {
-    FDCAN_RxHeaderTypeDef RxHeader;
     CAN_Message_t msg;
     uint8_t rx[8] = {0};
 
