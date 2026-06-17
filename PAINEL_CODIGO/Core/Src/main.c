@@ -21,13 +21,12 @@
 #include "jpeg_utils_conf.h"
 #include "cmsis_os2.h"
 #include "app_touchgfx.h"
-#include <string.h>
-#include <stdint.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Components/mx66uw1g45g/mx66uw1g45g.h"
 #include "stm32u5xx_hal.h"
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -68,6 +67,8 @@ DMA_HandleTypeDef handle_GPDMA1_Channel0;
 
 LTDC_HandleTypeDef hltdc;
 
+TIM_HandleTypeDef htim1;
+
 /* USER CODE BEGIN PV */
 
 //variaveis que recebo do barramento can
@@ -102,7 +103,7 @@ uint8_t RxData[8];
 uint8_t TxData[8];
 
 //mando
-extern uint8_t valorRTD;
+volatile uint8_t valorRTD;
 volatile uint8_t pagina_atual;
 volatile uint8_t start_autonomo;
 
@@ -127,6 +128,7 @@ static void MX_HSPI1_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_JPEG_Init(void);
 static void MX_FDCAN1_Init(void);
+static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs);
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
@@ -186,10 +188,13 @@ int main(void)
   MX_I2C2_Init();
   MX_JPEG_Init();
   MX_FDCAN1_Init();
+  MX_TIM1_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
+
+  HAL_TIM_Base_Start_IT(&htim1);
 
   /* USER CODE END 2 */
 
@@ -421,7 +426,8 @@ static void MX_FDCAN1_Init(void)
 
   /* USER CODE END FDCAN1_Init 0 */
 
-  /* USER CODE BEGIN FDCAN1_Init 1 */
+  /* USER CODE BEGIN FDCAN1_Init 1
+   *  */
 
   /* USER CODE END FDCAN1_Init 1 */
   hfdcan1.Instance = FDCAN1;
@@ -446,7 +452,6 @@ static void MX_FDCAN1_Init(void)
   {
     Error_Handler();
   }
-
   /* USER CODE BEGIN FDCAN1_Init 2 */
   FDCAN_FilterTypeDef sFilterConfig;
 
@@ -764,6 +769,53 @@ static void MX_LTDC_Init(void)
 }
 
 /**
+  * @brief TIM1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM1_Init(void)
+{
+
+  /* USER CODE BEGIN TIM1_Init 0 */
+
+  /* USER CODE END TIM1_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM1_Init 1 */
+
+  /* USER CODE END TIM1_Init 1 */
+  htim1.Instance = TIM1;
+  htim1.Init.Prescaler = 1023;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.Period = 15624;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.RepetitionCounter = 0;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM1_Init 2 */
+
+  /* USER CODE END TIM1_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -875,21 +927,21 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
     {
         switch(RxHeader.Identifier){
         case 0x120: { //0x120 //0x141so pra teste
-        	falha_inversor = msg_recebida.data[0];
-        	readtodrive_led = msg_recebida.data[3];
-        	falha_tms = msg_recebida.data[4];
-        	falha_ecu = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
+        	falha_inversor = RxData[0];
+        	readtodrive_led = RxData[3];
+        	falha_tms = RxData[4];
+        	falha_ecu = ((uint16_t)RxData[1] << 8) | RxData[2];
         	if (readtodrive_led == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
         	} else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
         	break;
         }
         case 0x121: {
-        	tensao_cel_min = msg_recebida.data[0];
-        	tensao_cel_max = msg_recebida.data[2];
-        	soc = msg_recebida.data[3];
-        	acelerador = msg_recebida.data[4];
-        	freio = msg_recebida.data[5];
-        	temperatura_acc = msg_recebida.data[7]; //certo [7] qualquer outro teste
+        	tensao_cel_min = RxData[0];
+        	tensao_cel_max = RxData[2];
+        	soc = RxData[3];
+        	acelerador = RxData[4];
+        	freio = RxData[5];
+        	temperatura_acc = RxData[7]; //certo [7] qualquer outro teste
         	break;
         }
 
@@ -897,24 +949,22 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
         	correnteHV = 0.0f; //acumulador
         	corrente_inv = 0.0f; //inversor
 
-        	memcpy(&correnteHV, &msg_recebida.data[4], sizeof(float));
-        	memcpy(&corrente_inv, &msg_recebida.data[0], sizeof(float));
-        	modelListener->updateCorrenteHV((float)correnteHV);
-        	modelListener->updateCorrenteInv((float)corrente_inv);
+        	memcpy(&correnteHV, &RxData[4], sizeof(float));
+        	memcpy(&corrente_inv, &RxData[0], sizeof(float));
         	break;
         }
         case 0x420: {
-        	rpm = ((uint16_t)msg_recebida.data[0] << 8) | msg_recebida.data[1];
-        	temperatura_motor = ((uint16_t)msg_recebida.data[2] << 8) | msg_recebida.data[3];
-        	temperatura_inv = ((uint16_t)msg_recebida.data[6] << 8) | msg_recebida.data[7];
+        	rpm = ((uint16_t)RxData[0] << 8) | RxData[1];
+        	temperatura_motor = ((uint16_t)RxData[2] << 8) | RxData[3];
+        	temperatura_inv = ((uint16_t)RxData[6] << 8) | RxData[7];
         	break;
         }
         case 0x421: {
         	tensao_inv = 0.0f; // dclink inv
         	tensaoHV = 0.0f; //acumulador
 
-        	memcpy(&tensao_inv, &msg_recebida.data[0], sizeof(float));
-        	memcpy(&tensaoHV, &msg_recebida.data[4], sizeof(float));
+        	memcpy(&tensao_inv, &RxData[0], sizeof(float));
+        	memcpy(&tensaoHV, &RxData[4], sizeof(float));
         	break;
         }
         }
@@ -932,31 +982,57 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
   */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-  /* USER CODE BEGIN Callback 0 */
+	/* USER CODE BEGIN Callback 0 */
+	if (htim->Instance == TIM6)
+	{
+		HAL_IncTick();
+	}
 
-  /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM6)
-  {
-    HAL_IncTick();
-  }
-  /* USER CODE BEGIN Callback 1 */
+	if (htim->Instance == TIM1)
+	{
+		// Read to drive
+		TxHeader.Identifier = 0x141;
+		TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+		TxData[0] = valorRTD;
+		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-  /* USER CODE END Callback 1 */
+		// Id página
+		TxHeader.Identifier = 0x54B;
+		TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+		TxData[0] = pagina_atual;
+		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+
+		// start autonomo
+		TxHeader.Identifier = 0x347;
+		TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+		TxData[0] = start_autonomo;
+		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+	}
+
+
+	/* USER CODE END Callback 0 */
+	if (htim->Instance == TIM6)
+	{
+		HAL_IncTick();
+	}
+	/* USER CODE BEGIN Callback 1 */
+
+	/* USER CODE END Callback 1 */
 }
 
 /**
-  * @brief  This function is executed in case of error occurrence.
-  * @retval None
-  */
+ * @brief  This function is executed in case of error occurrence.
+ * @retval None
+ */
 void Error_Handler(void)
 {
-  /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
-  /* USER CODE END Error_Handler_Debug */
+	/* USER CODE BEGIN Error_Handler_Debug */
+	/* User can add his own implementation to report the HAL error return state */
+	__disable_irq();
+	while (1)
+	{
+	}
+	/* USER CODE END Error_Handler_Debug */
 }
 #ifdef USE_FULL_ASSERT
 /**
