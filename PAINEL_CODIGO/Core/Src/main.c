@@ -197,7 +197,7 @@ int main(void)
    TxHeader.FDFormat            = FDCAN_CLASSIC_CAN; //
    TxHeader.TxEventFifoControl  = FDCAN_NO_TX_EVENTS;
    TxHeader.MessageMarker       = 0;
-   TxHeader.DataLength = FDCAN_DLC_BYTES_8;
+   TxHeader.DataLength = FDCAN_DLC_BYTES_1;
 
   HAL_FDCAN_ConfigGlobalFilter(&hfdcan1,
   FDCAN_ACCEPT_IN_RX_FIFO0,

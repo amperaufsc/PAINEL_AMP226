@@ -14,16 +14,12 @@
 #define CAN_ID_PAG  0x54B  // ID das paginas //0x54B original qualquer outro é teste
 #define CAN_ID_SA  0x347  // ID do modo de prova do sistema autonomo
 
-//id da pagina can
-uint8_t dadoPag[8] = {0};
-
 //botao RTD
-uint8_t valorRTD[8] = {0};
 static uint8_t  btn_contador = 0; //pra evitar de apertar o botao sem querer e ruido
 static uint8_t  btn_apertado  = 0;
 #define BTN_TICKS  5      // ticks necessarios pra confirmar a leitura do botao
 
-uint8_t CAN_rtd_msg;   // valor enviado enquanto botao rtd pressionado
+uint8_t CAN_rtd_msg = 1;   // valor enviado enquanto botao rtd pressionado
 
 //botao 1 *^* triangulo
 static uint8_t  btn_contador_1 = 0; //pra evitar de apertar o botao sem querer e ruido
@@ -146,19 +142,17 @@ void Model::tick()
 	if (frequenciapag >= 14)
 	{
 		//id pagina
-		dadoPag[0] = pagina_atual;
         TxHeader.Identifier = CAN_ID_PAG; //na main.h
-        HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, dadoPag);
-
+        uint8_t dadoPag = pagina_atual;
+        HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &dadoPag);
         frequenciapag = 0;
 	}
 	if (frequenciaautonomos >= 13)
 	{
-		//id pagina
+		//id autonomos
         TxHeader.Identifier = CAN_ID_SA; //na main.h
-        uint8_t dado_SA = start_autonomo; //mandando como no teste loopback se nao funcionar volta mandar a variavel uint8
+        uint8_t dado_SA = start_autonomo;
         HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &dado_SA);
-
         frequenciaautonomos = 0;
 	}
 
@@ -187,10 +181,9 @@ void Model::tick()
 
 	if (btn_apertado == 1)
 	{  // envio da mensagem no can
-		CAN_rtd_msg = 1;
-		valorRTD[0] = CAN_rtd_msg;
+		uint8_t valorRTD = CAN_rtd_msg;
 		TxHeader.Identifier = CAN_ID_RTD;
-		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, valorRTD);
+		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &valorRTD);
 		modelListener->RTDbotao(btn_apertado); //aqui vou mandar o valor do botão ate pq
 		//se ele aperta vai mandar um msm mas o um é so pra conferir se apertou
 
@@ -199,9 +192,9 @@ void Model::tick()
 		else {
 		btn_apertado = 0;
 		CAN_rtd_msg = 0;
-		valorRTD[0] = CAN_rtd_msg;
+		uint8_t valorRTD = CAN_rtd_msg;
 		TxHeader.Identifier = CAN_ID_RTD;
-		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, valorRTD);
+		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &valorRTD);
 		modelListener->RTDbotao(btn_apertado);
 		}
 
