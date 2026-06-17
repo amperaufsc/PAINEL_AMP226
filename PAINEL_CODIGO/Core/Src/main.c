@@ -21,8 +21,6 @@
 #include "jpeg_utils_conf.h"
 #include "cmsis_os2.h"
 #include "app_touchgfx.h"
-#include <string.h>
-#include <stdint.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -68,6 +66,8 @@ DMA_HandleTypeDef handle_GPDMA1_Channel0;
 
 LTDC_HandleTypeDef hltdc;
 
+TIM_HandleTypeDef htim1;
+
 /* USER CODE BEGIN PV */
 
 //variaveis que recebo do barramento can
@@ -98,14 +98,16 @@ int distancia;
 FDCAN_RxHeaderTypeDef RxHeader;
 FDCAN_TxHeaderTypeDef TxHeader;
 
+uint8_t RxData[8];
+uint8_t TxData[8];
+
 //variavel da pagina
-volatile uint8_t pagina_atual;
-volatile uint8_t start_autonomo;
+//volatile uint8_t start_autonomo;
 
 //mando
-extern uint8_t valorRTD;
-extern uint8_t dadoPag;
-
+extern uint8_t botao_rtd;
+extern volatile uint8_t pagina_atual;
+extern volatile uint8_t start_autonomo;
 
 /* USER CODE END PV */
 
@@ -126,8 +128,10 @@ static void MX_HSPI1_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_JPEG_Init(void);
 static void MX_FDCAN1_Init(void);
+static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
-
+void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs);
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -184,38 +188,11 @@ int main(void)
   MX_I2C2_Init();
   MX_JPEG_Init();
   MX_FDCAN1_Init();
+  MX_TIM1_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
-  //configuração pra mandar mensagem can
-  //TxHeader.Identifier no model.c
-   TxHeader.IdType              = FDCAN_STANDARD_ID; //mensagem standart
-   TxHeader.TxFrameType         = FDCAN_DATA_FRAME;  // dataframe = mandar dados remoteframe = receber dados
-   TxHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE; //identifica erros
-   TxHeader.BitRateSwitch       = FDCAN_BRS_OFF; //permite mudar a velocidade dos bits de dados
-   TxHeader.FDFormat            = FDCAN_CLASSIC_CAN; //
-   TxHeader.TxEventFifoControl  = FDCAN_NO_TX_EVENTS;
-   TxHeader.MessageMarker       = 0;
-   TxHeader.DataLength = FDCAN_DLC_BYTES_1;
-
-  HAL_FDCAN_ConfigGlobalFilter(&hfdcan1,
-  FDCAN_ACCEPT_IN_RX_FIFO0,
-  FDCAN_ACCEPT_IN_RX_FIFO0,
-  FDCAN_REJECT_REMOTE,
-  FDCAN_REJECT_REMOTE); //filtro pra aceitar tudo
-
-  //liga o start can
-  if (HAL_FDCAN_Start(&hfdcan1) != HAL_OK)
-  {
-  	Error_Handler();
-  }
-
-  //interrupção para receber as mensagens
-if (HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0) != HAL_OK)
-  {
-      Error_Handler();
-  }
 
   /* USER CODE END 2 */
 
@@ -473,6 +450,30 @@ static void MX_FDCAN1_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN FDCAN1_Init 2 */
+  FDCAN_FilterTypeDef sFilterConfig;
+
+  sFilterConfig.IdType = FDCAN_STANDARD_ID;
+  sFilterConfig.FilterIndex = 0;
+  sFilterConfig.FilterType = FDCAN_FILTER_MASK;
+  sFilterConfig.FilterConfig = FDCAN_FILTER_TO_RXFIFO0;
+  sFilterConfig.FilterID1 = 0;
+  sFilterConfig.FilterID2 = 0;
+
+  if (HAL_FDCAN_ConfigFilter(&hfdcan1, &sFilterConfig) != HAL_OK) {
+	  Error_Handler();
+	  }
+
+  HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
+  HAL_FDCAN_Start(&hfdcan1);
+
+  TxHeader.IdType              = FDCAN_STANDARD_ID; //mensagem standart
+  TxHeader.TxFrameType         = FDCAN_DATA_FRAME;  // dataframe = mandar dados remoteframe = receber dados
+  TxHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE; //identifica erros
+  TxHeader.BitRateSwitch       = FDCAN_BRS_OFF; //permite mudar a velocidade dos bits de dados
+  TxHeader.FDFormat            = FDCAN_CLASSIC_CAN; //
+  TxHeader.TxEventFifoControl  = FDCAN_NO_TX_EVENTS;
+  TxHeader.MessageMarker       = 0;
+  TxHeader.DataLength = FDCAN_DLC_BYTES_1;
 
   /* USER CODE END FDCAN1_Init 2 */
 
@@ -765,6 +766,53 @@ static void MX_LTDC_Init(void)
 }
 
 /**
+  * @brief TIM1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM1_Init(void)
+{
+
+  /* USER CODE BEGIN TIM1_Init 0 */
+
+  /* USER CODE END TIM1_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM1_Init 1 */
+
+  /* USER CODE END TIM1_Init 1 */
+  htim1.Instance = TIM1;
+  htim1.Init.Prescaler = 1023;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.Period = 15624;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.RepetitionCounter = 0;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM1_Init 2 */
+
+  /* USER CODE END TIM1_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -872,14 +920,72 @@ extern osMessageQueueId_t msg_canHandle;
 
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 {
-    CAN_Message_t msg;
-    uint8_t rx[8] = {0};
-
-    if (HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, rx) == HAL_OK)
+    if (HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, RxData) == HAL_OK)
     {
-        msg.id = RxHeader.Identifier;
-        memcpy(msg.data, rx, 8);
-        osMessageQueuePut(msg_canHandle, &msg, 0, 0);
+        switch(RxHeader.Identifier){
+        case 0x120: { //0x120 //0x141so pra teste
+        	falha_inversor = msg_recebida.data[0];
+        	readtodrive_led = msg_recebida.data[3];
+        	falha_tms = msg_recebida.data[4];
+        	falha_ecu = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
+        	if (readtodrive_led == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+        	} else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
+
+        	modelListener->updateFalhaTMS(falha_tms);
+        	modelListener->updateFalhaECU(falha_ecu);
+        	modelListener->updateFalhaINV(falha_inversor);
+
+        	break;
+        }
+        case 0x121: {
+        	tensao_cel_min = msg_recebida.data[0];
+        	tensao_cel_max = msg_recebida.data[2];
+        	soc = msg_recebida.data[3];
+        	acelerador = msg_recebida.data[4];
+        	freio = msg_recebida.data[5];
+        	temperatura_acc = msg_recebida.data[7]; //certo [7] qualquer outro teste
+
+        	modelListener->updateTensaoCelulaMin(tensao_cel_min);
+        	modelListener->updateTensaoCelulaMax(tensao_cel_max);
+        	modelListener->updateSOC(soc);
+        	modelListener->updateAcelerador(acelerador);
+        	modelListener->updateFreio(freio);
+        	modelListener->updateTempAcc(temperatura_acc);
+        	break;
+        }
+
+        case 0x220: {
+        	correnteHV = 0.0f; //acumulador
+        	corrente_inv = 0.0f; //inversor
+
+        	memcpy(&correnteHV, &msg_recebida.data[4], sizeof(float));
+        	memcpy(&corrente_inv, &msg_recebida.data[0], sizeof(float));
+        	modelListener->updateCorrenteHV((float)correnteHV);
+        	modelListener->updateCorrenteInv((float)corrente_inv);
+        	break;
+        }
+        case 0x420: {
+        	rpm = ((uint16_t)msg_recebida.data[0] << 8) | msg_recebida.data[1];
+        	temperatura_motor = ((uint16_t)msg_recebida.data[2] << 8) | msg_recebida.data[3];
+        	temperatura_inv = ((uint16_t)msg_recebida.data[6] << 8) | msg_recebida.data[7];
+
+        	modelListener->updateRPM(rpm);
+        	modelListener->updateTempMotor(temperatura_motor);
+        	modelListener->updateTempInversor(temperatura_inv);
+        	break;
+        }
+        case 0x421: {
+        	tensao_inv = 0.0f; // dclink inv
+        	tensaoHV = 0.0f; //acumulador
+
+        	memcpy(&tensao_inv, &msg_recebida.data[0], sizeof(float));
+        	memcpy(&tensaoHV, &msg_recebida.data[4], sizeof(float));
+
+        	modelListener->updateTensaoHV((float)tensaoHV);
+        	modelListener->updateTensaoInversor((float)tensao_inv);
+        	break;
+        }
+        }
     }
 }
 

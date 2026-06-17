@@ -287,6 +287,8 @@ void HAL_FDCAN_MspInit(FDCAN_HandleTypeDef* hfdcan)
     /* FDCAN1 interrupt Init */
     HAL_NVIC_SetPriority(FDCAN1_IT0_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(FDCAN1_IT0_IRQn);
+    HAL_NVIC_SetPriority(FDCAN1_IT1_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(FDCAN1_IT1_IRQn);
     /* USER CODE BEGIN FDCAN1_MspInit 1 */
 
     /* USER CODE END FDCAN1_MspInit 1 */
@@ -319,6 +321,7 @@ void HAL_FDCAN_MspDeInit(FDCAN_HandleTypeDef* hfdcan)
 
     /* FDCAN1 interrupt DeInit */
     HAL_NVIC_DisableIRQ(FDCAN1_IT0_IRQn);
+    HAL_NVIC_DisableIRQ(FDCAN1_IT1_IRQn);
     /* USER CODE BEGIN FDCAN1_MspDeInit 1 */
 
     /* USER CODE END FDCAN1_MspDeInit 1 */
@@ -894,6 +897,63 @@ void HAL_LTDC_MspDeInit(LTDC_HandleTypeDef* hltdc)
     /* USER CODE BEGIN LTDC_MspDeInit 1 */
 
     /* USER CODE END LTDC_MspDeInit 1 */
+  }
+
+}
+
+/**
+  * @brief TIM_Base MSP Initialization
+  * This function configures the hardware resources used in this example
+  * @param htim_base: TIM_Base handle pointer
+  * @retval None
+  */
+void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
+{
+  if(htim_base->Instance==TIM1)
+  {
+    /* USER CODE BEGIN TIM1_MspInit 0 */
+
+    /* USER CODE END TIM1_MspInit 0 */
+    /* Peripheral clock enable */
+    __HAL_RCC_TIM1_CLK_ENABLE();
+    /* TIM1 interrupt Init */
+    HAL_NVIC_SetPriority(TIM1_BRK_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(TIM1_BRK_IRQn);
+    HAL_NVIC_SetPriority(TIM1_UP_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(TIM1_UP_IRQn);
+    HAL_NVIC_SetPriority(TIM1_TRG_COM_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(TIM1_TRG_COM_IRQn);
+    /* USER CODE BEGIN TIM1_MspInit 1 */
+
+    /* USER CODE END TIM1_MspInit 1 */
+
+  }
+
+}
+
+/**
+  * @brief TIM_Base MSP De-Initialization
+  * This function freeze the hardware resources used in this example
+  * @param htim_base: TIM_Base handle pointer
+  * @retval None
+  */
+void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
+{
+  if(htim_base->Instance==TIM1)
+  {
+    /* USER CODE BEGIN TIM1_MspDeInit 0 */
+
+    /* USER CODE END TIM1_MspDeInit 0 */
+    /* Peripheral clock disable */
+    __HAL_RCC_TIM1_CLK_DISABLE();
+
+    /* TIM1 interrupt DeInit */
+    HAL_NVIC_DisableIRQ(TIM1_BRK_IRQn);
+    HAL_NVIC_DisableIRQ(TIM1_UP_IRQn);
+    HAL_NVIC_DisableIRQ(TIM1_TRG_COM_IRQn);
+    /* USER CODE BEGIN TIM1_MspDeInit 1 */
+
+    /* USER CODE END TIM1_MspDeInit 1 */
   }
 
 }

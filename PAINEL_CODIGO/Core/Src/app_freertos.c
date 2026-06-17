@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
+  * Copyright (c) 2026 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -24,19 +24,11 @@
 #include "cmsis_os2.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "main.h"
-#include "cmsis_os2.h" // Para as funções de Queue do RTOS
-#include "can_types.h"
-#include <string.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
-typedef struct {
-    uint32_t id;
-    uint8_t data[8];
-} CAN_Message_t;
 
 /* USER CODE END PTD */
 
@@ -61,48 +53,15 @@ const osThreadAttr_t defaultTask_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
   .stack_size = 128 * 4
 };
-/* Definitions for GUI_Task */
-osThreadId_t GUI_TaskHandle;
-const osThreadAttr_t GUI_Task_attributes = {
-  .name = "GUI_Task",
-  .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = 8192 * 4
-};
-/* Definitions for msg_can */
-osMessageQueueId_t msg_canHandle;
-const osMessageQueueAttr_t msg_can_attributes = {
-  .name = "msg_can"
-};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-extern portBASE_TYPE IdleTaskHook(void* p);
+
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
-extern void TouchGFX_Task(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
-
-/* Hook prototypes */
-void vApplicationIdleHook(void);
-
-/* USER CODE BEGIN 2 */
-void vApplicationIdleHook( void )
-{
-   /* vApplicationIdleHook() will only be called if configUSE_IDLE_HOOK is set
-   to 1 in FreeRTOSConfig.h. It will be called on each iteration of the idle
-   task. It is essential that code added to this hook function never attempts
-   to block in any way (for example, call xQueueReceive() with a block time
-   specified, or call vTaskDelay()). If the application makes use of the
-   vTaskDelete() API function (as this demo application does) then it is also
-   important that vApplicationIdleHook() is permitted to return to its calling
-   function, because it is the responsibility of the idle task to clean up
-   memory allocated by the kernel to any task that has since been deleted. */
-  
-   vTaskSetApplicationTaskTag(NULL, IdleTaskHook);
-}
-/* USER CODE END 2 */
 
 /**
   * @brief  FreeRTOS initialization
@@ -125,17 +84,12 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
-  /* creation of msg_can */
-  msg_canHandle = osMessageQueueNew (48, sizeof(CAN_Message_t), &msg_can_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
-
-  /* creation of GUI_Task */
-  GUI_TaskHandle = osThreadNew(TouchGFX_Task, NULL, &GUI_Task_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
