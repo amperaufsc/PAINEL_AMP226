@@ -921,17 +921,15 @@ static void MX_GPIO_Init(void)
 extern osMessageQueueId_t msg_canHandle;
 
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
+//aqui eu receebo as variaveis can e armazeno em variaveis
+// pra depois mandar pro model.c que dai mando pro display
 {
-    if (HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, RxData) == HAL_OK)
-    {
         switch(RxHeader.Identifier){
         case 0x120: { //0x120 //0x141so pra teste
         	falha_inversor = RxData[0];
         	readtodrive_led = RxData[3];
         	falha_tms = RxData[4];
         	falha_ecu = ((uint16_t)RxData[1] << 8) | RxData[2];
-        	if (readtodrive_led == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
-        	} else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
         	break;
         }
         case 0x121: {
@@ -965,7 +963,6 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
         	memcpy(&tensao_inv, &RxData[0], sizeof(float));
         	memcpy(&tensaoHV, &RxData[4], sizeof(float));
         	break;
-        }
         }
     }
 }

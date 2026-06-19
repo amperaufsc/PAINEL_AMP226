@@ -54,7 +54,7 @@ extern volatile uint8_t valorRTD;   // valor enviado enquanto botao rtd pression
 //recebo
 extern uint8_t falha_inversor;
 extern uint8_t readtodrive_led;
-extern uint8_t readtodrive_botao;
+extern uint8_t readtodrive_botao; //lembrar que por enquanto faz nada
 extern uint8_t falha_tms;
 extern uint16_t falha_ecu;
 extern uint8_t tensao_cel_min;
@@ -132,28 +132,28 @@ void Model::tick()
 
 	//configurando frequencia de envio das mensagens
 	//enviadas a cada 12 ticks ou 192ms ou 5hz
-//	static uint8_t frequenciapag = 0;
-//	static uint8_t frequenciaautonomos = 0;
-//
-//	frequenciapag++;
-//	frequenciaautonomos++;
-//
-//	if (frequenciapag >= 14)
-//	{
-//		//id pagina
-//		TxHeader.Identifier = CAN_ID_PAG; //na main.h
-//		uint8_t dadoPag = pagina_atual;
-//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &dadoPag);
-//		frequenciapag = 0;
-//	}
-//	if (frequenciaautonomos >= 13)
-//	{
-//		//id autonomos
-//		TxHeader.Identifier = CAN_ID_SA; //na main.h
-//		uint8_t dado_SA = start_autonomo;
-//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &dado_SA);
-//		frequenciaautonomos = 0;
-//	}
+	//	static uint8_t frequenciapag = 0;
+	//	static uint8_t frequenciaautonomos = 0;
+	//
+	//	frequenciapag++;
+	//	frequenciaautonomos++;
+	//
+	//	if (frequenciapag >= 14)
+	//	{
+	//		//id pagina
+	//		TxHeader.Identifier = CAN_ID_PAG; //na main.h
+	//		uint8_t dadoPag = pagina_atual;
+	//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &dadoPag);
+	//		frequenciapag = 0;
+	//	}
+	//	if (frequenciaautonomos >= 13)
+	//	{
+	//		//id autonomos
+	//		TxHeader.Identifier = CAN_ID_SA; //na main.h
+	//		uint8_t dado_SA = start_autonomo;
+	//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &dado_SA);
+	//		frequenciaautonomos = 0;
+	//	}
 
 
 	//*** configuração dos botoes pra serem lidos a cada tick(16ms) ***//
@@ -180,24 +180,27 @@ void Model::tick()
 
 	if (btn_apertado == 1)
 	{  // envio da mensagem no can
-//		uint8_t valorRTD = CAN_rtd_msg;
-//		TxHeader.Identifier = CAN_ID_RTD;
-//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &valorRTD);
+		//		uint8_t valorRTD = CAN_rtd_msg;
+		//		TxHeader.Identifier = CAN_ID_RTD;
+		//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &valorRTD);
 		valorRTD = 1;
 		modelListener->RTDbotao(btn_apertado); //aqui vou mandar o valor do botão ate pq
 		//se ele aperta vai mandar um msm mas o um é so pra conferir se apertou
 
-
 	}
 	else {
 		btn_apertado = 0;
-//		CAN_rtd_msg = 0;
-//		uint8_t valorRTD = CAN_rtd_msg;
-//		TxHeader.Identifier = CAN_ID_RTD;
-//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &valorRTD);
+		//		CAN_rtd_msg = 0;
+		//		uint8_t valorRTD = CAN_rtd_msg;
+		//		TxHeader.Identifier = CAN_ID_RTD;
+		//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &valorRTD);
 		valorRTD = 0;
 		modelListener->RTDbotao(btn_apertado);
 	}
+
+	//ligar o led quando o botao rtd tiver apertado
+	if (valorRTD == 1) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+	} else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
 
 	//***** READ TO DRIVE END *****//
 
@@ -274,73 +277,94 @@ void Model::tick()
 
 	//***** BOTAO 3 END *****//
 
+	//**mandar pro display as variaveis recebidas do can **//
+
+	modelListener->updateFalhaTMS(falha_tms);
+	modelListener->updateFalhaECU(falha_ecu);
+	modelListener->updateFalhaINV(falha_inversor);
+	modelListener->updateTensaoCelulaMin(tensao_cel_min);
+	modelListener->updateTensaoCelulaMax(tensao_cel_max);
+	modelListener->updateSOC(soc);
+	modelListener->updateAcelerador(acelerador);
+	modelListener->updateFreio(freio);
+	modelListener->updateTempAcc(temperatura_acc);
+	modelListener->updateCorrenteHV((float)correnteHV);
+	modelListener->updateCorrenteInv((float)corrente_inv);
+	modelListener->updateRPM(rpm);
+	modelListener->updateTempMotor(temperatura_motor);
+	modelListener->updateTempInversor(temperatura_inv);
+	modelListener->updateTensaoHV((float)tensaoHV);
+	modelListener->updateTensaoInversor((float)tensao_inv);
+
+	//**mandar pro display as variaveis recebidas do can END**//
+
 	//	CAN_Message_t msg_recebida;
 	//	while (osMessageQueueGet(msg_canHandle, &msg_recebida, NULL, 0) == osOK)
 	//	{
-	switch (RxHeader.Identifier)
-	{
-	case 0x120: { //0x120 //0x141so pra teste
-		//			falha_inversor = msg_recebida.data[0];
-		//			readtodrive_led = msg_recebida.data[3];
-		//			falha_tms = msg_recebida.data[4];
-		//			falha_ecu = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
-		//			if (readtodrive_led == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
-		//			} else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
-
-		modelListener->updateFalhaTMS(falha_tms);
-		modelListener->updateFalhaECU(falha_ecu);
-		modelListener->updateFalhaINV(falha_inversor);
-
-		break;
-	}
-	case 0x121: {
-		//			tensao_cel_min = msg_recebida.data[0];
-		//			tensao_cel_max = msg_recebida.data[2];
-		//			soc = msg_recebida.data[3];
-		//			acelerador = msg_recebida.data[4];
-		//			freio = msg_recebida.data[5];
-		//			temperatura_acc = msg_recebida.data[7]; //certo [7] qualquer outro teste
-
-		modelListener->updateTensaoCelulaMin(tensao_cel_min);
-		modelListener->updateTensaoCelulaMax(tensao_cel_max);
-		modelListener->updateSOC(soc);
-		modelListener->updateAcelerador(acelerador);
-		modelListener->updateFreio(freio);
-		modelListener->updateTempAcc(temperatura_acc);
-		break;
-	}
-
-	case 0x220: {
-		//			correnteHV = 0.0f; //acumulador
-		//			corrente_inv = 0.0f; //inversor
-
-		//			memcpy(&correnteHV, &msg_recebida.data[4], sizeof(float));
-		//			memcpy(&corrente_inv, &msg_recebida.data[0], sizeof(float));
-		modelListener->updateCorrenteHV((float)correnteHV);
-		modelListener->updateCorrenteInv((float)corrente_inv);
-		break;
-	}
-	case 0x420: {
-		//			rpm = ((uint16_t)msg_recebida.data[0] << 8) | msg_recebida.data[1];
-		//			temperatura_motor = ((uint16_t)msg_recebida.data[2] << 8) | msg_recebida.data[3];
-		//			temperatura_inv = ((uint16_t)msg_recebida.data[6] << 8) | msg_recebida.data[7];
-
-		modelListener->updateRPM(rpm);
-		modelListener->updateTempMotor(temperatura_motor);
-		modelListener->updateTempInversor(temperatura_inv);
-		break;
-	}
-	case 0x421: {
-		//			tensao_inv = 0.0f; //trifasico
-		//			tensaoHV = 0.0f; //acumulador
-		//
-		//			memcpy(&tensao_inv, &msg_recebida.data[0], sizeof(float));
-		//			memcpy(&tensaoHV, &msg_recebida.data[4], sizeof(float));
-
-		modelListener->updateTensaoHV((float)tensaoHV);
-		modelListener->updateTensaoInversor((float)tensao_inv);
-		break;
-	}
-	}
+	//	switch (RxHeader.Identifier)
+	//	{
+	//	case 0x120: { //0x120 //0x141so pra teste
+	//		//			falha_inversor = msg_recebida.data[0];
+	//		//			readtodrive_led = msg_recebida.data[3];
+	//		//			falha_tms = msg_recebida.data[4];
+	//		//			falha_ecu = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
+	//		//			if (readtodrive_led == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+	//		//			} else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
+	//
+	//		modelListener->updateFalhaTMS(falha_tms);
+	//		modelListener->updateFalhaECU(falha_ecu);
+	//		modelListener->updateFalhaINV(falha_inversor);
+	//
+	//		break;
+	//	}
+	//	case 0x121: {
+	//		//			tensao_cel_min = msg_recebida.data[0];
+	//		//			tensao_cel_max = msg_recebida.data[2];
+	//		//			soc = msg_recebida.data[3];
+	//		//			acelerador = msg_recebida.data[4];
+	//		//			freio = msg_recebida.data[5];
+	//		//			temperatura_acc = msg_recebida.data[7]; //certo [7] qualquer outro teste
+	//
+	//		modelListener->updateTensaoCelulaMin(tensao_cel_min);
+	//		modelListener->updateTensaoCelulaMax(tensao_cel_max);
+	//		modelListener->updateSOC(soc);
+	//		modelListener->updateAcelerador(acelerador);
+	//		modelListener->updateFreio(freio);
+	//		modelListener->updateTempAcc(temperatura_acc);
+	//		break;
+	//	}
+	//
+	//	case 0x220: {
+	//		//			correnteHV = 0.0f; //acumulador
+	//		//			corrente_inv = 0.0f; //inversor
+	//
+	//		//			memcpy(&correnteHV, &msg_recebida.data[4], sizeof(float));
+	//		//			memcpy(&corrente_inv, &msg_recebida.data[0], sizeof(float));
+	//		modelListener->updateCorrenteHV((float)correnteHV);
+	//		modelListener->updateCorrenteInv((float)corrente_inv);
+	//		break;
+	//	}
+	//	case 0x420: {
+	//		//			rpm = ((uint16_t)msg_recebida.data[0] << 8) | msg_recebida.data[1];
+	//		//			temperatura_motor = ((uint16_t)msg_recebida.data[2] << 8) | msg_recebida.data[3];
+	//		//			temperatura_inv = ((uint16_t)msg_recebida.data[6] << 8) | msg_recebida.data[7];
+	//
+	//		modelListener->updateRPM(rpm);
+	//		modelListener->updateTempMotor(temperatura_motor);
+	//		modelListener->updateTempInversor(temperatura_inv);
+	//		break;
+	//	}
+	//	case 0x421: {
+	//		//			tensao_inv = 0.0f; //trifasico
+	//		//			tensaoHV = 0.0f; //acumulador
+	//		//
+	//		//			memcpy(&tensao_inv, &msg_recebida.data[0], sizeof(float));
+	//		//			memcpy(&tensaoHV, &msg_recebida.data[4], sizeof(float));
+	//
+	//		modelListener->updateTensaoHV((float)tensaoHV);
+	//		modelListener->updateTensaoInversor((float)tensao_inv);
+	//		break;
+	//	}
+	//	}
 }
 
