@@ -921,7 +921,7 @@ static void MX_GPIO_Init(void)
 extern osMessageQueueId_t msg_canHandle;
 
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
-//aqui eu receebo as variaveis can e armazeno em variaveis
+//aqui eu receebo can e armazeno em variaveis
 // pra depois mandar pro model.c que dai mando pro display
 {
         switch(RxHeader.Identifier){
@@ -984,7 +984,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		HAL_IncTick();
 	}
 
-	if (htim->Instance == TIM1)
+	if (htim->Instance == TIM1) //timer pra mandar mensagens em 10hz
 	{
 		// Read to drive
 		TxHeader.Identifier = 0x141;
