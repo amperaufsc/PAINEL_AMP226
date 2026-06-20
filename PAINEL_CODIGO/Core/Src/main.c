@@ -67,7 +67,7 @@ DMA_HandleTypeDef handle_GPDMA1_Channel0;
 
 LTDC_HandleTypeDef hltdc;
 
-TIM_HandleTypeDef htim1;
+TIM_HandleTypeDef htim3;
 
 /* USER CODE BEGIN PV */
 
@@ -128,7 +128,7 @@ static void MX_HSPI1_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_JPEG_Init(void);
 static void MX_FDCAN1_Init(void);
-static void MX_TIM1_Init(void);
+static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs);
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
@@ -188,13 +188,13 @@ int main(void)
   MX_I2C2_Init();
   MX_JPEG_Init();
   MX_FDCAN1_Init();
-  MX_TIM1_Init();
+  MX_TIM3_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
 
-  HAL_TIM_Base_Start_IT(&htim1);
+  HAL_TIM_Base_Start_IT(&htim3);
 
   /* USER CODE END 2 */
 
@@ -475,7 +475,7 @@ static void MX_FDCAN1_Init(void)
   TxHeader.FDFormat            = FDCAN_CLASSIC_CAN; //
   TxHeader.TxEventFifoControl  = FDCAN_NO_TX_EVENTS;
   TxHeader.MessageMarker       = 0;
-  TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+  TxHeader.DataLength = FDCAN_DLC_BYTES_8;
 
   /* USER CODE END FDCAN1_Init 2 */
 
@@ -768,49 +768,47 @@ static void MX_LTDC_Init(void)
 }
 
 /**
-  * @brief TIM1 Initialization Function
+  * @brief TIM3 Initialization Function
   * @param None
   * @retval None
   */
-static void MX_TIM1_Init(void)
+static void MX_TIM3_Init(void)
 {
 
-  /* USER CODE BEGIN TIM1_Init 0 */
+  /* USER CODE BEGIN TIM3_Init 0 */
 
-  /* USER CODE END TIM1_Init 0 */
+  /* USER CODE END TIM3_Init 0 */
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
 
-  /* USER CODE BEGIN TIM1_Init 1 */
+  /* USER CODE BEGIN TIM3_Init 1 */
 
-  /* USER CODE END TIM1_Init 1 */
-  htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 1023;
-  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 15624;
-  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim1.Init.RepetitionCounter = 0;
-  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 1023;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 15624;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
   {
     Error_Handler();
   }
   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
   {
     Error_Handler();
   }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN TIM1_Init 2 */
+  /* USER CODE BEGIN TIM3_Init 2 */
 
-  /* USER CODE END TIM1_Init 2 */
+  /* USER CODE END TIM3_Init 2 */
 
 }
 
@@ -921,50 +919,57 @@ static void MX_GPIO_Init(void)
 extern osMessageQueueId_t msg_canHandle;
 
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
-//aqui eu receebo can e armazeno em variaveis
+//aqui eu recebo can e armazeno em variaveis
 // pra depois mandar pro model.c que dai mando pro display
 {
-        switch(RxHeader.Identifier){
-        case 0x120: { //0x120 //0x141so pra teste
-        	falha_inversor = RxData[0];
-        	readtodrive_led = RxData[3];
-        	falha_tms = RxData[4];
-        	falha_ecu = ((uint16_t)RxData[1] << 8) | RxData[2];
-        	break;
-        }
-        case 0x121: {
-        	tensao_cel_min = RxData[0];
-        	tensao_cel_max = RxData[2];
-        	soc = RxData[3];
-        	acelerador = RxData[4];
-        	freio = RxData[5];
-        	temperatura_acc = RxData[7]; //certo [7] qualquer outro teste
-        	break;
-        }
+	if ((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != 0)
+	{
+		if (HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
+		        {
+		            return;
+		        }
+		switch(RxHeader.Identifier){
+		case 0x120: { //0x120 //0x141so pra teste
+			falha_inversor = RxData[0];
+			readtodrive_led = RxData[3];
+			falha_tms = RxData[4];
+			falha_ecu = ((uint16_t)RxData[1] << 8) | RxData[2];
+			break;
+		}
+		case 0x121: {
+			tensao_cel_min = RxData[0];
+			tensao_cel_max = RxData[2];
+			soc = RxData[3];
+			acelerador = RxData[4];
+			freio = RxData[5];
+			temperatura_acc = RxData[7]; //certo [7] qualquer outro teste
+			break;
+		}
 
-        case 0x220: {
-        	correnteHV = 0.0f; //acumulador
-        	corrente_inv = 0.0f; //inversor
+		case 0x220: {
+			correnteHV = 0.0f; //acumulador
+			corrente_inv = 0.0f; //inversor
 
-        	memcpy(&correnteHV, &RxData[4], sizeof(float));
-        	memcpy(&corrente_inv, &RxData[0], sizeof(float));
-        	break;
-        }
-        case 0x420: {
-        	rpm = ((uint16_t)RxData[0] << 8) | RxData[1];
-        	temperatura_motor = ((uint16_t)RxData[2] << 8) | RxData[3];
-        	temperatura_inv = ((uint16_t)RxData[6] << 8) | RxData[7];
-        	break;
-        }
-        case 0x421: {
-        	tensao_inv = 0.0f; // dclink inv
-        	tensaoHV = 0.0f; //acumulador
+			memcpy(&correnteHV, &RxData[4], sizeof(float));
+			memcpy(&corrente_inv, &RxData[0], sizeof(float));
+			break;
+		}
+		case 0x420: {
+			rpm = ((uint16_t)RxData[0] << 8) | RxData[1];
+			temperatura_motor = ((uint16_t)RxData[2] << 8) | RxData[3];
+			temperatura_inv = ((uint16_t)RxData[6] << 8) | RxData[7];
+			break;
+		}
+		case 0x421: {
+			tensao_inv = 0.0f; // dclink inv
+			tensaoHV = 0.0f; //acumulador
 
-        	memcpy(&tensao_inv, &RxData[0], sizeof(float));
-        	memcpy(&tensaoHV, &RxData[4], sizeof(float));
-        	break;
-        }
-    }
+			memcpy(&tensao_inv, &RxData[0], sizeof(float));
+			memcpy(&tensaoHV, &RxData[4], sizeof(float));
+			break;
+		}
+		}
+	}
 }
 /* USER CODE END 4 */
 
@@ -984,7 +989,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		HAL_IncTick();
 	}
 
-	if (htim->Instance == TIM1) //timer pra mandar mensagens em 10hz
+	if (htim->Instance == TIM3) //timer pra mandar mensagens em 10hz
 	{
 		// Read to drive
 		TxHeader.Identifier = 0x141;
@@ -992,17 +997,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		TxData[0] = valorRTD;
 		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-		// Id página
-		TxHeader.Identifier = 0x54B;
-		TxHeader.DataLength = FDCAN_DLC_BYTES_1;
-		TxData[0] = pagina_atual;
-		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//		// Id página
+//		TxHeader.Identifier = 0x54B;
+//		TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+//		TxData[0] = pagina_atual;
+//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
 		// start autonomo
-		TxHeader.Identifier = 0x347;
-		TxHeader.DataLength = FDCAN_DLC_BYTES_1;
-		TxData[0] = start_autonomo;
-		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+//		TxHeader.Identifier = 0x347;
+//		TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+//		TxData[0] = start_autonomo;
+//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 	}
 
 
