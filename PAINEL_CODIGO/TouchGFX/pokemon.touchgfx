@@ -18,6 +18,136 @@
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "logo_branca.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin",
+            "X": 492,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin_1",
+            "X": 532,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin_2",
+            "X": 572,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin_35",
+            "X": 609,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin_3",
+            "X": 652,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin_4",
+            "X": 692,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin_5",
+            "X": 730,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin_6",
+            "X": -66,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin_7",
+            "X": -26,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin_8",
+            "X": 13,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin_9",
+            "X": 54,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin_10",
+            "X": 94,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "carrin_11",
+            "X": 127,
+            "Y": 59,
+            "Width": 120,
+            "Height": 50,
+            "Visible": false,
+            "RelativeFilename": "carrin.png"
           }
         ],
         "Interactions": [
@@ -1193,7 +1323,7 @@
             "Name": "MENU_MP",
             "X": 76,
             "Y": 429,
-            "Width": 92,
+            "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_8H7T",
             "TextRotation": "0",
@@ -1201,8 +1331,7 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            },
-            "AutoSize": true
+            }
           }
         ],
         "Interactions": [
