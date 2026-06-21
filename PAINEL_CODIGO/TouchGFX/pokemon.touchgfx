@@ -237,7 +237,7 @@
           {
             "Type": "TextArea",
             "Name": "rpm",
-            "X": 621,
+            "X": 620,
             "Y": 209,
             "Width": 67,
             "Height": 35,
@@ -570,7 +570,7 @@
           {
             "Type": "TextArea",
             "Name": "soc",
-            "X": 621,
+            "X": 620,
             "Y": 291,
             "Width": 66,
             "Height": 35,
@@ -1386,7 +1386,7 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "MODODEPROVA.png"
+            "RelativeFilename": "fundoSA.png"
           }
         ],
         "Interactions": [
@@ -1435,7 +1435,7 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "Areatesteoficial.png"
+            "RelativeFilename": "fundoSA.png"
           }
         ],
         "Interactions": []
@@ -1448,7 +1448,7 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "AUTOCROSS.png"
+            "RelativeFilename": "fundoSA.png"
           }
         ],
         "Interactions": []
@@ -1461,7 +1461,7 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "ACELERACAO.png"
+            "RelativeFilename": "fundoSA.png"
           }
         ],
         "Interactions": []
@@ -1474,7 +1474,7 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "SKIDPAD.png"
+            "RelativeFilename": "fundoSA.png"
           }
         ],
         "Interactions": []
@@ -1487,7 +1487,7 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "TRACKDRIVE.png"
+            "RelativeFilename": "fundoSA.png"
           }
         ],
         "Interactions": []
@@ -1500,7 +1500,7 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "EBS.png"
+            "RelativeFilename": "fundoSA.png"
           }
         ],
         "Interactions": [
@@ -1538,7 +1538,7 @@
             "Name": "image1",
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "INSPECAO.png"
+            "RelativeFilename": "fundoSA.png"
           }
         ],
         "Interactions": [

@@ -9,7 +9,7 @@ void CapaView::setupScreen()
 {
 	CapaViewBase::setupScreen();
 
-	// Estado inicial: logo visível, TODOS os carrinhos escondidos
+	// Estado inicial
 	logobranca.setVisible(true);
 	image1.setVisible(false);
 	image2.setVisible(false);
