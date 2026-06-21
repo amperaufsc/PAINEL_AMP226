@@ -87,7 +87,14 @@ void Model::startautonomos(uint8_t sa)
 }
 
 void Model::tick()
-{	//**teste de can em loopback init**//
+{	//**contador de fps**//
+	//configuração pra 30 fps
+//	uint8_t fps30;
+//	fps30++;
+//	if (fps30 >= 2){fps30 = 0;}
+	//configuração pra 30 fps
+
+	//**teste de can em loopback init**//
 	//	static int freq = 0; //frequencia
 	//	freq++;
 	//	static uint8_t msgteste = 0; //variaveis  de teste do loopback
@@ -129,31 +136,6 @@ void Model::tick()
 
 	//**teste de can em loopback end**//
 
-
-	//configurando frequencia de envio das mensagens
-	//enviadas a cada 12 ticks ou 192ms ou 5hz
-	//	static uint8_t frequenciapag = 0;
-	//	static uint8_t frequenciaautonomos = 0;
-	//
-	//	frequenciapag++;
-	//	frequenciaautonomos++;
-	//
-	//	if (frequenciapag >= 14)
-	//	{
-	//		//id pagina
-	//		TxHeader.Identifier = CAN_ID_PAG; //na main.h
-	//		uint8_t dadoPag = pagina_atual;
-	//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &dadoPag);
-	//		frequenciapag = 0;
-	//	}
-	//	if (frequenciaautonomos >= 13)
-	//	{
-	//		//id autonomos
-	//		TxHeader.Identifier = CAN_ID_SA; //na main.h
-	//		uint8_t dado_SA = start_autonomo;
-	//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, &dado_SA);
-	//		frequenciaautonomos = 0;
-	//	}
 
 
 	//*** configuração dos botoes pra serem lidos a cada tick(16ms) ***//
@@ -301,7 +283,7 @@ void Model::tick()
 	//**ligar led verde quando entrar no modo de read to drive
 	if (readtodrive_led >= 2 ){HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);}
 
-	//desligar o led quando triangulo for apertado
+	//desligar o led enquanto estiver em rtd quando triangulo e x for apertado
 	else if(readtodrive_led >= 2 && btn_apertado_1 == 1 && btn_apertado_3 == 1){HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
 
 

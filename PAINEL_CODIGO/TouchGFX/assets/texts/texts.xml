@@ -6,6 +6,30 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_8H7T" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">MENU</Translation>
+      </Text>
+      <Text Id="__SingleUse_PRFE" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">5</Translation>
+      </Text>
+      <Text Id="__SingleUse_3T7X" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_PGYK" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_NY57" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_BUGL" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">6</Translation>
+      </Text>
+      <Text Id="__SingleUse_TK3V" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_WQU1" Alignment="Center" TypographyId="velocimetro">
+        <Translation Language="GB">0</Translation>
+      </Text>
       <Text Id="__SingleUse_Y0XX" Alignment="Center" TypographyId="batman">
         <Translation Language="GB">DESATIVADO</Translation>
       </Text>
@@ -109,7 +133,7 @@
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_8ABU" Alignment="Center" TypographyId="batman">
-        <Translation Language="GB">  &lt;value&gt;  </Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_3DVT" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">FREIO</Translation>
@@ -240,5 +264,6 @@
     <Typography Id="Typography2" Font="Gotham_Bold.otf" Size="70" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography3" Font="Gotham_Ultra.otf" Size="134" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" />
     <Typography Id="letra_miuda" Font="Gotham_Bold.otf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="velocimetro" Font="Gotham_Bold.otf" Size="22" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="a-z,A-Z,0-9" />
   </Typographies>
 </TextDatabase>

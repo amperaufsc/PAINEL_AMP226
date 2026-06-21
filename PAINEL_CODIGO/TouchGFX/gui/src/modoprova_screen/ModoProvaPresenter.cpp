@@ -33,3 +33,31 @@ void ModoProvaPresenter::updateTempAcc(int temp)
 {
     view.updateTempAcc(temp);
 }
+
+void ModoProvaPresenter::updateAcelerador(int acelera)
+{
+    view.updateAcelerador(acelera);
+}
+
+void ModoProvaPresenter::updateFreio(int freio)
+{
+    view.updateFreio(freio);
+}
+void ModoProvaPresenter::updateVelocidade(int vel)
+{
+    view.updateVelocidade(vel);
+}
+
+void ModoProvaPresenter::updateDistancia(int metros)
+{
+    view.updateDistancia(metros);
+}
+void ModoProvaPresenter::updateRPM(int rpm)
+{
+    view.updateRPM(rpm);
+}
+
+void ModoProvaPresenter::updateSOC(int soc)
+{
+    view.updateSOC(soc);
+}
