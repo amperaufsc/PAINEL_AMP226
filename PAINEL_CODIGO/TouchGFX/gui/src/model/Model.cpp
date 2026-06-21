@@ -270,7 +270,7 @@ void Model::tick()
 	}
 	if (btn_apertado_3 == 1)
 	{
-		modelListener->Botao3(btn_apertado_3);
+	modelListener->Botao3(btn_apertado_3);
 	}
 	else { btn_apertado_3 = 0;
 	modelListener->Botao3(btn_apertado_3);}
@@ -297,6 +297,14 @@ void Model::tick()
 	modelListener->updateTensaoInversor((float)tensao_inv);
 
 	//**mandar pro display as variaveis recebidas do can END**//
+
+	//**ligar led verde quando entrar no modo de read to drive
+	if (readtodrive_led >= 2 ){HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);}
+
+	//desligar o led quando triangulo for apertado
+	else if(readtodrive_led >= 2 && btn_apertado_1 == 1 && btn_apertado_3 == 1){HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
+
+
 
 	//	CAN_Message_t msg_recebida;
 	//	while (osMessageQueueGet(msg_canHandle, &msg_recebida, NULL, 0) == osOK)

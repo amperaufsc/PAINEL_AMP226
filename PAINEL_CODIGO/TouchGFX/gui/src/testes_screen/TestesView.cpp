@@ -103,7 +103,8 @@ void TestesView::updateSOC(int soc)
 
 void TestesView::updateRPM(int rpm)
 {
-    Unicode::snprintf(rpm_unBuffer, RPM_UN_SIZE, "%d", rpm);
+	int rotacao = rpm/10;
+    Unicode::snprintf(rpm_unBuffer, RPM_UN_SIZE, "%d", rotacao);
     rpm_un.invalidate();
 }
 

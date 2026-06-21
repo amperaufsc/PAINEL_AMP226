@@ -45,3 +45,11 @@ void ModoProvaView::updateTempAcc(int temp)
 
 	    Tempacc_un.invalidate();
 }
+
+void ModoProvaView::updateRPM(int rpm)
+{
+	int rotacao = rpm/10;
+    Unicode::snprintf(rpm_unBuffer, RPM_UN_SIZE, "%d", rotacao);
+    rpm_un.invalidate();
+}
+
