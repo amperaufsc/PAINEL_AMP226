@@ -955,9 +955,9 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 			break;
 		}
 		case 0x420: {
-			rpm = ((uint16_t)RxData[0] << 8) | RxData[1];
-			temperatura_motor = ((uint16_t)RxData[2] << 8) | RxData[3];
-			temperatura_inv = ((uint16_t)RxData[6] << 8) | RxData[7];
+			rpm = ((uint16_t)RxData[1] << 8) | RxData[0];
+			temperatura_motor = ((uint16_t)RxData[3] << 8) | RxData[2];
+			temperatura_inv = ((uint16_t)RxData[7] << 8) | RxData[6];
 			break;
 		}
 		case 0x421: {
