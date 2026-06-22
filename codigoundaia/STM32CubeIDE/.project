@@ -390,6 +390,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/roleta.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/roleta.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/EBS_Teste_SAPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/ebs_teste_sa_screen/EBS_Teste_SAPresenter.cpp</locationURI>
@@ -433,6 +438,16 @@
 			<name>Application/User/gui/pag1_AutonomosView.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/pag1_autonomos_screen/pag1_AutonomosView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/paginasecretaPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/paginasecreta_screen/paginasecretaPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/paginasecretaView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/paginasecreta_screen/paginasecretaView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/Skidped_SAPresenter.cpp</name>
@@ -680,6 +695,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/roletaBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/roletaBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/EBS_Teste_SAViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/ebs_teste_sa_screen/EBS_Teste_SAViewBase.cpp</locationURI>
@@ -698,6 +718,11 @@
 			<name>Application/User/generated/pag1_AutonomosViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/pag1_autonomos_screen/pag1_AutonomosViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/paginasecretaViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/paginasecreta_screen/paginasecretaViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Skidped_SAViewBase.cpp</name>
@@ -848,6 +873,31 @@
 			<name>Application/User/generated/image_logobrancav2.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_logobrancav2.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_m1.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_m1.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_m2.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_m2.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_m3.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_m3.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_m4.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_m4.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_m5.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_m5.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_ponteira.cpp</name>
