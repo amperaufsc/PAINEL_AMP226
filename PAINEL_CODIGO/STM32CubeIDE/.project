@@ -390,6 +390,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/ModosProvaSAuto.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/ModosProvaSAuto.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/EBS_Teste_SAPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/ebs_teste_sa_screen/EBS_Teste_SAPresenter.cpp</locationURI>
@@ -678,6 +683,11 @@
 			<name>Application/User/generated/FrontendApplicationBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/ModosProvaSAutoBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/ModosProvaSAutoBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/EBS_Teste_SAViewBase.cpp</name>

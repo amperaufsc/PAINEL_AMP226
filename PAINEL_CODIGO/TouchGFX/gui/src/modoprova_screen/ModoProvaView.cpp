@@ -48,8 +48,8 @@ void ModoProvaView::updateTempAcc(int temp)
 
 void ModoProvaView::updateRPM(int rpm)
 {
-	float rotacaotacometro = rpm/1000.0 ; // aqui so deixa em x100 pra nao sobrecarregar o sistema
-    Unicode::snprintf(rpm_unBuffer, RPM_UN_SIZE, "%d", rotacao);
+	float rotacaotacometro = rpm/1000.0f;
+	Unicode::snprintfFloat(rpm_unBuffer, RPM_UN_SIZE, "%.1f", rotacaotacometro);
     tacometro.setValue(rotacaotacometro);
 
     if (rpm < 1000) {
@@ -128,10 +128,11 @@ void ModoProvaView::updateSOC(int soc)
 }
 void ModoProvaView::updateVelocidade(int vel)
 {
-	    Unicode::snprintf(velocidade_unBuffer, VELOCIDADE_UN_SIZE, "%d", vel);
-	    velocidade_un.invalidate();
-	    velocimetro.setValue(vel);
-	    velocimetro.invalidate();
+	//sa vai mandar pra mim o valor enquanto isso nao acontece vou deixar comentado aqui
+//	    Unicode::snprintf(velocidade_unBuffer, VELOCIDADE_UN_SIZE, "%d", vel);
+//	    velocidade_un.invalidate();
+//	    velocimetro.setValue(vel);
+//	    velocimetro.invalidate();
 }
 void ModoProvaView::updateDistancia(int metros)
 {

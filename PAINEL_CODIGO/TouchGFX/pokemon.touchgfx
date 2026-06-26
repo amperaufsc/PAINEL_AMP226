@@ -1383,10 +1383,49 @@
         "Components": [
           {
             "Type": "Image",
-            "Name": "image1",
+            "Name": "Fundo",
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "MODODEPROVA.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "erased1",
+            "X": 72,
+            "Y": 430,
+            "Width": 137,
+            "Height": 50,
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "erased1_2",
+            "X": 72,
+            "Y": 99,
+            "Width": 656,
+            "Height": 254,
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "erased1_1",
+            "X": 593,
+            "Y": 430,
+            "Width": 153,
+            "Height": 50,
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            }
           }
         ],
         "Interactions": [
@@ -1436,6 +1475,19 @@
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "Areatesteoficial.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 102,
+            "Y": 426,
+            "Width": 59,
+            "Height": 54,
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            }
           }
         ],
         "Interactions": []
@@ -1569,7 +1621,15 @@
         ]
       }
     ],
-    "CustomContainerDefinitions": [],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "ModosProvaSAuto",
+        "Width": 800,
+        "Height": 480,
+        "Components": [],
+        "Interactions": []
+      }
+    ],
     "Name": "pokemon",
     "Resolution": {
       "Width": 800,

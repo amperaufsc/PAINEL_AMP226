@@ -148,8 +148,8 @@ void TestesView::updateCorrenteHV(float corrente)
 {
 	//esse if é so pra quando a corrente da menos de 0 ele ficar em 0
 	if (corrente >= 0){
-    Unicode::snprintfFloat(correntehv_unBuffer, CORRENTEHV_UN_SIZE, "%.1f", corrente);
-    correntehv_un.invalidate();
+		Unicode::snprintfFloat(correntehv_unBuffer, CORRENTEHV_UN_SIZE, "%.1f", corrente);
+		correntehv_un.invalidate();
 	}
 	else{
 	    Unicode::snprintfFloat(correntehv_unBuffer, CORRENTEHV_UN_SIZE, "%.1f", correntelixo);
