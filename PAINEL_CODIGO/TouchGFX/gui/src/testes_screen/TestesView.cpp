@@ -103,7 +103,7 @@ void TestesView::updateSOC(int soc)
 
 void TestesView::updateRPM(int rpm)
 {
-	int rotacao = rpm/10;
+	int rotacao = rpm;
     Unicode::snprintf(rpm_unBuffer, RPM_UN_SIZE, "%d", rotacao);
     rpm_un.invalidate();
 }
@@ -146,14 +146,30 @@ void TestesView::updateTempAcc(int temp)
 
 void TestesView::updateCorrenteHV(float corrente)
 {
+	//esse if é so pra quando a corrente da menos de 0 ele ficar em 0
+	if (corrente >= 0){
     Unicode::snprintfFloat(correntehv_unBuffer, CORRENTEHV_UN_SIZE, "%.1f", corrente);
     correntehv_un.invalidate();
+	}
+	else{
+	    Unicode::snprintfFloat(correntehv_unBuffer, CORRENTEHV_UN_SIZE, "%.1f", correntelixo);
+	    correntehv_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+	    correntehv_un.invalidate();
+	}
 }
 
 void TestesView::updateCorrenteInv(float corrente)
 {
+	//esse if é so pra quando a corrente da menos de 0(que é impossivel) ele ficar em 0
+	if (corrente >= 0){
     Unicode::snprintfFloat(correnteinv_unBuffer, CORRENTEINV_UN_SIZE, "%.1f", corrente);
     correnteinv_un.invalidate();
+	}
+	else{
+	    Unicode::snprintfFloat(correnteinv_unBuffer, CORRENTEINV_UN_SIZE, "%.1f", correntelixo);
+	    correnteinv_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+	    correnteinv_un.invalidate();
+	}
 }
 
 void TestesView::updateTensaoHV(float tesao)

@@ -31,6 +31,7 @@ public:
 protected:
     float valTensaoMin;
     float valTensaoMax;
+    float correntelixo = 0.0f;
 };
 
 #endif // TESTESVIEW_HPP

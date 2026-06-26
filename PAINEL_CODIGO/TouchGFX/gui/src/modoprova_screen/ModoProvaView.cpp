@@ -1,3 +1,4 @@
+
 #include <gui/modoprova_screen/ModoProvaView.hpp>
 #include <touchgfx/Color.hpp>
 #include <stdio.h>
@@ -20,8 +21,7 @@ void ModoProvaView::tearDownScreen()
 
 void ModoProvaView::updateTempMotor(int temp)
 {
-	int temperaturareal = temp/100;
-	Unicode::snprintf(Tempmotor_unBuffer, TEMPMOTOR_UN_SIZE, "%d", temperaturareal);
+	Unicode::snprintf(Tempmotor_unBuffer, TEMPMOTOR_UN_SIZE, "%d", temp);
 	Tempmotor_un.invalidate();
 }
 
@@ -48,14 +48,11 @@ void ModoProvaView::updateTempAcc(int temp)
 
 void ModoProvaView::updateRPM(int rpm)
 {
-	int rotacao = rpm; //ta recenbendo com 5 algarismos sendo um deles casa decimal
-	int rotacaotacografo = rpm; // aqui so deixa em x100 pra nao sobrecarregar o sistema
+	float rotacaotacometro = rpm/1000.0 ; // aqui so deixa em x100 pra nao sobrecarregar o sistema
     Unicode::snprintf(rpm_unBuffer, RPM_UN_SIZE, "%d", rotacao);
-    tacometro.setValue(rotacaotacografo);
-    tacometro.invalidate();
-    rpm_un.invalidate();
+    tacometro.setValue(rotacaotacometro);
 
-    if (rotacao < 1000) {
+    if (rpm < 1000) {
     	        rpm0.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
     	        rpm1.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
     	        rpm2.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
@@ -64,7 +61,7 @@ void ModoProvaView::updateRPM(int rpm)
     	        rpm5.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
     	        rpm6.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
     	    }
-    	    else if (rotacao >= 1000 && rotacao < 2000) {
+    	    else if (rpm >= 1000 && rpm < 2000) {
     	        rpm0.setColor(touchgfx::Color::getColorFromRGB(64, 126, 147));
     	        rpm1.setColor(touchgfx::Color::getColorFromRGB(64, 126, 147));
     	        rpm2.setColor(touchgfx::Color::getColorFromRGB(64, 126, 147));
@@ -73,7 +70,7 @@ void ModoProvaView::updateRPM(int rpm)
     	        rpm5.setColor(touchgfx::Color::getColorFromRGB(64, 126, 147));
     	        rpm6.setColor(touchgfx::Color::getColorFromRGB(64, 126, 147));
     	    }
-    	    else if (rotacao >= 2000 && rotacao < 2850) {
+    	    else if (rpm >= 2000 && rpm < 2850) {
     	        rpm0.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
     	        rpm1.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
     	        rpm2.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
@@ -82,7 +79,7 @@ void ModoProvaView::updateRPM(int rpm)
     	        rpm5.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
     	        rpm6.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
     	    }
-    	    else if (rotacao >= 2850 && rotacao < 3150) {
+    	    else if (rpm >= 2850 && rpm < 3150) {
     	        rpm0.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
     	        rpm1.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
     	        rpm2.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
@@ -91,7 +88,7 @@ void ModoProvaView::updateRPM(int rpm)
     	        rpm5.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
     	        rpm6.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
     	    }
-    	    else if (rotacao >= 3150 && rotacao < 4000) {
+    	    else if (rpm >= 3150 && rpm < 4000) {
     	        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
     	        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
     	        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
@@ -100,7 +97,7 @@ void ModoProvaView::updateRPM(int rpm)
     	        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
     	        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
     	    }
-    	    else if (rotacao >= 4000 && rotacao <= 5000) {
+    	    else if (rpm >= 4000 && rpm <= 5000) {
     	        rpm0.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
     	        rpm1.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
     	        rpm2.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
@@ -109,7 +106,7 @@ void ModoProvaView::updateRPM(int rpm)
     	        rpm5.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
     	        rpm6.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
     	    }
-    	    else if (rotacao > 5000) {
+    	    else if (rpm > 5000) {
     			rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     			rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     			rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
@@ -118,6 +115,9 @@ void ModoProvaView::updateRPM(int rpm)
     			rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     			rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     		}
+
+    tacometro.invalidate();
+    rpm_un.invalidate();
 }
 void ModoProvaView::updateSOC(int soc)
 {

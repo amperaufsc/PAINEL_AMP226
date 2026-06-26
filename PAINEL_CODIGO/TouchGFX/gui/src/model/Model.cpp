@@ -284,7 +284,7 @@ void Model::tick()
 	if (readtodrive_led >= 2 ){HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);}
 
 	//desligar o led enquanto estiver em rtd quando triangulo e x for apertado
-	else if(readtodrive_led >= 2 && btn_apertado_1 == 1 && btn_apertado_3 == 1){HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
+	//else if(readtodrive_led >= 2 && btn_apertado_1 == 1 && btn_apertado_3 == 1){HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
 
 
 

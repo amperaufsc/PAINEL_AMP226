@@ -947,8 +947,8 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 		}
 
 		case 0x220: {
-			correnteHV = 0.0f; //acumulador
-			corrente_inv = 0.0f; //inversor
+//			correnteHV = 0.0f; //acumulador
+//			corrente_inv = 0.0f; //inversor
 
 			memcpy(&correnteHV, &RxData[4], sizeof(float));
 			memcpy(&corrente_inv, &RxData[0], sizeof(float));
@@ -961,8 +961,8 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 			break;
 		}
 		case 0x421: {
-			tensao_inv = 0.0f; // dclink inv
-			tensaoHV = 0.0f; //acumulador
+//			tensao_inv = 0.0f; // dclink inv
+//			tensaoHV = 0.0f; //acumulador
 
 			memcpy(&tensao_inv, &RxData[0], sizeof(float));
 			memcpy(&tensaoHV, &RxData[4], sizeof(float));
