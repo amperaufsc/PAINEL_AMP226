@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.26.0">
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.26.1">
   <Languages>
     <Language Id="GB" />
   </Languages>
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_HCMQ" Alignment="Left" TypographyId="Typography6">
+        <Translation Language="GB">MENU</Translation>
+      </Text>
+      <Text Id="__SingleUse_1XKH" Alignment="Left" TypographyId="Typography6">
+        <Translation Language="GB">INSPEÇÃO</Translation>
+      </Text>
+      <Text Id="__SingleUse_0I5Y" Alignment="Left" TypographyId="Typography6">
+        <Translation Language="GB">TESTES</Translation>
+      </Text>
+      <Text Id="__SingleUse_BRNL" Alignment="Left" TypographyId="Typography6">
+        <Translation Language="GB">AUTOCROSS</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZP84" Alignment="Left" TypographyId="Typography6">
+        <Translation Language="GB">TESTES</Translation>
+      </Text>
+      <Text Id="__SingleUse_KNE4" Alignment="Left" TypographyId="Typography6">
+        <Translation Language="GB">MENU_SA</Translation>
+      </Text>
+      <Text Id="__SingleUse_6B3J" Alignment="Left" TypographyId="Typography4">
+        <Translation Language="GB">ACELERAÇÃO</Translation>
+      </Text>
+      <Text Id="__SingleUse_TNK7" Alignment="Left" TypographyId="Typography4">
+        <Translation Language="GB">SKIDPAD</Translation>
+      </Text>
+      <Text Id="__SingleUse_23MT" Alignment="Left" TypographyId="Typography4">
+        <Translation Language="GB">TRACKDRIVE</Translation>
+      </Text>
+      <Text Id="__SingleUse_2WL4" Alignment="Left" TypographyId="Typography4">
+        <Translation Language="GB">AUTOCROSS</Translation>
+      </Text>
+      <Text Id="__SingleUse_B56I" Alignment="Left" TypographyId="Typography4">
+        <Translation Language="GB">EBS</Translation>
+      </Text>
+      <Text Id="__SingleUse_QVC0" Alignment="Left" TypographyId="Typography4">
+        <Translation Language="GB">INSPEÇÃO</Translation>
+      </Text>
+      <Text Id="__SingleUse_0FAD" Alignment="Left" TypographyId="Typography4">
+        <Translation Language="GB">ÁREA DE TESTE</Translation>
+      </Text>
       <Text Id="__SingleUse_8H7T" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">MENU</Translation>
       </Text>
@@ -157,7 +196,7 @@
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_4951" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Hodometro</Translation>
+        <Translation Language="GB">Distância</Translation>
       </Text>
       <Text Id="__SingleUse_AF0Y" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
@@ -265,5 +304,7 @@
     <Typography Id="Typography3" Font="Gotham_Ultra.otf" Size="134" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" />
     <Typography Id="letra_miuda" Font="Gotham_Bold.otf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="a-z,A-Z,0-9" />
     <Typography Id="velocimetro" Font="Gotham_Bold.otf" Size="22" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="Typography4" Font="Gotham_Bold.otf" Size="81" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography6" Font="Gotham_Bold.otf" Size="23" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

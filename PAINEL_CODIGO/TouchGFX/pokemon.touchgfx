@@ -914,9 +914,9 @@
           {
             "Type": "TextArea",
             "Name": "distancia",
-            "X": 313,
+            "X": 330,
             "Y": 402,
-            "Width": 174,
+            "Width": 141,
             "Height": 35,
             "TextId": "__SingleUse_4951",
             "TextRotation": "0",
@@ -1390,10 +1390,10 @@
           },
           {
             "Type": "Box",
-            "Name": "erased1",
-            "X": 72,
+            "Name": "box1",
+            "X": 74,
             "Y": 430,
-            "Width": 137,
+            "Width": 129,
             "Height": 50,
             "Color": {
               "Red": 64,
@@ -1403,29 +1403,48 @@
           },
           {
             "Type": "Box",
-            "Name": "erased1_2",
-            "X": 72,
-            "Y": 99,
-            "Width": 656,
-            "Height": 254,
-            "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
-            }
-          },
-          {
-            "Type": "Box",
-            "Name": "erased1_1",
-            "X": 593,
+            "Name": "box2",
+            "X": 590,
             "Y": 430,
-            "Width": 153,
+            "Width": 147,
             "Height": 50,
             "Color": {
               "Red": 64,
               "Green": 126,
               "Blue": 147
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "testes_text",
+            "X": 82,
+            "Y": 438,
+            "Width": 90,
+            "Height": 26,
+            "TextId": "__SingleUse_ZP84",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "autocross_text",
+            "X": 582,
+            "Y": 438,
+            "Width": 152,
+            "Height": 26,
+            "TextId": "__SingleUse_BRNL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1436,7 +1455,8 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "North",
               "ActionComponent": "Capa"
             }
           },
@@ -1448,8 +1468,8 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "Inspecao_SA"
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Area_de_Teste_SA"
             }
           },
           {
@@ -1460,37 +1480,11 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "West",
+              "ScreenTransitionDirection": "East",
               "ActionComponent": "Area_de_Teste_SA"
             }
           }
         ]
-      },
-      {
-        "Name": "Area_de_Teste_SA",
-        "Components": [
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "Width": 800,
-            "Height": 480,
-            "RelativeFilename": "Areatesteoficial.png"
-          },
-          {
-            "Type": "Box",
-            "Name": "box1",
-            "X": 102,
-            "Y": 426,
-            "Width": 59,
-            "Height": 54,
-            "Color": {
-              "Red": 64,
-              "Green": 126,
-              "Blue": 147
-            }
-          }
-        ],
-        "Interactions": []
       },
       {
         "Name": "AutoCross_SA",
@@ -1501,6 +1495,51 @@
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "AUTOCROSS.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "autocross_gostate",
+            "X": 134,
+            "Y": 182,
+            "Width": 533,
+            "Height": 95,
+            "TextId": "__SingleUse_2WL4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 188,
+              "Blue": 13
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 67,
+            "Y": 430,
+            "Width": 147,
+            "Height": 50,
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "menusa_text",
+            "X": 75,
+            "Y": 437,
+            "Width": 117,
+            "Height": 26,
+            "TextId": "__SingleUse_KNE4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": []
@@ -1514,6 +1553,22 @@
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "ACELERACAO.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "aceleracao_gostate",
+            "X": 107,
+            "Y": 180,
+            "Width": 586,
+            "Height": 95,
+            "TextId": "__SingleUse_6B3J",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 188,
+              "Blue": 13
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": []
@@ -1527,6 +1582,22 @@
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "SKIDPAD.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "skidpad_gostate",
+            "X": 212,
+            "Y": 181,
+            "Width": 376,
+            "Height": 95,
+            "TextId": "__SingleUse_TNK7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 188,
+              "Blue": 13
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": []
@@ -1540,6 +1611,22 @@
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "TRACKDRIVE.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "trackdrive_gostate",
+            "X": 123,
+            "Y": 180,
+            "Width": 554,
+            "Height": 95,
+            "TextId": "__SingleUse_23MT",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 188,
+              "Blue": 13
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": []
@@ -1553,6 +1640,22 @@
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "EBS.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ebs_gostate",
+            "X": 318,
+            "Y": 181,
+            "Width": 164,
+            "Height": 95,
+            "TextId": "__SingleUse_B56I",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 188,
+              "Blue": 13
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1591,6 +1694,51 @@
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "INSPECAO.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "inspecao_gostate",
+            "X": 180,
+            "Y": 182,
+            "Width": 440,
+            "Height": 95,
+            "TextId": "__SingleUse_QVC0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 188,
+              "Blue": 13
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 637,
+            "Y": 430,
+            "Width": 50,
+            "Height": 50,
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "testes_text",
+            "X": 620,
+            "Y": 438,
+            "Width": 90,
+            "Height": 26,
+            "TextId": "__SingleUse_0I5Y",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 252,
+              "Green": 252,
+              "Blue": 252
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1619,6 +1767,93 @@
             }
           }
         ]
+      },
+      {
+        "Name": "Area_de_Teste_SA",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "Areatesteoficial.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "teste_gostate",
+            "X": 66,
+            "Y": 181,
+            "Width": 669,
+            "Height": 95,
+            "TextId": "__SingleUse_0FAD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 188,
+              "Blue": 13
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 112,
+            "Y": 430,
+            "Width": 50,
+            "Height": 50,
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "X": 587,
+            "Y": 430,
+            "Width": 158,
+            "Height": 50,
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "inspecao_text",
+            "X": 86,
+            "Y": 439,
+            "Width": 125,
+            "Height": 27,
+            "TextId": "__SingleUse_1XKH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "menu_text",
+            "X": 639,
+            "Y": 439,
+            "Width": 70,
+            "Height": 27,
+            "TextId": "__SingleUse_HCMQ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [
@@ -1690,6 +1925,6 @@
       "Video"
     ]
   },
-  "Version": "4.26.0",
+  "Version": "4.26.1",
   "CreatedBy": "4.26.0"
 }
