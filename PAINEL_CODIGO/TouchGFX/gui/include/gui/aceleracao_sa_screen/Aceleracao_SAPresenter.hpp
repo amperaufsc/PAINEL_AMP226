@@ -26,6 +26,11 @@ public:
     virtual void deactivate();
     virtual ~Aceleracao_SAPresenter() {}
 
+	//botoes
+	virtual void Botao1(int bn1) override;
+	virtual void Botao2(int bn2) override;
+	virtual void Botao3(int bn3) override;
+
 private:
     Aceleracao_SAPresenter();
 

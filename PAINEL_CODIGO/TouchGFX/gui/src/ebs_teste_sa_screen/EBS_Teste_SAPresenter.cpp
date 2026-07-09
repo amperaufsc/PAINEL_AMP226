@@ -16,3 +16,9 @@ void EBS_Teste_SAPresenter::deactivate()
 {
 
 }
+
+void EBS_Teste_SAPresenter::Botao1(int bn1){}
+
+void EBS_Teste_SAPresenter::Botao2(int bn2){}
+
+void EBS_Teste_SAPresenter::Botao3(int bn3){}

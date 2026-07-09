@@ -201,6 +201,17 @@
               "ScreenTransitionType": "ScreenTransitionBlock",
               "ActionComponent": "ModoProva"
             }
+          },
+          {
+            "InteractionName": "direcaoautonoma",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ActionComponent": "pag1_Autonomos"
+            }
           }
         ]
       },
@@ -1420,7 +1431,7 @@
             "X": 82,
             "Y": 438,
             "Width": 90,
-            "Height": 26,
+            "Height": 27,
             "TextId": "__SingleUse_ZP84",
             "TextRotation": "0",
             "Color": {
@@ -1436,7 +1447,7 @@
             "X": 582,
             "Y": 438,
             "Width": 152,
-            "Height": 26,
+            "Height": 27,
             "TextId": "__SingleUse_BRNL",
             "TextRotation": "0",
             "Color": {
@@ -1461,7 +1472,7 @@
             }
           },
           {
-            "InteractionName": "irInspecao",
+            "InteractionName": "nextpage_autocross",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1469,19 +1480,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
-              "ActionComponent": "Area_de_Teste_SA"
-            }
-          },
-          {
-            "InteractionName": "IrAutoCross",
-            "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "Area_de_Teste_SA"
+              "ActionComponent": "AutoCross_SA"
             }
           }
         ]
@@ -1531,7 +1530,7 @@
             "X": 75,
             "Y": 437,
             "Width": 117,
-            "Height": 26,
+            "Height": 27,
             "TextId": "__SingleUse_KNE4",
             "TextRotation": "0",
             "Color": {
@@ -1542,7 +1541,32 @@
             "AutoSize": true
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "backpage_menusa",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "pag1_Autonomos"
+            }
+          },
+          {
+            "InteractionName": "nextpage_acelerecao",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Aceleracao_SA"
+            }
+          }
+        ]
       },
       {
         "Name": "Aceleracao_SA",
@@ -1571,7 +1595,32 @@
             "AutoSize": true
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "backpage_autocross",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "AutoCross_SA"
+            }
+          },
+          {
+            "InteractionName": "nextpage_skidpad",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Skidped_SA"
+            }
+          }
+        ]
       },
       {
         "Name": "Skidped_SA",
@@ -1600,7 +1649,32 @@
             "AutoSize": true
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "backpage_aceleracao",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Aceleracao_SA"
+            }
+          },
+          {
+            "InteractionName": "nextpage_trackdrive",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Trackdrive_SA"
+            }
+          }
+        ]
       },
       {
         "Name": "Trackdrive_SA",
@@ -1629,7 +1703,20 @@
             "AutoSize": true
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "backpage_skidpad",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Skidped_SA"
+            }
+          }
+        ]
       },
       {
         "Name": "EBS_Teste_SA",
@@ -1730,7 +1817,7 @@
             "X": 620,
             "Y": 438,
             "Width": 90,
-            "Height": 26,
+            "Height": 27,
             "TextId": "__SingleUse_0I5Y",
             "TextRotation": "0",
             "Color": {
@@ -1839,9 +1926,9 @@
           {
             "Type": "TextArea",
             "Name": "menu_text",
-            "X": 639,
+            "X": 612,
             "Y": 439,
-            "Width": 70,
+            "Width": 117,
             "Height": 27,
             "TextId": "__SingleUse_HCMQ",
             "TextRotation": "0",

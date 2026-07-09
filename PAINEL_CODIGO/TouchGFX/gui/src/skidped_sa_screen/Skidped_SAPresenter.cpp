@@ -16,3 +16,9 @@ void Skidped_SAPresenter::deactivate()
 {
 
 }
+
+void Skidped_SAPresenter::Botao1(int bn1){}
+
+void Skidped_SAPresenter::Botao2(int bn2){}
+
+void Skidped_SAPresenter::Botao3(int bn3){}

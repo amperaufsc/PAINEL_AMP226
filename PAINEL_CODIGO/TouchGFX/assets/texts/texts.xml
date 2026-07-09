@@ -7,7 +7,7 @@
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
       <Text Id="__SingleUse_HCMQ" Alignment="Left" TypographyId="Typography6">
-        <Translation Language="GB">MENU</Translation>
+        <Translation Language="GB">MENU_SA</Translation>
       </Text>
       <Text Id="__SingleUse_1XKH" Alignment="Left" TypographyId="Typography6">
         <Translation Language="GB">INSPEÇÃO</Translation>

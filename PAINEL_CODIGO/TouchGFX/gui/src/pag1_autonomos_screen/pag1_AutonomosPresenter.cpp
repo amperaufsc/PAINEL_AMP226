@@ -16,7 +16,7 @@ void pag1_AutonomosPresenter::deactivate()
 {
 
 }
-void pag1_AutonomosPresenter::Botao1(int bn1){}
+void pag1_AutonomosPresenter::Botao1(int bn1){ }
 
 void pag1_AutonomosPresenter::Botao2(int bn2){}
 

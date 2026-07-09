@@ -28,7 +28,7 @@ void CapaPresenter::Botao1(int bn1) //*^*//
 void CapaPresenter::Botao2(int bn2)//*O*//
 {
 	if (bn2 == 1){
-//		static_cast<FrontendApplication*>(Application::getInstance())->gotopag1_AutonomosScreenBlockTransition();
+		static_cast<FrontendApplication*>(Application::getInstance())->gotopag1_AutonomosScreenBlockTransition();
 	}
 }
 void CapaPresenter::Botao3(int bn3)//*X*//

@@ -27,6 +27,11 @@ public:
 
     virtual ~Area_de_Teste_SAPresenter() {}
 
+	//botoes
+	virtual void Botao1(int bn1) override;
+	virtual void Botao2(int bn2) override;
+	virtual void Botao3(int bn3) override;
+
 private:
     Area_de_Teste_SAPresenter();
 

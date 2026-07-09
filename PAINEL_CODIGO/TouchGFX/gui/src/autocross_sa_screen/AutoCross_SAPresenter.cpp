@@ -16,3 +16,9 @@ void AutoCross_SAPresenter::deactivate()
 {
 
 }
+
+void AutoCross_SAPresenter::Botao1(int bn1){}
+
+void AutoCross_SAPresenter::Botao2(int bn2){}
+
+void AutoCross_SAPresenter::Botao3(int bn3){}
