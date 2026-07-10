@@ -1427,10 +1427,10 @@
           },
           {
             "Type": "TextArea",
-            "Name": "testes_text",
-            "X": 82,
+            "Name": "check_text",
+            "X": 94,
             "Y": 438,
-            "Width": 90,
+            "Width": 83,
             "Height": 27,
             "TextId": "__SingleUse_ZP84",
             "TextRotation": "0",
@@ -1482,6 +1482,18 @@
               "ScreenTransitionDirection": "West",
               "ActionComponent": "AutoCross_SA"
             }
+          },
+          {
+            "InteractionName": "backpage_check",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "check_SA"
+            }
           }
         ]
       },
@@ -1502,6 +1514,7 @@
             "Y": 182,
             "Width": 533,
             "Height": 95,
+            "Visible": false,
             "TextId": "__SingleUse_2WL4",
             "TextRotation": "0",
             "Color": {
@@ -1525,13 +1538,42 @@
             }
           },
           {
+            "Type": "Box",
+            "Name": "box1_1",
+            "X": 577,
+            "Y": 430,
+            "Width": 164,
+            "Height": 50,
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            }
+          },
+          {
             "Type": "TextArea",
             "Name": "menusa_text",
-            "X": 75,
-            "Y": 437,
+            "X": 82,
+            "Y": 438,
             "Width": 117,
             "Height": 27,
             "TextId": "__SingleUse_KNE4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "aceleracao_text",
+            "X": 577,
+            "Y": 438,
+            "Width": 166,
+            "Height": 27,
+            "TextId": "__SingleUse_JRVW",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1555,7 +1597,7 @@
             }
           },
           {
-            "InteractionName": "nextpage_acelerecao",
+            "InteractionName": "nextpage_aceleracao",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1585,6 +1627,7 @@
             "Y": 180,
             "Width": 586,
             "Height": 95,
+            "Visible": false,
             "TextId": "__SingleUse_6B3J",
             "TextRotation": "0",
             "Color": {
@@ -1639,6 +1682,7 @@
             "Y": 181,
             "Width": 376,
             "Height": 95,
+            "Visible": false,
             "TextId": "__SingleUse_TNK7",
             "TextRotation": "0",
             "Color": {
@@ -1653,7 +1697,7 @@
           {
             "InteractionName": "backpage_aceleracao",
             "Trigger": {
-              "Type": "TriggerNone"
+              "Type": "TriggerPhysicalButtonClicked"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -1665,7 +1709,7 @@
           {
             "InteractionName": "nextpage_trackdrive",
             "Trigger": {
-              "Type": "TriggerNone"
+              "Type": "TriggerPhysicalButtonClicked"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -1687,12 +1731,26 @@
             "RelativeFilename": "TRACKDRIVE.png"
           },
           {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 612,
+            "Y": 430,
+            "Width": 83,
+            "Height": 50,
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            }
+          },
+          {
             "Type": "TextArea",
             "Name": "trackdrive_gostate",
             "X": 123,
             "Y": 180,
             "Width": 554,
             "Height": 95,
+            "Visible": false,
             "TextId": "__SingleUse_23MT",
             "TextRotation": "0",
             "Color": {
@@ -1701,13 +1759,29 @@
               "Blue": 13
             },
             "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "calibration_text",
+            "X": 586,
+            "Y": 438,
+            "Width": 161,
+            "Height": 27,
+            "TextId": "__SingleUse_NTXT",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
           {
             "InteractionName": "backpage_skidpad",
             "Trigger": {
-              "Type": "TriggerNone"
+              "Type": "TriggerPhysicalButtonClicked"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -1715,11 +1789,23 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "Skidped_SA"
             }
+          },
+          {
+            "InteractionName": "nextpage_calibragem",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "calibragem_SA"
+            }
           }
         ]
       },
       {
-        "Name": "EBS_Teste_SA",
+        "Name": "calibragem_SA",
         "Components": [
           {
             "Type": "Image",
@@ -1729,12 +1815,71 @@
             "RelativeFilename": "EBS.png"
           },
           {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 282,
+            "Y": 143,
+            "Width": 247,
+            "Height": 177,
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1_1",
+            "X": 585,
+            "Y": 433,
+            "Width": 151,
+            "Height": 35,
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            }
+          },
+          {
             "Type": "TextArea",
-            "Name": "ebs_gostate",
-            "X": 318,
-            "Y": 181,
-            "Width": 164,
+            "Name": "calibragem_text",
+            "X": 585,
+            "Y": 438,
+            "Width": 161,
+            "Height": 27,
+            "TextId": "__SingleUse_90HX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 252,
+              "Green": 252,
+              "Blue": 252
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "calibragem_text_menu",
+            "X": 122,
+            "Y": 184,
+            "Width": 566,
             "Height": 95,
+            "TextId": "__SingleUse_WBH4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "calibragem_gostate",
+            "X": 122,
+            "Y": 184,
+            "Width": 566,
+            "Height": 95,
+            "Visible": false,
             "TextId": "__SingleUse_B56I",
             "TextRotation": "0",
             "Color": {
@@ -1747,7 +1892,7 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "IrTrackdrive",
+            "InteractionName": "backpage_trackdrive",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1759,7 +1904,7 @@
             }
           },
           {
-            "InteractionName": "IrInspecao",
+            "InteractionName": "nextpage_check",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1767,13 +1912,13 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
-              "ActionComponent": "Inspecao_SA"
+              "ActionComponent": "check_SA"
             }
           }
         ]
       },
       {
-        "Name": "Inspecao_SA",
+        "Name": "check_SA",
         "Components": [
           {
             "Type": "Image",
@@ -1783,12 +1928,68 @@
             "RelativeFilename": "INSPECAO.png"
           },
           {
+            "Type": "Box",
+            "Name": "box1_1",
+            "X": 102,
+            "Y": 430,
+            "Width": 83,
+            "Height": 50,
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1_1_1",
+            "X": 619,
+            "Y": 430,
+            "Width": 83,
+            "Height": 50,
+            "Color": {
+              "Red": 64,
+              "Green": 126,
+              "Blue": 147
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 164,
+            "Y": 144,
+            "Width": 502,
+            "Height": 172,
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            }
+          },
+          {
             "Type": "TextArea",
-            "Name": "inspecao_gostate",
-            "X": 180,
-            "Y": 182,
-            "Width": 440,
+            "Name": "check_text_menu",
+            "X": 253,
+            "Y": 183,
+            "Width": 295,
             "Height": 95,
+            "TextId": "__SingleUse_UZ47",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "check_gostate",
+            "X": 253,
+            "Y": 183,
+            "Width": 295,
+            "Height": 95,
+            "Visible": false,
             "TextId": "__SingleUse_QVC0",
             "TextRotation": "0",
             "Color": {
@@ -1799,26 +2000,29 @@
             "AutoSize": true
           },
           {
-            "Type": "Box",
-            "Name": "box1",
-            "X": 637,
-            "Y": 430,
-            "Width": 50,
-            "Height": 50,
+            "Type": "TextArea",
+            "Name": "testes_text",
+            "X": 608,
+            "Y": 438,
+            "Width": 117,
+            "Height": 27,
+            "TextId": "__SingleUse_0I5Y",
+            "TextRotation": "0",
             "Color": {
-              "Red": 64,
-              "Green": 126,
-              "Blue": 147
-            }
+              "Red": 252,
+              "Green": 252,
+              "Blue": 252
+            },
+            "AutoSize": true
           },
           {
             "Type": "TextArea",
-            "Name": "testes_text",
-            "X": 620,
+            "Name": "calibragem_text",
+            "X": 63,
             "Y": 438,
-            "Width": 90,
+            "Width": 161,
             "Height": 27,
-            "TextId": "__SingleUse_0I5Y",
+            "TextId": "__SingleUse_DUFO",
             "TextRotation": "0",
             "Color": {
               "Red": 252,
@@ -1830,7 +2034,7 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "IrEBSTeste",
+            "InteractionName": "backpage_calibragem",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
@@ -1838,7 +2042,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "EBS_Teste_SA"
+              "ActionComponent": "calibragem_SA"
             }
           },
           {
@@ -1854,93 +2058,6 @@
             }
           }
         ]
-      },
-      {
-        "Name": "Area_de_Teste_SA",
-        "Components": [
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "Width": 800,
-            "Height": 480,
-            "RelativeFilename": "Areatesteoficial.png"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "teste_gostate",
-            "X": 66,
-            "Y": 181,
-            "Width": 669,
-            "Height": 95,
-            "TextId": "__SingleUse_0FAD",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 219,
-              "Green": 188,
-              "Blue": 13
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "Box",
-            "Name": "box1",
-            "X": 112,
-            "Y": 430,
-            "Width": 50,
-            "Height": 50,
-            "Color": {
-              "Red": 64,
-              "Green": 126,
-              "Blue": 147
-            }
-          },
-          {
-            "Type": "Box",
-            "Name": "box2",
-            "X": 587,
-            "Y": 430,
-            "Width": 158,
-            "Height": 50,
-            "Color": {
-              "Red": 64,
-              "Green": 126,
-              "Blue": 147
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "inspecao_text",
-            "X": 86,
-            "Y": 439,
-            "Width": 125,
-            "Height": 27,
-            "TextId": "__SingleUse_1XKH",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "menu_text",
-            "X": 612,
-            "Y": 439,
-            "Width": 117,
-            "Height": 27,
-            "TextId": "__SingleUse_HCMQ",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          }
-        ],
-        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [

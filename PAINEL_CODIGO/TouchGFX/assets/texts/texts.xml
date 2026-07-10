@@ -6,20 +6,32 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_HCMQ" Alignment="Left" TypographyId="Typography6">
-        <Translation Language="GB">MENU_SA</Translation>
+      <Text Id="__SingleUse_UZ47" Alignment="Left" TypographyId="Typography4">
+        <Translation Language="GB">CHECK</Translation>
       </Text>
-      <Text Id="__SingleUse_1XKH" Alignment="Left" TypographyId="Typography6">
-        <Translation Language="GB">INSPEÇÃO</Translation>
+      <Text Id="__SingleUse_90HX" Alignment="Left" TypographyId="Typography6">
+        <Translation Language="GB">CALIBRAGEM</Translation>
+      </Text>
+      <Text Id="__SingleUse_DUFO" Alignment="Left" TypographyId="Typography6">
+        <Translation Language="GB">CALIBRAGEM</Translation>
+      </Text>
+      <Text Id="__SingleUse_WBH4" Alignment="Left" TypographyId="Typography4">
+        <Translation Language="GB">CALIBRAGEM</Translation>
+      </Text>
+      <Text Id="__SingleUse_NTXT" Alignment="Left" TypographyId="Typography6">
+        <Translation Language="GB">CALIBRAGEM</Translation>
+      </Text>
+      <Text Id="__SingleUse_JRVW" Alignment="Left" TypographyId="Typography6">
+        <Translation Language="GB">ACELERAÇÃO</Translation>
       </Text>
       <Text Id="__SingleUse_0I5Y" Alignment="Left" TypographyId="Typography6">
-        <Translation Language="GB">TESTES</Translation>
+        <Translation Language="GB">MENU_SA</Translation>
       </Text>
       <Text Id="__SingleUse_BRNL" Alignment="Left" TypographyId="Typography6">
         <Translation Language="GB">AUTOCROSS</Translation>
       </Text>
       <Text Id="__SingleUse_ZP84" Alignment="Left" TypographyId="Typography6">
-        <Translation Language="GB">TESTES</Translation>
+        <Translation Language="GB">CHECK</Translation>
       </Text>
       <Text Id="__SingleUse_KNE4" Alignment="Left" TypographyId="Typography6">
         <Translation Language="GB">MENU_SA</Translation>
@@ -37,13 +49,10 @@
         <Translation Language="GB">AUTOCROSS</Translation>
       </Text>
       <Text Id="__SingleUse_B56I" Alignment="Left" TypographyId="Typography4">
-        <Translation Language="GB">EBS</Translation>
+        <Translation Language="GB">CALIBRAGEM</Translation>
       </Text>
       <Text Id="__SingleUse_QVC0" Alignment="Left" TypographyId="Typography4">
-        <Translation Language="GB">INSPEÇÃO</Translation>
-      </Text>
-      <Text Id="__SingleUse_0FAD" Alignment="Left" TypographyId="Typography4">
-        <Translation Language="GB">ÁREA DE TESTE</Translation>
+        <Translation Language="GB">CHECK</Translation>
       </Text>
       <Text Id="__SingleUse_8H7T" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">MENU</Translation>

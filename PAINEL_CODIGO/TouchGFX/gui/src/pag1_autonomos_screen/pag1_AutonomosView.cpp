@@ -14,4 +14,3 @@ void pag1_AutonomosView::tearDownScreen()
 {
     pag1_AutonomosViewBase::tearDownScreen();
 }
-

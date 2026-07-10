@@ -1,17 +1,17 @@
-#ifndef AREA_DE_TESTE_SAPRESENTER_HPP
-#define AREA_DE_TESTE_SAPRESENTER_HPP
+#ifndef CHECK_SAPRESENTER_HPP
+#define CHECK_SAPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Area_de_Teste_SAView;
+class check_SAView;
 
-class Area_de_Teste_SAPresenter : public touchgfx::Presenter, public ModelListener
+class check_SAPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Area_de_Teste_SAPresenter(Area_de_Teste_SAView& v);
+    check_SAPresenter(check_SAView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,17 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Area_de_Teste_SAPresenter() {}
-
-	//botoes
-	virtual void Botao1(int bn1) override;
-	virtual void Botao2(int bn2) override;
-	virtual void Botao3(int bn3) override;
+    virtual ~check_SAPresenter() {}
 
 private:
-    Area_de_Teste_SAPresenter();
+    check_SAPresenter();
 
-    Area_de_Teste_SAView& view;
+    check_SAView& view;
 };
 
-#endif // AREA_DE_TESTE_SAPRESENTER_HPP
+#endif // CHECK_SAPRESENTER_HPP

@@ -34,7 +34,8 @@ public:
 
 private:
     AutoCross_SAPresenter();
-
+    int missao;
+    int gostateautocross;
     AutoCross_SAView& view;
 };
 

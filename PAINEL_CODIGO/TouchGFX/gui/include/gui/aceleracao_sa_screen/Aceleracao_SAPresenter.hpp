@@ -33,7 +33,8 @@ public:
 
 private:
     Aceleracao_SAPresenter();
-
+    int missao;
+    int gostateaceleracao;
     Aceleracao_SAView& view;
 };
 

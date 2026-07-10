@@ -11,6 +11,8 @@ public:
     virtual ~Aceleracao_SAView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void ativacaobotao(int gostate);
 protected:
 };
 

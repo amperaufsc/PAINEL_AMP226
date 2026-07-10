@@ -1,17 +1,17 @@
-#ifndef EBS_TESTE_SAPRESENTER_HPP
-#define EBS_TESTE_SAPRESENTER_HPP
+#ifndef CALIBRAGEM_SAPRESENTER_HPP
+#define CALIBRAGEM_SAPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class EBS_Teste_SAView;
+class calibragem_SAView;
 
-class EBS_Teste_SAPresenter : public touchgfx::Presenter, public ModelListener
+class calibragem_SAPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    EBS_Teste_SAPresenter(EBS_Teste_SAView& v);
+    calibragem_SAPresenter(calibragem_SAView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,17 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~EBS_Teste_SAPresenter() {}
-
-	//botoes
-	virtual void Botao1(int bn1) override;
-	virtual void Botao2(int bn2) override;
-	virtual void Botao3(int bn3) override;
+    virtual ~calibragem_SAPresenter() {}
 
 private:
-    EBS_Teste_SAPresenter();
+    calibragem_SAPresenter();
 
-    EBS_Teste_SAView& view;
+    calibragem_SAView& view;
 };
 
-#endif // EBS_TESTE_SAPRESENTER_HPP
+#endif // CALIBRAGEM_SAPRESENTER_HPP
