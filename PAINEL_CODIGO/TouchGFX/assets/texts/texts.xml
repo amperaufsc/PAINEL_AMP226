@@ -6,11 +6,17 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_PW1Y" Alignment="Left" TypographyId="batman">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_OBLZ" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; </Translation>
+      </Text>
       <Text Id="__SingleUse_UZ47" Alignment="Left" TypographyId="Typography4">
         <Translation Language="GB">CHECK</Translation>
       </Text>
       <Text Id="__SingleUse_90HX" Alignment="Left" TypographyId="Typography6">
-        <Translation Language="GB">CALIBRAGEM</Translation>
+        <Translation Language="GB">CHECK</Translation>
       </Text>
       <Text Id="__SingleUse_DUFO" Alignment="Left" TypographyId="Typography6">
         <Translation Language="GB">CALIBRAGEM</Translation>
@@ -306,7 +312,7 @@
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="batman" Font="Gotham_Bold.otf" Size="30" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=",.-%" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="batman" Font="Gotham_Bold.otf" Size="30" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=",.-%:;" WildcardCharacterRanges="a-z,A-Z,0-9" />
     <Typography Id="coringa" Font="Gotham_Ultra.otf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="-" WildcardCharacters=",.-%" WildcardCharacterRanges="a-z,A-Z,0-9" />
     <Typography Id="Typography1" Font="Gotham_Ultra.otf" Size="150" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography2" Font="Gotham_Bold.otf" Size="70" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />

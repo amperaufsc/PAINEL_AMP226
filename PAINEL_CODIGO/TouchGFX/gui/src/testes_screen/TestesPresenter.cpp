@@ -19,7 +19,12 @@ void TestesPresenter::deactivate()
 
 
 //botoes de controle
-void TestesPresenter::Botao1(int bn1){}
+void TestesPresenter::Botao1(int bn1)
+{
+    if (bn1 == 1){
+        view.resetRelogio();
+    }
+}
 
 void TestesPresenter::Botao2(int bn2)
 {

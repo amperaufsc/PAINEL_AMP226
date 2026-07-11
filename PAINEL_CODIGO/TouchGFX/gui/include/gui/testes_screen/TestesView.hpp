@@ -28,10 +28,19 @@ public:
     virtual void updateTensaoCelulaMin(int tesao);
     virtual void updateTensaoCelulaMax(int tesao);
 
+    virtual void handleTickEvent();
+    void resetRelogio();
+
 protected:
     float valTensaoMin;
     float valTensaoMax;
     float correntelixo = 0.0f;
+
+
+    uint32_t baseTick;
+	int horas;
+	int minutos;
+	int segundos;
 };
 
 #endif // TESTESVIEW_HPP

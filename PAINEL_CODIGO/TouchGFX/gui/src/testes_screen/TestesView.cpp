@@ -15,8 +15,40 @@ void TestesView::setupScreen()
 
 void TestesView::tearDownScreen()
 {
+
     TestesViewBase::tearDownScreen();
 }
+
+void TestesView::resetRelogio()
+{
+    baseTick = HAL_GetTick();
+    horas = 0;
+    minutos = 0;
+    segundos = 0;
+    Unicode::snprintf(relogioBuffer, RELOGIO_SIZE, "%02d:%02d:%02d", horas, minutos, segundos);
+    relogio.invalidate();
+}
+
+void TestesView::handleTickEvent()
+{
+    TestesViewBase::handleTickEvent();
+
+    uint32_t totalSeg = (HAL_GetTick() - baseTick) / 1000;
+
+    int novoSeg =  totalSeg        % 60;
+    int novoMin = (totalSeg / 60)  % 60;
+    int novoHor = (totalSeg / 3600) % 24;
+
+    if (novoSeg != segundos)
+    {
+        segundos = novoSeg;
+        minutos  = novoMin;
+        horas    = novoHor;
+        Unicode::snprintf(relogioBuffer, RELOGIO_SIZE, "%02d:%02d:%02d", horas, minutos, segundos);
+        relogio.invalidate();
+    }
+}
+
 
 void TestesView::updateFalhaTMS(int falha)
 {
