@@ -33,7 +33,8 @@ public:
 
 private:
     Trackdrive_SAPresenter();
-
+    int missao;
+    int gostatetrackdrive;
     Trackdrive_SAView& view;
 };
 

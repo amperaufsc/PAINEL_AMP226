@@ -34,7 +34,8 @@ public:
 
 private:
     Skidped_SAPresenter();
-
+    int missao;
+    int gostateskidped;
     Skidped_SAView& view;
 };
 

@@ -1004,10 +1004,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
 		// start autonomo
-//		TxHeader.Identifier = 0x347;
-//		TxHeader.DataLength = FDCAN_DLC_BYTES_1;
-//		TxData[0] = start_autonomo;
-//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+		TxHeader.Identifier = 0x347;
+		TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+		TxData[0] = start_autonomo;
+		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 	}
 
 

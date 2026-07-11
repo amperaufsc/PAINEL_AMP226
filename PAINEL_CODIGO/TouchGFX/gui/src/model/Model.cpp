@@ -77,11 +77,11 @@ Model::Model() : modelListener(0)
 
 }
 
-void Model::idpagina(uint8_t pag_atual)
+void Model::idpagina(int pag_atual)
 {
 	pagina_atual = pag_atual;
 }
-void Model::startautonomos(uint8_t sa)
+void Model::startautonomos(int sa)
 {
 	start_autonomo = sa;
 }

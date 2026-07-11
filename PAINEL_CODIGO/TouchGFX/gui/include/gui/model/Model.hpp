@@ -19,8 +19,8 @@ public:
 
     void tick();
 
-    void idpagina(uint8_t pag_atual); //funcao pra armazenar o valor da pagina no model
-    void startautonomos(uint8_t sa); //funcao pra armazenar o valor de sa
+    void idpagina(int pag_atual); //funcao pra armazenar o valor da pagina no model
+    void startautonomos(int sa); //funcao pra armazenar o valor de sa
 
 protected:
     ModelListener* modelListener;

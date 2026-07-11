@@ -14,3 +14,16 @@ void check_SAView::tearDownScreen()
 {
     check_SAViewBase::tearDownScreen();
 }
+
+void check_SAView::ativacaobotao(int gostate)
+{
+    if (gostate == 1)
+    {
+        check_gostate.setVisible(true);
+    }
+    else
+    {
+    	check_gostate.setVisible(false);
+    }
+    check_gostate.invalidate();
+}
