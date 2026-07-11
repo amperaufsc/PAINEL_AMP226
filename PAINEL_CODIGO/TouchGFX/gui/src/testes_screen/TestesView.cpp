@@ -33,7 +33,7 @@ void TestesView::handleTickEvent()
 {
     TestesViewBase::handleTickEvent();
 
-    uint32_t totalSeg = (HAL_GetTick() - baseTick) / 1000;
+    uint32_t totalSeg = (HAL_GetTick() - baseTick) / 2000;
 
     int novoSeg =  totalSeg        % 60;
     int novoMin = (totalSeg / 60)  % 60;

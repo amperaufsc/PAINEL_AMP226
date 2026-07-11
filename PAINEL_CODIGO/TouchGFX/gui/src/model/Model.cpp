@@ -66,6 +66,7 @@ extern uint8_t temperatura_acc;
 extern float correnteHV;
 extern float corrente_inv;
 extern uint16_t rpm;
+extern int16_t rpm_bruto;
 extern uint16_t temperatura_motor;
 extern uint16_t temperatura_inv;
 extern float tensao_inv;

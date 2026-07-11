@@ -27,6 +27,8 @@
 #include "Components/mx66uw1g45g/mx66uw1g45g.h"
 #include "stm32u5xx_hal.h"
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -82,8 +84,9 @@ uint8_t acelerador; //
 uint8_t freio; //
 uint8_t temperatura_acc; //
 
+int16_t rpm_bruto; //valor recebido bruto podendo ser negativo
+uint16_t rpm; //valor real do rpm
 uint16_t falha_ecu; //
-uint16_t rpm; //
 uint16_t temperatura_motor; //
 uint16_t temperatura_inv; //
 float tensaoHV; //
@@ -955,7 +958,11 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 			break;
 		}
 		case 0x420: {
-			rpm = ((uint16_t)RxData[0] << 8) | RxData[1];
+			// aqui estou recebendo um valor negativo de rotação do motor
+			//esta logica é pra transforma-lo num valor positivo
+			rpm_bruto = ((int16_t)RxData[1] << 8) | RxData[0];
+			rpm = (uint16_t)abs(rpm_bruto);
+
 			temperatura_motor = ((uint16_t)RxData[3] << 8) | RxData[2];
 			temperatura_inv = ((uint16_t)RxData[7] << 8) | RxData[6];
 			break;
