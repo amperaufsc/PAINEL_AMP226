@@ -190,74 +190,58 @@ void Model::tick()
 	//***** BOTAO 1 START *****//
 	if (botao1 == GPIO_PIN_RESET)           // botão pressionado
 	{
-		if (btn_contador_1 < BTN_TICKS) // se o botao tiver apertado enquanto o numero de ticks pra ler for menor
-			btn_contador_1++; // entao aumento o valor desta variavel pra evitar toques acidentais
-
-		if (btn_contador_1 >= BTN_TICKS) //se atingiu o numero de ticks certo ele le o botao
-			btn_apertado_1 = 1; //aqui muda e confirma que o botao ta apertado
-
+		if (btn_contador_1 < BTN_TICKS) // debounce: conta ticks pra confirmar a leitura
+			btn_contador_1++;
 	}
 	else                                    // botão solto
 	{
-		btn_contador_1   = 0;
-		btn_apertado_1 = 0;
+		btn_contador_1 = 0;
 	}
 
-	if (btn_apertado_1 == 1)
+	uint8_t pressed_1 = (btn_contador_1 >= BTN_TICKS) ? 1 : 0;
+	if (pressed_1 && !btn_apertado_1)       // SÓ na borda de subida => 1 evento por aperto (obs: a leitura fisica ainda é na borda de descida)
 	{
-		modelListener->Botao1(btn_apertado_1);
-
+		modelListener->Botao1(1);
 	}
-	else { btn_apertado_1 = 0;
-	modelListener->Botao1(btn_apertado_1);}
+	btn_apertado_1 = pressed_1;             // guarda o estado pro proximo tick
 	//***** BOTAO 1 END *****//
 
 	//***** BOTAO 2 START *****//
-	if (botao2 == GPIO_PIN_RESET)
+	if (botao2 == GPIO_PIN_RESET)           // botão pressionado
 	{
-		if (btn_contador_2 < BTN_TICKS)
+		if (btn_contador_2 < BTN_TICKS) // debounce: conta ticks pra confirmar a leitura
 			btn_contador_2++;
-
-		if (btn_contador_2 >= BTN_TICKS)
-			btn_apertado_2 = 1;
 	}
-	else
+	else                                    // botão solto
 	{
 		btn_contador_2 = 0;
-		btn_apertado_2 = 0;
 	}
-	if (btn_apertado_2 == 1)
+
+	uint8_t pressed_2 = (btn_contador_2 >= BTN_TICKS) ? 1 : 0;
+	if (pressed_2 && !btn_apertado_2)       // SÓ na borda de subida  => 1 evento por aperto(obs: a leitura fisica ainda é na borda de descida)
 	{
-		modelListener->Botao2(btn_apertado_2);
+		modelListener->Botao2(1);
 	}
-	else { btn_apertado_2 = 0;
-	modelListener->Botao2(btn_apertado_2);}
+	btn_apertado_2 = pressed_2;             // guarda o estado pro proximo tick
 	//***** BOTAO 2 END *****//
 
 	//***** BOTAO 3 START *****//
-
-	if (botao3 == GPIO_PIN_RESET)
+	if (botao3 == GPIO_PIN_RESET)           // botão pressionado
 	{
-		if (btn_contador_3 < BTN_TICKS)
+		if (btn_contador_3 < BTN_TICKS) // debounce: conta ticks pra confirmar a leitura
 			btn_contador_3++;
-
-		if (btn_contador_3 >= BTN_TICKS)
-			btn_apertado_3 = 1;
-
 	}
-	else
+	else                                    // botão solto
 	{
 		btn_contador_3 = 0;
-		btn_apertado_3 = 0;
-
 	}
-	if (btn_apertado_3 == 1)
+
+	uint8_t pressed_3 = (btn_contador_3 >= BTN_TICKS) ? 1 : 0;
+	if (pressed_3 && !btn_apertado_3)       // SÓ na borda de subida => 1 evento por aperto(obs: a leitura fisica ainda é na borda de descida)
 	{
-	modelListener->Botao3(btn_apertado_3);
+		modelListener->Botao3(1);
 	}
-	else { btn_apertado_3 = 0;
-	modelListener->Botao3(btn_apertado_3);}
-
+	btn_apertado_3 = pressed_3;             // guarda o estado pro proximo tick
 	//***** BOTAO 3 END *****//
 
 	//**mandar pro display as variaveis recebidas do can **//

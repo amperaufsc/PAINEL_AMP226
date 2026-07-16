@@ -1837,10 +1837,9 @@
           {
             "Type": "Box",
             "Name": "box1",
-            "X": 282,
-            "Y": 143,
-            "Width": 247,
-            "Height": 177,
+            "Y": 134,
+            "Width": 794,
+            "Height": 206,
             "Color": {
               "Red": 55,
               "Green": 52,
@@ -1949,6 +1948,18 @@
           },
           {
             "Type": "Box",
+            "Name": "box1",
+            "Y": 139,
+            "Width": 800,
+            "Height": 211,
+            "Color": {
+              "Red": 55,
+              "Green": 52,
+              "Blue": 53
+            }
+          },
+          {
+            "Type": "Box",
             "Name": "box1_1",
             "X": 102,
             "Y": 430,
@@ -1971,19 +1982,6 @@
               "Red": 64,
               "Green": 126,
               "Blue": 147
-            }
-          },
-          {
-            "Type": "Box",
-            "Name": "box1",
-            "X": 164,
-            "Y": 144,
-            "Width": 502,
-            "Height": 172,
-            "Color": {
-              "Red": 55,
-              "Green": 52,
-              "Blue": 53
             }
           },
           {
