@@ -41,8 +41,6 @@ void calibragem_SAPresenter::Botao2(int bn2)
 void calibragem_SAPresenter::Botao3(int bn3)
 {
 	if (bn3 == 1){
-	// Vizinho a esquerda = tela "check" (ainda nao criada).
-	// Quando criar a tela Check, descomente a linha abaixo (ajuste o nome do goto se necessario):
-	// static_cast<FrontendApplication*>(Application::getInstance())->gotoCheck_SAScreenSlideTransitionWest();
+	static_cast<FrontendApplication*>(Application::getInstance())->gotocheck_SAScreenSlideTransitionWest();
 }
 }
