@@ -128,15 +128,23 @@ void ModoProvaView::updateSOC(int soc)
 }
 void ModoProvaView::updateVelocidade(int vel)
 {
-	//sa vai mandar pra mim o valor enquanto isso nao acontece vou deixar comentado aqui
-//	    Unicode::snprintf(velocidade_unBuffer, VELOCIDADE_UN_SIZE, "%d", vel);
-//	    velocidade_un.invalidate();
-//	    velocimetro.setValue(vel);
-//	    velocimetro.invalidate();
+	//sa vai mandar pra mim o valor, mas não sei como. se mandar em km/h ta certo, senao converter aqui
+
+		int velocidade_kmh = vel;
+	    Unicode::snprintf(velocidade_unBuffer, VELOCIDADE_UN_SIZE, "%d", velocidade_kmh);
+	    velocidade_un.invalidate();
+	    velocimetro.setValue(velocidade_kmh);
+	    velocimetro.invalidate();
 }
 void ModoProvaView::updateDistancia(int metros)
 {
-	    Unicode::snprintf(distancia_unBuffer, DISTANCIA_UN_SIZE, "%d", metros);
+	//sa vai mandar pra mim o valor, mas não sei como. se mandar em metros ta certo, senao converter aqui
+	//talvez eu tenha que calcular distancia total somando num intervalo de tempo
+	//talvez eu tenha que usar a velocidade e calcular no tempo, se for o caso fazer isso na main.
+	//já adicionando o valor certo total da distancia la
+	//independente de como, aqui colocar pra zerar se eu apertar o botao de "reset"
+		int distancia_percorrida = metros;
+	    Unicode::snprintf(distancia_unBuffer, DISTANCIA_UN_SIZE, "%d", distancia_percorrida);
 	    distancia_un.invalidate();
 }
 void ModoProvaView::updateAcelerador(int acelera)

@@ -95,6 +95,7 @@ float corrente_inv; //
 float correnteHV; //
 
 //variaveis recebidas de sa
+//ainda não determinada
 int velocidade;
 int distancia;
 
@@ -932,49 +933,61 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 		            return;
 		        }
 		switch(RxHeader.Identifier){
-		case 0x120: { //0x120 //0x141so pra teste
-			falha_inversor = RxData[0];
-			readtodrive_led = RxData[3];
-			falha_tms = RxData[4];
-			falha_ecu = ((uint16_t)RxData[1] << 8) | RxData[2];
-			break;
-		}
-		case 0x121: {
-			tensao_cel_min = RxData[0];
-			tensao_cel_max = RxData[2];
-			soc = RxData[3];
-			acelerador = RxData[4];
-			freio = RxData[5];
-			temperatura_acc = RxData[7]; //certo [7] qualquer outro teste
-			break;
-		}
+			case 0x120: { //0x120 //0x141so pra teste
+				falha_inversor = RxData[0];
+				readtodrive_led = RxData[3];
+				falha_tms = RxData[4];
+				falha_ecu = ((uint16_t)RxData[2] << 8) | RxData[1];
+				break;
+			}
+			case 0x121: {
+				tensao_cel_min = RxData[0];
+				tensao_cel_max = RxData[2];
+				soc = RxData[3];
+				acelerador = RxData[4];
+				freio = RxData[5];
+				temperatura_acc = RxData[7]; //certo [7] qualquer outro teste
+				break;
+			}
 
-		case 0x220: {
-//			correnteHV = 0.0f; //acumulador
-//			corrente_inv = 0.0f; //inversor
+			case 0x220: {
+	//			correnteHV = 0.0f; //acumulador
+	//			corrente_inv = 0.0f; //inversor
 
-			memcpy(&correnteHV, &RxData[4], sizeof(float));
-			memcpy(&corrente_inv, &RxData[0], sizeof(float));
-			break;
-		}
-		case 0x420: {
-			// aqui estou recebendo um valor negativo de rotação do motor
-			//esta logica é pra transforma-lo num valor positivo
-			rpm_bruto = ((int16_t)RxData[1] << 8) | RxData[0];
-			rpm = (uint16_t)abs(rpm_bruto);
+				memcpy(&correnteHV, &RxData[4], sizeof(float));
+				memcpy(&corrente_inv, &RxData[0], sizeof(float));
+				break;
+			}
+			case 0x420: {
+				// aqui estou recebendo um valor negativo de rotação do motor
+				//esta logica é pra transforma-lo num valor positivo
+				rpm_bruto = ((int16_t)RxData[1] << 8) | RxData[0];
+				rpm = (uint16_t)abs(rpm_bruto);
 
-			temperatura_motor = ((uint16_t)RxData[3] << 8) | RxData[2];
-			temperatura_inv = ((uint16_t)RxData[7] << 8) | RxData[6];
-			break;
-		}
-		case 0x421: {
-//			tensao_inv = 0.0f; // dclink inv
-//			tensaoHV = 0.0f; //acumulador
+				temperatura_motor = ((uint16_t)RxData[3] << 8) | RxData[2];
+				temperatura_inv = ((uint16_t)RxData[7] << 8) | RxData[6];
+				break;
+			}
+			case 0x421: {
+	//			tensao_inv = 0.0f; // dclink inv
+	//			tensaoHV = 0.0f; //acumulador
 
-			memcpy(&tensao_inv, &RxData[0], sizeof(float));
-			memcpy(&tensaoHV, &RxData[4], sizeof(float));
-			break;
-		}
+				memcpy(&tensao_inv, &RxData[0], sizeof(float));
+				memcpy(&tensaoHV, &RxData[4], sizeof(float));
+				break;
+			}
+	//		case 0x000: {
+	//			velocidade = RxData[0];
+	//			velocidade = ((uint16_t)RxData[1] << 8) | RxData[0];
+	//			memcpy(&velocidade, &RxData[0], sizeof(float));
+	//			break;
+	//		}
+	//		case 0x000: {
+	//			distancia = RxData[0];
+	//			distancia = ((uint16_t)RxData[1] << 8) | RxData[0];
+	//			memcpy(&distancia, &RxData[0], sizeof(float));
+	//			break;
+	//		}
 		}
 	}
 }
