@@ -3,6 +3,12 @@
 #include <stdio.h>
 #include "stm32u5xx_hal.h"
 
+// Estado do cronometro guardado em 'static' (escopo de arquivo) pra sobreviver
+// a troca de telas: a TestesView e recriada toda vez que a pagina abre, entao
+// se o tempo base ficasse na View ele resetava a cada entrada. Em static, persiste.
+static uint32_t cronoBase = 0;
+static bool     cronoIniciado = false;
+
 TestesView::TestesView()
 {
 
@@ -11,6 +17,20 @@ TestesView::TestesView()
 void TestesView::setupScreen()
 {
     TestesViewBase::setupScreen();
+
+    if (!cronoIniciado)              // 1a vez que a tela abre desde o boot -> zera
+    {
+        cronoBase = HAL_GetTick();
+        cronoIniciado = true;
+    }
+
+    // mostra o tempo certo imediatamente ao abrir a tela (sem esperar o proximo tick)
+    uint32_t totalSeg = (HAL_GetTick() - cronoBase) / 2000;
+    segundos = totalSeg % 60;
+    minutos  = (totalSeg / 60) % 60;
+    horas    = (totalSeg / 3600) % 24;
+    Unicode::snprintf(relogioBuffer, RELOGIO_SIZE, "%02d:%02d:%02d", horas, minutos, segundos);
+    relogio.invalidate();
 }
 
 void TestesView::tearDownScreen()
@@ -21,7 +41,8 @@ void TestesView::tearDownScreen()
 
 void TestesView::resetRelogio()
 {
-    baseTick = HAL_GetTick();
+    cronoBase = HAL_GetTick();
+    cronoIniciado = true;
     horas = 0;
     minutos = 0;
     segundos = 0;
@@ -33,7 +54,7 @@ void TestesView::handleTickEvent()
 {
     TestesViewBase::handleTickEvent();
 
-    uint32_t totalSeg = (HAL_GetTick() - baseTick) / 2000;
+    uint32_t totalSeg = (HAL_GetTick() - cronoBase) / 2000;
 
     int novoSeg =  totalSeg        % 60;
     int novoMin = (totalSeg / 60)  % 60;
