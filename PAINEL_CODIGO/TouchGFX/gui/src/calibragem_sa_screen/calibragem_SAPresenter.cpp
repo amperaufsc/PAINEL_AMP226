@@ -33,6 +33,9 @@ void calibragem_SAPresenter::Botao2(int bn2)
 		if (gostatecalibragem > 3){gostatecalibragem = 0;}
 		if (gostatecalibragem == 1){missao = 1;
 		model->startautonomos(missao);}
+		else {
+		missao = 6;
+		model->startautonomos(missao);}
 		view.ativacaobotao(gostatecalibragem);
 	}
 

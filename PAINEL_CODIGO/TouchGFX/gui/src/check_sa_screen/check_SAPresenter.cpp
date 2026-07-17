@@ -33,6 +33,9 @@ void check_SAPresenter::Botao2(int bn2)
 		if (gostatecheck > 3){gostatecheck = 0;}
 		if (gostatecheck == 1){missao = 0;
 		model->startautonomos(missao);}
+		else {
+		missao = 6;
+		model->startautonomos(missao);}
 		view.ativacaobotao(gostatecheck);
 	}
 

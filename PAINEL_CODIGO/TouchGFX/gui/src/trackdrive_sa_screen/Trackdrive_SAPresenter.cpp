@@ -33,6 +33,9 @@ void Trackdrive_SAPresenter::Botao2(int bn2)
 		if (gostatetrackdrive > 3){gostatetrackdrive = 0;}
 		if (gostatetrackdrive == 1){missao = 2;
 		model->startautonomos(missao);}
+		else {
+		missao = 6;
+		model->startautonomos(missao);}
 		view.ativacaobotao(gostatetrackdrive);
 	}
 

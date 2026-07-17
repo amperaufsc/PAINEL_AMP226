@@ -33,6 +33,9 @@ void Aceleracao_SAPresenter::Botao2(int bn2)
 		if (gostateaceleracao > 3){gostateaceleracao = 0;}
 		if (gostateaceleracao == 1){missao = 4;
 		model->startautonomos(missao);}
+		else {
+		missao = 6;
+		model->startautonomos(missao);}
 		view.ativacaobotao(gostateaceleracao);
 	}
 

@@ -31,7 +31,11 @@ void Skidped_SAPresenter::Botao2(int bn2)
 	if (bn2 == 1){
 		gostateskidped += 1;
 		if (gostateskidped > 3){gostateskidped = 0;}
-		if (gostateskidped == 1){missao = 3;
+		if (gostateskidped == 1){
+			missao = 3;
+		model->startautonomos(missao);}
+		else {
+		missao = 6;
 		model->startautonomos(missao);}
 		view.ativacaobotao(gostateskidped);
 	}

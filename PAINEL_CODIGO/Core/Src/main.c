@@ -1023,11 +1023,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //		TxData[0] = pagina_atual;
 //		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 
-		// start autonomo
-		TxHeader.Identifier = 0x347;
-		TxHeader.DataLength = FDCAN_DLC_BYTES_1;
-		TxData[0] = start_autonomo;
-		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
+		//descomentar só quando for usar o sistema autonomo
+		//pq sobrepoe o rtd e para de mandar rtd
+
+//		// start autonomo
+//		TxHeader.Identifier = 0x347;
+//		TxHeader.DataLength = FDCAN_DLC_BYTES_1;
+//		TxData[0] = start_autonomo;
+//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData);
 	}
 
 

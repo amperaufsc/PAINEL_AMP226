@@ -33,6 +33,9 @@ void AutoCross_SAPresenter::Botao2(int bn2)
 		if (gostateautocross > 3){gostateautocross = 0;}
 		if (gostateautocross == 1){missao = 5;
 		model->startautonomos(missao);}
+		else {
+		missao = 6;
+		model->startautonomos(missao);}
 		view.ativacaobotao(gostateautocross);
 	}
 
