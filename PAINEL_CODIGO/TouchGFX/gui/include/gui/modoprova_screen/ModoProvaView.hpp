@@ -16,7 +16,7 @@ public:
     virtual void updateTempAcc(int temp);
     virtual void updateRPM(int rpm);
     virtual void updateSOC(int soc);
-    virtual void updateVelocidade(int vel);
+    virtual void updateVelocidade(float vel);
     virtual void updateDistancia(int metros);
     virtual void updateAcelerador(int acelera);
     virtual void updateFreio(int freio);

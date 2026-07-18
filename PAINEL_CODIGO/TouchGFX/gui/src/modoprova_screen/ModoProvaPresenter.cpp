@@ -43,7 +43,7 @@ void ModoProvaPresenter::updateFreio(int freio)
 {
     view.updateFreio(freio);
 }
-void ModoProvaPresenter::updateVelocidade(int vel)
+void ModoProvaPresenter::updateVelocidade(float vel)
 {
     view.updateVelocidade(vel);
 }

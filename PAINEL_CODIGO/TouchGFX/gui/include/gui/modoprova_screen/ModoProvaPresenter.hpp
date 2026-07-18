@@ -22,7 +22,7 @@ public:
 	virtual void updateTempAcc(int temp) override;
     virtual void updateAcelerador(int acelera) override;
     virtual void updateFreio(int freio) override;
-    virtual void updateVelocidade(int vel) override;
+    virtual void updateVelocidade(float vel) override;
     virtual void updateDistancia(int metros) override;
     virtual void updateRPM(int rpm) override;
     virtual void updateSOC(int soc) override;

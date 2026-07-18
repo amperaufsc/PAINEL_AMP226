@@ -43,7 +43,7 @@ public:
     //
     virtual void updateAcelerador(int acelera) {}
     virtual void updateFreio(int freio) {}
-    virtual void updateVelocidade(int vel) {}
+    virtual void updateVelocidade(float vel) {}
     virtual void updateDistancia(int metros) {}
 
     //botoes

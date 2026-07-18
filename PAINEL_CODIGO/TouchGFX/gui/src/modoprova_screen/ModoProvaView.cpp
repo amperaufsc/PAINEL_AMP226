@@ -126,14 +126,13 @@ void ModoProvaView::updateSOC(int soc)
 	bateria.setValue(soc);
 	bateria.invalidate();
 }
-void ModoProvaView::updateVelocidade(int vel)
+void ModoProvaView::updateVelocidade(float vel)
 {
-	//sa vai mandar pra mim o valor, mas não sei como. se mandar em km/h ta certo, senao converter aqui
-
-		int velocidade_kmh = vel;
-	    Unicode::snprintf(velocidade_unBuffer, VELOCIDADE_UN_SIZE, "%d", velocidade_kmh);
+	//velocidade chega em m/s -> converto pra km/h multiplicando por 3.6
+		float velocidade_kmh = vel * 3.6f;
+	    Unicode::snprintfFloat(velocidade_unBuffer, VELOCIDADE_UN_SIZE, "%.1f", velocidade_kmh);
 	    velocidade_un.invalidate();
-	    velocimetro.setValue(velocidade_kmh);
+	    velocimetro.setValue((int)velocidade_kmh);  // o gauge so aceita int
 	    velocimetro.invalidate();
 }
 void ModoProvaView::updateDistancia(int metros)
