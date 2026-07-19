@@ -21,6 +21,7 @@ public:
 
     void idpagina(int pag_atual); //funcao pra armazenar o valor da pagina no model
     void startautonomos(int sa); //funcao pra armazenar o valor de sa
+    void resetDistancia(); //zera a distancia percorrida (botaoTriangulo)
 
 protected:
     ModelListener* modelListener;

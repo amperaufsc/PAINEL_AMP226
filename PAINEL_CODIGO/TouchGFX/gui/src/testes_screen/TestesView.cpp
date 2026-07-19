@@ -18,6 +18,7 @@ void TestesView::setupScreen()
 {
     TestesViewBase::setupScreen();
 
+    //configuração do cronometro
     if (!cronoIniciado)              // 1a vez que a tela abre desde o boot -> zera
     {
         cronoBase = HAL_GetTick();

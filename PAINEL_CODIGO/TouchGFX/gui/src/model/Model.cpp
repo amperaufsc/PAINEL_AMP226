@@ -33,6 +33,10 @@ static uint8_t  btn_apertado_2  = 0;
 static uint8_t  btn_contador_3 = 0; //pra evitar de apertar o botao sem querer e ruido
 static uint8_t  btn_apertado_3  = 0;
 
+//distancia percorrida
+//acumula em float pra nao perder as fracoes de metro a cada soma
+static float distanciaAcum = 0.0f; //em metros
+
 
 typedef struct {
 	uint32_t id;
@@ -71,6 +75,8 @@ extern uint16_t temperatura_motor;
 extern uint16_t temperatura_inv;
 extern float tensao_inv;
 extern float tensaoHV;
+extern float velocidade;
+extern int distancia;
 }
 
 Model::Model() : modelListener(0)
@@ -86,9 +92,15 @@ void Model::startautonomos(int sa)
 {
 	start_autonomo = sa;
 }
+void Model::resetDistancia() //botao1(triangulo) na pagina modo de prova
+{
+	distanciaAcum = 0.0f;
+}
 
 void Model::tick()
-{	//**contador de fps**//
+{
+	//velocidade = 10; //teste
+	//**contador de fps**//
 	//configuração pra 30 fps
 //	uint8_t fps30;
 //	fps30++;
@@ -262,6 +274,17 @@ void Model::tick()
 	modelListener->updateTempInversor(temperatura_inv);
 	modelListener->updateTensaoHV((float)tensaoHV);
 	modelListener->updateTensaoInversor((float)tensao_inv);
+	modelListener->updateVelocidade((float)velocidade);
+
+	//**integrando a velocidade pra calcular a distancia percorrida**//
+
+	if (velocidade > 0.0f) //ignora valor negativo
+	{
+		distanciaAcum += (velocidade * (1.0f / 60.0f));
+	}
+	modelListener->updateDistancia((int)distanciaAcum);
+
+	//**integrando a velocidade pra calcular a distancia percorrida END**//
 
 	//**mandar pro display as variaveis recebidas do can END**//
 

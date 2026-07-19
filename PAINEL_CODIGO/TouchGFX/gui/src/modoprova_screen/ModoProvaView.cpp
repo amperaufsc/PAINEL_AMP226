@@ -79,7 +79,7 @@ void ModoProvaView::updateRPM(int rpm)
     	        rpm5.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
     	        rpm6.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
     	    }
-    	    else if (rpm >= 2850 && rpm < 3150) {
+    	    else if (rpm >= 2850 && rpm < 3300) { //faixa ideal 2875 - 3300
     	        rpm0.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
     	        rpm1.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
     	        rpm2.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
@@ -88,7 +88,7 @@ void ModoProvaView::updateRPM(int rpm)
     	        rpm5.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
     	        rpm6.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
     	    }
-    	    else if (rpm >= 3150 && rpm < 4000) {
+    	    else if (rpm >= 3300 && rpm < 4000) {
     	        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
     	        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
     	        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
