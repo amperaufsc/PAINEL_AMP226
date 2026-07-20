@@ -79,6 +79,8 @@ extern float velocidade;
 extern int distancia;
 }
 
+
+
 Model::Model() : modelListener(0)
 {
 
@@ -99,58 +101,6 @@ void Model::resetDistancia() //botao1(triangulo) na pagina modo de prova
 
 void Model::tick()
 {
-	//velocidade = 10; //teste
-	//**contador de fps**//
-	//configuração pra 30 fps
-//	uint8_t fps30;
-//	fps30++;
-//	if (fps30 >= 2){fps30 = 0;}
-	//configuração pra 30 fps
-
-	//**teste de can em loopback init**//
-	//	static int freq = 0; //frequencia
-	//	freq++;
-	//	static uint8_t msgteste = 0; //variaveis  de teste do loopback
-	//	static uint8_t msgteste2 = 0;
-	//	static uint8_t msgteste3 = 0;
-	//
-	//	static float msg_float = 0.0f; //se quiser mandar mensagens float
-	//	static float msg_float2 = 0.0f;
-	//
-	//	static uint8_t dt[8] = {0}; // buffer can
-	//	static uint8_t dt2_float[8] = {0};
-	//
-	//	#define ID_teste 0x121
-	//	#define ID_teste2 0x220
-	//
-	//	if(freq >= 12){
-	//		freq = 0;
-	//
-	//
-	//		memcpy(&dt2_float[0], &msg_float, 4); // se quiser enviar um float usa o memcpy igual pra receber
-	//		memcpy(&dt2_float[4], &msg_float2, 4);
-	//		dt[0] = msgteste; //pra colocar a mensagem no byte que quero
-	//		dt[2] = msgteste2;
-	//		dt[7] = msgteste3;
-	//
-	//		TxHeader.Identifier = ID_teste;
-	//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, dt);
-	//
-	//		TxHeader.Identifier = ID_teste2;
-	//		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, dt2_float);
-	//
-	//		//só pra mudar o valor
-	//		msgteste++;
-	//		msgteste2 += 2;
-	//		msgteste3 += 3;
-	//		msg_float += 1.1f;
-	//		msg_float2 += 2.475f;
-	//	}
-
-	//**teste de can em loopback end**//
-
-
-
 	//*** configuração dos botoes pra serem lidos a cada tick(16ms) ***//
 	GPIO_PinState estado = HAL_GPIO_ReadPin(botaortd_GPIO_Port, botaortd_Pin); //le o botao rtd
 	GPIO_PinState botao1 = HAL_GPIO_ReadPin(botao1_GPIO_Port, botao1_Pin); //le o botao 1
@@ -285,6 +235,7 @@ void Model::tick()
 	modelListener->updateDistancia((int)distanciaAcum);
 
 	//**integrando a velocidade pra calcular a distancia percorrida END**//
+
 
 	//**mandar pro display as variaveis recebidas do can END**//
 

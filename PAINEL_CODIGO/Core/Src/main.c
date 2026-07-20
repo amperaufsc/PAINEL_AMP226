@@ -39,6 +39,11 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
+// Cálculo da velocidade a partir do RPM do motor
+#define REL_TRANSMISSAO   (49.0f / 11.0f)   //relaçao
+#define RAIO_PNEU_M       0.2605f           // raio do pneu [m
+#define MS_POR_RPM        (2.0f * 3.14159265f * RAIO_PNEU_M / (60.0f * REL_TRANSMISSAO))
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -964,6 +969,10 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 			rpm_bruto = ((int16_t)RxData[1] << 8) | RxData[0];
 			rpm = (uint16_t)abs(rpm_bruto);
 
+			//enquanto nao recebemos a velocidade do sensor da roda
+			//calculo ela aqui pela transmissao: v[m/s] = rpm * 0,0061241(calculada la na linha 42)
+			velocidade = (float)rpm * MS_POR_RPM;
+
 			temperatura_motor = ((uint16_t)RxData[3] << 8) | RxData[2];
 			temperatura_inv = ((uint16_t)RxData[7] << 8) | RxData[6];
 			break;
@@ -976,11 +985,15 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 			memcpy(&tensaoHV, &RxData[4], sizeof(float));
 			break;
 		}
-		case 0x4A4: {
-			memcpy(&velocidade, &RxData[0], sizeof(float)); //velocidade roda dianteira direita
-			memcpy(&velocidade1, &RxData[4], sizeof(float)); //velocidade roda dianteira esquerda(nao vai usar por enquanto, só pra caso eu erre)
-			break;
-		}
+		//por enquanto NAO vamos receber a velocidade pelo CAN
+		//a velocidade esta sendo calculada pelo rpm no case 0x420
+		//DESCOMENTAR este case quando o SA voltar a mandar a velocidade
+		//e comentar a linha do calculo da velocidade la
+		//		case 0x4A4: {
+		//			memcpy(&velocidade, &RxData[0], sizeof(float)); //velocidade roda dianteira direita
+		//			memcpy(&velocidade1, &RxData[4], sizeof(float)); //velocidade roda dianteira esquerda(nao vai usar por enquanto, só pra caso eu erre)
+		//			break;
+		//		}
 		//		case 0x000: {
 		//			distancia = RxData[0];
 		//			distancia = ((uint16_t)RxData[1] << 8) | RxData[0];
