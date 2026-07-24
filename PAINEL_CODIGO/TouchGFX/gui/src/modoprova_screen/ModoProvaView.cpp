@@ -111,9 +111,8 @@ void ModoProvaView::updateRPM(int rpm)
     tacometro.setValue(rotacaotacometro);
 
     touchgfx::colortype cor;
-    if (rpm < 1000)        cor = touchgfx::Color::getColorFromRGB(222, 34, 110);
-    else if (rpm < 2000)   cor = touchgfx::Color::getColorFromRGB(64, 126, 147);
-    else if (rpm < 2850)   cor = touchgfx::Color::getColorFromRGB(92, 198, 208);
+    if (rpm < 500)        cor = touchgfx::Color::getColorFromRGB(222, 34, 110);
+    else if (rpm < 1500)   cor = touchgfx::Color::getColorFromRGB(64, 126, 147);
     else if (rpm < 3300)   cor = touchgfx::Color::getColorFromRGB(0, 255, 0);
     else if (rpm < 4000)   cor = touchgfx::Color::getColorFromRGB(255, 255, 0);
     else if (rpm <= 5000)  cor = touchgfx::Color::getColorFromRGB(222, 34, 110);
