@@ -7,22 +7,29 @@
 class ModoProvaView : public ModoProvaViewBase
 {
 public:
-    ModoProvaView();
-    virtual ~ModoProvaView() {}
-    virtual void setupScreen();
-    virtual void tearDownScreen();
+	ModoProvaView();
+	virtual ~ModoProvaView() {}
+	virtual void setupScreen();
+	virtual void tearDownScreen();
 
-    virtual void updateTempMotor(int temp);
-    virtual void updateTempAcc(int temp);
-    virtual void updateRPM(int rpm);
-    virtual void updateSOC(int soc);
-    virtual void updateVelocidade(float vel);
-    virtual void updateDistancia(int metros);
-    virtual void updateAcelerador(int acelera);
-    virtual void updateFreio(int freio);
+	virtual void updateTempMotor(int temp);
+	virtual void updateTempAcc(int temp);
+	virtual void updateRPM(int rpm);
+	virtual void updateSOC(int soc);
+	virtual void updateVelocidade(float vel);
+	virtual void updateDistancia(int metros);
+	virtual void updateAcelerador(int acelera);
+	virtual void updateFreio(int freio);
+
+	virtual void handleTickEvent();
+	void resetRelogio();
 
 };
 
+	uint32_t baseTick;
+	int horas;
+	int minutos;
+	int segundos;
 
 
 #endif

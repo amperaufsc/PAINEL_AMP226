@@ -11,12 +11,58 @@ ModoProvaView::ModoProvaView()
 
 void ModoProvaView::setupScreen()
 {
-    ModoProvaViewBase::setupScreen();
+    TestesViewBase::setupScreen();
+
+    //configuração do cronometro
+    if (!cronoIniciado)              // 1a vez que a tela abre desde o boot -> zera
+    {
+        cronoBase = HAL_GetTick();
+        cronoIniciado = true;
+    }
+
+    // mostra o tempo certo imediatamente ao abrir a tela (sem esperar o proximo tick)
+    uint32_t totalSeg = (HAL_GetTick() - cronoBase) / 2000;
+    segundos = totalSeg % 60;
+    minutos  = (totalSeg / 60) % 60;
+    horas    = (totalSeg / 3600) % 24;
+    Unicode::snprintf(relogioBuffer, RELOGIO_SIZE, "%02d:%02d:%02d", horas, minutos, segundos);
+    relogio.invalidate();
 }
 
 void ModoProvaView::tearDownScreen()
 {
     ModoProvaViewBase::tearDownScreen();
+}
+
+void ModoProvaView::resetRelogio()
+{
+    cronoBase = HAL_GetTick();
+    cronoIniciado = true;
+    horas = 0;
+    minutos = 0;
+    segundos = 0;
+    Unicode::snprintf(relogioBuffer, RELOGIO_SIZE, "%02d:%02d:%02d", horas, minutos, segundos);
+    relogio.invalidate();
+}
+
+void ModoProvaView::handleTickEvent()
+{
+    TestesViewBase::handleTickEvent();
+
+    uint32_t totalSeg = (HAL_GetTick() - cronoBase) / 2000;
+
+    int novoSeg =  totalSeg        % 60;
+    int novoMin = (totalSeg / 60)  % 60;
+    int novoHor = (totalSeg / 3600) % 24;
+
+    if (novoSeg != segundos)
+    {
+        segundos = novoSeg;
+        minutos  = novoMin;
+        horas    = novoHor;
+        Unicode::snprintf(relogioBuffer, RELOGIO_SIZE, "%02d:%02d:%02d", horas, minutos, segundos);
+        relogio.invalidate();
+    }
 }
 
 void ModoProvaView::updateTempMotor(int temp)

@@ -27,7 +27,12 @@ void ModoProvaPresenter::Botao2(int bn2)
 	}
 }
 
-void ModoProvaPresenter::Botao3(int bn3){}
+void ModoProvaPresenter::Botao3(int bn3)
+{
+    if (bn3 == 1){
+        view.resetRelogio();
+    }
+}
 
 void ModoProvaPresenter::updateTempMotor(int temp)
 {

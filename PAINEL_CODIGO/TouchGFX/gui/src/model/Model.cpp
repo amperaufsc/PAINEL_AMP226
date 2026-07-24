@@ -240,80 +240,8 @@ void Model::tick()
 	//**mandar pro display as variaveis recebidas do can END**//
 
 	//**ligar led verde quando entrar no modo de read to drive
-	if (readtodrive_led >= 2 ){HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);}
-
-	//desligar o led enquanto estiver em rtd quando triangulo e x for apertado
-	//else if(readtodrive_led >= 2 && btn_apertado_1 == 1 && btn_apertado_3 == 1){HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
-
-
-
-	//	CAN_Message_t msg_recebida;
-	//	while (osMessageQueueGet(msg_canHandle, &msg_recebida, NULL, 0) == osOK)
-	//	{
-	//	switch (RxHeader.Identifier)
-	//	{
-	//	case 0x120: { //0x120 //0x141so pra teste
-	//		//			falha_inversor = msg_recebida.data[0];
-	//		//			readtodrive_led = msg_recebida.data[3];
-	//		//			falha_tms = msg_recebida.data[4];
-	//		//			falha_ecu = ((uint16_t)msg_recebida.data[1] << 8) | msg_recebida.data[2];
-	//		//			if (readtodrive_led == 3) {  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
-	//		//			} else { HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);}
-	//
-	//		modelListener->updateFalhaTMS(falha_tms);
-	//		modelListener->updateFalhaECU(falha_ecu);
-	//		modelListener->updateFalhaINV(falha_inversor);
-	//
-	//		break;
-	//	}
-	//	case 0x121: {
-	//		//			tensao_cel_min = msg_recebida.data[0];
-	//		//			tensao_cel_max = msg_recebida.data[2];
-	//		//			soc = msg_recebida.data[3];
-	//		//			acelerador = msg_recebida.data[4];
-	//		//			freio = msg_recebida.data[5];
-	//		//			temperatura_acc = msg_recebida.data[7]; //certo [7] qualquer outro teste
-	//
-	//		modelListener->updateTensaoCelulaMin(tensao_cel_min);
-	//		modelListener->updateTensaoCelulaMax(tensao_cel_max);
-	//		modelListener->updateSOC(soc);
-	//		modelListener->updateAcelerador(acelerador);
-	//		modelListener->updateFreio(freio);
-	//		modelListener->updateTempAcc(temperatura_acc);
-	//		break;
-	//	}
-	//
-	//	case 0x220: {
-	//		//			correnteHV = 0.0f; //acumulador
-	//		//			corrente_inv = 0.0f; //inversor
-	//
-	//		//			memcpy(&correnteHV, &msg_recebida.data[4], sizeof(float));
-	//		//			memcpy(&corrente_inv, &msg_recebida.data[0], sizeof(float));
-	//		modelListener->updateCorrenteHV((float)correnteHV);
-	//		modelListener->updateCorrenteInv((float)corrente_inv);
-	//		break;
-	//	}
-	//	case 0x420: {
-	//		//			rpm = ((uint16_t)msg_recebida.data[0] << 8) | msg_recebida.data[1];
-	//		//			temperatura_motor = ((uint16_t)msg_recebida.data[2] << 8) | msg_recebida.data[3];
-	//		//			temperatura_inv = ((uint16_t)msg_recebida.data[6] << 8) | msg_recebida.data[7];
-	//
-	//		modelListener->updateRPM(rpm);
-	//		modelListener->updateTempMotor(temperatura_motor);
-	//		modelListener->updateTempInversor(temperatura_inv);
-	//		break;
-	//	}
-	//	case 0x421: {
-	//		//			tensao_inv = 0.0f; //trifasico
-	//		//			tensaoHV = 0.0f; //acumulador
-	//		//
-	//		//			memcpy(&tensao_inv, &msg_recebida.data[0], sizeof(float));
-	//		//			memcpy(&tensaoHV, &msg_recebida.data[4], sizeof(float));
-	//
-	//		modelListener->updateTensaoHV((float)tensaoHV);
-	//		modelListener->updateTensaoInversor((float)tensao_inv);
-	//		break;
-	//	}
-	//	}
+	if ((readtodrive_led >= 2) or (tensaoHV >= 60)) {
+	    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+	}
 }
 

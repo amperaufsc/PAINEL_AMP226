@@ -6,6 +6,21 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_FR70" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_TMVL" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; °C</Translation>
+      </Text>
+      <Text Id="__SingleUse_45F0" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Temp. Inv</Translation>
+      </Text>
+      <Text Id="__SingleUse_XJH5" Alignment="Left" TypographyId="batman">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_XPO4" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt; </Translation>
+      </Text>
       <Text Id="__SingleUse_PW1Y" Alignment="Left" TypographyId="batman">
         <Translation Language="GB">0</Translation>
       </Text>
@@ -193,7 +208,7 @@
         <Translation Language="GB">FREIO</Translation>
       </Text>
       <Text Id="__SingleUse_6QZV" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Temp. Motor</Translation>
+        <Translation Language="GB">  Temp. Motor  </Translation>
       </Text>
       <Text Id="__SingleUse_0N3L" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>
