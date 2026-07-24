@@ -224,6 +224,10 @@ void Model::tick()
 	modelListener->updateTempInversor(temperatura_inv);
 	modelListener->updateTensaoHV((float)tensaoHV);
 	modelListener->updateTensaoInversor((float)tensao_inv);
+
+	//potencia do motor (eletrica no inversor): tensao_inv * corrente_inv, sem filtro
+	//regen -> a potencia fica verde e negativa
+	modelListener->updatePotencia((tensao_inv * corrente_inv) / 1000.0f); //kw
 	modelListener->updateVelocidade((float)velocidade);
 
 	//**integrando a velocidade pra calcular a distancia percorrida**//

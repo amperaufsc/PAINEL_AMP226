@@ -13,6 +13,7 @@ public:
 	virtual void tearDownScreen();
 
 	virtual void updateTempMotor(int temp);
+	virtual void updateTempInversor(int temp);
 	virtual void updateTempAcc(int temp);
 	virtual void updateRPM(int rpm);
 	virtual void updateSOC(int soc);
@@ -20,6 +21,7 @@ public:
 	virtual void updateDistancia(int metros);
 	virtual void updateAcelerador(int acelera);
 	virtual void updateFreio(int freio);
+	virtual void updatePotencia(float pot);
 
 	virtual void handleTickEvent();
 	void resetRelogio();

@@ -19,9 +19,11 @@ public:
     virtual ~ModoProvaPresenter() {};
 ;
 	virtual void updateTempMotor(int temp) override;
+	virtual void updateTempInversor(int temp) override;
 	virtual void updateTempAcc(int temp) override;
     virtual void updateAcelerador(int acelera) override;
     virtual void updateFreio(int freio) override;
+	virtual void updatePotencia(float pot) override;
     virtual void updateVelocidade(float vel) override;
     virtual void updateDistancia(int metros) override;
     virtual void updateRPM(int rpm) override;

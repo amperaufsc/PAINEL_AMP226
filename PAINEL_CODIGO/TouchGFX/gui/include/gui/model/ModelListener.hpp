@@ -45,6 +45,7 @@ public:
     virtual void updateFreio(int freio) {}
     virtual void updateVelocidade(float vel) {}
     virtual void updateDistancia(int metros) {}
+    virtual void updatePotencia(float pot) {}
 
     //botoes
     virtual void Botao1(int bn1) {}

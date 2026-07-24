@@ -39,6 +39,11 @@ void ModoProvaPresenter::updateTempMotor(int temp)
     view.updateTempMotor(temp);
 }
 
+void ModoProvaPresenter::updateTempInversor(int temp)
+{
+    view.updateTempInversor(temp);
+}
+
 void ModoProvaPresenter::updateTempAcc(int temp)
 {
     view.updateTempAcc(temp);
@@ -70,4 +75,9 @@ void ModoProvaPresenter::updateRPM(int rpm)
 void ModoProvaPresenter::updateSOC(int soc)
 {
     view.updateSOC(soc);
+}
+
+void ModoProvaPresenter::updatePotencia(float pot)
+{
+    view.updatePotencia(pot);
 }

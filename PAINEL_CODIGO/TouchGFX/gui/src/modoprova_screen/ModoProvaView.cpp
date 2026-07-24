@@ -77,6 +77,12 @@ void ModoProvaView::updateTempMotor(int temp)
 	Tempmotor_un.invalidate();
 }
 
+void ModoProvaView::updateTempInversor(int temp)
+{
+	Unicode::snprintf(Tempinv_unBuffer, TEMPINV_UN_SIZE, "%d", temp);
+	Tempinv_un.invalidate();
+}
+
 void ModoProvaView::updateTempAcc(int temp)
 {
 	    Unicode::snprintf(Tempacc_unBuffer, TEMPACC_UN_SIZE, "%d", temp);
@@ -104,69 +110,20 @@ void ModoProvaView::updateRPM(int rpm)
 	Unicode::snprintfFloat(rpm_unBuffer, RPM_UN_SIZE, "%.1f", rotacaotacometro);
     tacometro.setValue(rotacaotacometro);
 
-    if (rpm < 1000) {
-    	        rpm0.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	        rpm1.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	        rpm2.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	        rpm3.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	        rpm4.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	        rpm5.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	        rpm6.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	    }
-    	    else if (rpm >= 1000 && rpm < 2000) {
-    	        rpm0.setColor(touchgfx::Color::getColorFromRGB(64, 126, 147));
-    	        rpm1.setColor(touchgfx::Color::getColorFromRGB(64, 126, 147));
-    	        rpm2.setColor(touchgfx::Color::getColorFromRGB(64, 126, 147));
-    	        rpm3.setColor(touchgfx::Color::getColorFromRGB(64, 126, 147));
-    	        rpm4.setColor(touchgfx::Color::getColorFromRGB(64, 126, 147));
-    	        rpm5.setColor(touchgfx::Color::getColorFromRGB(64, 126, 147));
-    	        rpm6.setColor(touchgfx::Color::getColorFromRGB(64, 126, 147));
-    	    }
-    	    else if (rpm >= 2000 && rpm < 2850) {
-    	        rpm0.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
-    	        rpm1.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
-    	        rpm2.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
-    	        rpm3.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
-    	        rpm4.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
-    	        rpm5.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
-    	        rpm6.setColor(touchgfx::Color::getColorFromRGB(92, 198, 208));
-    	    }
-    	    else if (rpm >= 2850 && rpm < 3300) { //faixa ideal 2875 - 3300
-    	        rpm0.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
-    	        rpm1.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
-    	        rpm2.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
-    	        rpm3.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
-    	        rpm4.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
-    	        rpm5.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
-    	        rpm6.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
-    	    }
-    	    else if (rpm >= 3300 && rpm < 4000) {
-    	        rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
-    	        rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
-    	        rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
-    	        rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
-    	        rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
-    	        rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
-    	        rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 0));
-    	    }
-    	    else if (rpm >= 4000 && rpm <= 5000) {
-    	        rpm0.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	        rpm1.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	        rpm2.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	        rpm3.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	        rpm4.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	        rpm5.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	        rpm6.setColor(touchgfx::Color::getColorFromRGB(222, 34, 110));
-    	    }
-    	    else if (rpm > 5000) {
-    			rpm0.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    			rpm1.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    			rpm2.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    			rpm3.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    			rpm4.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    			rpm5.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    			rpm6.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    		}
+    touchgfx::colortype cor;
+    if (rpm < 1000)        cor = touchgfx::Color::getColorFromRGB(222, 34, 110);
+    else if (rpm < 2000)   cor = touchgfx::Color::getColorFromRGB(64, 126, 147);
+    else if (rpm < 2850)   cor = touchgfx::Color::getColorFromRGB(92, 198, 208);
+    else if (rpm < 3300)   cor = touchgfx::Color::getColorFromRGB(0, 255, 0);
+    else if (rpm < 4000)   cor = touchgfx::Color::getColorFromRGB(255, 255, 0);
+    else if (rpm <= 5000)  cor = touchgfx::Color::getColorFromRGB(222, 34, 110);
+    else                   cor = touchgfx::Color::getColorFromRGB(255, 0, 0);
+
+    touchgfx::TextArea* barrasRpm[7] = { &rpm0, &rpm1, &rpm2, &rpm3, &rpm4, &rpm5, &rpm6 };
+    for (int i = 0; i < 7; i++)
+    {
+        barrasRpm[i]->setColor(cor);
+    }
 
     tacometro.invalidate();
     rpm_un.invalidate();
@@ -211,4 +168,14 @@ void ModoProvaView::updateFreio(int freio)
 		freio_un.invalidate();
 		freio_bar.setValue(freio);
 		freio_bar.invalidate();
+}
+
+void ModoProvaView::updatePotencia(float pot)
+{
+	Unicode::snprintfFloat(potencia_unBuffer, POTENCIA_UN_SIZE, "%.1f", pot);
+	if (pot < 0.0f)
+		potencia_un.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
+	else
+		potencia_un.setColor(touchgfx::Color::getColorFromRGB(245, 247, 247));
+	potencia_un.invalidate();
 }
