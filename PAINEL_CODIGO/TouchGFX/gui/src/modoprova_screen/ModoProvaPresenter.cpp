@@ -15,7 +15,7 @@ void ModoProvaPresenter::deactivate()
 void ModoProvaPresenter::Botao1(int bn1)
 {
 	if (bn1 == 1){
-		model->resetDistancia(); //zera a distancia percorrida, igual o reset do relogio na pagina de testes
+		model->resetDistancia(); //zera a distancia percorrida
 	}
 }
 

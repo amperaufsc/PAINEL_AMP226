@@ -24,12 +24,11 @@ public:
 	virtual void handleTickEvent();
 	void resetRelogio();
 
-};
-
+protected:
 	uint32_t baseTick;
 	int horas;
 	int minutos;
 	int segundos;
-
+};
 
 #endif

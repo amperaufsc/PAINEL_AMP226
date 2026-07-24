@@ -4,6 +4,12 @@
 #include <stdio.h>
 #include "stm32u5xx_hal.h"
 
+// Estado do cronometro guardado em 'static' (escopo de arquivo) pra sobreviver
+// a troca de telas: a ModoProvaView e recriada toda vez que a pagina abre, entao
+// se o tempo base ficasse na View ele resetava a cada entrada. Em static, persiste.
+static uint32_t cronoBase = 0;
+static bool     cronoIniciado = false;
+
 ModoProvaView::ModoProvaView()
 {
 
@@ -11,7 +17,7 @@ ModoProvaView::ModoProvaView()
 
 void ModoProvaView::setupScreen()
 {
-    TestesViewBase::setupScreen();
+    ModoProvaViewBase::setupScreen();
 
     //configuração do cronometro
     if (!cronoIniciado)              // 1a vez que a tela abre desde o boot -> zera
@@ -47,7 +53,7 @@ void ModoProvaView::resetRelogio()
 
 void ModoProvaView::handleTickEvent()
 {
-    TestesViewBase::handleTickEvent();
+    ModoProvaViewBase::handleTickEvent();
 
     uint32_t totalSeg = (HAL_GetTick() - cronoBase) / 2000;
 
