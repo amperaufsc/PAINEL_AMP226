@@ -872,6 +872,42 @@
           },
           {
             "Type": "TextArea",
+            "Name": "TensaoHV_un",
+            "X": 397,
+            "Y": 331,
+            "Width": 143,
+            "Height": 35,
+            "TextId": "__SingleUse_JQ4W",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_E3PF",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TensaoHV",
+            "X": 396,
+            "Y": 292,
+            "Width": 162,
+            "Height": 35,
+            "TextId": "__SingleUse_CCQ9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
             "Name": "relogio",
             "X": 207,
             "Y": 437,
@@ -1017,8 +1053,8 @@
           {
             "Type": "TextArea",
             "Name": "potencia",
-            "X": 330,
-            "Y": 302,
+            "X": 228,
+            "Y": 292,
             "Width": 133,
             "Height": 35,
             "TextId": "__SingleUse_WV88",
@@ -1033,8 +1069,8 @@
           {
             "Type": "TextArea",
             "Name": "potencia_un",
-            "X": 318,
-            "Y": 339,
+            "X": 213,
+            "Y": 330,
             "Width": 165,
             "Height": 37,
             "TextId": "__SingleUse_FMPH",
@@ -1358,12 +1394,7 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_AEP2",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
+            "AutoSize": true
           },
           {
             "Type": "TextArea",

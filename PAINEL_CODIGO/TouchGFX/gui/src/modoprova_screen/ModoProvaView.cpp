@@ -179,3 +179,9 @@ void ModoProvaView::updatePotencia(float pot)
 		potencia_un.setColor(touchgfx::Color::getColorFromRGB(245, 247, 247));
 	potencia_un.invalidate();
 }
+
+void ModoProvaView::updateTensaoHV(float tesao)
+{
+	Unicode::snprintfFloat(TensaoHV_unBuffer, TENSAOHV_UN_SIZE, "%.1f", tesao);
+	TensaoHV_un.invalidate();
+}

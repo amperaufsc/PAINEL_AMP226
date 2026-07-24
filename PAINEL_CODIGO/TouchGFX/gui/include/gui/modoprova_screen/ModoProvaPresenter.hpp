@@ -24,6 +24,7 @@ public:
     virtual void updateAcelerador(int acelera) override;
     virtual void updateFreio(int freio) override;
 	virtual void updatePotencia(float pot) override;
+	virtual void updateTensaoHV(float tesao) override;
     virtual void updateVelocidade(float vel) override;
     virtual void updateDistancia(int metros) override;
     virtual void updateRPM(int rpm) override;

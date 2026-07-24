@@ -22,6 +22,7 @@ public:
 	virtual void updateAcelerador(int acelera);
 	virtual void updateFreio(int freio);
 	virtual void updatePotencia(float pot);
+	virtual void updateTensaoHV(float tesao);
 
 	virtual void handleTickEvent();
 	void resetRelogio();

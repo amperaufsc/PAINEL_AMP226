@@ -6,6 +6,15 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_E3PF" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_JQ4W" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt;  V</Translation>
+      </Text>
+      <Text Id="__SingleUse_CCQ9" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB">Tensão HV</Translation>
+      </Text>
       <Text Id="__SingleUse_B2U2" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Tempo Prova</Translation>
       </Text>
@@ -147,14 +156,11 @@
       <Text Id="__SingleUse_8YAI" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">TMS OK</Translation>
       </Text>
-      <Text Id="__SingleUse_AEP2" Alignment="Left" TypographyId="letra_miuda">
-        <Translation Language="GB">x 1000</Translation>
-      </Text>
       <Text Id="__SingleUse_2NCR" Alignment="Left" TypographyId="letra_miuda">
         <Translation Language="GB">km/h</Translation>
       </Text>
       <Text Id="__SingleUse_YA30" Alignment="Left" TypographyId="letra_miuda">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB">x 1000</Translation>
       </Text>
       <Text Id="__SingleUse_ZFV1" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">0</Translation>

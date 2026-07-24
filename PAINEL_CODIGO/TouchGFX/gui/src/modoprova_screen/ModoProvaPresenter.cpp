@@ -81,3 +81,8 @@ void ModoProvaPresenter::updatePotencia(float pot)
 {
     view.updatePotencia(pot);
 }
+
+void ModoProvaPresenter::updateTensaoHV(float tesao)
+{
+    view.updateTensaoHV(tesao);
+}
