@@ -89,9 +89,15 @@ uint8_t soc; //
 uint8_t acelerador; //
 uint8_t freio; //
 uint8_t temperatura_acc; //
+uint8_t inverter_status; //0x120 byte 5
+uint8_t cebolinha; //0x121 byte 6 - 0 (solto) 1 (pressionado)
+uint8_t tensao_cel_med; //0x121 byte 1 - avg cell voltage
 
 int16_t rpm_bruto; //valor recebido bruto podendo ser negativo
 uint16_t rpm; //valor real do rpm
+uint16_t control_word; //0x120 bytes 7-6 - estados Sevcon
+int16_t torque_bruto; //0x420 bytes 5-4 - bruto podendo ser negativo
+uint16_t torque_motor; //valor absoluto do torque
 uint16_t falha_ecu; //
 uint16_t temperatura_motor; //
 uint16_t temperatura_inv; //
@@ -944,6 +950,8 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 			readtodrive_led = RxData[3]; //current state
 			falha_tms = RxData[4];
 			falha_ecu = ((uint16_t)RxData[2] << 8) | RxData[1];
+			inverter_status = RxData[5];
+			control_word = ((uint16_t)RxData[7] << 8) | RxData[6];
 			break;
 		}
 		case 0x121: {
@@ -953,6 +961,8 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 			acelerador = RxData[4];
 			freio = RxData[5];
 			temperatura_acc = RxData[7]; //certo [7] qualquer outro teste
+			cebolinha = RxData[6]; //0 (solto) 1 (pressionado)
+			tensao_cel_med = RxData[1]; //avg cell voltage
 			break;
 		}
 
@@ -976,6 +986,10 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 
 			temperatura_motor = ((uint16_t)RxData[3] << 8) | RxData[2];
 			temperatura_inv = ((uint16_t)RxData[7] << 8) | RxData[6];
+
+			//torque do motor (bytes 5-4), mesmo esquema do rpm: bruto pode ser negativo
+			torque_bruto = (int16_t)(((uint16_t)RxData[5] << 8) | RxData[4]);
+			torque_motor = (uint16_t)abs(torque_bruto);
 			break;
 		}
 		case 0x421: {
