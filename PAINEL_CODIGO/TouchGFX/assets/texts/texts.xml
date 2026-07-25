@@ -192,9 +192,6 @@
       <Text Id="__SingleUse_5U7Q" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Falha INV.</Translation>
       </Text>
-      <Text Id="__SingleUse_I401" Alignment="Center" TypographyId="coringa">
-        <Translation Language="GB">Falha TMS</Translation>
-      </Text>
       <Text Id="__SingleUse_POJW" Alignment="Left" TypographyId="coringa">
         <Translation Language="GB">100</Translation>
       </Text>
