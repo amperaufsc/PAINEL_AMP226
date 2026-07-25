@@ -986,28 +986,12 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 			memcpy(&tensaoHV, &RxData[4], sizeof(float));
 			break;
 		}
-		//por enquanto NAO vamos receber a velocidade pelo CAN
-		//a velocidade esta sendo calculada pelo rpm no case 0x420
-		//DESCOMENTAR este case quando o SA voltar a mandar a velocidade
-		//e comentar a linha do calculo da velocidade la
-		//		case 0x4A4: {
-		//			memcpy(&velocidade, &RxData[0], sizeof(float)); //velocidade roda dianteira direita
-		//			memcpy(&velocidade1, &RxData[4], sizeof(float)); //velocidade roda dianteira esquerda(nao vai usar por enquanto, só pra caso eu erre)
-		//			break;
-		//		}
-		//		case 0x000: {
-		//			distancia = RxData[0];
-		//			distancia = ((uint16_t)RxData[1] << 8) | RxData[0];
-		//			memcpy(&distancia, &RxData[0], sizeof(float));
-		//			break;
-		//		}
 		}
 	}
 }
 /* USER CODE END 4 */
 
-/**
- * @brief  Period elapsed callback in non blocking mode
+/***'	 * @brief  Period elapsed callback in non blocking mode
  * @note   This function is called  when TIM6 interrupt took place, inside
  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
  * a global variable "uwTick" used as application time base.

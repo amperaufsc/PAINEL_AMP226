@@ -227,6 +227,26 @@
           },
           {
             "Type": "TextArea",
+            "Name": "distancia_un",
+            "X": 456,
+            "Y": 435,
+            "Width": 165,
+            "Height": 37,
+            "TextId": "__SingleUse_8YZT",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 247,
+              "Blue": 247
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_E01K",
+              "UseBuffer": true,
+              "BufferSize": 11
+            }
+          },
+          {
+            "Type": "TextArea",
             "Name": "rpm_un",
             "X": 587,
             "Y": 224,
@@ -808,9 +828,9 @@
           {
             "Type": "TextArea",
             "Name": "relogio",
-            "X": 331,
-            "Y": 431,
-            "Width": 150,
+            "X": 212,
+            "Y": 435,
+            "Width": 160,
             "Height": 40,
             "TextId": "__SingleUse_OBLZ",
             "TextRotation": "0",
@@ -877,6 +897,7 @@
             "Y": 337,
             "Width": 143,
             "Height": 35,
+            "Visible": false,
             "TextId": "__SingleUse_JQ4W",
             "TextRotation": "0",
             "Color": {
@@ -897,6 +918,7 @@
             "Y": 300,
             "Width": 162,
             "Height": 35,
+            "Visible": false,
             "TextId": "__SingleUse_CCQ9",
             "TextRotation": "0",
             "Color": {
@@ -1053,8 +1075,8 @@
           {
             "Type": "TextArea",
             "Name": "potencia",
-            "X": 228,
-            "Y": 300,
+            "X": 334,
+            "Y": 301,
             "Width": 133,
             "Height": 35,
             "TextId": "__SingleUse_WV88",
@@ -1069,8 +1091,8 @@
           {
             "Type": "TextArea",
             "Name": "potencia_un",
-            "X": 213,
-            "Y": 337,
+            "X": 318,
+            "Y": 335,
             "Width": 165,
             "Height": 37,
             "TextId": "__SingleUse_FMPH",
@@ -1192,8 +1214,8 @@
           {
             "Type": "TextArea",
             "Name": "Tempmotor_un",
-            "X": 350,
-            "Y": 62,
+            "X": 450,
+            "Y": 51,
             "Width": 100,
             "Height": 35,
             "TextId": "__SingleUse_T4IY",
@@ -1212,8 +1234,8 @@
           {
             "Type": "TextArea",
             "Name": "TempMotor",
-            "X": 288,
-            "Y": 27,
+            "X": 407,
+            "Y": 13,
             "Width": 224,
             "Height": 35,
             "TextId": "__SingleUse_6QZV",
@@ -1228,7 +1250,7 @@
           {
             "Type": "TextArea",
             "Name": "TempInv",
-            "X": 138,
+            "X": 225,
             "Y": 13,
             "Width": 150,
             "Height": 35,
@@ -1279,6 +1301,7 @@
             "Y": 48,
             "Width": 100,
             "Height": 35,
+            "Visible": false,
             "TextId": "__SingleUse_C8P5",
             "TextRotation": "0",
             "Color": {
@@ -1295,7 +1318,7 @@
           {
             "Type": "TextArea",
             "Name": "Tempinv_un",
-            "X": 188,
+            "X": 250,
             "Y": 48,
             "Width": 100,
             "Height": 35,
@@ -1319,6 +1342,7 @@
             "Y": 13,
             "Width": 159,
             "Height": 35,
+            "Visible": false,
             "TextId": "__SingleUse_ECCU",
             "TextRotation": "0",
             "Color": {
