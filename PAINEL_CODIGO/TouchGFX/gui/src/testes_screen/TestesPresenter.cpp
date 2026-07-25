@@ -21,9 +21,9 @@ void TestesPresenter::deactivate()
 //botoes de controle
 void TestesPresenter::Botao1(int bn1)
 {
-    if (bn1 == 1){
-        view.resetRelogio();
-    }
+	if (bn1 == 1){
+		model->resetDistancia(); //zera a distancia percorrida
+	}
 }
 
 void TestesPresenter::Botao2(int bn2)
@@ -34,7 +34,12 @@ void TestesPresenter::Botao2(int bn2)
 	}
 }
 
-void TestesPresenter::Botao3(int bn3){}
+void TestesPresenter::Botao3(int bn3)
+{
+    if (bn3 == 1){
+        view.resetRelogio();
+    }
+}
 
 void TestesPresenter::updateFalhaTMS(int falha)
 {

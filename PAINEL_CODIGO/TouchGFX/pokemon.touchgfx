@@ -228,9 +228,9 @@
           {
             "Type": "TextArea",
             "Name": "distancia_un",
-            "X": 456,
-            "Y": 435,
-            "Width": 165,
+            "X": 315,
+            "Y": 309,
+            "Width": 170,
             "Height": 37,
             "TextId": "__SingleUse_8YZT",
             "TextRotation": "0",
@@ -284,9 +284,9 @@
           {
             "Type": "TextArea",
             "Name": "TensaoCelulamaisbaixa_un",
-            "X": 329,
+            "X": 315,
             "Y": 225,
-            "Width": 143,
+            "Width": 170,
             "Height": 35,
             "TextId": "__SingleUse_JK1H",
             "TextRotation": "0",
@@ -304,9 +304,9 @@
           {
             "Type": "TextArea",
             "Name": "TensaoCelulamaisbaixa",
-            "X": 300,
+            "X": 298,
             "Y": 189,
-            "Width": 219,
+            "Width": 205,
             "Height": 35,
             "TextId": "__SingleUse_0JHV",
             "TextRotation": "0",
@@ -319,46 +319,10 @@
           },
           {
             "Type": "TextArea",
-            "Name": "TensaoCelulamaisalta_un",
-            "X": 329,
-            "Y": 309,
-            "Width": 143,
-            "Height": 35,
-            "TextId": "__SingleUse_G75T",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 245,
-              "Green": 247,
-              "Blue": 247
-            },
-            "Wildcard1": {
-              "TextId": "__SingleUse_CNRD",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "TensaoCelulamaisalta",
-            "X": 296,
-            "Y": 271,
-            "Width": 227,
-            "Height": 35,
-            "TextId": "__SingleUse_M9XP",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 92,
-              "Green": 198,
-              "Blue": 208
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
             "Name": "TensaoHV_un",
-            "X": 329,
-            "Y": 145,
-            "Width": 143,
+            "X": 315,
+            "Y": 141,
+            "Width": 170,
             "Height": 35,
             "TextId": "__SingleUse_HFVM",
             "TextRotation": "0",
@@ -376,9 +340,9 @@
           {
             "Type": "TextArea",
             "Name": "TensaoHV",
-            "X": 328,
+            "X": 316,
             "Y": 106,
-            "Width": 162,
+            "Width": 168,
             "Height": 35,
             "TextId": "__SingleUse_OPWS",
             "TextRotation": "0",
@@ -392,9 +356,9 @@
           {
             "Type": "TextArea",
             "Name": "TensaoInversor_un",
-            "X": 329,
+            "X": 315,
             "Y": 63,
-            "Width": 143,
+            "Width": 170,
             "Height": 35,
             "TextId": "__SingleUse_5HLU",
             "TextRotation": "0",
@@ -520,9 +484,9 @@
           {
             "Type": "TextArea",
             "Name": "TempAcumulador",
-            "X": 55,
+            "X": 36,
             "Y": 189,
-            "Width": 168,
+            "Width": 207,
             "Height": 35,
             "TextId": "__SingleUse_913G",
             "TextRotation": "0",
@@ -601,9 +565,9 @@
           {
             "Type": "TextArea",
             "Name": "soc",
-            "X": 621,
+            "X": 557,
             "Y": 271,
-            "Width": 66,
+            "Width": 205,
             "Height": 35,
             "TextId": "__SingleUse_DPMA",
             "TextRotation": "0",
@@ -613,6 +577,21 @@
               "Blue": 208
             },
             "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "distancia",
+            "X": 330,
+            "Y": 274,
+            "Width": 141,
+            "Height": 35,
+            "TextId": "__SingleUse_7NNW",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 92,
+              "Green": 198,
+              "Blue": 208
+            }
           },
           {
             "Type": "TextArea",
@@ -706,8 +685,8 @@
           {
             "Type": "TextArea",
             "Name": "invok",
-            "X": 292,
-            "Y": 350,
+            "X": 26,
+            "Y": 367,
             "Width": 216,
             "Height": 35,
             "TextId": "__SingleUse_NPCG",
@@ -740,7 +719,7 @@
             "Type": "TextArea",
             "Name": "ecuok",
             "X": 604,
-            "Y": 350,
+            "Y": 367,
             "Width": 119,
             "Height": 35,
             "TextId": "__SingleUse_HQLU",
@@ -771,45 +750,9 @@
           },
           {
             "Type": "TextArea",
-            "Name": "tmsok",
-            "X": 75,
-            "Y": 350,
-            "Width": 120,
-            "Height": 35,
-            "TextId": "__SingleUse_8YAI",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 64,
-              "Green": 126,
-              "Blue": 147
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Falhatmsuni",
-            "X": 79,
-            "Y": 385,
-            "Width": 120,
-            "Height": 35,
-            "TextId": "__SingleUse_20FB",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Wildcard1": {
-              "TextId": "__SingleUse_KIRL",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "Falhainvuni",
-            "X": 292,
-            "Y": 385,
+            "X": 26,
+            "Y": 402,
             "Width": 216,
             "Height": 35,
             "TextId": "__SingleUse_ZXI4",
@@ -828,9 +771,9 @@
           {
             "Type": "TextArea",
             "Name": "relogio",
-            "X": 212,
-            "Y": 435,
-            "Width": 160,
+            "X": 329,
+            "Y": 402,
+            "Width": 170,
             "Height": 40,
             "TextId": "__SingleUse_OBLZ",
             "TextRotation": "0",
@@ -849,7 +792,7 @@
             "Type": "TextArea",
             "Name": "Falhaecuuni",
             "X": 604,
-            "Y": 385,
+            "Y": 402,
             "Width": 119,
             "Height": 35,
             "TextId": "__SingleUse_POQR",
@@ -931,7 +874,7 @@
           {
             "Type": "TextArea",
             "Name": "relogio",
-            "X": 301,
+            "X": 300,
             "Y": 420,
             "Width": 200,
             "Height": 40,
@@ -1024,9 +967,9 @@
           {
             "Type": "TextArea",
             "Name": "distancia",
-            "X": 335,
-            "Y": 303,
-            "Width": 141,
+            "X": 250,
+            "Y": 301,
+            "Width": 300,
             "Height": 35,
             "TextId": "__SingleUse_4951",
             "TextRotation": "0",
@@ -1034,15 +977,14 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            },
-            "AutoSize": true
+            }
           },
           {
             "Type": "TextArea",
             "Name": "distancia_1",
-            "X": 300,
-            "Y": 389,
-            "Width": 201,
+            "X": 250,
+            "Y": 385,
+            "Width": 300,
             "Height": 35,
             "TextId": "__SingleUse_B2U2",
             "TextRotation": "0",
@@ -1050,15 +992,14 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            },
-            "AutoSize": true
+            }
           },
           {
             "Type": "TextArea",
             "Name": "distancia_un",
-            "X": 318,
-            "Y": 334,
-            "Width": 165,
+            "X": 300,
+            "Y": 336,
+            "Width": 200,
             "Height": 37,
             "TextId": "__SingleUse_OE0U",
             "TextRotation": "0",
@@ -1076,9 +1017,9 @@
           {
             "Type": "TextArea",
             "Name": "potencia",
-            "X": 334,
-            "Y": 217,
-            "Width": 133,
+            "X": 250,
+            "Y": 215,
+            "Width": 300,
             "Height": 35,
             "TextId": "__SingleUse_WV88",
             "TextRotation": "0",
@@ -1086,15 +1027,14 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            },
-            "AutoSize": true
+            }
           },
           {
             "Type": "TextArea",
             "Name": "potencia_un",
-            "X": 318,
-            "Y": 251,
-            "Width": 165,
+            "X": 300,
+            "Y": 250,
+            "Width": 200,
             "Height": 37,
             "TextId": "__SingleUse_FMPH",
             "TextRotation": "0",
@@ -1216,9 +1156,9 @@
           {
             "Type": "TextArea",
             "Name": "Tempmotor_un",
-            "X": 350,
-            "Y": 82,
-            "Width": 100,
+            "X": 300,
+            "Y": 84,
+            "Width": 200,
             "Height": 35,
             "TextId": "__SingleUse_T4IY",
             "TextRotation": "0",
@@ -1236,9 +1176,9 @@
           {
             "Type": "TextArea",
             "Name": "TempMotor",
-            "X": 288,
-            "Y": 47,
-            "Width": 224,
+            "X": 250,
+            "Y": 48,
+            "Width": 300,
             "Height": 35,
             "TextId": "__SingleUse_6QZV",
             "TextRotation": "0",
@@ -1246,15 +1186,14 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            },
-            "AutoSize": true
+            }
           },
           {
             "Type": "TextArea",
             "Name": "TempInv",
-            "X": 325,
-            "Y": 132,
-            "Width": 150,
+            "X": 250,
+            "Y": 130,
+            "Width": 300,
             "Height": 35,
             "TextId": "__SingleUse_45F0",
             "TextRotation": "0",
@@ -1262,8 +1201,7 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            },
-            "AutoSize": true
+            }
           },
           {
             "Type": "TextArea",
@@ -1320,9 +1258,9 @@
           {
             "Type": "TextArea",
             "Name": "Tempinv_un",
-            "X": 350,
-            "Y": 167,
-            "Width": 100,
+            "X": 300,
+            "Y": 165,
+            "Width": 200,
             "Height": 35,
             "TextId": "__SingleUse_TMVL",
             "TextRotation": "0",

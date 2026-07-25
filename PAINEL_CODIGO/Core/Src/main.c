@@ -941,7 +941,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 		switch(RxHeader.Identifier){
 		case 0x120: { //0x120 //0x141so pra teste
 			falha_inversor = RxData[0];
-			readtodrive_led = RxData[3];
+			readtodrive_led = RxData[3]; //current state
 			falha_tms = RxData[4];
 			falha_ecu = ((uint16_t)RxData[2] << 8) | RxData[1];
 			break;
