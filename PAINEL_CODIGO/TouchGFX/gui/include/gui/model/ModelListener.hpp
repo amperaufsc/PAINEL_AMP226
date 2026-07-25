@@ -47,6 +47,12 @@ public:
     virtual void updateDistancia(int metros) {}
     virtual void updatePotencia(float pot) {}
 
+    //dados do inversor (tela de testes)
+    virtual void updateControlWord(int cw) {}
+    virtual void updateStatusInversor(int status) {}
+    virtual void updateCurrentState(int estado) {}
+    virtual void updateTorque(int torque) {}
+
     //botoes
     virtual void Botao1(int bn1) {}
     virtual void Botao2(int bn2) {}

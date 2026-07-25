@@ -72,25 +72,26 @@ void TestesView::handleTickEvent()
 }
 
 
-void TestesView::updateFalhaTMS(int falha)
-{
-    Unicode::snprintf(FalhatmsuniBuffer, FALHATMSUNI_SIZE, "%d", falha);
-
-    if (falha != 0)
-    {
-        tmsok.setVisible(false);
-        falhatms.setVisible(true);
-    }
-    else
-    {
-        tmsok.setVisible(true);
-        falhatms.setVisible(false);
-    }
-
-    tmsok.invalidate();
-    falhatms.invalidate();
-    Falhatmsuni.invalidate();
-}
+//comentado: a tela nova nao tem mais os widgets de falha do TMS (tmsok/falhatms/Falhatmsuni)
+//void TestesView::updateFalhaTMS(int falha)
+//{
+//    Unicode::snprintf(FalhatmsuniBuffer, FALHATMSUNI_SIZE, "%d", falha);
+//
+//    if (falha != 0)
+//    {
+//        tmsok.setVisible(false);
+//        falhatms.setVisible(true);
+//    }
+//    else
+//    {
+//        tmsok.setVisible(true);
+//        falhatms.setVisible(false);
+//    }
+//
+//    tmsok.invalidate();
+//    falhatms.invalidate();
+//    Falhatmsuni.invalidate();
+//}
 
 void TestesView::updateFalhaECU(int falha)
 {
@@ -149,11 +150,12 @@ void TestesView::RTDbotao(int rtd)
     rtddesativado.invalidate();
 }
 
-void TestesView::updateSOC(int soc)
-{
-    Unicode::snprintf(Soc_unBuffer, SOC_UN_SIZE, "%d", soc);
-    Soc_un.invalidate();
-}
+//comentado: a tela nova nao tem mais o widget de SOC (Soc_un)
+//void TestesView::updateSOC(int soc)
+//{
+//    Unicode::snprintf(Soc_unBuffer, SOC_UN_SIZE, "%d", soc);
+//    Soc_un.invalidate();
+//}
 
 void TestesView::updateRPM(int rpm)
 {
@@ -174,29 +176,26 @@ void TestesView::updateTempInversor(int temp)
     Tempinversor_un.invalidate();
 }
 
-void TestesView::updateTempAcc(int temp)
-{
-	    Unicode::snprintf(Tempacc_unBuffer, TEMPACC_UN_SIZE, "%d", temp);
-
-	    if (temp < 15)
-	    {
-
-	    	Tempacc_un.setColor(touchgfx::Color::getColorFromRGB(92,198,208));
-	    }
-	    else if (temp > 55)
-	    {
-
-	    	Tempacc_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-	    }
-	    else
-	    {
-
-	    	Tempacc_un.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
-	    }
-
-
-	    Tempacc_un.invalidate();
-}
+//comentado: a tela nova nao tem mais o widget de temperatura do acumulador (Tempacc_un)
+//void TestesView::updateTempAcc(int temp)
+//{
+//	    Unicode::snprintf(Tempacc_unBuffer, TEMPACC_UN_SIZE, "%d", temp);
+//
+//	    if (temp < 15)
+//	    {
+//	    	Tempacc_un.setColor(touchgfx::Color::getColorFromRGB(92,198,208));
+//	    }
+//	    else if (temp > 55)
+//	    {
+//	    	Tempacc_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+//	    }
+//	    else
+//	    {
+//	    	Tempacc_un.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
+//	    }
+//
+//	    Tempacc_un.invalidate();
+//}
 
 void TestesView::updateCorrenteHV(float corrente)
 {
@@ -226,6 +225,7 @@ void TestesView::updateCorrenteInv(float corrente)
 	}
 }
 
+//reativado: o widget TensaoHV_un voltou na tela
 void TestesView::updateTensaoHV(float tesao)
 {
     Unicode::snprintfFloat(TensaoHV_unBuffer, TENSAOHV_UN_SIZE, "%.1f", tesao);
@@ -238,46 +238,79 @@ void TestesView::updateTensaoInversor(float tesao)
     TensaoInversor_un.invalidate();
 }
 
-void TestesView::updateTensaoCelulaMin(int tesao)
+//comentado: a tela nova nao tem mais os widgets de tensao de celula (TensaoCelulamaisbaixa_un/TensaoCelulamaisalta_un)
+//void TestesView::updateTensaoCelulaMin(int tesao)
+//{
+//    valTensaoMin = (float)tesao / 10.0f;
+//
+//    Unicode::snprintfFloat(TensaoCelulamaisbaixa_unBuffer, TENSAOCELULAMAISBAIXA_UN_SIZE, "%.1f", valTensaoMin);
+//
+//    float diferenca = valTensaoMax - valTensaoMin;
+//    if (diferenca >= 0.5f)
+//    {
+//    	TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+//    	TensaoCelulamaisalta_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+//    }
+//    else
+//    {
+//    	TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
+//    	TensaoCelulamaisalta_un.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
+//    }
+//
+//    TensaoCelulamaisbaixa_un.invalidate();
+//    TensaoCelulamaisalta_un.invalidate();
+//}
+//
+//void TestesView::updateTensaoCelulaMax(int tesao)
+//{
+//    valTensaoMax = (float)tesao / 10.0f;
+//
+//    Unicode::snprintfFloat(TensaoCelulamaisalta_unBuffer, TENSAOCELULAMAISALTA_UN_SIZE, "%.1f", valTensaoMax);
+//
+//    float diferenca = valTensaoMax - valTensaoMin;
+//
+//    if (diferenca >= 0.5f)
+//    {
+//    	TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+//    	TensaoCelulamaisalta_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+//    }
+//    else
+//    {
+//    	TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
+//    	TensaoCelulamaisalta_un.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
+//    }
+//    TensaoCelulamaisbaixa_un.invalidate();
+//    TensaoCelulamaisalta_un.invalidate();
+//}
+
+//***** widgets novos da tela de testes *****//
+
+void TestesView::updateDistancia(int metros)
 {
-    valTensaoMin = (float)tesao / 10.0f;
-
-    Unicode::snprintfFloat(TensaoCelulamaisbaixa_unBuffer, TENSAOCELULAMAISBAIXA_UN_SIZE, "%.1f", valTensaoMin);
-
-    float diferenca = valTensaoMax - valTensaoMin;
-    if (diferenca >= 0.5f)
-    {
-    	TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    	TensaoCelulamaisalta_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    }
-    else
-    {
-    	TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
-    	TensaoCelulamaisalta_un.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
-    }
-
-    TensaoCelulamaisbaixa_un.invalidate();
-    TensaoCelulamaisalta_un.invalidate();
+    Unicode::snprintf(distancia_unBuffer, DISTANCIA_UN_SIZE, "%d", metros);
+    distancia_un.invalidate();
 }
 
-void TestesView::updateTensaoCelulaMax(int tesao)
+void TestesView::updateControlWord(int cw)
 {
-    valTensaoMax = (float)tesao / 10.0f;
+    Unicode::snprintf(controlword_unBuffer, CONTROLWORD_UN_SIZE, "%d", cw);
+    controlword_un.invalidate();
+}
 
-    Unicode::snprintfFloat(TensaoCelulamaisalta_unBuffer, TENSAOCELULAMAISALTA_UN_SIZE, "%.1f", valTensaoMax);
+void TestesView::updateStatusInversor(int status)
+{
+    Unicode::snprintf(statusinversor_unBuffer, STATUSINVERSOR_UN_SIZE, "%d", status);
+    statusinversor_un.invalidate();
+}
 
-    float diferenca = valTensaoMax - valTensaoMin;
+void TestesView::updateCurrentState(int estado)
+{
+    Unicode::snprintf(currentstate_unBuffer, CURRENTSTATE_UN_SIZE, "%d", estado);
+    currentstate_un.invalidate();
+}
 
-    if (diferenca >= 0.5f)
-    {
-    	TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    	TensaoCelulamaisalta_un.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    }
-    else
-    {
-    	TensaoCelulamaisbaixa_un.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
-    	TensaoCelulamaisalta_un.setColor(touchgfx::Color::getColorFromRGB(0, 255, 0));
-    }
-    TensaoCelulamaisbaixa_un.invalidate();
-    TensaoCelulamaisalta_un.invalidate();
+void TestesView::updateTorque(int torque)
+{
+    Unicode::snprintf(torque_unBuffer, TORQUE_UN_SIZE, "%d", torque);
+    torque_un.invalidate();
 }

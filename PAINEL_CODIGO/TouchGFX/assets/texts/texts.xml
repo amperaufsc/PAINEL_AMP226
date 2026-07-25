@@ -6,6 +6,15 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_93O3" Alignment="Left" TypographyId="coringa">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZBPE" Alignment="Center" TypographyId="batman">
+        <Translation Language="GB">&lt;value&gt;  V</Translation>
+      </Text>
+      <Text Id="__SingleUse_2JU7" Alignment="Center" TypographyId="coringa">
+        <Translation Language="GB"> Tensão HV</Translation>
+      </Text>
       <Text Id="__SingleUse_7NNW" Alignment="Center" TypographyId="coringa">
         <Translation Language="GB">Distância</Translation>
       </Text>

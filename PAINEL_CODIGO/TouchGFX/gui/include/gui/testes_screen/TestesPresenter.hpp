@@ -27,21 +27,28 @@ public:
 
     virtual ~TestesPresenter() {}
 
-	virtual void updateFalhaTMS(int falha) override;
+	//virtual void updateFalhaTMS(int falha) override;        //comentado: sem widget na tela nova
 	virtual void updateFalhaECU(int falha) override;
 	virtual void updateFalhaINV(int falha) override;
 	virtual void RTDbotao(int rtd) override;
-	virtual void updateSOC(int soc) override;
+	//virtual void updateSOC(int soc) override;               //comentado: sem widget na tela nova
 	virtual void updateRPM(int rpm) override;
 	virtual void updateTempMotor(int temp) override;
 	virtual void updateTempInversor(int temp) override;
-	virtual void updateTempAcc(int temp) override;
+	//virtual void updateTempAcc(int temp) override;          //comentado: sem widget na tela nova
 	virtual void updateCorrenteHV(float corrente) override;
 	virtual void updateCorrenteInv(float corrente) override;
-	virtual void updateTensaoHV(float tesao) override;
+	virtual void updateTensaoHV(float tesao) override;        //reativado: widget TensaoHV_un voltou na tela
 	virtual void updateTensaoInversor(float tesao) override;
-	virtual void updateTensaoCelulaMin(int tesao) override;
-	virtual void updateTensaoCelulaMax(int tesao) override;
+	//virtual void updateTensaoCelulaMin(int tesao) override; //comentado: sem widget na tela nova
+	//virtual void updateTensaoCelulaMax(int tesao) override; //comentado: sem widget na tela nova
+
+	//widgets novos da tela de testes
+	virtual void updateDistancia(int metros) override;
+	virtual void updateControlWord(int cw) override;
+	virtual void updateStatusInversor(int status) override;
+	virtual void updateCurrentState(int estado) override;
+	virtual void updateTorque(int torque) override;
 
     //botoes
     virtual void Botao1(int bn1) override;

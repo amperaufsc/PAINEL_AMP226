@@ -41,10 +41,11 @@ void TestesPresenter::Botao3(int bn3)
     }
 }
 
-void TestesPresenter::updateFalhaTMS(int falha)
-{
-    view.updateFalhaTMS(falha);
-}
+//comentado: sem widget na tela nova
+//void TestesPresenter::updateFalhaTMS(int falha)
+//{
+//    view.updateFalhaTMS(falha);
+//}
 
 void TestesPresenter::updateFalhaECU(int falha)
 {
@@ -61,10 +62,11 @@ void TestesPresenter::RTDbotao(int rtd)
     view.RTDbotao(rtd);
 }
 
-void TestesPresenter::updateSOC(int soc)
-{
-    view.updateSOC(soc);
-}
+//comentado: sem widget na tela nova
+//void TestesPresenter::updateSOC(int soc)
+//{
+//    view.updateSOC(soc);
+//}
 
 void TestesPresenter::updateRPM(int rpm)
 {
@@ -81,10 +83,11 @@ void TestesPresenter::updateTempInversor(int temp)
     view.updateTempInversor(temp);
 }
 
-void TestesPresenter::updateTempAcc(int temp)
-{
-    view.updateTempAcc(temp);
-}
+//comentado: sem widget na tela nova
+//void TestesPresenter::updateTempAcc(int temp)
+//{
+//    view.updateTempAcc(temp);
+//}
 
 void TestesPresenter::updateCorrenteHV(float corrente)
 {
@@ -96,6 +99,7 @@ void TestesPresenter::updateCorrenteInv(float corrente)
     view.updateCorrenteInv(corrente);
 }
 
+//reativado: widget TensaoHV_un voltou na tela
 void TestesPresenter::updateTensaoHV(float tesao)
 {
     view.updateTensaoHV(tesao);
@@ -106,12 +110,40 @@ void TestesPresenter::updateTensaoInversor(float tesao)
     view.updateTensaoInversor(tesao);
 }
 
-void TestesPresenter::updateTensaoCelulaMin(int tesao)
+//comentado: sem widget na tela nova
+//void TestesPresenter::updateTensaoCelulaMin(int tesao)
+//{
+//    view.updateTensaoCelulaMin(tesao);
+//}
+//
+//void TestesPresenter::updateTensaoCelulaMax(int tesao)
+//{
+//    view.updateTensaoCelulaMax(tesao);
+//}
+
+//***** widgets novos da tela de testes *****//
+
+void TestesPresenter::updateDistancia(int metros)
 {
-    view.updateTensaoCelulaMin(tesao);
+    view.updateDistancia(metros);
 }
 
-void TestesPresenter::updateTensaoCelulaMax(int tesao)
+void TestesPresenter::updateControlWord(int cw)
 {
-    view.updateTensaoCelulaMax(tesao);
+    view.updateControlWord(cw);
+}
+
+void TestesPresenter::updateStatusInversor(int status)
+{
+    view.updateStatusInversor(status);
+}
+
+void TestesPresenter::updateCurrentState(int estado)
+{
+    view.updateCurrentState(estado);
+}
+
+void TestesPresenter::updateTorque(int torque)
+{
+    view.updateTorque(torque);
 }

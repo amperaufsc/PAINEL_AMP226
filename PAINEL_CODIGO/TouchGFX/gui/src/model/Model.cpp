@@ -71,6 +71,9 @@ extern float correnteHV;
 extern float corrente_inv;
 extern uint16_t rpm;
 extern int16_t rpm_bruto;
+extern uint16_t control_word;      //0x120 bytes 7-6 - estados Sevcon
+extern uint8_t inverter_status;    //0x120 byte 5
+extern uint16_t torque_motor;      //0x420 bytes 5-4 (valor absoluto)
 extern uint16_t temperatura_motor;
 extern uint16_t temperatura_inv;
 extern float tensao_inv;
@@ -224,6 +227,12 @@ void Model::tick()
 	modelListener->updateTempInversor(temperatura_inv);
 	modelListener->updateTensaoHV((float)tensaoHV);
 	modelListener->updateTensaoInversor((float)tensao_inv);
+
+	//dados do inversor pra tela de testes
+	modelListener->updateControlWord(control_word);
+	modelListener->updateStatusInversor(inverter_status);
+	modelListener->updateCurrentState(readtodrive_led); //current state (0x120 byte 3)
+	modelListener->updateTorque(torque_motor);
 
 	//potencia do motor (eletrica no inversor): tensao_inv * corrente_inv, sem filtro
 	//regen -> a potencia fica verde e negativa
