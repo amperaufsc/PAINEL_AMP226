@@ -234,7 +234,7 @@ void Model::tick()
 	modelListener->updateCurrentState(readtodrive_led); //current state (0x120 byte 3)
 	modelListener->updateTorque(torque_motor);
 
-	//potencia do motor (eletrica no inversor): tensao_inv * corrente_inv, sem filtro
+	//potencia do motor (eletrica no inversor): tensao_inv * corrente_inv
 	//regen -> a potencia fica verde e negativa
 	modelListener->updatePotencia((tensao_inv * corrente_inv) / 1000.0f); //kw
 	modelListener->updateVelocidade((float)velocidade);
@@ -253,7 +253,7 @@ void Model::tick()
 	//**mandar pro display as variaveis recebidas do can END**//
 
 	//**ligar led verde quando entrar no modo de read to drive
-	if ((readtodrive_led >= 2) or (tensaoHV >= 60)) {
+	if ((readtodrive_led >= 2) or (tensaoHV >= 60) or (tensao_inv >= 60)) {
 	    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
 	}
 }
